@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://db26m2afepnbf"]
+
+[ext_resource type="Script" path="res://scene/penebang/penebang.gd" id="1_tlqfd"]
+[ext_resource type="Texture2D" uid="uid://bcimubsnu3p64" path="res://asset/villain/WhatsApp Image 2024-02-16 at 16.09.19.jpeg" id="2_mgrmh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b14ok"]
+size = Vector2(30, 34)
+
+[node name="Penebang" type="CharacterBody2D"]
+script = ExtResource("1_tlqfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_mgrmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_b14ok")

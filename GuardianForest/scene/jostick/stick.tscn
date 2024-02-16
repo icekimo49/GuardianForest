@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbsb0k6708nio"]
+
+[ext_resource type="Script" path="res://scene/jostick/stick.gd" id="1_pl3vs"]
+[ext_resource type="Texture2D" uid="uid://blbljcjfduepb" path="res://asset/control/idle.png" id="2_bk15p"]
+
+[node name="stick" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pl3vs")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_bk15p")
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 138.0
+offset_bottom = 131.0
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
