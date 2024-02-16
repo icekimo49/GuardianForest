@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const maksKecepatan = 150
+const maksKecepatan = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

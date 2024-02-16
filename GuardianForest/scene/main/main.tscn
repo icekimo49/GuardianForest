@@ -30,5 +30,5 @@ layer_0/tile_data = PackedInt32Array(-458765, 720896, 13, -458764, 786432, 13, -
 [node name="Player" parent="." instance=ExtResource("1_hh63w")]
 
 [node name="Penebang" parent="." instance=ExtResource("6_762iu")]
-position = Vector2(2, -181)
+position = Vector2(-7, -205)
 floor_max_angle = 0.951204
