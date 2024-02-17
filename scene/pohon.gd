@@ -16,6 +16,7 @@ func _on_area_2d_body_entered(body):
 func _ready():
 	timer = $Timer
 	timer2 = $Timer2
+	timer3 = $Timer3
 	
 func mulai_timer1():
 	timer.start()
