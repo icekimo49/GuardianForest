@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs6b5jgiul2ci"]
+
+[ext_resource type="Texture2D" uid="uid://c305dar51nb07" path="res://resources/spr_tree1.png" id="1_2lg1o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vi2ba"]
+radius = 11.0
+
+[node name="Pohon" type="StaticBody2D"]
+
+[node name="SprTree1" type="Sprite2D" parent="."]
+texture = ExtResource("1_2lg1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 18)
+shape = SubResource("CircleShape2D_vi2ba")
