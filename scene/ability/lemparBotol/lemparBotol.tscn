@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsgitu7euotkq"]
+
+[ext_resource type="Texture2D" uid="uid://cgts13gp7pxl2" path="res://scene/ability/lemparBotol/botol.png" id="1_q6jmy"]
+
+[sub_resource type="Animation" id="Animation_nebjd"]
+resource_name = "swing"
+length = 1.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25, 0.35, 0.65, 0.9, 0.95, 1.075, 1.3375),
+"transitions": PackedFloat32Array(1, 1.62451, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.301942, -3.14159, -0.198968, 0.141372, -2.57436, -0.0837758]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.25, 0.55, 0.75, 1.15, 1.3375),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 5.46416, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.5, 1.5), Vector2(1, 1), Vector2(1, 1), Vector2(2, 2), Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.35),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wj6ge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nug3j"]
+_data = {
+"RESET": SubResource("Animation_wj6ge"),
+"swing": SubResource("Animation_nebjd")
+}
+
+[node name="Botol" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nug3j")
+}
+autoplay = "swing"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q6jmy")
+offset = Vector2(0, -4)

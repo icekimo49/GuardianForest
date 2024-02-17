@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://cj63yoh1hff6t"]
+
+[ext_resource type="Texture2D" uid="uid://dx422gf4w7rdm" path="res://scene/analog/idle.png" id="1_ni8k5"]
+[ext_resource type="Script" path="res://scene/analog/script/analog.gd" id="1_r81ff"]
+[ext_resource type="Texture2D" uid="uid://bkqb6bvxu5g2l" path="res://scene/analog/kiri.png" id="3_hn7ib"]
+[ext_resource type="Texture2D" uid="uid://44e0rhrkwfdb" path="res://scene/analog/kanan.png" id="4_5gitq"]
+[ext_resource type="Texture2D" uid="uid://dne7djagwdtau" path="res://scene/analog/atas.png" id="5_q4hyq"]
+[ext_resource type="Texture2D" uid="uid://bb3qeyfovcmq7" path="res://scene/analog/bawah.png" id="6_tj07f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq51x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ieme6"]
+
+[node name="analog" type="Node2D"]
+position = Vector2(307, 249)
+script = ExtResource("1_r81ff")
+
+[node name="idle" type="TouchScreenButton" parent="."]
+position = Vector2(-69, -60)
+texture_normal = ExtResource("1_ni8k5")
+
+[node name="kiri" type="TouchScreenButton" parent="."]
+position = Vector2(-127, 1)
+scale = Vector2(10.8569, 3.0071)
+shape = SubResource("RectangleShape2D_xq51x")
+
+[node name="Kiri" type="Sprite2D" parent="kiri"]
+visible = false
+position = Vector2(10.4081, 0.997639)
+scale = Vector2(0.0921075, 0.332547)
+texture = ExtResource("3_hn7ib")
+
+[node name="kanan" type="TouchScreenButton" parent="."]
+position = Vector2(106, 3)
+scale = Vector2(-9.7991, -3.02396)
+shape = SubResource("RectangleShape2D_ieme6")
+
+[node name="Kanan" type="Sprite2D" parent="kanan"]
+visible = false
+position = Vector2(10.5112, -0.330692)
+rotation = 3.14159
+scale = Vector2(0.10205, 0.330692)
+texture = ExtResource("4_5gitq")
+
+[node name="atas" type="TouchScreenButton" parent="."]
+position = Vector2(-4, -103)
+scale = Vector2(-2.87377, 7.01229)
+shape = SubResource("RectangleShape2D_xq51x")
+
+[node name="Atas" type="Sprite2D" parent="atas"]
+visible = false
+position = Vector2(0.347975, 13.9755)
+rotation = 3.14159
+scale = Vector2(0.347974, -0.142607)
+texture = ExtResource("5_q4hyq")
+
+[node name="bawah" type="TouchScreenButton" parent="."]
+position = Vector2(-4, 88)
+scale = Vector2(-3.59909, -5.22396)
+shape = SubResource("RectangleShape2D_ieme6")
+
+[node name="Bawah" type="Sprite2D" parent="bawah"]
+visible = false
+position = Vector2(0.277847, 14.7398)
+rotation = 3.14159
+scale = Vector2(0.277848, 0.191426)
+texture = ExtResource("6_tj07f")
+
+[connection signal="pressed" from="atas" to="." method="_on_atas_pressed"]
