@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs6b5jgiul2ci"]
+[gd_scene load_steps=7 format=3 uid="uid://cs6b5jgiul2ci"]
 
 [ext_resource type="Texture2D" uid="uid://c305dar51nb07" path="res://resources/spr_tree1.png" id="1_2lg1o"]
 [ext_resource type="Script" path="res://scene/pohon.gd" id="1_taq8s"]
@@ -10,6 +10,9 @@ radius = 11.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_yudq5"]
 radius = 38.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5j81"]
+radius = 13.0
+
 [node name="Pohon" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 4
@@ -20,6 +23,7 @@ api = ExtResource("2_tgoya")
 texture = ExtResource("1_2lg1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 18)
 shape = SubResource("CircleShape2D_vi2ba")
 
@@ -35,9 +39,22 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Timer3" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 18)
+shape = SubResource("CircleShape2D_g5j81")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

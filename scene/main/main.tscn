@@ -43,7 +43,7 @@ position = Vector2(496, 44)
 position = Vector2(251, -95)
 
 [node name="Pohon" parent="." instance=ExtResource("7_v6i5r")]
-position = Vector2(-119, -69)
+position = Vector2(508, 39)
 
 [node name="Pohon3" parent="." instance=ExtResource("7_v6i5r")]
 position = Vector2(-127, 46)

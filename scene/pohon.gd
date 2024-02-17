@@ -6,6 +6,7 @@ var deteksi = false
 var kebakar = null
 var timer: Timer
 var timer2: Timer
+var timer3: Timer
 
 func _on_area_2d_body_entered(body):
 	if deteksi == false:
@@ -28,8 +29,17 @@ func _on_timer_timeout():
 func mulai_timer2():
 	timer2.start()
 
+func mulai_timer3():
+	timer3.start()
+
 func _on_area_2d_body_exited(body):
 	timer2.stop()
 
 func _on_timer_2_timeout():
+	queue_free()
+	
+func _on_area_2d_2_body_entered(body):
+	mulai_timer3()
+
+func _on_timer_3_timeout():
 	queue_free()

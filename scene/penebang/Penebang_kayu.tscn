@@ -98,6 +98,8 @@ _data = {
 
 [node name="Musuh" type="CharacterBody2D"]
 position = Vector2(2, -1)
+collision_layer = 16
+collision_mask = 16
 script = ExtResource("1_we245")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -126,5 +128,9 @@ libraries = {
 "": SubResource("AnimationLibrary_xc8qe")
 }
 autoplay = "menebang"
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
