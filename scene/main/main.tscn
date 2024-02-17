@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4fsx7vb0erkf"]
+[gd_scene load_steps=9 format=3 uid="uid://d4fsx7vb0erkf"]
 
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_fth7k"]
 [ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://scene/player/player.tscn" id="1_hh63w"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://scene/joystick/joystick.tscn" id="7_dm7oj"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://scene/pohon.tscn" id="7_v6i5r"]
 [ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang_kayu/Penebang_kayu.tscn" id="8_41wox"]
+[ext_resource type="PackedScene" uid="uid://cl4vpo8abukrq" path="res://scene/tombolSerang/tombol_serang.tscn" id="8_huxm0"]
 
 [node name="main" type="Node2D"]
 position = Vector2(184, 100)
@@ -31,6 +32,9 @@ floor_max_angle = 0.951204
 
 [node name="joystick" parent="UI" instance=ExtResource("7_dm7oj")]
 position = Vector2(24, 224)
+
+[node name="tombolSerang" parent="UI" instance=ExtResource("8_huxm0")]
+position = Vector2(464, 213)
 
 [node name="Musuh" parent="." instance=ExtResource("8_41wox")]
 position = Vector2(496, 44)
