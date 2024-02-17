@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-const maksKecepatan = 0
+const maksKecepatan = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Area2D.area_entered.connect(on_area_entered)
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +21,3 @@ func arah_kePlayer():
 		
 	return Vector2.ZERO
 
-
-func on_area_entered(other_area : Area2D):
-	queue_free()
