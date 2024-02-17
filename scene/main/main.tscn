@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4fsx7vb0erkf"]
+[gd_scene load_steps=9 format=3 uid="uid://d4fsx7vb0erkf"]
 
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_fth7k"]
 [ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://scene/player/player.tscn" id="1_hh63w"]
@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://dphlynwb27mtu" path="res://resources/air.tres" id="4_uhevb"]
 [ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/penebang.tscn" id="6_762iu"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://scene/joystick/joystick.tscn" id="7_dm7oj"]
+[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang_kayu/Penebang_kayu.tscn" id="8_41wox"]
 
 [node name="main" type="Node2D"]
 position = Vector2(184, 100)
@@ -34,6 +35,8 @@ layer_0/tile_data = PackedInt32Array(-458765, 720896, 13, -458764, 786432, 13, -
 
 [node name="Player" parent="." instance=ExtResource("1_hh63w")]
 scale = Vector2(0.988421, 0.968354)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Penebang" parent="." instance=ExtResource("6_762iu")]
 position = Vector2(2, -181)
@@ -67,3 +70,6 @@ floor_max_angle = 0.951204
 
 [node name="joystick" parent="UI" instance=ExtResource("7_dm7oj")]
 position = Vector2(24, 224)
+
+[node name="Musuh" parent="." instance=ExtResource("8_41wox")]
+position = Vector2(496, 44)

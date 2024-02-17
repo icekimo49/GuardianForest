@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cfbeqiep442p0"]
 
-[ext_resource type="Script" path="res://scene/main/Musuh.gd" id="1_we245"]
-[ext_resource type="Texture2D" uid="uid://cpoaegu4wtiyu" path="res://asset/villain/Woodcutter_attack2.png" id="2_hgfhn"]
+[ext_resource type="Script" path="res://scene/penebang/Penebang_Kayu.gd" id="1_we245"]
+[ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="2_hgfhn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qm6c2"]
 atlas = ExtResource("2_hgfhn")
@@ -65,7 +65,8 @@ script = ExtResource("1_we245")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xcfdp")
-frame_progress = 0.605539
+autoplay = "default"
+frame_progress = 0.32115
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 3)
