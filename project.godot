@@ -14,6 +14,10 @@ config/name="GuardianForest"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalScript="*res://script/global_script/global_script.gd"
+
 [display]
 
 window/size/viewport_width=640

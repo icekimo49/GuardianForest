@@ -24,3 +24,7 @@ func arah_kePlayer():
 
 func on_area_entered(other_area : Area2D):
 	queue_free()
+
+
+func _on_timer_timeout():
+	pass
