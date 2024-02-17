@@ -20,3 +20,4 @@ func arah_kePlayer():
 		return (player_nodes.global_position - global_position).normalized()
 		
 	return Vector2.ZERO
+
