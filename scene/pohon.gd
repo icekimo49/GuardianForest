@@ -1,11 +1,30 @@
 extends StaticBody2D
 
+var posisi = position
+@export var api : PackedScene
+var deteksi = false
+var kebakar = null
+var timer: Timer
 
-# Called when the node enters the scene tree for the first time.
+func _on_area_2d_body_entered(body):
+	if deteksi == false:
+		mulai_timer()
+		print("2")
+		deteksi = true
+
 func _ready():
-	pass # Replace with function body.
+	timer = $Timer
+	
+func mulai_timer():
+	timer.start()
+	
+func _on_timer_timeout():
+	var instance = api.instantiate()
+	instance.position = posisi
+	add_child(instance)
+	
+	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_area_2d_body_exited(body):
+	deteksi = false

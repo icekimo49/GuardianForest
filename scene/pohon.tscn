@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs6b5jgiul2ci"]
+[gd_scene load_steps=6 format=3 uid="uid://cs6b5jgiul2ci"]
 
 [ext_resource type="Texture2D" uid="uid://c305dar51nb07" path="res://resources/spr_tree1.png" id="1_2lg1o"]
+[ext_resource type="Script" path="res://scene/pohon.gd" id="1_taq8s"]
+[ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/penebang.tscn" id="2_tgoya"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vi2ba"]
 radius = 11.0
@@ -9,6 +11,10 @@ radius = 11.0
 radius = 38.0
 
 [node name="Pohon" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_taq8s")
+api = ExtResource("2_tgoya")
 
 [node name="SprTree1" type="Sprite2D" parent="."]
 texture = ExtResource("1_2lg1o")
@@ -21,3 +27,10 @@ shape = SubResource("CircleShape2D_vi2ba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_yudq5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

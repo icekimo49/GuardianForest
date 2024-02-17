@@ -55,4 +55,4 @@ position = Vector2(-87, 48)
 position = Vector2(212, 14)
 
 [node name="Penebang2" parent="." instance=ExtResource("6_762iu")]
-position = Vector2(143, -84)
+position = Vector2(220, -85)
