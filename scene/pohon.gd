@@ -44,3 +44,6 @@ func _on_area_2d_2_body_entered(body):
 
 func _on_timer_3_timeout():
 	queue_free()
+
+func _on_area_2d_2_body_exited(body):
+	timer3.stop()
