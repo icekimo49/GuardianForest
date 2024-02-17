@@ -18,3 +18,4 @@ func get_movement_vector():
 	var inputX = Input.get_action_strength("ui_kanan")-Input.get_action_strength("ui_kiri")
 	var inputY = Input.get_action_strength("ui_bawah")-Input.get_action_strength("ui_atas")
 	return Vector2(inputX, inputY)
+
