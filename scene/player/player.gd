@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const kecepatan : int = 300
+const kecepatan : int = 250
+const akselerasi  = 25
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,6 +13,8 @@ func _process(delta):
 	var arah = get_movement_vector()
 	var arahNormalized = arah.normalized()
 	velocity = arahNormalized * kecepatan
+	#var target_velocity = arahNormalized  *kecepatan
+	#velocity = velocity.lerp(target_velocity, 1 - exp(-delta * akselerasi))
 	move_and_slide()
 	
 	#Controller 
