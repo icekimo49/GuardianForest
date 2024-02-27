@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 const maksKecepatan = 0
+var timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Area2D.area_entered.connect(on_area_entered)
-
+	timer = $Timer
+	timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,4 +29,4 @@ func on_area_entered(other_area : Area2D):
 
 
 func _on_timer_timeout():
-	pass
+	queue_free()
