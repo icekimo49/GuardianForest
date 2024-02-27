@@ -1,0 +1,6 @@
+1. Collision Layer (Biar nggak nembus pohon).
+2. Ngebenerin Apinya biar ilang dan berhenti ngebakar pohon ketika disiram air
+3. Nambahin sistem Ammo (nggak bisa nyiram kalo air habis).
+4. Kolam untuk refill ammo.
+5. Ngebenerin penebang (pathfinding, nebang pohonnya).
+6. Sistem Waktu (Timer Wave).
