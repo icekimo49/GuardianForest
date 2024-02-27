@@ -30,3 +30,7 @@ func on_area_entered(other_area : Area2D):
 
 func _on_timer_timeout():
 	queue_free()
+
+func api():
+	pass
+	#buat body.has_method di player

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c305dar51nb07" path="res://resources/spr_tree1.png" id="1_2lg1o"]
 [ext_resource type="Script" path="res://scene/pohon.gd" id="1_taq8s"]
-[ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/penebang.tscn" id="2_tgoya"]
+[ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/api.tscn" id="2_tgoya"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vi2ba"]
 radius = 11.0
