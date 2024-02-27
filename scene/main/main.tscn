@@ -1,17 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4fsx7vb0erkf"]
+[gd_scene load_steps=12 format=3 uid="uid://d4fsx7vb0erkf"]
 
 [ext_resource type="PackedScene" uid="uid://dep6x1wv4t3ns" path="res://scene/penebang_kayu_manager/penebang_kayu_manager.tscn" id="1_4dckh"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_fth7k"]
 [ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://scene/player/player.tscn" id="1_hh63w"]
+[ext_resource type="PackedScene" uid="uid://bpgj51qgdn3vm" path="res://scene/arena_timer_ui/arena_timer_ui.tscn" id="1_jgc42"]
 [ext_resource type="PackedScene" uid="uid://d60xcrr7mvka" path="res://scene/Kamera/game_camera.tscn" id="1_yj2vq"]
+[ext_resource type="PackedScene" uid="uid://cjwpmeh62nvht" path="res://scene/arena_timer_manager/arena_timer_manager.tscn" id="2_lq7pm"]
 [ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/api.tscn" id="6_762iu"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://scene/joystick/joystick.tscn" id="7_dm7oj"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://scene/pohon.tscn" id="7_v6i5r"]
-[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang/Penebang_kayu.tscn" id="8_41wox"]
+[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang_kayu/Penebang_kayu.tscn" id="8_41wox"]
 [ext_resource type="PackedScene" uid="uid://cl4vpo8abukrq" path="res://scene/tombolSerang/tombol_serang.tscn" id="8_huxm0"]
 
 [node name="main" type="Node2D"]
 position = Vector2(184, 100)
+
+[node name="arena_timer_ui" parent="." node_paths=PackedStringArray("arena_timer_manager") instance=ExtResource("1_jgc42")]
+arena_timer_manager = NodePath("../arena_timer_manager")
+
+[node name="arena_timer_manager" parent="." instance=ExtResource("2_lq7pm")]
+position = Vector2(-184, -100)
 
 [node name="penebang_kayu_manager" parent="." instance=ExtResource("1_4dckh")]
 
@@ -51,6 +59,9 @@ position = Vector2(290, 16)
 
 [node name="Pohon6" parent="pohon" instance=ExtResource("7_v6i5r")]
 position = Vector2(319, 22)
+
+[node name="Pohon7" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(217, 61)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
