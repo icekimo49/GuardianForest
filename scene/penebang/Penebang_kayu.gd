@@ -7,6 +7,7 @@ var speed = 1000
 var kabur = false
 var player = null
 var arahRandom = randf()
+@onready var timer = $Timer
 
 
 
@@ -29,3 +30,10 @@ func pembuatRandom() -> float :
 func _on_area_2d_body_entered(body):
 	player = body
 	kabur = true
+	timer.start()
+	
+
+
+
+func _on_timer_timeout():
+	$".".queue_free()
