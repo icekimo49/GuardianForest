@@ -7,3 +7,4 @@ var player_serang_atas = false
 var player_serang_kanan = false
 var player_serang_kiri = false
 var player_serang_bawah = false
+var isi_air_gayung : int

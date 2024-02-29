@@ -104,7 +104,8 @@ func _on_api_cooldown_timeout():
 
 func attack():
 	var arah = animasi_player
-	if GlobalScript.pencet:
+	#nanti tambahin notif ammo habis
+	if GlobalScript.pencet && GlobalScript.isi_air_gayung > 0:
 		GlobalScript.player_current_attack = true
 		attack_in_progress = true
 		if arah == "kanan":
@@ -124,6 +125,8 @@ func attack():
 			$AnimatedSprite2D.play("serang_atas")
 			$deal_attack_timer.start()
 			$player_hitbox_atas.toggle_collision(true)
+		GlobalScript.isi_air_gayung -=1
+		print(GlobalScript.isi_air_gayung)
 	GlobalScript.pencet = false
 
 
