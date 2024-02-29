@@ -6,6 +6,7 @@ var hp = 100
 var api_inattack_range = false
 var api_attack_cooldown = true
 var player_alive = true
+var animasi_player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,13 +24,45 @@ func _process(delta):
 	
 	#Controller 
 	velocity = $"../UI/joystick".get_velo().normalized() * kecepatan
+	animasi_player = $"../UI/joystick".arah()
+	if animasi_player == "kiri":
+		animasi(1)
+	elif animasi_player == "kanan":
+		animasi(1)
+	elif animasi_player == "atas":
+		animasi(1)
+	elif animasi_player == "bawah":
+		animasi(1)
+	elif animasi_player == "diam":
+		animasi(1)
+	print(animasi_player)
 	move_and_slide()
-	
 	pass
 
+func animasi(movement):
+	var arah = animasi_player
+	var anim = $AnimatedSprite2D
+	if arah == "kiri":
+		if movement == 1:
+			anim.play("kiri")
+		elif movement == 0:
+			anim.play("diam_kiri")
+	if arah == "kanan":
+		if movement == 1:
+			anim.play("kanan")
+		elif movement == 0:
+			anim.play("diam_kanan")
+	if arah == "atas":
+		if movement == 1:
+			anim.play("atas")
+		elif movement == 0:
+			anim.play("diam_atas")
+	if arah == "diam":
+		if movement == 1:
+			anim.play("diam")
+	pass
 func _physics_process(delta):
 	api_attack()
-	
 	
 	if hp <= 0:
 		player_alive = false #pindah ke main menu

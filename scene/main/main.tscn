@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d4fsx7vb0erkf"]
+[gd_scene load_steps=11 format=3 uid="uid://d4fsx7vb0erkf"]
 
 [ext_resource type="PackedScene" uid="uid://dep6x1wv4t3ns" path="res://scene/penebang_kayu_manager/penebang_kayu_manager.tscn" id="1_4dckh"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_fth7k"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/api.tscn" id="6_762iu"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://scene/joystick/joystick.tscn" id="7_dm7oj"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://scene/pohon.tscn" id="7_v6i5r"]
-[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang_kayu/Penebang_kayu.tscn" id="8_41wox"]
 [ext_resource type="PackedScene" uid="uid://cl4vpo8abukrq" path="res://scene/tombolSerang/tombol_serang.tscn" id="8_huxm0"]
 
 [node name="main" type="Node2D"]
@@ -67,12 +66,6 @@ position = Vector2(217, 61)
 
 [node name="joystick" parent="UI" instance=ExtResource("7_dm7oj")]
 position = Vector2(24, 224)
-
-[node name="Musuh" parent="." instance=ExtResource("8_41wox")]
-position = Vector2(396, -256)
-
-[node name="Musuh2" parent="." instance=ExtResource("8_41wox")]
-position = Vector2(-175, 32)
 
 [node name="tombol_serang" type="CanvasLayer" parent="."]
 
