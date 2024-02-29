@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt00m2fu2u3h6"]
+
+[ext_resource type="Texture2D" uid="uid://8l67bi7sx3cp" path="res://asset/environtment/tileset_water.png" id="1_ov82f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_36nbh"]
+radius = 19.0263
+
+[node name="kolamAir" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_36nbh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ov82f")
+hframes = 5
+vframes = 21
+frame = 1
