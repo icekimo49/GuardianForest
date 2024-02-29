@@ -6,6 +6,8 @@ extends Area2D
 @onready var max_distance = $CollisionShape2D.shape.radius
 
 var touched : bool = false
+var arah_baru
+var arah_lama
 
 
 func _input(event):
@@ -29,16 +31,18 @@ func arah():
 	var a = Vector2.RIGHT
 	var b = Vector2(small_Circle.position.x / max_distance, small_Circle.position.y / max_distance)
 	var c = rad_to_deg(a.angle_to(b))
-	var arah
-	if c < 45 && c > -45:
-		arah = "kanan"
+	if c == 0:
+		arah_baru = arah_lama
+	elif c < 45 && c > -45:
+		arah_baru = "kanan"
 	elif c < 135 && c > 45:
-		arah = "bawah"
+		arah_baru = "bawah"
 	elif c > -135 && c < -45:
-		arah = "atas"
+		arah_baru = "atas"
 	elif c < -135 || c > 135:
-		arah = "kiri"
-	return arah
+		arah_baru = "kiri"
+	arah_lama = arah_baru
+	return arah_baru
 	
 	
 func get_velo():

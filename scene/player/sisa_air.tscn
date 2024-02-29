@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk7fvk865oa8"]
+
+[ext_resource type="Script" path="res://scene/player/sisa_air.gd" id="1_npf30"]
+
+[node name="sisa_air" type="CanvasLayer"]
+script = ExtResource("1_npf30")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 84.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+
+[node name="TextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+text = "sisa : "
+autowrap_mode = 0

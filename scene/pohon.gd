@@ -31,6 +31,8 @@ func mulai_timer2():
 func _on_area_2d_body_exited(body):
 	var pohon = $Area2D/CollisionShape2D
 	pohon.apply_scale(Vector2(3,3))
+	timer.stop()
+	timer2.stop()
 
 func _on_timer_2_timeout():
 	queue_free()

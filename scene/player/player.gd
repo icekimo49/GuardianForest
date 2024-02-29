@@ -9,6 +9,7 @@ var player_alive = true
 var attack_in_progress = false
 var animasi_player
 var a = 1
+var posisi_lama
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,16 +28,12 @@ func _process(delta):
 	#Controller 
 	velocity = $"../UI/joystick".get_velo().normalized() * kecepatan
 	animasi_player = $"../UI/joystick".arah()
-	if animasi_player == "kiri":
+	var posisi_baru = self.global_position
+	if posisi_baru != posisi_lama:
 		animasi(1)
-	elif animasi_player == "kanan":
-		animasi(1)
-	elif animasi_player == "atas":
-		animasi(1)
-	elif animasi_player == "bawah":
-		animasi(1)
-	elif animasi_player == "diam":
-		animasi(1)
+	elif posisi_baru == posisi_lama:
+		animasi(0)
+	posisi_lama = posisi_baru
 	move_and_slide()
 	pass
 
@@ -65,11 +62,8 @@ func animasi(movement):
 		if attack_in_progress == false:
 			if movement == 1:
 				anim.play("bawah")
-			elif movement == 0:
+			if movement == 0:
 				anim.play("diam_bawah")
-	if arah == "diam":
-		if movement == 1:
-			anim.play("diam_bawah")
 	pass
 func _physics_process(delta):
 	api_attack()
@@ -110,25 +104,29 @@ func _on_api_cooldown_timeout():
 
 func attack():
 	var arah = animasi_player
-	if GlobalScript.pencet:
+	#nanti tambahin notif ammo habis
+	if GlobalScript.pencet && GlobalScript.isi_air_gayung > 0:
 		GlobalScript.player_current_attack = true
 		attack_in_progress = true
-		a+=1
-		print(a)
 		if arah == "kanan":
-			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play("serang_kanan")
 			$deal_attack_timer.start()
+			$player_hitbox_kanan.toggle_collision(true)
 		if arah == "kiri":
 			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play("serang_kanan")
 			$deal_attack_timer.start()
+			$player_hitbox_kiri.toggle_collision(true)
 		if arah == "bawah":
 			$AnimatedSprite2D.play("serang_bawah")
 			$deal_attack_timer.start()
+			$player_hitbox_bawah.toggle_collision(true)
 		if arah == "atas":
 			$AnimatedSprite2D.play("serang_atas")
 			$deal_attack_timer.start()
+			$player_hitbox_atas.toggle_collision(true)
+		GlobalScript.isi_air_gayung -=1
+		print(GlobalScript.isi_air_gayung)
 	GlobalScript.pencet = false
 
 
@@ -138,3 +136,8 @@ func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	GlobalScript.player_current_attack = false
 	attack_in_progress = false
+	$AnimatedSprite2D.flip_h = false
+	$player_hitbox_kiri.toggle_collision(false)
+	$player_hitbox_kanan.toggle_collision(false)
+	$player_hitbox_bawah.toggle_collision(false)
+	$player_hitbox_atas.toggle_collision(false)
