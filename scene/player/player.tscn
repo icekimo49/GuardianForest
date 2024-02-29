@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://bjxhj32neycau"]
+[gd_scene load_steps=35 format=3 uid="uid://bjxhj32neycau"]
 
 [ext_resource type="Script" path="res://scene/player/player.gd" id="1_7c5n1"]
-[ext_resource type="Texture2D" uid="uid://4ykusdeqed81" path="res://scene/player/player.png" id="1_55yaf"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://scene/player/Actor1.png" id="2_0qjyr"]
 [ext_resource type="PackedScene" uid="uid://cxp32tjv0xv5n" path="res://scene/ability/lemparBotol_controller/lempar_botol_controller.tscn" id="2_botwl"]
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="4_hw3ry"]
+[ext_resource type="Texture2D" uid="uid://bcimubsnu3p64" path="res://asset/villain/WhatsApp Image 2024-02-16 at 16.09.19.jpeg" id="4_li7cc"]
+[ext_resource type="Script" path="res://scene/player/player_hitbox_atas.gd" id="6_3nybf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eg6bi"]
 atlas = ExtResource("2_0qjyr")
@@ -34,9 +35,9 @@ region = Rect2(528, 0, 48, 72)
 atlas = ExtResource("2_0qjyr")
 region = Rect2(480, 216, 48, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g1kha"]
-atlas = ExtResource("1_55yaf")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve7bo"]
+atlas = ExtResource("4_li7cc")
+region = Rect2(0, 0, 160, 180)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfi44"]
 atlas = ExtResource("2_0qjyr")
@@ -134,7 +135,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g1kha")
+"texture": SubResource("AtlasTexture_ve7bo")
 }],
 "loop": true,
 "name": &"diam_bawah",
@@ -222,6 +223,16 @@ animations = [{
 radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_my3qs"]
+radius = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xya8s"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h7sq"]
+size = Vector2(11.75, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj851"]
+size = Vector2(12, 20)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
@@ -231,7 +242,7 @@ script = ExtResource("1_7c5n1")
 position = Vector2(2.38419e-07, -6)
 scale = Vector2(0.473958, 0.473958)
 sprite_frames = SubResource("SpriteFrames_dyxpy")
-animation = &"serang_kanan"
+animation = &"diam_bawah"
 autoplay = "diam_bawah"
 
 [node name="abilityManager" type="Node" parent="."]
@@ -247,6 +258,26 @@ shape = SubResource("CircleShape2D_jw6pm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_my3qs")
+
+[node name="player_hitbox_atas" type="CollisionShape2D" parent="."]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_xya8s")
+script = ExtResource("6_3nybf")
+
+[node name="player_hitbox_bawah" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_xya8s")
+script = ExtResource("6_3nybf")
+
+[node name="player_hitbox_kiri" type="CollisionShape2D" parent="."]
+position = Vector2(-11.875, -6)
+shape = SubResource("RectangleShape2D_3h7sq")
+script = ExtResource("6_3nybf")
+
+[node name="player_hitbox_kanan" type="CollisionShape2D" parent="."]
+position = Vector2(12, -6)
+shape = SubResource("RectangleShape2D_oj851")
+script = ExtResource("6_3nybf")
 
 [node name="api_cooldown" type="Timer" parent="."]
 

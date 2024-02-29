@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://db26m2afepnbf"]
+[gd_scene load_steps=9 format=3 uid="uid://db26m2afepnbf"]
 
 [ext_resource type="Script" path="res://scene/penebang/api.gd" id="1_ktts3"]
-[ext_resource type="Texture2D" uid="uid://csrsyyt1rgajh" path="res://asset/villain/Woodcutter.png" id="2_1bhi2"]
 [ext_resource type="PackedScene" uid="uid://cxp32tjv0xv5n" path="res://scene/ability/lemparBotol_controller/lempar_botol_controller.tscn" id="3_d3h3s"]
 [ext_resource type="Texture2D" uid="uid://iic0xk2717jy" path="res://scene/api/api.png" id="4_em6x0"]
 
@@ -43,17 +42,11 @@ collision_mask = 9
 script = ExtResource("1_ktts3")
 
 [node name="Area2D" type="Area2D" parent="." groups=["api"]]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_xnkky")
-
-[node name="Sprite2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(57.815, 75.455)
-texture = ExtResource("2_1bhi2")
 
 [node name="abilityManager" type="Node" parent="."]
 
@@ -68,7 +61,6 @@ vframes = 5
 frame = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_b14ok")
 
