@@ -1,10 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://bjxhj32neycau"]
+[gd_scene load_steps=34 format=3 uid="uid://bjxhj32neycau"]
 
 [ext_resource type="Script" path="res://scene/player/player.gd" id="1_7c5n1"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://scene/player/Actor1.png" id="2_0qjyr"]
 [ext_resource type="PackedScene" uid="uid://cxp32tjv0xv5n" path="res://scene/ability/lemparBotol_controller/lempar_botol_controller.tscn" id="2_botwl"]
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="4_hw3ry"]
-[ext_resource type="Texture2D" uid="uid://bcimubsnu3p64" path="res://asset/villain/WhatsApp Image 2024-02-16 at 16.09.19.jpeg" id="4_li7cc"]
 [ext_resource type="Script" path="res://scene/player/player_hitbox_atas.gd" id="6_3nybf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eg6bi"]
@@ -35,9 +34,9 @@ region = Rect2(528, 0, 48, 72)
 atlas = ExtResource("2_0qjyr")
 region = Rect2(480, 216, 48, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ve7bo"]
-atlas = ExtResource("4_li7cc")
-region = Rect2(0, 0, 160, 180)
+[sub_resource type="AtlasTexture" id="AtlasTexture_quc05"]
+atlas = ExtResource("2_0qjyr")
+region = Rect2(480, 0, 48, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfi44"]
 atlas = ExtResource("2_0qjyr")
@@ -135,7 +134,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ve7bo")
+"texture": SubResource("AtlasTexture_quc05")
 }],
 "loop": true,
 "name": &"diam_bawah",
@@ -239,10 +238,11 @@ motion_mode = 1
 script = ExtResource("1_7c5n1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(2.38419e-07, -6)
 scale = Vector2(0.473958, 0.473958)
 sprite_frames = SubResource("SpriteFrames_dyxpy")
-animation = &"diam_bawah"
+animation = &"diam_kiri"
 autoplay = "diam_bawah"
 
 [node name="abilityManager" type="Node" parent="."]

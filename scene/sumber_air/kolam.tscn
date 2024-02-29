@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnkm0g7sqai5f"]
 
-[ext_resource type="Texture2D" uid="uid://70kx6fg0c6dr" path="res://scene/sumber_air/fcde5da5-96fc-4819-80a9-80f5b9d0e826-1680522563728.jpg" id="1_7cxp0"]
 [ext_resource type="Script" path="res://scene/sumber_air/kolam.gd" id="1_g5j2q"]
+[ext_resource type="Texture2D" uid="uid://8l67bi7sx3cp" path="res://asset/environtment/tileset_water.png" id="2_3l8x8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdqnc"]
 size = Vector2(58, 34)
@@ -13,8 +13,10 @@ size = Vector2(53, 30)
 script = ExtResource("1_g5j2q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0661053, 0.0661053)
-texture = ExtResource("1_7cxp0")
+scale = Vector2(0.786, 0.786)
+texture = ExtResource("2_3l8x8")
+hframes = 5
+vframes = 21
 
 [node name="refill" type="Area2D" parent="."]
 scale = Vector2(1.20505, 1.31797)
