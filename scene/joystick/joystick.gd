@@ -30,9 +30,7 @@ func arah():
 	var b = Vector2(small_Circle.position.x / max_distance, small_Circle.position.y / max_distance)
 	var c = rad_to_deg(a.angle_to(b))
 	var arah
-	if c == 0:
-		arah = "diam"
-	elif c < 45 && c > -45:
+	if c < 45 && c > -45:
 		arah = "kanan"
 	elif c < 135 && c > 45:
 		arah = "bawah"

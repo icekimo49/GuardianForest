@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwg2k40ry8u0q"]
+
+[ext_resource type="Texture2D" uid="uid://bgfe4k4l63qbb" path="res://scene/tombolSerang/Menyiram.png" id="1_yn8hv"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_yn8hv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

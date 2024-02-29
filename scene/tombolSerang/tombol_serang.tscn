@@ -9,6 +9,7 @@ position = Vector2(-94, -79)
 scale = Vector2(0.164063, 0.164063)
 texture_normal = ExtResource("1_eljab")
 texture_pressed = ExtResource("2_rlpds")
+action = "action_button"
 script = ExtResource("2_7d0sf")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

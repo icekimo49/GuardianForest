@@ -5,38 +5,41 @@ const MAX_RANGE = 100
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	$Timer.timeout.connect(on_timer_timeout)
+#func _process(delta):
+	#$Timer.timeout.connect(on_timer_timeout)
 	
 	
-func on_timer_timeout():
-	if(GlobalScript.tombol_serang == true):
-		var player = get_tree().get_first_node_in_group("player") as Node2D
-		if 	player == null:	
-			return
+#func on_timer_timeout():
+	#if(GlobalScript.tombol_serang == true):
+		#var player = get_tree().get_first_node_in_group("player") as Node2D
+		#if 	player == null:	
+			#return
 			
 			
 		#### Penebang
-		var enemies = get_tree().get_nodes_in_group("enemy")
+		#var enemies = get_tree().get_nodes_in_group("enemy")
 		
-		enemies = enemies.filter(func(enemy : Node2D):
-			return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE,2)
-		)
+		#enemies = enemies.filter(func(enemy : Node2D):
+			#return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE,2)
+		#)
 		
-		if enemies.size() == 0:
-			return
+		#if enemies.size() == 0:
+			#return
 			
-		enemies.sort_custom(func(a:Node2D, b:Node2D):
-			var a_distance = a.global_position.distance_squared_to(player.global_position)
-			var b_distance = b.global_position.distance_squared_to(player.global_position)
-			return a_distance < b_distance	
-		)
+		#enemies.sort_custom(func(a:Node2D, b:Node2D):
+			#var a_distance = a.global_position.distance_squared_to(player.global_position)
+			#var b_distance = b.global_position.distance_squared_to(player.global_position)
+			#return a_distance < b_distance	
+		#)
 		
-		var lemparBotol_instance = lemparBotol.instantiate() as Node2D
-		player.get_parent().add_child(lemparBotol_instance)
-		lemparBotol_instance.global_position = enemies[0].global_position
+		#var lemparBotol_instance = lemparBotol.instantiate() as Node2D
+		#player.get_parent().add_child(lemparBotol_instance)
+		#lemparBotol_instance.global_position = enemies[0].global_position
 		
-		GlobalScript.tombol_serang = false
+		#GlobalScript.tombol_serang = false
+		
+		#SEMUA KOMENTAR DIATAS NYALAIN BUAT BALIKIN TOMBOL AIR YANG DIBUAT HAIKAL
+		
 	#lemparBotol_instance.global_position += Vector2.RIGHT.rotated(randf_range(0,TAU)) *4
 	#
 	#var arah_enemy = enemies[0].global_position - lemparBotol_instance.global_position

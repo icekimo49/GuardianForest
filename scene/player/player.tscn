@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjxhj32neycau"]
+[gd_scene load_steps=31 format=3 uid="uid://bjxhj32neycau"]
 
 [ext_resource type="Script" path="res://scene/player/player.gd" id="1_7c5n1"]
 [ext_resource type="Texture2D" uid="uid://4ykusdeqed81" path="res://scene/player/player.png" id="1_55yaf"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://scene/player/Actor1.png" id="2_0qjyr"]
 [ext_resource type="PackedScene" uid="uid://cxp32tjv0xv5n" path="res://scene/ability/lemparBotol_controller/lempar_botol_controller.tscn" id="2_botwl"]
+[ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="4_hw3ry"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eg6bi"]
 atlas = ExtResource("2_0qjyr")
@@ -68,6 +69,30 @@ region = Rect2(480, 72, 48, 72)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfu0u"]
 atlas = ExtResource("2_0qjyr")
 region = Rect2(528, 72, 48, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xie5a"]
+atlas = ExtResource("4_hw3ry")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agd3v"]
+atlas = ExtResource("4_hw3ry")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peryk"]
+atlas = ExtResource("4_hw3ry")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_556ca"]
+atlas = ExtResource("4_hw3ry")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkcd0"]
+atlas = ExtResource("4_hw3ry")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2xxy"]
+atlas = ExtResource("4_hw3ry")
+region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dyxpy"]
 animations = [{
@@ -158,6 +183,39 @@ animations = [{
 "loop": true,
 "name": &"kiri",
 "speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"serang_atas",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"serang_bawah",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xie5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agd3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peryk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_556ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkcd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2xxy")
+}],
+"loop": true,
+"name": &"serang_kanan",
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jw6pm"]
@@ -173,7 +231,7 @@ script = ExtResource("1_7c5n1")
 position = Vector2(2.38419e-07, -6)
 scale = Vector2(0.473958, 0.473958)
 sprite_frames = SubResource("SpriteFrames_dyxpy")
-animation = &"kiri"
+animation = &"serang_kanan"
 autoplay = "diam_bawah"
 
 [node name="abilityManager" type="Node" parent="."]
@@ -192,6 +250,9 @@ shape = SubResource("CircleShape2D_my3qs")
 
 [node name="api_cooldown" type="Timer" parent="."]
 
+[node name="deal_attack_timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="api_cooldown" to="." method="_on_api_cooldown_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]

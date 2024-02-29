@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 const maksKecepatan = 0
 var timer: Timer
+var HP = 1
+var player_inattack_zone = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +18,8 @@ func _process(delta):
 	velocity = arah * maksKecepatan
 	move_and_slide()
 
+func _physics_process(delta):
+	deal_damage()
 
 func arah_kePlayer():
 	var player_nodes = get_tree().get_first_node_in_group("player") as Node2D
@@ -29,8 +34,29 @@ func on_area_entered(other_area : Area2D):
 
 
 func _on_timer_timeout():
-	queue_free()
+	#queue_free()
+	pass
 
 func api():
 	pass
-	#buat body.has_method di player
+	#jangan diapus, penting!!!!
+
+
+
+
+func _on_api_hitbox_body_entered(body):
+	#ubah persyaratan if buat ganti tipe senjatanya dari player ke gayung dsb
+	if body.has_method("player"):
+		player_inattack_zone = true
+
+
+func _on_api_hitbox_body_exited(body):
+	if body.has_method("player"):
+		player_inattack_zone = false
+
+func deal_damage():
+	if player_inattack_zone and GlobalScript.player_current_attack == true:
+		HP -=1
+		print(HP)
+		if HP <= 0:
+			self.queue_free()
