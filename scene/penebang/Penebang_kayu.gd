@@ -25,7 +25,7 @@ func _physics_process(delta):
 	if kabur:
 		var positionLimit = position
 		var target_positionLimit = Vector2(1000,0 )
-		print(positionLimit)
+		#print(positionLimit)
 		if (positionLimit.x <=  1000 && positionLimit.y != target_positionLimit.y) :
 			var start_position = position
 			var target_position = Vector2(1000,0 )  # Ubah posisi tujuan sesuai kebutuhan Anda
@@ -57,11 +57,11 @@ func _on_timer_timeout():
 
 #PathFinding Stuff
 func recalc_path():
-	if (target_node && is_instance_valid($".")):
-		navAgent.target_position = target_node.global_position
-	elif (is_instance_valid($".")) :
-		navAgent.target_position = home_position
-		
+	#if (target_node && is_instance_valid($".")):
+		#navAgent.target_position = target_node.global_position
+	#elif (is_instance_valid($".")) :
+		#navAgent.target_position = home_position
+	pass
 
 func _on_pathfinding_timer_timeout():
 	recalc_path()

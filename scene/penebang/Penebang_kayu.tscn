@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cfbeqiep442p0"]
+[gd_scene load_steps=19 format=3 uid="uid://cfbeqiep442p0"]
 
 [ext_resource type="Script" path="res://scene/penebang/Penebang_Kayu.gd" id="1_we245"]
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="2_hgfhn"]
@@ -105,6 +105,9 @@ radius = 320.264
 [sub_resource type="CircleShape2D" id="CircleShape2D_ammr1"]
 radius = 25.02
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4rcqe"]
+polygon = PackedVector2Array(-9, -7, -11, -3, -14, 0, -16, 5, -17, 8, -23, 10, -24, 18, -14, 18, -17, 14, -17, 12, -13, 13, -16, 22, -12, 22, -9, 13, -6, 13, -3, 23, 0, 23, 0, 17, -2, 13, -1, 10, 1, 10, -1, 6, -3, -3, -4, -3, -5, -7)
+
 [node name="Musuh" type="CharacterBody2D" node_paths=PackedStringArray("navAgent")]
 position = Vector2(2, -1)
 collision_layer = 16
@@ -174,6 +177,9 @@ collision_mask = 16
 modulate = Color(1, 1, 0.0313726, 1)
 scale = Vector2(8.53, 8.53)
 shape = SubResource("CircleShape2D_ammr1")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_4rcqe")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
