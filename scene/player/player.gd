@@ -18,12 +18,47 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var arah = get_movement_vector()
-	var arahNormalized = arah.normalized()
-	velocity = arahNormalized * kecepatan
-	#var target_velocity = arahNormalized  *kecepatan
-	#velocity = velocity.lerp(target_velocity, 1 - exp(-delta * akselerasi))
+	#var arah = get_movement_vector()
+	#var arahNormalized = arah.normalized()
+	#velocity = arahNormalized * kecepatan
+		##Sebelumnya Nggak dipake
+		##var target_velocity = arahNormalized  *kecepatan
+		##velocity = velocity.lerp(target_velocity, 1 - exp(-delta * akselerasi))
+	#move_and_slide()
+	
+	#Movement pake Keyboard versi 2 (Biar bisa animasi)
+	velocity = Vector2.ZERO
+	if(Input.is_action_pressed("ui_kanan")): 
+		var anim = $AnimatedSprite2D
+		velocity.x += 1
+		if attack_in_progress == false:
+			anim.play("kanan")
+	elif(Input.is_action_just_released("ui_kanan",true)):
+		$AnimatedSprite2D.play("diam_kanan")
+	if(Input.is_action_pressed("ui_kiri")):
+		var anim = $AnimatedSprite2D
+		velocity.x -= 1
+		if attack_in_progress == false:
+			anim.play("kiri")
+	elif(Input.is_action_just_released("ui_kiri",true)):
+		$AnimatedSprite2D.play("diam_kiri")
+	if(Input.is_action_pressed("ui_atas")):
+		var anim = $AnimatedSprite2D 
+		velocity.y -= 1
+		if attack_in_progress == false:
+			anim.play("atas")
+	elif(Input.is_action_just_released("ui_atas",true)):
+		$AnimatedSprite2D.play("diam_atas")
+	if(Input.is_action_pressed("ui_bawah")):
+		velocity.y += 1
+		if attack_in_progress == false:
+			$AnimatedSprite2D.play("bawah")
+	elif(Input.is_action_just_released("ui_bawah",true)):
+		$AnimatedSprite2D.play("diam_bawah")
+	velocity = velocity.normalized() * kecepatan
+	print(velocity)
 	move_and_slide()
+	
 	
 	#Controller 
 	velocity = $"../UI/joystick".get_velo().normalized() * kecepatan

@@ -215,7 +215,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"serang_kanan",
-"speed": 8.0
+"speed": 24.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jw6pm"]
@@ -242,7 +242,7 @@ texture_filter = 1
 position = Vector2(2.38419e-07, -6)
 scale = Vector2(0.473958, 0.473958)
 sprite_frames = SubResource("SpriteFrames_dyxpy")
-animation = &"diam_kiri"
+animation = &"kanan"
 autoplay = "diam_bawah"
 
 [node name="abilityManager" type="Node" parent="."]
@@ -282,6 +282,7 @@ script = ExtResource("6_3nybf")
 [node name="api_cooldown" type="Timer" parent="."]
 
 [node name="deal_attack_timer" type="Timer" parent="."]
+wait_time = 0.439
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
