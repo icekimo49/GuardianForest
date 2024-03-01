@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://scene/pohon.tscn" id="7_v6i5r"]
 [ext_resource type="PackedScene" uid="uid://cl4vpo8abukrq" path="res://scene/tombolSerang/tombol_serang.tscn" id="8_huxm0"]
 [ext_resource type="PackedScene" uid="uid://bnkm0g7sqai5f" path="res://scene/sumber_air/kolam.tscn" id="11_vh36d"]
-[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang/Penebang_kayu.tscn" id="12_6nk8v"]
-[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang_kayu/Penebang_kayu.tscn" id="12_8gha6"]
+[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang_kayu/Penebang_kayu.tscn" id="12_6nk8v"]
 [ext_resource type="Script" path="res://scene/main/NightCycle.gd" id="14_ivo6g"]
+[ext_resource type="Texture2D" uid="uid://bsqls83wqklg1" path="res://asset/environtment/teashop.png" id="14_jap7l"]
 
 [node name="main" type="Node2D"]
 position = Vector2(184, 100)
@@ -70,6 +70,126 @@ position = Vector2(319, 22)
 [node name="Pohon7" parent="pohon" instance=ExtResource("7_v6i5r")]
 position = Vector2(217, 61)
 
+[node name="Pohon8" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(567, -54)
+
+[node name="Pohon9" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(597, -104)
+
+[node name="Pohon10" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(632, -130)
+
+[node name="Pohon11" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(582, -154)
+
+[node name="Pohon12" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(642, -193)
+
+[node name="Pohon13" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(688, -195)
+
+[node name="Pohon14" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(700, -243)
+
+[node name="Pohon15" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(303, -251)
+
+[node name="Pohon16" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(366, -238)
+
+[node name="Pohon17" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(417, -266)
+
+[node name="Pohon18" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(472, -238)
+
+[node name="Pohon19" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(519, -260)
+
+[node name="Pohon20" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(561, -244)
+
+[node name="Pohon21" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(620, -248)
+
+[node name="Pohon22" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(518, -17)
+
+[node name="Pohon23" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(501, 42)
+
+[node name="Pohon24" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(448, 80)
+
+[node name="Pohon25" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(397, 137)
+
+[node name="Pohon26" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(325, 162)
+
+[node name="Pohon27" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(268, 164)
+
+[node name="Pohon28" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(211, 168)
+
+[node name="Pohon29" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(170, 139)
+
+[node name="Pohon30" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(147, 164)
+
+[node name="Pohon31" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(93, 177)
+
+[node name="Pohon32" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(47, 170)
+
+[node name="Pohon33" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-15, 165)
+
+[node name="Pohon34" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(61, -243)
+
+[node name="Pohon35" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(5, -245)
+
+[node name="Pohon36" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-41, -284)
+
+[node name="Pohon37" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-59, -258)
+
+[node name="Pohon38" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-36, -237)
+
+[node name="Pohon39" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-99, -246)
+
+[node name="Pohon40" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-123, -226)
+
+[node name="Pohon41" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-174, -245)
+
+[node name="Pohon42" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-240, -253)
+
+[node name="Pohon43" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-224, -225)
+
+[node name="Pohon44" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-293, -234)
+
+[node name="Pohon45" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-348, -232)
+
+[node name="Pohon46" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-385, -201)
+
+[node name="Pohon47" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-385, -201)
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="joystick" parent="UI" instance=ExtResource("7_dm7oj")]
@@ -83,7 +203,7 @@ position = Vector2(462, 207)
 [node name="kolam" parent="." instance=ExtResource("11_vh36d")]
 position = Vector2(249, 0)
 
-[node name="Penebang_Kayu" parent="." instance=ExtResource("12_8gha6")]
+[node name="Penebang_Kayu" parent="." instance=ExtResource("12_6nk8v")]
 position = Vector2(-240, -31)
 
 [node name="Musuh" parent="Penebang_Kayu" instance=ExtResource("12_6nk8v")]
@@ -94,3 +214,8 @@ collision_mask = 16
 [node name="NightCycle" type="CanvasModulate" parent="."]
 color = Color(0.160784, 0.380392, 0.509804, 1)
 script = ExtResource("14_ivo6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(329, -205)
+scale = Vector2(1.45396, 1.42308)
+texture = ExtResource("14_jap7l")
