@@ -56,7 +56,7 @@ func _process(delta):
 	elif(Input.is_action_just_released("ui_bawah",true)):
 		$AnimatedSprite2D.play("diam_bawah")
 	velocity = velocity.normalized() * kecepatan
-	print(velocity)
+	#print(velocity)
 	move_and_slide()
 	
 	

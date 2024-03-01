@@ -14,10 +14,14 @@ var arahRandom = randf()
 func _physics_process(delta):
 	
 	if kabur:
-		var start_position = position
-		var target_position = Vector2(1000,0 )  # Ubah posisi tujuan sesuai kebutuhan Anda
-		var direction = (target_position - start_position).normalized()
-		position += direction * speed * delta
+		var positionLimit = position
+		var target_positionLimit = Vector2(1000,0 )
+		print(positionLimit)
+		if (positionLimit.x <=  5000 && positionLimit.y != target_positionLimit.y) :
+			var start_position = position
+			var target_position = Vector2(1000,0 )  # Ubah posisi tujuan sesuai kebutuhan Anda
+			var direction = (target_position - start_position).normalized()
+			position += direction * speed * delta
 	
 	
 func pembuatRandom() -> float :
@@ -31,8 +35,10 @@ func _on_area_2d_body_entered(body):
 	player = body
 	kabur = true
 	timer.start()
-	
 
+
+
+	
 
 
 func _on_timer_timeout():
