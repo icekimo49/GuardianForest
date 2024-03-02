@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://scene/sumber_air/kolam.gd" id="1_g5j2q"]
 [ext_resource type="Texture2D" uid="uid://8l67bi7sx3cp" path="res://asset/environtment/tileset_water.png" id="2_3l8x8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdqnc"]
-size = Vector2(58, 34)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ybhqi"]
+radius = 16.5968
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kv2ot"]
-size = Vector2(53, 30)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ueeik"]
+radius = 17.0
 
 [node name="kolam" type="StaticBody2D"]
 script = ExtResource("1_g5j2q")
@@ -22,11 +22,10 @@ vframes = 21
 scale = Vector2(1.20505, 1.31797)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="refill"]
-shape = SubResource("RectangleShape2D_pdqnc")
+shape = SubResource("CircleShape2D_ybhqi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_kv2ot")
+shape = SubResource("CircleShape2D_ueeik")
 
 [node name="cooldown_refill" type="Timer" parent="."]
 
