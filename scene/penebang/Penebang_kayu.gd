@@ -16,9 +16,10 @@ var arahRandom = randf()
 
 func _ready():
 	#PathFinding Stuff
-	home_position = self.global_position
-	navAgent.path_desired_distance = 4
-	navAgent.target_desired_distance = 4
+	#home_position = self.global_position
+	#navAgent.path_desired_distance = 4
+	#navAgent.target_desired_distance = 4
+	pass
 
 func _physics_process(delta):
 	
