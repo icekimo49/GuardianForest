@@ -34,10 +34,10 @@ func _physics_process(delta):
 			position += direction * speed * delta
 	
 	#PathFinding Stuff
-	if (navAgent.is_navigation_finished()):
+	#if (navAgent.is_navigation_finished()):
 		return
-	var axis = to_local(navAgent.get_next_path_position()).normalized()
-	velocity = axis * speed
+	#var axis = to_local(navAgent.get_next_path_position()).normalized()
+	#velocity = axis * speed
 	move_and_slide()
 	
 func pembuatRandom() -> float :
