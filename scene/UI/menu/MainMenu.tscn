@@ -1,0 +1,340 @@
+[gd_scene load_steps=42 format=3 uid="uid://bc2brwin4qxhf"]
+
+[ext_resource type="Texture2D" uid="uid://deixiivbuycby" path="res://scene/UI/menu/asset/bg.png" id="1_iafcp"]
+[ext_resource type="Texture2D" uid="uid://c6px1s1t40fut" path="res://scene/UI/menu/asset/Langit 1.png" id="1_tqd2b"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer1.gd" id="2_maxty"]
+[ext_resource type="Texture2D" uid="uid://de5ytxq7wn4rc" path="res://scene/UI/menu/asset/Langit 2.png" id="2_mlrt7"]
+[ext_resource type="Texture2D" uid="uid://iqidp7cvxblw" path="res://scene/UI/menu/asset/Langit 3.png" id="3_o76ty"]
+[ext_resource type="Texture2D" uid="uid://c0l55u23w215n" path="res://scene/UI/menu/asset/Langit 4.png" id="4_evdmm"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer2.gd" id="4_f1r7o"]
+[ext_resource type="Texture2D" uid="uid://cv1cqfptwyqiw" path="res://scene/UI/menu/asset/Pohon 2.png" id="5_ue77u"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer3.gd" id="6_4jn7s"]
+[ext_resource type="Texture2D" uid="uid://cjs8jegf0ptr" path="res://scene/UI/menu/asset/Tanah.png" id="6_o2x13"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer5.gd" id="7_utupv"]
+[ext_resource type="Texture2D" uid="uid://cjavhynuc6mwn" path="res://scene/UI/menu/asset/Tanah 2.png" id="7_v74cp"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer6.gd" id="8_6wkin"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer4.gd" id="8_a1uaj"]
+[ext_resource type="Texture2D" uid="uid://cat27ahudphaw" path="res://scene/UI/menu/asset/Sparkle 1.png" id="8_ijrs4"]
+[ext_resource type="Texture2D" uid="uid://d1b8u23q5k1gb" path="res://scene/UI/menu/asset/Sparkle 2.png" id="9_52tu6"]
+[ext_resource type="Texture2D" uid="uid://co0b60sek3kki" path="res://scene/UI/menu/asset/Sparkle 3.png" id="10_igdug"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer7.gd" id="10_q6h6t"]
+[ext_resource type="Texture2D" uid="uid://c0l4aksanf1x7" path="res://scene/UI/menu/asset/Sparkle 5.png" id="11_cd352"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer10.gd" id="12_efed5"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer8.gd" id="12_xqshv"]
+[ext_resource type="Texture2D" uid="uid://be6e84ghfocia" path="res://scene/UI/menu/asset/Pohon.png" id="13_sriou"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer9.gd" id="14_0pqgi"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer12.gd" id="14_fo4r8"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer11.gd" id="14_ydhby"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer13.gd" id="15_08p4p"]
+[ext_resource type="Texture2D" uid="uid://bmhfjk1uhx3sr" path="res://scene/UI/menu/asset/Bayangan1.png" id="15_u0uk0"]
+[ext_resource type="Texture2D" uid="uid://boklp8eab20ow" path="res://scene/UI/menu/asset/Vignette.png" id="17_mgln0"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/Layer14.gd" id="18_yeinh"]
+[ext_resource type="Texture2D" uid="uid://csf53dnfncelm" path="res://scene/UI/menu/font/text-1710175318481.png" id="30_ky81s"]
+[ext_resource type="Texture2D" uid="uid://7rlmu34dr8lc" path="res://scene/UI/menu/font/text-1710175604839.png" id="31_dowll"]
+[ext_resource type="Texture2D" uid="uid://7sumfv60fne6" path="res://scene/UI/menu/font/text-1710175420703.png" id="32_8spsq"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/GuardianYellow.gd" id="32_a3k6f"]
+[ext_resource type="Texture2D" uid="uid://dbu78wylragno" path="res://scene/UI/menu/font/text-1710175509634.png" id="33_qngbj"]
+[ext_resource type="Script" path="res://scene/UI/menu/script/ForestYellow.gd" id="34_umycw"]
+
+[sub_resource type="Animation" id="Animation_etg12"]
+resource_name = "GuardianAnim"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Guardian/GuardianWhite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(141.797, 77.805), Vector2(141.797, 80), Vector2(141.797, 77.805)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Guardian/GuardianYellow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(148.187, 74.892), Vector2(148.187, 79), Vector2(148.187, 74.892)]
+}
+
+[sub_resource type="Animation" id="Animation_evevv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Guardian/GuardianWhite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(138, 77.8054)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Guardian/GuardianYellow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(141.797, 74.8918)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kn3sp"]
+_data = {
+"GuardianAnim": SubResource("Animation_etg12"),
+"RESET": SubResource("Animation_evevv")
+}
+
+[sub_resource type="Animation" id="Animation_cpl3a"]
+resource_name = "ForestAnim"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Forest/ForestBlack:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(165.636, -0.25, 0, 0.25, 0, 165.636, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 12)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Forest/ForestBlack:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(133.403, -0.25, 0, 0.25, 0, 136.403, -0.25, 0, 0, 0, 133.403, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 6, 12)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Forest/ForestYellow:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(171.644, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Forest/ForestYellow:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(130.423, -0.25, 0, 0.25, 0, 133.423, -0.25, 0, 0.25, 0, 130.423, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 6, 12)
+}
+
+[sub_resource type="Animation" id="Animation_v7u8p"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Forest/ForestBlack:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(165.636, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Forest/ForestBlack:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(133.403, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Forest/ForestYellow:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(171.644, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Forest/ForestYellow:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(130.423, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkoe2"]
+_data = {
+"ForestAnim": SubResource("Animation_cpl3a"),
+"RESET": SubResource("Animation_v7u8p")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 320.0
+offset_top = 179.0
+offset_right = 320.0
+offset_bottom = 179.0
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(-1, 1)
+
+[node name="bg" type="Sprite2D" parent="Node2D"]
+position = Vector2(3.50002, 4.50001)
+scale = Vector2(1.19219, 1.24167)
+texture = ExtResource("1_iafcp")
+
+[node name="Layer1" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("1_tqd2b")
+script = ExtResource("2_maxty")
+
+[node name="Layer2" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("2_mlrt7")
+script = ExtResource("4_f1r7o")
+
+[node name="Layer3" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("3_o76ty")
+script = ExtResource("6_4jn7s")
+
+[node name="Layer4" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("4_evdmm")
+script = ExtResource("8_a1uaj")
+
+[node name="Layer5" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("5_ue77u")
+script = ExtResource("7_utupv")
+
+[node name="Layer6" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("6_o2x13")
+script = ExtResource("8_6wkin")
+
+[node name="Layer7" type="Sprite2D" parent="Node2D"]
+position = Vector2(-3.79999, -13.3)
+scale = Vector2(1.165, 1.165)
+texture = ExtResource("7_v74cp")
+script = ExtResource("10_q6h6t")
+
+[node name="Layer8" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("8_ijrs4")
+script = ExtResource("12_xqshv")
+
+[node name="Layer9" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("9_52tu6")
+script = ExtResource("14_0pqgi")
+
+[node name="Layer10" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("10_igdug")
+script = ExtResource("12_efed5")
+
+[node name="Layer11" type="Sprite2D" parent="Node2D"]
+position = Vector2(-3.79999, -13.3)
+scale = Vector2(1.165, 1.165)
+texture = ExtResource("11_cd352")
+script = ExtResource("14_ydhby")
+
+[node name="Layer13" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("13_sriou")
+script = ExtResource("15_08p4p")
+
+[node name="Layer12" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("15_u0uk0")
+script = ExtResource("14_fo4r8")
+
+[node name="Layer14" type="Sprite2D" parent="Node2D"]
+position = Vector2(3.00001, 1)
+scale = Vector2(1.10139, 1.10139)
+texture = ExtResource("17_mgln0")
+script = ExtResource("18_yeinh")
+
+[node name="Guardian" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kn3sp")
+}
+autoplay = "GuardianAnim"
+
+[node name="GuardianWhite" type="Sprite2D" parent="Guardian"]
+texture_filter = 1
+position = Vector2(138, 77.8054)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("30_ky81s")
+flip_h = true
+
+[node name="GuardianYellow" type="Sprite2D" parent="Guardian"]
+texture_filter = 1
+position = Vector2(141.797, 74.8918)
+rotation = -3.14159
+scale = Vector2(0.490643, -0.490643)
+texture = ExtResource("31_dowll")
+flip_h = true
+script = ExtResource("32_a3k6f")
+
+[node name="Forest" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bkoe2")
+}
+autoplay = "ForestAnim"
+
+[node name="ForestBlack" type="Sprite2D" parent="Forest"]
+texture_filter = 1
+position = Vector2(165.636, 133.403)
+rotation = -3.14159
+scale = Vector2(0.715067, -0.715067)
+texture = ExtResource("32_8spsq")
+flip_h = true
+
+[node name="ForestYellow" type="Sprite2D" parent="Forest"]
+texture_filter = 1
+position = Vector2(171.644, 130.423)
+rotation = -3.14159
+scale = Vector2(0.345988, -0.345988)
+texture = ExtResource("33_qngbj")
+flip_h = true
+script = ExtResource("34_umycw")
+
+[node name="Timer" type="Timer" parent="Forest/ForestYellow"]
+wait_time = 12.0
+autostart = true
