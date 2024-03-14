@@ -27,7 +27,8 @@ func _on_area_2d_body_exited(body):
 func _ready():
 	timer = $Timer
 	timer2 = $Timer2
-	array_posisi_pohon.append(self.position)
+	array_posisi_pohon.append(self.global_position)
+	print(self.position)
 	
 func mulai_timer1():
 	timer.start()

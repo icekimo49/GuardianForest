@@ -12,4 +12,4 @@ var isi_air_gayung : int
 var malam : bool = true
 
 #pohon
-@export var posisi_pohon = []
+var posisi_pohon = []

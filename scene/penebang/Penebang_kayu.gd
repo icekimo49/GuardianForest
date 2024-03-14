@@ -24,13 +24,12 @@ func _ready():
 	#navAgent.path_desired_distance = 4
 	#navAgent.target_desired_distance = 4
 	
-	print(array_posisi_pohon[angka_acak.randi_range(0, array_posisi_pohon.size()-1)])
+	print(array_posisi_pohon.size())
 	pass
 
 func _physics_process(delta):
 	if aselole == false:
 		tet = rng()
-	print(tet)
 	if kabur:
 		var positionLimit = position
 		var target_positionLimit = Vector2(array_posisi_pohon[tet].x, array_posisi_pohon[tet].y)

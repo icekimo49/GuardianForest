@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8hkr5cfrve56"]
+
+[ext_resource type="Script" path="res://scene/penebang_kayu/spawner_penebang_kayu.gd" id="1_pkk43"]
+[ext_resource type="Texture2D" uid="uid://bh6b4ydv43dvr" path="res://scene/download.png" id="1_tvmrk"]
+
+[node name="Spawner_PenebangKayu" type="Node2D"]
+script = ExtResource("1_pkk43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, -3.8147e-06)
+scale = Vector2(0.286667, 0.303571)
+texture = ExtResource("1_tvmrk")
