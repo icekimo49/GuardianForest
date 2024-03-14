@@ -14,17 +14,24 @@ var a = 1
 var posisi_lama
 @onready var barDarah = $barDarah
 @onready var textDamage = $damage_diterima
+@onready var textAir = $airIndikator
+
+func notif_air_habis():
+	DamageToPlayer.display_air("Air Habis!", textDamage.global_position)
 
 func display_darah_player(): #Buat nampilin sisa darah player
 	barDarah.value = hp
+
+func display_air_indikator(): #Buat nampilin jumlah sisa air
+	textAir.text = str(GlobalScript.isi_air_gayung) 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	display_darah_player()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	display_air_indikator()
 	#var arah = get_movement_vector()
 	#var arahNormalized = arah.normalized()
 	#velocity = arahNormalized * kecepatan
@@ -148,7 +155,8 @@ func _on_api_cooldown_timeout():
 
 func attack():
 	var arah = animasi_player
-	#nanti tambahin notif ammo habis
+	if GlobalScript.pencet && GlobalScript.isi_air_gayung == 0:#notif ammo habis
+		notif_air_habis()
 	if GlobalScript.pencet && GlobalScript.isi_air_gayung > 0:
 		GlobalScript.player_current_attack = true
 		attack_in_progress = true

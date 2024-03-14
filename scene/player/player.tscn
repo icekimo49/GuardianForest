@@ -268,6 +268,22 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_siawd")
 value = 50.0
 show_percentage = false
 
+[node name="airIndikator" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(10, 10)
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 32.0
+offset_bottom = 48.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+text = "0
+"
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.2
 range_item_cull_mask = 7
