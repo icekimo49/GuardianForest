@@ -242,6 +242,16 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_7c5n1")
 
+[node name="barDarah" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(30, 6)
+offset_left = -15.0
+offset_top = -30.0
+offset_right = 15.0
+offset_bottom = -24.0
+pivot_offset = Vector2(15, 3)
+value = 50.0
+show_percentage = false
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.2
 range_item_cull_mask = 7

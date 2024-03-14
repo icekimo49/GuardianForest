@@ -3,6 +3,7 @@ extends CharacterBody2D
 const kecepatan : int = 250
 const akselerasi  = 25
 var hp = 100
+var maksHP = 100
 var api_inattack_range = false
 var api_attack_cooldown = true
 var player_alive = true
@@ -10,10 +11,15 @@ var attack_in_progress = false
 var animasi_player
 var a = 1
 var posisi_lama
+@onready var barDarah = $barDarah
+
+
+func display_darah_player(): #Buat nampilin sisa darah player
+	barDarah.value = hp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	display_darah_player()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -130,6 +136,7 @@ func _on_player_hitbox_body_exited(body):
 func api_attack():
 	if api_inattack_range and api_attack_cooldown == true:
 		hp -= 20
+		display_darah_player()
 		api_attack_cooldown = false
 		$api_cooldown.start()
 		print(hp)
