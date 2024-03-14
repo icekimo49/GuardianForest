@@ -15,6 +15,7 @@ var arahRandom = randf()
 var array_posisi_pohon = GlobalScript.posisi_pohon
 var aselole = false
 var angka_acak = RandomNumberGenerator.new()
+var tet
 
 
 func _ready():
@@ -27,7 +28,9 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	var tet = rng()
+	if aselole == false:
+		tet = rng()
+	print(tet)
 	if kabur:
 		var positionLimit = position
 		var target_positionLimit = Vector2(array_posisi_pohon[tet].x, array_posisi_pohon[tet].y)
@@ -56,7 +59,8 @@ func rng():
 		angka_acak.randomize()
 		var rng = angka_acak.randi_range(0, array_posisi_pohon.size()-1)
 		aselole = true
-		return 
+		print(rng)
+		return rng
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("player"):
