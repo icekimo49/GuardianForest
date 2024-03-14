@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2xj7hjqlence"]
+[gd_scene load_steps=16 format=3 uid="uid://d2xj7hjqlence"]
 
 [ext_resource type="PackedScene" uid="uid://dep6x1wv4t3ns" path="res://scene/penebang_kayu_manager/penebang_kayu_manager.tscn" id="1_4dckh"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_fth7k"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang_kayu/Penebang_kayu.tscn" id="12_6nk8v"]
 [ext_resource type="Script" path="res://scene/main/NightCycle.gd" id="14_ivo6g"]
 [ext_resource type="Texture2D" uid="uid://bsqls83wqklg1" path="res://asset/environtment/teashop.png" id="14_jap7l"]
+[ext_resource type="Texture2D" uid="uid://bh6b4ydv43dvr" path="res://scene/download.png" id="15_p8o6f"]
 
 [node name="main" type="Node2D"]
 position = Vector2(184, 100)
@@ -188,7 +189,7 @@ position = Vector2(-348, -232)
 position = Vector2(-385, -201)
 
 [node name="Pohon47" parent="pohon" instance=ExtResource("7_v6i5r")]
-position = Vector2(-385, -201)
+position = Vector2(-361, -78)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -204,12 +205,7 @@ position = Vector2(462, 207)
 position = Vector2(249, 0)
 
 [node name="Penebang_Kayu" parent="." instance=ExtResource("12_6nk8v")]
-position = Vector2(-240, -31)
-
-[node name="Musuh" parent="Penebang_Kayu" instance=ExtResource("12_6nk8v")]
-position = Vector2(465, 171)
-collision_layer = 0
-collision_mask = 16
+position = Vector2(-216, -7)
 
 [node name="NightCycle" type="CanvasModulate" parent="."]
 color = Color(0.160784, 0.380392, 0.509804, 1)
@@ -219,3 +215,15 @@ script = ExtResource("14_ivo6g")
 position = Vector2(329, -205)
 scale = Vector2(1.45396, 1.42308)
 texture = ExtResource("14_jap7l")
+
+[node name="Spawner_PenebangKayu" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Spawner_PenebangKayu"]
+position = Vector2(-16, 362)
+texture = ExtResource("15_p8o6f")
+
+[node name="Penebang_Kayu2" parent="." instance=ExtResource("12_6nk8v")]
+position = Vector2(41, 141)
+
+[node name="Penebang_Kayu3" parent="." instance=ExtResource("12_6nk8v")]
+position = Vector2(186, -83)

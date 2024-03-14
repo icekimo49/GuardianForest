@@ -12,6 +12,9 @@ var kabur = false
 var player = null
 var arahRandom = randf()
 @onready var timer = $Timer
+var array_posisi_pohon = GlobalScript.posisi_pohon
+var aselole = false
+var angka_acak = RandomNumberGenerator.new()
 
 
 func _ready():
@@ -19,17 +22,19 @@ func _ready():
 	#home_position = self.global_position
 	#navAgent.path_desired_distance = 4
 	#navAgent.target_desired_distance = 4
+	
+	print(array_posisi_pohon[angka_acak.randi_range(0, array_posisi_pohon.size()-1)])
 	pass
 
 func _physics_process(delta):
-	
+	var tet = rng()
 	if kabur:
 		var positionLimit = position
-		var target_positionLimit = Vector2(1000,0 )
+		var target_positionLimit = Vector2(array_posisi_pohon[tet].x, array_posisi_pohon[tet].y)
 		#print(positionLimit)
-		if (positionLimit.x <=  1000 && positionLimit.y != target_positionLimit.y) :
+		if (positionLimit.x <=  array_posisi_pohon[tet].x && positionLimit.y != target_positionLimit.y) :
 			var start_position = position
-			var target_position = Vector2(1000,0 )  # Ubah posisi tujuan sesuai kebutuhan Anda
+			var target_position = Vector2(array_posisi_pohon[tet].x, array_posisi_pohon[tet].y)  # Ubah posisi tujuan sesuai kebutuhan Anda
 			var direction = (target_position - start_position).normalized()
 			position += direction * speed * delta
 	
@@ -46,6 +51,12 @@ func pembuatRandom() -> float :
 		x = -1000
 	return x
 
+func rng():
+	if aselole == false:
+		angka_acak.randomize()
+		var rng = angka_acak.randi_range(0, array_posisi_pohon.size()-1)
+		aselole = true
+		return 
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("player"):

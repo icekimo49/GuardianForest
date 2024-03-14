@@ -10,3 +10,6 @@ var player_serang_bawah = false
 var isi_air_gayung : int
 
 var malam : bool = true
+
+#pohon
+@export var posisi_pohon = []

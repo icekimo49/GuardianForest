@@ -6,6 +6,7 @@ var deteksi = false
 var kebakar = null
 var timer: Timer
 var timer2: Timer
+var array_posisi_pohon = GlobalScript.posisi_pohon
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("penebang_kayu"):
@@ -26,6 +27,7 @@ func _on_area_2d_body_exited(body):
 func _ready():
 	timer = $Timer
 	timer2 = $Timer2
+	array_posisi_pohon.append(self.position)
 	
 func mulai_timer1():
 	timer.start()
