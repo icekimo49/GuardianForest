@@ -1,6 +1,6 @@
 extends Node
 
-func display_damage(value : int, position : Vector2):
+func display_damage(value : int, position : Vector2): #Hello World, ini adalah easter egg
 	var damage = Label.new()
 	damage.global_position = position
 	damage.text = str(value)
