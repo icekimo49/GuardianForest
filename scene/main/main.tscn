@@ -41,7 +41,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Penebang" parent="." instance=ExtResource("6_762iu")]
-position = Vector2(303, 94)
+position = Vector2(353, 59)
 floor_max_angle = 0.951204
 
 [node name="pohon" type="CanvasGroup" parent="."]
