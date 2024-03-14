@@ -42,7 +42,6 @@ func api():
 	#jangan diapus, penting!!!!
 
 func _on_api_hitbox_body_entered(body):
-	#ubah persyaratan if buat ganti tipe senjatanya dari player ke gayung dsb
 	if body.has_method("player"):
 		player_inattack_zone = true
 

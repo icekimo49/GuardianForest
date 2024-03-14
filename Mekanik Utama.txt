@@ -1,6 +1,17 @@
-1. Collision Layer (Biar nggak nembus pohon).
-2. Ngebenerin Apinya biar ilang dan berhenti ngebakar pohon ketika disiram air
-3. Nambahin sistem Ammo (nggak bisa nyiram kalo air habis).
-4. Kolam untuk refill ammo.
-5. Ngebenerin penebang (pathfinding, nebang pohonnya).
-6. Sistem Waktu (Timer Wave).
+Mekanik Game (Terutama untuk level awal) :
+2. Perkenalkan player dengan penebang Pohon
+3. Buat penebang pohon bisa ngilangin pohonnya dalam kurun waktu tertentu (mungkin sementara 5 detik kali ya?)
+4. Ngebatasin jumlah spawn penebang pohon
+5. Sistem Pathfinding musuh (kalo bisa, soalnya Haikal gagal terus T-T)
+
+UI Game :
+1. Main Menu
+2. Level selector
+3. Tambah musik dummy
+4. Menu Pause
+
+Rencana Mekanik kedepan (NEXT) :
+1. Buat sistem Wave yang bikin musuh dateng secara berkala
+2. Sistem Upgrade
+3. Sistem Toko
+4. Sistem Item

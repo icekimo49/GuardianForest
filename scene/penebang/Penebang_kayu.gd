@@ -71,6 +71,9 @@ func _on_pathfinding_timer_timeout():
 func _on_lingkar_jauh_area_entered(area):
 	target_node = area.owner
 
+func penebang_kayu():
+	pass
+	#jangan diapus!!!
 
 func _on_lingkar_dekat_area_entered(area):
 	if (area.owner == target_node):

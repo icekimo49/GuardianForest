@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cfbeqiep442p0"]
+[gd_scene load_steps=13 format=3 uid="uid://cfbeqiep442p0"]
 
 [ext_resource type="Script" path="res://scene/penebang/Penebang_Kayu.gd" id="1_we245"]
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="2_hgfhn"]
@@ -50,7 +50,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 7.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsu0v"]
@@ -59,22 +59,27 @@ size = Vector2(26, 32)
 [sub_resource type="CircleShape2D" id="CircleShape2D_l85rn"]
 radius = 87.0057
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0aih"]
+size = Vector2(80, 54)
+
 [node name="Penebang_Kayu" type="CharacterBody2D"]
 position = Vector2(2, -1)
+collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_we245")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xcfdp")
-frame_progress = 0.605539
+frame = 4
+frame_progress = 0.251106
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 3)
 shape = SubResource("RectangleShape2D_fsu0v")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 10
+collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_l85rn")
@@ -82,6 +87,14 @@ shape = SubResource("CircleShape2D_l85rn")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(15, 6)
+shape = SubResource("RectangleShape2D_d0aih")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
