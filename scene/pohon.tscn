@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scene/pohon.gd" id="1_taq8s"]
 [ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/api.tscn" id="2_tgoya"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o656"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4j7r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yudq5"]
 radius = 38.0
@@ -21,11 +21,11 @@ texture = ExtResource("1_2lg1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 18)
-shape = SubResource("RectangleShape2D_3o656")
+shape = SubResource("RectangleShape2D_w4j7r")
 
 [node name="Area2D" type="Area2D" parent="." groups=["pohon"]]
 collision_layer = 8
-collision_mask = 9
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 17
@@ -41,11 +41,11 @@ wait_time = 5.0
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_dgi8g")
 
-[node name="Timer1_PenebangKayu" type="Timer" parent="."]
+[node name="timer_PenebangKayu" type="Timer" parent="."]
 wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
-[connection signal="timeout" from="Timer1_PenebangKayu" to="." method="_on_timer_1_penebang_kayu_timeout"]
+[connection signal="timeout" from="timer_PenebangKayu" to="." method="_on_timer_penebang_kayu_timeout"]

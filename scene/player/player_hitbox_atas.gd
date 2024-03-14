@@ -7,4 +7,3 @@ func _ready():
 # Fungsi untuk mengaktifkan atau menonaktifkan CollisionShape2D
 func toggle_collision(aktif: bool):
 	disabled = !aktif
-	print("atas")

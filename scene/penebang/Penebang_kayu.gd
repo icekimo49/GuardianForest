@@ -48,9 +48,10 @@ func pembuatRandom() -> float :
 
 
 func _on_area_2d_body_entered(body):
-	player = body
-	kabur = true
-	timer.start()
+	if body.has_method("player"):
+		player = body
+		kabur = true
+		timer.start()
 
 #Ngilangin musuh setelah kabur
 func _on_timer_timeout():
@@ -71,11 +72,11 @@ func _on_pathfinding_timer_timeout():
 func _on_lingkar_jauh_area_entered(area):
 	target_node = area.owner
 
-func penebang_kayu():
-	pass
-	#jangan diapus!!!
 
 func _on_lingkar_dekat_area_entered(area):
 	if (area.owner == target_node):
 		target_node = null
-		
+
+func penebang_kayu():
+	pass
+

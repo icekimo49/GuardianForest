@@ -8,20 +8,20 @@ var timer: Timer
 var timer2: Timer
 
 func _on_area_2d_body_entered(body):
-	if deteksi == false:
-		mulai_timer1()
-		deteksi = true
 	if body.has_method("penebang_kayu"):
-		$Timer1_PenebangKayu.start()
-		print("a")
+		$timer_PenebangKayu.start()
+	if body.has_method("api"):
+		if deteksi == false:
+			mulai_timer1()
+			deteksi = true
 
 func _on_area_2d_body_exited(body):
+	if body.has_method("penebang_kayu"):
+		$timer_PenebangKayu.stop()
 	var pohon = $Area2D/CollisionShape2D
 	pohon.apply_scale(Vector2(3,3))
 	timer.stop()
 	timer2.stop()
-	
-
 
 func _ready():
 	timer = $Timer
@@ -42,5 +42,6 @@ func mulai_timer2():
 func _on_timer_2_timeout():
 	queue_free()
 
-func _on_timer_1_penebang_kayu_timeout():
+func _on_timer_penebang_kayu_timeout():
 	queue_free()
+	$timer_PenebangKayu.stop()
