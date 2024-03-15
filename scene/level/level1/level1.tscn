@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckqnnvygvdth7"]
+[gd_scene load_steps=19 format=3 uid="uid://ckqnnvygvdth7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgj51qgdn3vm" path="res://scene/arena_timer_ui/arena_timer_ui.tscn" id="1_cgj20"]
 [ext_resource type="PackedScene" uid="uid://bmf5gf6cmyvsc" path="res://scene/level/level1/camera_level_1.tscn" id="1_eau26"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://scene/joystick/joystick.tscn" id="5_a8pua"]
 [ext_resource type="Script" path="res://scene/main/NightCycle.gd" id="8_5utqe"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://scene/pohon.tscn" id="9_alu3d"]
+[ext_resource type="Texture2D" uid="uid://re41tnvaqcbf" path="res://asset/control/InventorySlots.png" id="10_7duhj"]
+[ext_resource type="Texture2D" uid="uid://b83e6bciube4r" path="res://asset/control/InventorySlotsPrerssed.png" id="11_uwd2m"]
+[ext_resource type="Texture2D" uid="uid://bsqls83wqklg1" path="res://asset/environtment/teashop.png" id="12_75sou"]
+[ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/api.tscn" id="13_vrf4q"]
+[ext_resource type="PackedScene" uid="uid://bnkm0g7sqai5f" path="res://scene/sumber_air/kolam.tscn" id="14_7jw13"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_r0r7f"]
 b = Vector2(-318, 443)
@@ -377,6 +382,15 @@ position = Vector2(675, -278)
 [node name="Pohon61" parent="pohonBawah" instance=ExtResource("9_alu3d")]
 position = Vector2(641, -205)
 
+[node name="Pohon62" parent="pohonBawah" instance=ExtResource("9_alu3d")]
+position = Vector2(-287, -496)
+
+[node name="Pohon63" parent="pohonBawah" instance=ExtResource("9_alu3d")]
+position = Vector2(-293, -460)
+
+[node name="Pohon64" parent="pohonBawah" instance=ExtResource("9_alu3d")]
+position = Vector2(-303, -411)
+
 [node name="border" type="StaticBody2D" parent="."]
 position = Vector2(-156, -96)
 
@@ -395,3 +409,30 @@ shape = SubResource("SegmentShape2D_dk72r")
 [node name="bawah" type="CollisionShape2D" parent="border"]
 position = Vector2(-141, -130)
 shape = SubResource("SegmentShape2D_c3qun")
+
+[node name="inventory" type="CanvasLayer" parent="."]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="inventory"]
+position = Vector2(261, 309)
+scale = Vector2(1.71429, 1.71429)
+texture_normal = ExtResource("10_7duhj")
+texture_pressed = ExtResource("11_uwd2m")
+
+[node name="Toko" type="Sprite2D" parent="inventory"]
+position = Vector2(147, -216)
+scale = Vector2(1.45396, 1.42308)
+texture = ExtResource("12_75sou")
+
+[node name="Penebang" parent="." instance=ExtResource("13_vrf4q")]
+position = Vector2(-313, -88)
+floor_max_angle = 0.951204
+
+[node name="Penebang2" parent="." instance=ExtResource("13_vrf4q")]
+position = Vector2(-323, -45)
+floor_max_angle = 0.951204
+
+[node name="kolam" parent="." instance=ExtResource("14_7jw13")]
+position = Vector2(-146, -79)
+
+[node name="kolam2" parent="." instance=ExtResource("14_7jw13")]
+position = Vector2(-177, -59)
