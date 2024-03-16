@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=3 uid="uid://bouxjtcvbufse"]
+
+[ext_resource type="PackedScene" uid="uid://b75foo7ntpj1s" path="res://scene/level/levelSelector/level_component.tscn" id="1_m04kl"]
+[ext_resource type="Script" path="res://scene/level/levelSelector/level_selector.gd" id="1_qayed"]
+[ext_resource type="Texture2D" uid="uid://437qxpqf7rnv" path="res://scene/level/level1/PetaIndonesia.png" id="2_slasw"]
+[ext_resource type="PackedScene" uid="uid://xhfxdydw5jj5" path="res://scene/level/levelSelector/player_icon.tscn" id="3_4rdke"]
+
+[node name="levelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qayed")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(313, 195)
+texture = ExtResource("2_slasw")
+
+[node name="levelComponent" parent="." instance=ExtResource("1_m04kl")]
+offset_left = 239.0
+offset_top = 145.0
+offset_right = 303.0
+offset_bottom = 208.0
+level_path = "res://scene/level/level1/level1.tscn"
+
+[node name="level1" type="Button" parent="levelComponent"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 63.0
+
+[node name="levelComponent2" parent="." instance=ExtResource("1_m04kl")]
+offset_left = 71.0
+offset_top = 130.0
+offset_right = 135.0
+offset_bottom = 193.0
+level_path = ""
+world_index = 2
+
+[node name="level2" type="Button" parent="levelComponent2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 63.0
+offset_bottom = 63.0
+
+[node name="levelComponent3" parent="." instance=ExtResource("1_m04kl")]
+offset_left = 201.0
+offset_top = 271.0
+offset_right = 265.0
+offset_bottom = 334.0
+level_path = ""
+world_index = 3
+
+[node name="level3" type="Button" parent="levelComponent3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 63.0
+offset_bottom = 63.0
+
+[node name="levelComponent4" parent="." instance=ExtResource("1_m04kl")]
+offset_left = 490.0
+offset_top = 203.0
+offset_right = 554.0
+offset_bottom = 266.0
+level_path = ""
+world_index = 4
+
+[node name="level4" type="Button" parent="levelComponent4"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 65.0
+offset_bottom = 62.0
+
+[node name="playerIcon" parent="." instance=ExtResource("3_4rdke")]
+layout_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 308.0
+offset_right = 679.0
+offset_bottom = 348.0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="kembali" type="Button" parent="."]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 304.0
+offset_right = 119.0
+offset_bottom = 344.0
+text = "Kembali"
+
+[node name="pilih" type="Button" parent="."]
+layout_mode = 2
+offset_left = 518.0
+offset_top = 304.0
+offset_right = 629.22
+offset_bottom = 344.0
+text = "Pilih
+"
+
+[connection signal="pressed" from="levelComponent/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="levelComponent2/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="levelComponent3/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="levelComponent4/level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="kembali" to="." method="_on_kembali_pressed"]
+[connection signal="pressed" from="pilih" to="." method="_on_pilih_pressed"]
