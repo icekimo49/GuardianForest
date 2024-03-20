@@ -18,7 +18,9 @@ var angka_acak = RandomNumberGenerator.new()
 var tet
 
 var move_tween : Tween
-@onready var lokasiPohon : Array = [$"../pohon/Pohon", $"../pohon/Pohon2", $"../pohon/Pohon3", $"../pohon/Pohon4"]
+@onready var lokasiPohon : Array = [
+	$"../pohon/Pohon", $"../pohon/Pohon2", $"../pohon/Pohon3", $"../pohon/Pohon4"
+	]
 var nomor_musuh_spawn = 1
 
 
@@ -34,7 +36,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if kabur:
+	if kabur :
 		var direction = (Vector2(2000,2000) - position).normalized()
 		position += direction * speed * delta
 	#if aselole == false:
@@ -104,9 +106,11 @@ func _on_lingkar_dekat_area_entered(area):
 func penebang_kayu():
 	pass
 
+
+#Pathfinding terbaru coy
 func musuhMover():
 	var randomer = randi_range(0,lokasiPohon.size()-1)
-	var move_tween = create_tween()
+	var move_tween = get_tree().create_tween()
 	var musuh = get_tree()
 	if (lokasiPohon[randomer] != null):
 		move_tween.tween_property(
