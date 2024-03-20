@@ -17,10 +17,16 @@ var aselole = false
 var angka_acak = RandomNumberGenerator.new()
 var tet
 
+var move_tween : Tween
+@onready var lokasiPohon : Array = [$"../pohon/Pohon", $"../pohon/Pohon2", $"../pohon/Pohon3", $"../pohon/Pohon4"]
+var nomor_musuh_spawn = 1
+
 
 func _ready():
+	musuhMover()
+	
 	#PathFinding Stuff
-	#home_position = self.global_position
+	#home_position = self.global_position 
 	#navAgent.path_desired_distance = 4
 	#navAgent.target_desired_distance = 4
 	
@@ -28,24 +34,28 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if aselole == false:
-		tet = rng()
 	if kabur:
-		var positionLimit = position
-		var target_positionLimit = Vector2(array_posisi_pohon[tet].x, array_posisi_pohon[tet].y)
+		var direction = (Vector2(2000,2000) - position).normalized()
+		position += direction * speed * delta
+	#if aselole == false:
+		#tet = rng()
+	#if kabur:
+		#var positionLimit = position
+		#var target_positionLimit = Vector2(array_posisi_pohon[tet].x, array_posisi_pohon[tet].y)
 		#print(positionLimit)
-		if (positionLimit.x <=  array_posisi_pohon[tet].x && positionLimit.y != target_positionLimit.y) :
-			var start_position = position
-			var target_position = Vector2(array_posisi_pohon[tet].x, array_posisi_pohon[tet].y)  # Ubah posisi tujuan sesuai kebutuhan Anda
-			var direction = (target_position - start_position).normalized()
-			position += direction * speed * delta
+		#if (positionLimit.x <=  array_posisi_pohon[tet].x && positionLimit.y != target_positionLimit.y) :
+			#var start_position = position
+			#var target_position = Vector2(array_posisi_pohon[tet].x, array_posisi_pohon[tet].y)  # Ubah posisi tujuan sesuai kebutuhan Anda
+			#var direction = (target_position - start_position).normalized()
+			#position += direction * speed * delta
 	
 	#PathFinding Stuff
 	#if (navAgent.is_navigation_finished()):
-		return
+		#return
 	#var axis = to_local(navAgent.get_next_path_position()).normalized()
 	#velocity = axis * speed
-	move_and_slide()
+	#move_and_slide()
+	pass
 	
 func pembuatRandom() -> float :
 	var x = 1000
@@ -94,3 +104,16 @@ func _on_lingkar_dekat_area_entered(area):
 func penebang_kayu():
 	pass
 
+func musuhMover():
+	var randomer = randi_range(0,lokasiPohon.size()-1)
+	var move_tween = create_tween()
+	var musuh = get_tree()
+	if (lokasiPohon[randomer] != null):
+		move_tween.tween_property(
+			$".", "global_position", 
+			Vector2(lokasiPohon[randomer].global_position.x,lokasiPohon[randomer].global_position.y),
+			0.5
+			)
+	else:
+		return
+	

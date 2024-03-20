@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d2xj7hjqlence"]
+[gd_scene load_steps=19 format=3 uid="uid://d2xj7hjqlence"]
 
 [ext_resource type="PackedScene" uid="uid://dep6x1wv4t3ns" path="res://scene/penebang_kayu_manager/penebang_kayu_manager.tscn" id="1_4dckh"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_fth7k"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bsqls83wqklg1" path="res://asset/environtment/teashop.png" id="14_jap7l"]
 [ext_resource type="Texture2D" uid="uid://re41tnvaqcbf" path="res://asset/control/InventorySlots.png" id="16_coocx"]
 [ext_resource type="Texture2D" uid="uid://b83e6bciube4r" path="res://asset/control/InventorySlotsPrerssed.png" id="17_3p0rx"]
+[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang/Penebang_kayu.tscn" id="18_sx8gn"]
 
 [node name="main" type="Node2D"]
 position = Vector2(184, 100)
@@ -98,5 +99,8 @@ position = Vector2(261, 309)
 scale = Vector2(1.71429, 1.71429)
 texture_normal = ExtResource("16_coocx")
 texture_pressed = ExtResource("17_3p0rx")
+
+[node name="Musuh" parent="." instance=ExtResource("18_sx8gn")]
+position = Vector2(-367, -109)
 
 [connection signal="timeout" from="timer_spawner_PenebangKayu" to="." method="_on_timer_spawner_penebang_kayu_timeout"]
