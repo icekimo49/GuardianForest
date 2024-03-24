@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bsqls83wqklg1" path="res://asset/environtment/teashop.png" id="14_jap7l"]
 [ext_resource type="Texture2D" uid="uid://re41tnvaqcbf" path="res://asset/control/InventorySlots.png" id="16_coocx"]
 [ext_resource type="Texture2D" uid="uid://b83e6bciube4r" path="res://asset/control/InventorySlotsPrerssed.png" id="17_3p0rx"]
-[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang/Penebang_kayu.tscn" id="18_sx8gn"]
+[ext_resource type="PackedScene" uid="uid://cfbeqiep442p0" path="res://scene/penebang_kayu/Penebang_kayu.tscn" id="18_sx8gn"]
 
 [node name="main" type="Node2D"]
 position = Vector2(184, 100)
@@ -41,7 +41,7 @@ layer_0/tile_data = PackedInt32Array(1179676, 65536, 4, 1114140, 0, 4, 1048604, 
 
 [node name="Player" parent="." instance=ExtResource("1_hh63w")]
 texture_filter = 1
-position = Vector2(100, 0)
+position = Vector2(136, 0)
 scale = Vector2(0.988421, 0.968354)
 collision_layer = 3
 collision_mask = 3
@@ -53,15 +53,76 @@ floor_max_angle = 0.951204
 [node name="pohon" type="CanvasGroup" parent="."]
 
 [node name="Pohon" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(0, -6)
 
 [node name="Pohon2" parent="pohon" instance=ExtResource("7_v6i5r")]
-position = Vector2(0, 100)
+position = Vector2(0, 68)
 
 [node name="Pohon3" parent="pohon" instance=ExtResource("7_v6i5r")]
-position = Vector2(74, 124)
+position = Vector2(-68, 68)
+
+[node name="Pohon7" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-24, 68)
+
+[node name="Pohon9" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-106, 68)
+
+[node name="Pohon10" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-132, 77)
+
+[node name="Pohon11" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-147, -6)
+
+[node name="Pohon12" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-194, -6)
+
+[node name="Pohon13" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-170, 86)
+
+[node name="Pohon14" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-218, 86)
+
+[node name="Pohon15" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-229, -6)
+
+[node name="Pohon16" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-253, 86)
+
+[node name="Pohon17" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-264, -6)
+
+[node name="Pohon18" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-297, 86)
+
+[node name="Pohon19" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-297, -6)
+
+[node name="Pohon20" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-343, 86)
+
+[node name="Pohon21" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-334, -6)
+
+[node name="Pohon22" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-381, 86)
+
+[node name="Pohon23" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-357, 0)
+
+[node name="Pohon24" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-419, 86)
+
+[node name="Pohon8" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-106, 0)
 
 [node name="Pohon4" parent="pohon" instance=ExtResource("7_v6i5r")]
-position = Vector2(184, 77)
+position = Vector2(160, 68)
+
+[node name="Pohon6" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-68, -6)
+
+[node name="Pohon5" parent="pohon" instance=ExtResource("7_v6i5r")]
+position = Vector2(-40, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -86,7 +147,7 @@ scale = Vector2(1.45396, 1.42308)
 texture = ExtResource("14_jap7l")
 
 [node name="Spawner_PenebangKayu" parent="." instance=ExtResource("14_73hcj")]
-position = Vector2(-438, -23)
+position = Vector2(-419, 32)
 
 [node name="timer_spawner_PenebangKayu" type="Timer" parent="."]
 wait_time = 5.0

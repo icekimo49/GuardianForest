@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ckqnnvygvdth7"]
+[gd_scene load_steps=20 format=3 uid="uid://ckqnnvygvdth7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgj51qgdn3vm" path="res://scene/arena_timer_ui/arena_timer_ui.tscn" id="1_cgj20"]
 [ext_resource type="PackedScene" uid="uid://bmf5gf6cmyvsc" path="res://scene/level/level1/camera_level_1.tscn" id="1_eau26"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/api.tscn" id="13_vrf4q"]
 [ext_resource type="PackedScene" uid="uid://bnkm0g7sqai5f" path="res://scene/sumber_air/kolam.tscn" id="14_7jw13"]
 [ext_resource type="PackedScene" uid="uid://cl4vpo8abukrq" path="res://scene/tombolSerang/tombol_serang.tscn" id="15_vi576"]
+[ext_resource type="PackedScene" uid="uid://c8hkr5cfrve56" path="res://scene/penebang_kayu/spawner_penebang_kayu.tscn" id="15_yncyy"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_r0r7f"]
 a = Vector2(-247, -102)
@@ -437,3 +438,6 @@ position = Vector2(-177, -59)
 
 [node name="tombolSerang" parent="tombol_serang" instance=ExtResource("15_vi576")]
 position = Vector2(462, 207)
+
+[node name="Spawner_PenebangKayu" parent="." instance=ExtResource("15_yncyy")]
+position = Vector2(-1445, -18)
