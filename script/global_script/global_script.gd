@@ -13,3 +13,6 @@ var malam : bool = true
 
 #pohon
 var posisi_pohon = []
+
+#level
+var level_berakhir = false

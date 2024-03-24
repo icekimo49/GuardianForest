@@ -10,8 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
 func _on_timer_spawner_penebang_kayu_timeout():
 	var musuh = penebang_kayu.instantiate()
 	add_child(musuh)

@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://ckqnnvygvdth7"]
+[gd_scene load_steps=21 format=3 uid="uid://ckqnnvygvdth7"]
 
-[ext_resource type="Script" path="res://scene/level/level1/level1.gd" id="1_7wbal"]
 [ext_resource type="PackedScene" uid="uid://bpgj51qgdn3vm" path="res://scene/arena_timer_ui/arena_timer_ui.tscn" id="1_cgj20"]
 [ext_resource type="PackedScene" uid="uid://bmf5gf6cmyvsc" path="res://scene/level/level1/camera_level_1.tscn" id="1_eau26"]
 [ext_resource type="PackedScene" uid="uid://cjwpmeh62nvht" path="res://scene/arena_timer_manager/arena_timer_manager.tscn" id="2_a7ws6"]
@@ -35,7 +34,6 @@ a = Vector2(910, 643)
 b = Vector2(-688, 646)
 
 [node name="level1" type="Node2D"]
-script = ExtResource("1_7wbal")
 
 [node name="CameraLevel1" parent="." instance=ExtResource("1_eau26")]
 limit_left = -650
@@ -445,10 +443,4 @@ position = Vector2(462, 207)
 [node name="Spawner_PenebangKayu" parent="." instance=ExtResource("15_yncyy")]
 position = Vector2(-1445, -18)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="waktu_level" parent="CanvasLayer" instance=ExtResource("16_56bq4")]
-offset_left = 295.0
-offset_top = 41.0
-offset_right = 360.0
-offset_bottom = 81.0
+[node name="waktu_level" parent="." instance=ExtResource("16_56bq4")]
