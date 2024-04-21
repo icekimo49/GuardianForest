@@ -16,6 +16,8 @@ var posisi_lama
 @onready var textDamage = $damage_diterima
 @onready var textAir = $airIndikator
 
+@export var inv: Inv
+
 func notif_air_habis():
 	DamageToPlayer.display_air("Air Habis!", textDamage.global_position)
 

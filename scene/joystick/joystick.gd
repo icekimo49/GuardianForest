@@ -12,14 +12,16 @@ var arah_lama
 
 func _input(event):
 	if event is InputEventScreenTouch:
-		var distance = event.position.distance_to(big_Circle.global_position)
-		if not touched:
-			if distance < max_distance :
-				touched = true
-		else :
-			small_Circle.position = Vector2.ZERO
-			touched = false
-			
+		if GlobalScript.inventory_is_open == false:
+			var distance = event.position.distance_to(big_Circle.global_position)
+			if not touched:
+				if distance < max_distance :
+					touched = true
+			else :
+				small_Circle.position = Vector2.ZERO
+				touched = false
+		else:
+			self.visible = false
 func _process(delta):
 	if touched :
 		small_Circle.global_position = get_global_mouse_position()

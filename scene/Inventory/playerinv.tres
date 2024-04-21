@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=3 format=3 uid="uid://bmv5lumw68e6l"]
+
+[ext_resource type="Resource" uid="uid://2f5hs727qfub" path="res://scene/Inventory/items/BladeOfChaos.tres" id="1_ctxkk"]
+[ext_resource type="Script" path="res://inventory.gd" id="2_x3yic"]
+
+[resource]
+script = ExtResource("2_x3yic")
+items = Array[Resource("res://scene/Inventory/inventory_item.gd")]([null, ExtResource("1_ctxkk"), null, null, ExtResource("1_ctxkk"), null, null, null, ExtResource("1_ctxkk"), null, null, null])

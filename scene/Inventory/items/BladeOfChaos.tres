@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://2f5hs727qfub"]
+
+[ext_resource type="Script" path="res://scene/Inventory/inventory_item.gd" id="1_xlfe3"]
+[ext_resource type="Texture2D" uid="uid://c024brvu5pp67" path="res://scene/Inventory/BladeOfChaos.jpeg" id="2_qlapj"]
+
+[resource]
+script = ExtResource("1_xlfe3")
+name = "BladeOfChaos"
+texture = ExtResource("2_qlapj")
