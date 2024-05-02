@@ -20,8 +20,6 @@ func _input(event):
 			else :
 				small_Circle.position = Vector2.ZERO
 				touched = false
-		else:
-			self.visible = false
 func _process(delta):
 	if touched :
 		small_Circle.global_position = get_global_mouse_position()
