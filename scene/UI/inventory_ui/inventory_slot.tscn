@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://5xltbkvfg7nt"]
+
+[ext_resource type="Texture2D" uid="uid://dmam0a1ma33v0" path="res://asset/control/panelInset_beige.png" id="1_jb6wi"]
+[ext_resource type="Script" path="res://scene/UI/inventory_ui/inventory_slot.gd" id="1_vyf4s"]
+
+[node name="inventory_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(21, 21)
+offset_right = 21.0
+offset_bottom = 21.0
+scale = Vector2(1.43309, 1.43309)
+script = ExtResource("1_vyf4s")
+
+[node name="slot" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.225806, 0.225806)
+texture = ExtResource("1_jb6wi")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(21, 21)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 22.0
+offset_bottom = 22.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="tampilan_item" type="Sprite2D" parent="CenterContainer/Panel"]

@@ -17,6 +17,7 @@ var posisi_lama
 @onready var textAir = $airIndikator
 
 @export var inv: Inv
+@export var inventory_player : inventoryManager
 
 func notif_air_habis():
 	DamageToPlayer.display_air("Air Habis!", textDamage.global_position)
@@ -74,7 +75,6 @@ func _process(delta):
 	velocity = velocity.normalized() * kecepatan
 	#print(velocity)
 	move_and_slide()
-	
 	
 	#Controller 
 	velocity = $"../UI/joystick".get_velo().normalized() * kecepatan
@@ -182,9 +182,6 @@ func attack():
 		GlobalScript.isi_air_gayung -=1
 		print(GlobalScript.isi_air_gayung)
 	GlobalScript.pencet = false
-
-
-
 
 func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()

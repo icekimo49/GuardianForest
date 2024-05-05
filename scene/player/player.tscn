@@ -1,13 +1,15 @@
-[gd_scene load_steps=40 format=3 uid="uid://bjxhj32neycau"]
+[gd_scene load_steps=42 format=3 uid="uid://bjxhj32neycau"]
 
 [ext_resource type="Script" path="res://scene/player/player.gd" id="1_7c5n1"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://scene/player/Actor1.png" id="2_0qjyr"]
 [ext_resource type="PackedScene" uid="uid://cxp32tjv0xv5n" path="res://scene/ability/lemparBotol_controller/lempar_botol_controller.tscn" id="2_botwl"]
 [ext_resource type="Resource" uid="uid://bmv5lumw68e6l" path="res://scene/Inventory/playerinv.tres" id="2_y1yws"]
+[ext_resource type="Resource" uid="uid://bk63mjr6kxnm0" path="res://script/inventory/player_inventory.tres" id="3_yukjf"]
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="4_hw3ry"]
 [ext_resource type="Script" path="res://scene/player/player_hitbox_atas.gd" id="6_3nybf"]
 [ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="6_86ekm"]
 [ext_resource type="PackedScene" uid="uid://d30w2jixhhmaf" path="res://scene/Inventory/inv_ui.tscn" id="8_c7xk0"]
+[ext_resource type="PackedScene" uid="uid://ccgbi3dh1ll2b" path="res://scene/UI/inventory_ui/inventory_ui.tscn" id="10_xwhij"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qruo"]
 bg_color = Color(0.247059, 0.14902, 0.192157, 1)
@@ -255,6 +257,7 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_7c5n1")
 inv = ExtResource("2_y1yws")
+inventory_player = ExtResource("3_yukjf")
 
 [node name="damage_diterima" type="Node2D" parent="."]
 position = Vector2(-4, -18)
@@ -345,6 +348,12 @@ wait_time = 0.439
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_orxg3")
+
+[node name="inventory_UI" parent="." instance=ExtResource("10_xwhij")]
+offset_left = -73.0
+offset_top = -183.0
+offset_right = 73.0
+offset_bottom = -37.0
 
 [node name="Inv_UI" parent="." instance=ExtResource("8_c7xk0")]
 

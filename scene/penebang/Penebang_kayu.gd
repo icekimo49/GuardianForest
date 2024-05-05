@@ -81,7 +81,7 @@ func _on_area_2d_body_entered(body):
 
 #Ngilangin musuh setelah kabur
 func _on_timer_timeout():
-	$".".queue_free()
+	queue_free()
 
 #PathFinding Stuff
 func recalc_path():
