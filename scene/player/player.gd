@@ -157,31 +157,32 @@ func _on_api_cooldown_timeout():
 
 func attack():
 	var arah = animasi_player
-	if GlobalScript.pencet && GlobalScript.isi_air_gayung == 0:#notif ammo habis
-		notif_air_habis()
-	if GlobalScript.pencet && GlobalScript.isi_air_gayung > 0:
-		GlobalScript.player_current_attack = true
-		attack_in_progress = true
-		if arah == "kanan":
-			$AnimatedSprite2D.play("serang_kanan")
-			$deal_attack_timer.start()
-			$player_hitbox_kanan.toggle_collision(true)
-		if arah == "kiri":
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("serang_kanan")
-			$deal_attack_timer.start()
-			$player_hitbox_kiri.toggle_collision(true)
-		if arah == "bawah":
-			$AnimatedSprite2D.play("serang_bawah")
-			$deal_attack_timer.start()
-			$player_hitbox_bawah.toggle_collision(true)
-		if arah == "atas":
-			$AnimatedSprite2D.play("serang_atas")
-			$deal_attack_timer.start()
-			$player_hitbox_atas.toggle_collision(true)
-		GlobalScript.isi_air_gayung -=1
-		print(GlobalScript.isi_air_gayung)
-	GlobalScript.pencet = false
+	if GlobalScript.inv_is_open == false:
+		if GlobalScript.pencet && GlobalScript.isi_air_gayung == 0:#notif ammo habis
+			notif_air_habis()
+		if GlobalScript.pencet && GlobalScript.isi_air_gayung > 0:
+			GlobalScript.player_current_attack = true
+			attack_in_progress = true
+			if arah == "kanan":
+				$AnimatedSprite2D.play("serang_kanan")
+				$deal_attack_timer.start()
+				$player_hitbox_kanan.toggle_collision(true)
+			if arah == "kiri":
+				$AnimatedSprite2D.flip_h = true
+				$AnimatedSprite2D.play("serang_kanan")
+				$deal_attack_timer.start()
+				$player_hitbox_kiri.toggle_collision(true)
+			if arah == "bawah":
+				$AnimatedSprite2D.play("serang_bawah")
+				$deal_attack_timer.start()
+				$player_hitbox_bawah.toggle_collision(true)
+			if arah == "atas":
+				$AnimatedSprite2D.play("serang_atas")
+				$deal_attack_timer.start()
+				$player_hitbox_atas.toggle_collision(true)
+			GlobalScript.isi_air_gayung -=1
+			print(GlobalScript.isi_air_gayung)
+		GlobalScript.pencet = false
 
 func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()

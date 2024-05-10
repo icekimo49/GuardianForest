@@ -8,7 +8,7 @@ var player_serang_kanan = false
 var player_serang_kiri = false
 var player_serang_bawah = false
 var isi_air_gayung : int
-var inventory_is_open = false
+var inv_is_open = false
 
 var malam : bool = true
 

@@ -12,7 +12,7 @@ var arah_lama
 
 func _input(event):
 	if event is InputEventScreenTouch:
-		if GlobalScript.inventory_is_open == false:
+		if GlobalScript.inv_is_open == false:
 			var distance = event.position.distance_to(big_Circle.global_position)
 			if not touched:
 				if distance < max_distance :

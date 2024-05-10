@@ -1,7 +1,5 @@
 extends Control
 
-var is_open = false
-
 @onready var inventory : inventoryManager = preload("res://script/inventory/player_inventory.tres")
 @onready var slot_inventory : Array = $inventory_slot/GridContainer.get_children()
 
@@ -11,7 +9,7 @@ func _ready():
 	
 func _process(delta):
 	if Input.is_action_just_pressed("inventory_button"):
-		if is_open :
+		if GlobalScript.inv_is_open :
 			tutup()
 			GameEvent.emit_signal("kamera_ke_inventory", false)
 		else :			
@@ -24,8 +22,8 @@ func update_slots():
 
 func buka():
 	visible = true
-	is_open = true
+	GlobalScript.inv_is_open = true
 	
 func tutup():
 	visible = false
-	is_open = false
+	GlobalScript.inv_is_open = false

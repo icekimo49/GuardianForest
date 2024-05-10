@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scene/UI/inventory_ui/inventory_UI.gd" id="1_twaie"]
 [ext_resource type="Texture2D" uid="uid://cx60oappfqfcj" path="res://asset/control/panel_brown.png" id="2_5pbbb"]
-[ext_resource type="PackedScene" uid="uid://5xltbkvfg7nt" path="res://scene/UI/inventory_ui/inventory_slot.tscn" id="3_ks1pi"]
+[ext_resource type="PackedScene" uid="uid://5xltbkvfg7nt" path="res://scene/UI/inventory_ui/Inventory_UI_Slot.tscn" id="3_x8qax"]
 [ext_resource type="Texture2D" uid="uid://dmam0a1ma33v0" path="res://asset/control/panelInset_beige.png" id="4_mtcrd"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://scene/player/Actor1.png" id="5_twjvf"]
 
@@ -41,36 +41,36 @@ grow_vertical = 2
 scale = Vector2(1.235, 1.235)
 columns = 2
 
-[node name="inventory_slot" parent="inventory_slot/GridContainer" instance=ExtResource("3_ks1pi")]
+[node name="inventory_slot" parent="inventory_slot/GridContainer" instance=ExtResource("3_x8qax")]
 layout_mode = 2
 
-[node name="inventory_slot2" parent="inventory_slot/GridContainer" instance=ExtResource("3_ks1pi")]
+[node name="inventory_slot2" parent="inventory_slot/GridContainer" instance=ExtResource("3_x8qax")]
 layout_mode = 2
 
-[node name="inventory_slot3" parent="inventory_slot/GridContainer" instance=ExtResource("3_ks1pi")]
+[node name="inventory_slot3" parent="inventory_slot/GridContainer" instance=ExtResource("3_x8qax")]
 layout_mode = 2
 
-[node name="inventory_slot4" parent="inventory_slot/GridContainer" instance=ExtResource("3_ks1pi")]
+[node name="inventory_slot4" parent="inventory_slot/GridContainer" instance=ExtResource("3_x8qax")]
 layout_mode = 2
 
-[node name="inventory_slot5" parent="inventory_slot/GridContainer" instance=ExtResource("3_ks1pi")]
+[node name="inventory_slot5" parent="inventory_slot/GridContainer" instance=ExtResource("3_x8qax")]
 layout_mode = 2
 
-[node name="inventory_slot6" parent="inventory_slot/GridContainer" instance=ExtResource("3_ks1pi")]
+[node name="inventory_slot6" parent="inventory_slot/GridContainer" instance=ExtResource("3_x8qax")]
 layout_mode = 2
 
-[node name="inventory_slot7" parent="inventory_slot/GridContainer" instance=ExtResource("3_ks1pi")]
+[node name="inventory_slot7" parent="inventory_slot/GridContainer" instance=ExtResource("3_x8qax")]
 layout_mode = 2
 
-[node name="inventory_slot8" parent="inventory_slot/GridContainer" instance=ExtResource("3_ks1pi")]
+[node name="inventory_slot8" parent="inventory_slot/GridContainer" instance=ExtResource("3_x8qax")]
 layout_mode = 2
 
 [node name="player_view" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 14.0
-offset_right = 74.0
-offset_bottom = 99.0
+offset_left = 5.95918
+offset_top = 30.0
+offset_right = 73.9592
+offset_bottom = 115.0
 texture = ExtResource("4_mtcrd")
 patch_margin_left = 2
 patch_margin_top = 2

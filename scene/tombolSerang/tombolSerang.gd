@@ -5,4 +5,4 @@ extends TouchScreenButton
 	#pass
 
 func _on_pressed():
-	GlobalScript.pencet = true
+		GlobalScript.pencet = true

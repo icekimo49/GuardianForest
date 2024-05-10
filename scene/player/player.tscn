@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bjxhj32neycau"]
+[gd_scene load_steps=41 format=3 uid="uid://bjxhj32neycau"]
 
 [ext_resource type="Script" path="res://scene/player/player.gd" id="1_7c5n1"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://scene/player/Actor1.png" id="2_0qjyr"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="4_hw3ry"]
 [ext_resource type="Script" path="res://scene/player/player_hitbox_atas.gd" id="6_3nybf"]
 [ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="6_86ekm"]
-[ext_resource type="PackedScene" uid="uid://d30w2jixhhmaf" path="res://scene/Inventory/inv_ui.tscn" id="8_c7xk0"]
 [ext_resource type="PackedScene" uid="uid://ccgbi3dh1ll2b" path="res://scene/UI/inventory_ui/inventory_ui.tscn" id="10_xwhij"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qruo"]
@@ -354,8 +353,6 @@ offset_left = -73.0
 offset_top = -183.0
 offset_right = 73.0
 offset_bottom = -37.0
-
-[node name="Inv_UI" parent="." instance=ExtResource("8_c7xk0")]
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
