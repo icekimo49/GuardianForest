@@ -9,7 +9,8 @@ var player_serang_kiri = false
 var player_serang_bawah = false
 var isi_air_gayung : int
 var inv_is_open = false
-
+var drop_item_loc
+var drop_item = false
 var malam : bool = true
 
 #pohon

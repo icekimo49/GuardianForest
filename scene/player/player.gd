@@ -17,7 +17,6 @@ var posisi_lama
 @onready var textAir = $airIndikator
 
 @export var inv: Inv
-@export var inventory_player : inventoryManager
 
 func notif_air_habis():
 	DamageToPlayer.display_air("Air Habis!", textDamage.global_position)
@@ -193,3 +192,6 @@ func _on_deal_attack_timer_timeout():
 	$player_hitbox_kanan.toggle_collision(false)
 	$player_hitbox_bawah.toggle_collision(false)
 	$player_hitbox_atas.toggle_collision(false)
+
+func collect(item):
+	inv.insert(item)

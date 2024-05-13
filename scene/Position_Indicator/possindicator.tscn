@@ -20,6 +20,7 @@ flip_h = true
 [node name="indicator2" type="Sprite2D" parent="indicator"]
 self_modulate = Color(0.211765, 1, 0, 1)
 position = Vector2(0.327457, -1.10497)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2")
 offset = Vector2(-55.3476, 1.24314)
 
@@ -30,6 +31,7 @@ texture = ExtResource("3")
 offset = Vector2(-9.64523, -4.70116)
 
 [node name="indicator4" type="Sprite2D" parent="indicator/indicator3"]
-position = Vector2(-922.9, -9.53674e-07)
+position = Vector2(-814.059, 0.276678)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3")
 offset = Vector2(-9.64523, -4.70116)

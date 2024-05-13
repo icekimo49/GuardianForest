@@ -4,7 +4,7 @@ var boleh_spawn = true
 var penebang_kayu = preload("res://scene/penebang/Penebang_kayu.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,3 +19,5 @@ func _on_timer_spawner_penebang_kayu_timeout():
 func _on_timer_level_timeout():
 	boleh_spawn = false
 	print("waktu habis")
+
+

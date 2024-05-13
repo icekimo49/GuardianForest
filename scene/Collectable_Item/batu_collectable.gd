@@ -1,0 +1,13 @@
+extends StaticBody2D
+
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_area_2d_area_entered(body):
+	if body.has_method("player"):
+		queue_free()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://5xltbkvfg7nt"]
 
-[ext_resource type="Script" path="res://scene/UI/inventory_ui/Inventory_UI_Slot.gd" id="1_hcxdf"]
-[ext_resource type="Texture2D" uid="uid://dmam0a1ma33v0" path="res://asset/control/panelInset_beige.png" id="2_8e5yc"]
+[ext_resource type="Script" path="res://scene/UI/inventory_ui/Inv_UI_Slot.gd" id="1_va348"]
+[ext_resource type="Texture2D" uid="uid://dmam0a1ma33v0" path="res://asset/control/panelInset_beige.png" id="2_qjt34"]
 
 [node name="Inventory_UI_Slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -9,12 +9,12 @@ custom_minimum_size = Vector2(21, 21)
 offset_right = 21.0
 offset_bottom = 21.0
 scale = Vector2(1.43309, 1.43309)
-script = ExtResource("1_hcxdf")
+script = ExtResource("1_va348")
 
 [node name="slot" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.225806, 0.225806)
-texture = ExtResource("2_8e5yc")
+texture = ExtResource("2_qjt34")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -28,7 +28,7 @@ offset_bottom = 22.0
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="tampilan_item" type="Sprite2D" parent="CenterContainer/Panel"]
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
 custom_minimum_size = Vector2(40, 23)

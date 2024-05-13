@@ -6,7 +6,6 @@ var PFspeed = 150 #PF = PathFinding
 @export var navAgent : NavigationAgent2D
 var target_node = null
 var home_position = Vector2.ZERO
-
 var speed = 1000
 var kabur = false
 var player = null
@@ -16,6 +15,7 @@ var array_posisi_pohon = GlobalScript.posisi_pohon
 var aselole = false
 var angka_acak = RandomNumberGenerator.new()
 var tet
+@export var batu = preload("res://scene/Collectable_Item/batu_collectable.tscn")
 
 var move_tween : Tween
 @onready var lokasiPohon : Array = [
@@ -57,6 +57,8 @@ func _physics_process(delta):
 	#var axis = to_local(navAgent.get_next_path_position()).normalized()
 	#velocity = axis * speed
 	#move_and_slide()
+	if GlobalScript.drop_item == true:
+		drop_item()
 	pass
 	
 func pembuatRandom() -> float :
@@ -78,6 +80,8 @@ func _on_area_2d_body_entered(body):
 		player = body
 		kabur = true
 		timer.start()
+		GlobalScript.drop_item_loc = self.position
+		GlobalScript.drop_item = true
 
 #Ngilangin musuh setelah kabur
 func _on_timer_timeout():
@@ -120,4 +124,10 @@ func musuhMover():
 			)
 	else:
 		return
-	
+
+func drop_item():
+	var item_instance = batu.instantiate()
+	item_instance.position = GlobalScript.drop_item_loc
+	item_instance.position.x += 30
+	get_parent().add_child(item_instance)
+	GlobalScript.drop_item = false
