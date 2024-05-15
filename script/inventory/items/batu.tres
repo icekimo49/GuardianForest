@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bs4bdwcppqyw2"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c7fibiwoh6m2x"]
 
 [ext_resource type="Script" path="res://script/inventory/inventory_item.gd" id="1_v652d"]
 [ext_resource type="Texture2D" uid="uid://bgip6nwmuf03n" path="res://asset/item/batu 2.png" id="2_65q7j"]
@@ -7,3 +7,4 @@
 script = ExtResource("1_v652d")
 name = "batu"
 texture = ExtResource("2_65q7j")
+type = false

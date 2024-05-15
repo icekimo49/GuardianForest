@@ -26,7 +26,6 @@ var nomor_musuh_spawn = 1
 
 func _ready():
 	musuhMover()
-	
 	#PathFinding Stuff
 	#home_position = self.global_position 
 	#navAgent.path_desired_distance = 4
