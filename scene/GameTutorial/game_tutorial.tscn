@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dqfhckmcatuaa"]
+[gd_scene load_steps=17 format=3 uid="uid://dqfhckmcatuaa"]
 
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_71wjt"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://scene/joystick/joystick.tscn" id="1_ri8cj"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://be6e84ghfocia" path="res://scene/UI/menu/asset/Pohon.png" id="6_d4jxm"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://scene/pohon.tscn" id="6_lbigl"]
 [ext_resource type="Texture2D" uid="uid://d1b8u23q5k1gb" path="res://scene/UI/menu/asset/Sparkle 2.png" id="7_cm33v"]
+[ext_resource type="PackedScene" uid="uid://cepjowy0mhxvl" path="res://environtmen_scene/batang_kayu.tscn" id="9_ahpuh"]
 [ext_resource type="Texture2D" uid="uid://co0b60sek3kki" path="res://scene/UI/menu/asset/Sparkle 3.png" id="12_7fv4v"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1wwlw"]
@@ -110,6 +111,11 @@ texture = ExtResource("6_d4jxm")
 position = Vector2(386, 13)
 scale = Vector2(0.359995, 0.359995)
 texture = ExtResource("6_d4jxm")
+
+[node name="Batang_Kayu" parent="Pepohonan" instance=ExtResource("9_ahpuh")]
+position = Vector2(530, 115)
+scale = Vector2(0.319995, 0.319995)
+pilihan = {}
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(427, 170)
