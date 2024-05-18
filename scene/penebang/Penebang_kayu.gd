@@ -16,7 +16,7 @@ var aselole = false
 var angka_acak = RandomNumberGenerator.new()
 var tet
 @export var batu = preload("res://scene/Collectable_Item/batu_collectable.tscn")
-@export var item_array = Array
+@export var item_array : Array
 
 var move_tween : Tween
 @onready var lokasiPohon : Array = [

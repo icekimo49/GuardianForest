@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgaunqj7nm4j4"]
+
+[ext_resource type="Script" path="res://environtmen_scene/alang_alang.gd" id="1_mcd47"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0q1od"]
+
+[node name="alangAlang" type="Node2D"]
+script = ExtResource("1_mcd47")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0q1od")
+
+[node name="SpriteAlang" type="Sprite2D" parent="."]

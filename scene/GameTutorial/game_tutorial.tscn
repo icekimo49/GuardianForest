@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqfhckmcatuaa"]
+[gd_scene load_steps=18 format=3 uid="uid://dqfhckmcatuaa"]
 
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_71wjt"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://scene/joystick/joystick.tscn" id="1_ri8cj"]
@@ -29,6 +29,10 @@ shader = ExtResource("4_t21cf")
 shader_parameter/density = 0.25
 shader_parameter/kecepatan = Vector2(0.2, 0.1)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_ufuh1")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ro17d"]
+a = Vector2(-30, -2)
+b = Vector2(1000, -3)
 
 [node name="GameTutorial" type="Node2D"]
 
@@ -115,7 +119,6 @@ texture = ExtResource("6_d4jxm")
 [node name="Batang_Kayu" parent="Pepohonan" instance=ExtResource("9_ahpuh")]
 position = Vector2(530, 115)
 scale = Vector2(0.319995, 0.319995)
-pilihan = {}
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(427, 170)
@@ -123,7 +126,6 @@ scale = Vector2(12.5443, 1)
 texture = ExtResource("3_jhd7b")
 
 [node name="Player" parent="." instance=ExtResource("4_upb3k")]
-visible = false
 position = Vector2(358, 255)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -142,3 +144,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Sparkle3" type="Sprite2D" parent="."]
 position = Vector2(380, 21)
 texture = ExtResource("12_7fv4v")
+
+[node name="BorderAtasBawah" type="StaticBody2D" parent="."]
+position = Vector2(9, 173)
+
+[node name="atas" type="CollisionShape2D" parent="BorderAtasBawah"]
+shape = SubResource("SegmentShape2D_ro17d")
+
+[node name="bawah" type="CollisionShape2D" parent="BorderAtasBawah"]
+position = Vector2(-85, 161)
+shape = SubResource("SegmentShape2D_ro17d")
