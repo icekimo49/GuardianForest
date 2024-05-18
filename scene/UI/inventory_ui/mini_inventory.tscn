@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp8wd0pk0cj58"]
+
+[ext_resource type="Texture2D" uid="uid://re41tnvaqcbf" path="res://asset/control/InventorySlots.png" id="1_atx4c"]
+
+[node name="MiniInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+texture = ExtResource("1_atx4c")

@@ -1,6 +1,8 @@
 extends Control
 @onready var inv: Inv = preload ("res://script/inventory/playerinv.tres")
-@onready var slots : Array = $inventory_slot/GridContainer.get_children()
+@onready var slots : Array = $big_inventory/inventory_slot/GridContainer.get_children()
+
+@onready var big_inventory = $big_inventory
 
 func _ready():
 	inv.update.connect(update_slots)
@@ -22,9 +24,9 @@ func update_slots():
 		slots[i].update(inv.slots[i])
 
 func open():
-	visible = true
+	big_inventory.visible = true
 	GlobalScript.inv_is_open = true
 	
 func close():
-	visible = false
+	big_inventory.visible = false
 	GlobalScript.inv_is_open = false

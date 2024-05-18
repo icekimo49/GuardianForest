@@ -15,7 +15,12 @@ offset_bottom = 146.0
 scale = Vector2(1.00685, 1)
 script = ExtResource("1_6cqpk")
 
-[node name="inventory_slot" type="NinePatchRect" parent="."]
+[node name="big_inventory" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="inventory_slot" type="NinePatchRect" parent="big_inventory"]
 layout_mode = 0
 offset_right = 147.0
 offset_bottom = 147.0
@@ -25,7 +30,7 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="inventory_slot"]
+[node name="GridContainer" type="GridContainer" parent="big_inventory/inventory_slot"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -41,31 +46,31 @@ grow_vertical = 2
 scale = Vector2(1.235, 1.235)
 columns = 2
 
-[node name="inventory_slot" parent="inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
+[node name="inventory_slot" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
-[node name="inventory_slot2" parent="inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
+[node name="inventory_slot2" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
-[node name="inventory_slot3" parent="inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
+[node name="inventory_slot3" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
-[node name="inventory_slot4" parent="inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
+[node name="inventory_slot4" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
-[node name="inventory_slot5" parent="inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
+[node name="inventory_slot5" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
-[node name="inventory_slot6" parent="inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
+[node name="inventory_slot6" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
-[node name="inventory_slot7" parent="inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
+[node name="inventory_slot7" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
-[node name="inventory_slot8" parent="inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
+[node name="inventory_slot8" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
-[node name="player_view" type="NinePatchRect" parent="."]
+[node name="player_view" type="NinePatchRect" parent="big_inventory"]
 layout_mode = 0
 offset_left = 5.95918
 offset_top = 30.0
@@ -77,7 +82,7 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="player_view"]
+[node name="Sprite2D" type="Sprite2D" parent="big_inventory/player_view"]
 position = Vector2(36.7075, 40)
 texture = ExtResource("5_ywyy6")
 hframes = 12
