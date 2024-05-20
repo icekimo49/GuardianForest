@@ -33,6 +33,45 @@ shader_parameter/noise_texture = SubResource("NoiseTexture2D_ufuh1")
 a = Vector2(-30, -2)
 b = Vector2(1000, -3)
 
+[sub_resource type="Animation" id="Animation_118fk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sparkle4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1354, 181)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sparkle3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(684, 319)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sparkle2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1948, 337)]
+}
+
 [sub_resource type="Animation" id="Animation_g4022"]
 resource_name = "sparle_2"
 length = 50.0
@@ -73,49 +112,49 @@ tracks/2/keys = {
 "values": [Vector2(-3, 381), Vector2(-1684, 337)]
 }
 
-[sub_resource type="Animation" id="Animation_118fk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p75et"]
+_data = {
+"RESET": SubResource("Animation_118fk"),
+"sparle_2": SubResource("Animation_g4022")
+}
+
+[sub_resource type="Animation" id="Animation_l0hl0"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sparkle4:position")
+tracks/0/path = NodePath("sparkle/Sparkle4:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1354, 181)]
+"values": [Vector2(-202, 182)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sparkle3:position")
+tracks/1/path = NodePath("sparkle/Sparkle3:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(684, 319)]
+"values": [Vector2(-823, 308)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sparkle2:position")
+tracks/2/path = NodePath("sparkle/Sparkle2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1948, 337)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_p75et"]
-_data = {
-"RESET": SubResource("Animation_118fk"),
-"sparle_2": SubResource("Animation_g4022")
+"values": [Vector2(500, 27)]
 }
 
 [sub_resource type="Animation" id="Animation_6685x"]
@@ -157,45 +196,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(500, 27), Vector2(-1911, 27)]
-}
-
-[sub_resource type="Animation" id="Animation_l0hl0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sparkle/Sparkle4:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-202, 182)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("sparkle/Sparkle3:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-823, 308)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("sparkle/Sparkle2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(500, 27)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m6m1b"]

@@ -1,15 +1,118 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgaunqj7nm4j4"]
+[gd_scene load_steps=10 format=3 uid="uid://dgaunqj7nm4j4"]
 
 [ext_resource type="Script" path="res://environtmen_scene/alang_alang.gd" id="1_mcd47"]
+[ext_resource type="Texture2D" uid="uid://bcj4xri331two" path="res://asset/environtment/n_grass_diff_0_03.png" id="2_j5pls"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0q1od"]
+[sub_resource type="Animation" id="Animation_1wgid"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteAlang:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
-[node name="alangAlang" type="Node2D"]
+[sub_resource type="Animation" id="Animation_hyooj"]
+resource_name = "idle"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteAlang:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.200713, -0.253073, 0.200713, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2ipxf"]
+resource_name = "ke_kiri"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteAlang:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.698132]
+}
+
+[sub_resource type="Animation" id="Animation_ya2ny"]
+resource_name = "ke_kanan"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteAlang:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.698132]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o42l7"]
+_data = {
+"RESET": SubResource("Animation_1wgid"),
+"idle": SubResource("Animation_hyooj"),
+"ke_kanan": SubResource("Animation_ya2ny"),
+"ke_kiri": SubResource("Animation_2ipxf")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umt81"]
+size = Vector2(12.622, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mivda"]
+size = Vector2(12.9939, 20)
+
+[node name="alangAlang1" type="Node2D"]
 script = ExtResource("1_mcd47")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_0q1od")
-
 [node name="SpriteAlang" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("2_j5pls")
+offset = Vector2(0, -50)
+hframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o42l7")
+}
+
+[node name="kanan" type="Area2D" parent="."]
+position = Vector2(14, -20)
+scale = Vector2(1.1884, 1.98159)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kanan"]
+position = Vector2(-5.46954, 0)
+shape = SubResource("RectangleShape2D_umt81")
+
+[node name="kiri" type="Area2D" parent="."]
+position = Vector2(-25, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="kiri"]
+position = Vector2(15.279, -20)
+scale = Vector2(1.1884, 1.98159)
+shape = SubResource("RectangleShape2D_mivda")
+
+[connection signal="body_entered" from="kanan" to="." method="_on_kanan_body_entered"]
+[connection signal="body_exited" from="kanan" to="." method="_on_kanan_body_exited"]
+[connection signal="body_entered" from="kiri" to="." method="_on_kiri_body_entered"]
+[connection signal="body_exited" from="kiri" to="." method="_on_kiri_body_exited"]
