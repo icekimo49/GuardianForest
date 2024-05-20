@@ -4,6 +4,8 @@ const SPEED = 25
 @onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $animated_sprite
 @onready var sprite_alang = $SpriteAlang
+@onready var kanan = $kanan
+@onready var kiri = $kiri
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
