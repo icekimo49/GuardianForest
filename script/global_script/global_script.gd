@@ -16,6 +16,8 @@ var select1 = null
 var select2 = null
 var item_in_use : String
 
+var enable_analog : bool =false
+
 #pohon
 var posisi_pohon = []
 

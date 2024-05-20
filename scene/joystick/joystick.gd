@@ -9,8 +9,11 @@ var touched : bool = false
 var arah_baru
 var arah_lama
 
+var enable_analog  = true
 
 func _input(event):
+	if !enable_analog :
+		return
 	if event is InputEventScreenTouch:
 		if GlobalScript.inv_is_open == false:
 			var distance = event.position.distance_to(big_Circle.global_position)

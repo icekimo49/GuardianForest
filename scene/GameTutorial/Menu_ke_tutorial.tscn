@@ -1,17 +1,28 @@
-[gd_scene load_steps=23 format=3 uid="uid://boyjp71m3uskg"]
+[gd_scene load_steps=34 format=3 uid="uid://boyjp71m3uskg"]
 
+[ext_resource type="Texture2D" uid="uid://md6l6yk48tfj" path="res://asset/environtment/langit/1.png" id="1_i1ag3"]
+[ext_resource type="Script" path="res://scene/GameTutorial/Menu_ke_tutorial.gd" id="1_ir6e8"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://scene/joystick/joystick.tscn" id="1_leoae"]
+[ext_resource type="PackedScene" uid="uid://ckudivwuy7n7i" path="res://environtmen_scene/bulan_bintang_layer.tscn" id="2_1atji"]
+[ext_resource type="Texture2D" uid="uid://cgf847jsvar37" path="res://asset/environtment/langit/3.png" id="2_hugf1"]
 [ext_resource type="TileSet" uid="uid://eeb6qtp884dx" path="res://resources/tileset_farm.tres" id="2_iwdcs"]
 [ext_resource type="Texture2D" uid="uid://cv1cqfptwyqiw" path="res://scene/UI/menu/asset/Pohon 2.png" id="3_oyjdl"]
+[ext_resource type="Texture2D" uid="uid://dclvwdm88spku" path="res://asset/environtment/langit/4.png" id="4_cf0pr"]
 [ext_resource type="Texture2D" uid="uid://b8oudbsh64wn6" path="res://asset/environtment/Menu.png" id="4_lcu8n"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="5_moxa3"]
 [ext_resource type="Script" path="res://scene/GameTutorial/NightEffect.gd" id="6_hfju1"]
 [ext_resource type="Texture2D" uid="uid://be6e84ghfocia" path="res://scene/UI/menu/asset/Pohon.png" id="7_ucn81"]
+[ext_resource type="Texture2D" uid="uid://bgip6nwmuf03n" path="res://asset/item/batu 2.png" id="7_uho1a"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://scene/pohon.tscn" id="8_ygnjw"]
 [ext_resource type="Texture2D" uid="uid://d1b8u23q5k1gb" path="res://scene/UI/menu/asset/Sparkle 2.png" id="9_j1386"]
 [ext_resource type="PackedScene" uid="uid://cepjowy0mhxvl" path="res://environtmen_scene/batang_kayu.tscn" id="10_6aym3"]
 [ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://scene/player/player.tscn" id="12_5amrn"]
 [ext_resource type="Shader" path="res://scene/GameTutorial/game_tutorial.gdshader" id="14_jsffo"]
+[ext_resource type="FontFile" uid="uid://bql7walclmmtp" path="res://scene/UI/menu/font/font_1.ttf" id="17_i6obh"]
+[ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="18_sq2jt"]
+[ext_resource type="Texture2D" uid="uid://ct3ic460lyh78" path="res://scene/UI/menu/font/text-1710175169846.png" id="19_gyxmi"]
+[ext_resource type="Texture2D" uid="uid://csf53dnfncelm" path="res://scene/UI/menu/font/text-1710175318481.png" id="20_7e0fi"]
+[ext_resource type="Texture2D" uid="uid://bh7vn5mf20wkr" path="res://scene/UI/menu/font/web-gemastik-alt.png" id="22_ub2jm"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1wwlw"]
 frequency = 0.0075
@@ -205,9 +216,31 @@ _data = {
 }
 
 [node name="GameTutorial" type="Node2D"]
+script = ExtResource("1_ir6e8")
+
+[node name="ParallaxBackground3" type="Node2D" parent="."]
+
+[node name="Latar" type="Sprite2D" parent="ParallaxBackground3"]
+position = Vector2(-804, -48)
+scale = Vector2(4.4208, 4.4208)
+texture = ExtResource("1_i1ag3")
+
+[node name="bulan_bintang_layer" parent="ParallaxBackground3" instance=ExtResource("2_1atji")]
+position = Vector2(-761, -48)
+
+[node name="klise_bulan" type="Sprite2D" parent="ParallaxBackground3"]
+position = Vector2(-703, -261)
+texture = ExtResource("4_cf0pr")
+
+[node name="awan2" type="Sprite2D" parent="ParallaxBackground3"]
+position = Vector2(-888, 100)
+scale = Vector2(2.77141, 2.77141)
+texture = ExtResource("2_hugf1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-894, 240)
+position = Vector2(-894, -96)
+rotation = -3.14159
+scale = Vector2(10.5516, 10.5516)
 zoom = Vector2(0.76, 0.76)
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -284,7 +317,7 @@ scale = Vector2(0.319995, 0.319995)
 
 [node name="Pohon4" type="Sprite2D" parent="."]
 position = Vector2(-1148, 322)
-scale = Vector2(0.76, 0.76)
+scale = Vector2(0.761224, 0.76)
 texture = ExtResource("3_oyjdl")
 
 [node name="Pohon3" type="Sprite2D" parent="."]
@@ -420,8 +453,60 @@ libraries = {
 }
 autoplay = "sparle_2"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Sparkle" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_m6m1b")
 }
 autoplay = "sparkle_animation"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="guardian_forest" type="Node2D" parent="CanvasLayer"]
+position = Vector2(164, 69)
+
+[node name="PointLight2D" type="PointLight2D" parent="CanvasLayer/guardian_forest"]
+position = Vector2(165, 97)
+scale = Vector2(1.25917, 1.25917)
+color = Color(0.111097, 0.381896, 0.719218, 1)
+energy = 1.12
+shadow_enabled = true
+shadow_filter_smooth = 50.0
+texture = ExtResource("18_sq2jt")
+texture_scale = 0.8
+
+[node name="Text-1710175318481" type="Sprite2D" parent="CanvasLayer/guardian_forest"]
+position = Vector2(159, 95)
+texture = ExtResource("20_7e0fi")
+
+[node name="Text-1710175169846" type="Sprite2D" parent="CanvasLayer/guardian_forest/Text-1710175318481"]
+position = Vector2(-1, -6)
+texture = ExtResource("19_gyxmi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 305.0
+offset_top = 80.0
+offset_right = 345.0
+offset_bottom = 280.0
+scale = Vector2(1.00236, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_fonts/normal_font = ExtResource("17_i6obh")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Main "
+fit_content = true
+tab_size = 0
+
+[node name="tombol_start" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(230, 25)
+scale = Vector2(0.045166, 0.045166)
+texture_normal = ExtResource("7_uho1a")
+
+[node name="Gemastik" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(316, 165)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("22_ub2jm")
+
+[connection signal="pressed" from="CanvasLayer/tombol_start" to="." method="_on_tombol_start_pressed"]
