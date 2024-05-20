@@ -4,6 +4,8 @@ class_name InvItem
 
 @export var name : String = ""
 @export var texture : Texture2D
+@export var stack : bool
 @export var type : bool
 
-#true = stack, false = non-stack
+#stack true = stack, false = non-stack
+#type true = material, false = tools

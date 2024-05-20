@@ -54,9 +54,6 @@ func _on_tombol_1_pressed():
 	else:
 		select1 = 0
 		select2 = null
-	print(select1)
-	print(select2)
-
 
 func _on_tombol_2_pressed():
 	if select1 == null:
@@ -66,8 +63,6 @@ func _on_tombol_2_pressed():
 	else:
 		select1 = 1
 		select2 = null
-	print(select1)
-	print(select2)
 
 func _on_tombol_3_pressed():
 	if select1 == null:
@@ -77,9 +72,7 @@ func _on_tombol_3_pressed():
 	else:
 		select1 = 2
 		select2 = null
-	print(select1)
-	print(select2)
-	
+
 func _on_tombol_4_pressed():
 	if select1 == null:
 		select1 = 3
@@ -88,8 +81,6 @@ func _on_tombol_4_pressed():
 	else:
 		select1 = 3
 		select2 = null
-	print(select1)
-	print(select2)
 
 func _on_tombol_5_pressed():
 	if select1 == null:
@@ -99,9 +90,6 @@ func _on_tombol_5_pressed():
 	else:
 		select1 = 4
 		select2 = null
-	print(select1)
-	print(select2)
-	
 
 func _on_tombol_6_pressed():
 	if select1 == null:
@@ -111,9 +99,7 @@ func _on_tombol_6_pressed():
 	else:
 		select1 = 5
 		select2 = null
-	print(select1)
-	print(select2)
-	
+
 func _on_tombol_7_pressed():
 	if select1 == null:
 		select1 = 6
@@ -122,9 +108,7 @@ func _on_tombol_7_pressed():
 	else:
 		select1 = 6
 		select2 = null
-	print(select1)
-	print(select2)
-	
+
 func _on_tombol_8_pressed():
 	if select1 == null:
 		select1 = 7
@@ -133,5 +117,3 @@ func _on_tombol_8_pressed():
 	else:
 		select1 = 7
 		select2 = null
-	print(select1)
-	print(select2)

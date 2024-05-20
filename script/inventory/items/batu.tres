@@ -7,4 +7,5 @@
 script = ExtResource("1_v652d")
 name = "batu"
 texture = ExtResource("2_65q7j")
-type = false
+stack = true
+type = true

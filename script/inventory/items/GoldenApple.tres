@@ -7,4 +7,5 @@
 script = ExtResource("1_5m1a3")
 name = "Golden Apple"
 texture = ExtResource("2_5om0a")
-type = false
+stack = false
+type = true
