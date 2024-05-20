@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://boyjp71m3uskg"]
+[gd_scene load_steps=37 format=3 uid="uid://boyjp71m3uskg"]
 
 [ext_resource type="Texture2D" uid="uid://md6l6yk48tfj" path="res://asset/environtment/langit/1.png" id="1_i1ag3"]
 [ext_resource type="Script" path="res://scene/GameTutorial/Menu_ke_tutorial.gd" id="1_ir6e8"]
@@ -213,6 +213,44 @@ tracks/2/keys = {
 _data = {
 "RESET": SubResource("Animation_l0hl0"),
 "sparkle_animation": SubResource("Animation_6685x")
+}
+
+[sub_resource type="Animation" id="Animation_n7je2"]
+resource_name = "ngedip"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xeqnn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xyly4"]
+_data = {
+"RESET": SubResource("Animation_xeqnn"),
+"ngedip": SubResource("Animation_n7je2")
 }
 
 [node name="GameTutorial" type="Node2D"]
@@ -496,6 +534,31 @@ bbcode_enabled = true
 text = "Main "
 fit_content = true
 tab_size = 0
+
+[node name="analog_tutorial" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -137.0
+offset_top = 275.0
+offset_right = 294.065
+offset_bottom = 475.0
+grow_horizontal = 2
+scale = Vector2(1.00236, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_fonts/normal_font = ExtResource("17_i6obh")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Gunakan Analaog untuk Bergerak"
+fit_content = true
+scroll_active = false
+tab_size = 11
+
+[node name="tutorial_ngedip" type="AnimationPlayer" parent="CanvasLayer/analog_tutorial"]
+libraries = {
+"": SubResource("AnimationLibrary_xyly4")
+}
 
 [node name="tombol_start" type="TouchScreenButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
