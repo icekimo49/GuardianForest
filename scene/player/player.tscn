@@ -301,7 +301,7 @@ texture_filter = 1
 position = Vector2(2.38419e-07, -6)
 scale = Vector2(0.473958, 0.473958)
 sprite_frames = SubResource("SpriteFrames_dyxpy")
-animation = &"kanan"
+animation = &"serang_kanan"
 autoplay = "diam_bawah"
 
 [node name="abilityManager" type="Node" parent="."]
@@ -347,6 +347,7 @@ wait_time = 0.439
 occluder = SubResource("OccluderPolygon2D_orxg3")
 
 [node name="Inv_UI" parent="." instance=ExtResource("8_3p8na")]
+z_index = 5
 offset_left = -73.0
 offset_top = -183.0
 offset_right = 73.0

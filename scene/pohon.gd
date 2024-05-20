@@ -7,6 +7,7 @@ var kebakar = null
 var timer: Timer
 var timer2: Timer
 var array_posisi_pohon = GlobalScript.posisi_pohon
+var kondisi_area_pohon: Array
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("penebang_kayu"):
@@ -48,3 +49,4 @@ func _on_timer_2_timeout():
 func _on_timer_penebang_kayu_timeout():
 	queue_free()
 	$timer_PenebangKayu.stop()
+

@@ -184,9 +184,12 @@ func attack():
 		GlobalScript.pencet = false
 
 func _on_deal_attack_timer_timeout():
+	print("aselole")
 	$deal_attack_timer.stop()
 	GlobalScript.player_current_attack = false
 	attack_in_progress = false
+	if attack_in_progress == false:
+		print("gagal")
 	$AnimatedSprite2D.flip_h = false
 	$player_hitbox_kiri.toggle_collision(false)
 	$player_hitbox_kanan.toggle_collision(false)
