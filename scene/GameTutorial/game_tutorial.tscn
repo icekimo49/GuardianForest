@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dqfhckmcatuaa"]
+[gd_scene load_steps=20 format=3 uid="uid://dqfhckmcatuaa"]
 
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_71wjt"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://scene/joystick/joystick.tscn" id="1_ri8cj"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d1b8u23q5k1gb" path="res://scene/UI/menu/asset/Sparkle 2.png" id="7_cm33v"]
 [ext_resource type="PackedScene" uid="uid://cepjowy0mhxvl" path="res://environtmen_scene/batang_kayu.tscn" id="9_ahpuh"]
 [ext_resource type="Texture2D" uid="uid://co0b60sek3kki" path="res://scene/UI/menu/asset/Sparkle 3.png" id="12_7fv4v"]
+[ext_resource type="PackedScene" uid="uid://dgaunqj7nm4j4" path="res://environtmen_scene/alang_alang.tscn" id="15_h4esx"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1wwlw"]
 frequency = 0.0075
@@ -207,3 +208,99 @@ shape = SubResource("SegmentShape2D_ro17d")
 [node name="bawah" type="CollisionShape2D" parent="BorderAtasBawah"]
 position = Vector2(-85, 161)
 shape = SubResource("SegmentShape2D_ro17d")
+
+[node name="alangAlang1" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(435, 211)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang2" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(429, 222)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang3" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(430, 229)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang4" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(424, 240)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang5" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(421, 253)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang6" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(415, 264)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang7" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(450, 217)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang8" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(444, 228)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang9" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(449, 237)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang10" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(443, 248)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang11" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(414, 228)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang12" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(408, 239)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang13" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(400, 253)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang14" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(394, 264)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang15" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(433, 268)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang16" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(427, 279)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang17" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(401, 287)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang18" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(395, 298)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang19" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(418, 289)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang20" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(412, 300)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang21" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(384, 290)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang22" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(378, 301)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang23" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(380, 314)
+scale = Vector2(0.52, 0.52)
+
+[node name="alangAlang24" parent="." instance=ExtResource("15_h4esx")]
+position = Vector2(559, 260)
+scale = Vector2(0.52, 0.52)
