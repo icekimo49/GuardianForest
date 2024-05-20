@@ -9,3 +9,4 @@ name = "ember"
 texture = ExtResource("2_ca5kn")
 stack = false
 type = false
+ukuran_item = Vector2(0.05, 0.05)

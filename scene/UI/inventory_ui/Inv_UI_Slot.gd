@@ -8,13 +8,13 @@ func update(slot: InvSlot):
 		item_visual.visible = false
 		amount_text.visible = false
 	elif slot.item.stack == true:
-		item_visual.scale = Vector2(0.005,0.005)
+		item_visual.scale = slot.item.ukuran_item
 		item_visual.visible = true
 		item_visual.texture = slot.item.texture
 		amount_text.visible = true
 		amount_text.text = str(slot.amount)
 	else:
-		item_visual.scale = Vector2(0.005,0.005)
+		item_visual.scale = slot.item.ukuran_item
 		item_visual.visible = true
 		item_visual.texture = slot.item.texture
 		amount_text.visible = false

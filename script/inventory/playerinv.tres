@@ -6,46 +6,57 @@
 [sub_resource type="Resource" id="Resource_82v4p"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_fsgl3"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_60kvt"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_o81os"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_71pni"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_lehf3"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_8nsj5"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_n4umc"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_pr0aa"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_do0ch"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_thtn2"]
 script = ExtResource("2_uctha")
 amount = 0
+ukuran = Vector2(0, 0)
 
 [resource]
 script = ExtResource("2_2h64y")
