@@ -260,6 +260,7 @@ inv = ExtResource("2_2jk7n")
 position = Vector2(-4, -18)
 
 [node name="barDarah" type="ProgressBar" parent="."]
+z_index = 30
 custom_minimum_size = Vector2(30, 6)
 offset_left = -15.0
 offset_top = -30.0
