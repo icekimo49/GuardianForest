@@ -347,7 +347,6 @@ wait_time = 0.439
 occluder = SubResource("OccluderPolygon2D_orxg3")
 
 [node name="Inv_UI" parent="." instance=ExtResource("8_3p8na")]
-z_index = 5
 offset_left = -73.0
 offset_top = -183.0
 offset_right = 73.0

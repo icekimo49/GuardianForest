@@ -30,9 +30,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if !state_kanan && !state_kiri : 
-		animation_player.speed_scale = animasi_speed
-		animation_player.play("idle")
+	pass
 
 func _on_kanan_body_entered(body):
 	if body.is_in_group("player"):

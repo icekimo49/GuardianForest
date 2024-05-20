@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://scene/player/Actor1.png" id="5_ywyy6"]
 
 [node name="Inv_UI" type="Control"]
+z_index = 30
 custom_minimum_size = Vector2(146, 146)
 layout_mode = 3
 anchors_preset = 0
