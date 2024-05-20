@@ -5,6 +5,8 @@ extends Control
 @onready var big_inventory = $big_inventory
 
 var mini_item_state : String
+var select1 = null
+var select2 = null
 
 func _ready():
 	GameEvent.connect("tombol_more_inventory", Callable(self, "_mini_inventory"))
@@ -35,7 +37,84 @@ func update_slots():
 func open():
 	big_inventory.visible = true
 	GlobalScript.inv_is_open = true
-	
+
 func close():
 	big_inventory.visible = false
 	GlobalScript.inv_is_open = false
+
+func select_item():
+	pass
+
+
+func _on_button_1_pressed():
+	if select1 == null:
+		select1 = 0
+	elif select2 == null:
+		select2 = 0
+	else:
+		select1 = 0
+		select2 = null
+	print("aa")
+
+func _on_button_2_pressed():
+	if select1 == null:
+		select1 = 1
+	elif select2 == null:
+		select2 = 1
+	else:
+		select1 = 1
+		select2 = null
+
+func _on_button_3_pressed():
+	if select1 == null:
+		select1 = 2
+	elif select2 == null:
+		select2 = 2
+	else:
+		select1 = 2
+		select2 = null
+
+func _on_button_4_pressed():
+	if select1 == null:
+		select1 = 3
+	elif select2 == null:
+		select2 = 3
+	else:
+		select1 = 3
+		select2 = null
+
+func _on_button_5_pressed():
+	if select1 == null:
+		select1 = 4
+	elif select2 == null:
+		select2 = 4
+	else:
+		select1 = 4
+		select2 = null
+
+func _on_button_6_pressed():
+	if select1 == null:
+		select1 = 5
+	elif select2 == null:
+		select2 = 5
+	else:
+		select1 = 5
+		select2 = null
+
+func _on_button_7_pressed():
+	if select1 == null:
+		select1 = 6
+	elif select2 == null:
+		select2 = 6
+	else:
+		select1 = 6
+		select2 = null
+
+func _on_button_8_pressed():
+	if select1 == null:
+		select1 = 7
+	elif select2 == null:
+		select2 = 7
+	else:
+		select1 = 7
+		select2 = null

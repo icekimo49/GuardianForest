@@ -49,26 +49,103 @@ columns = 2
 [node name="inventory_slot" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
+[node name="Button1" type="Button" parent="big_inventory/inventory_slot/GridContainer/inventory_slot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.952
+anchor_bottom = 1.048
+offset_right = 1.008
+offset_bottom = -0.00800133
+
 [node name="inventory_slot2" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+
+[node name="Button2" type="Button" parent="big_inventory/inventory_slot/GridContainer/inventory_slot2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.952
+anchor_bottom = 1.048
+offset_left = 0.225447
+offset_top = 0.153845
+offset_right = 1.23345
+offset_bottom = 0.145844
 
 [node name="inventory_slot3" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
+[node name="Button3" type="Button" parent="big_inventory/inventory_slot/GridContainer/inventory_slot3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.952
+anchor_bottom = 1.048
+offset_left = -0.509199
+offset_top = -0.149799
+offset_right = 0.4988
+offset_bottom = -0.157801
+
 [node name="inventory_slot4" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+
+[node name="Button4" type="Button" parent="big_inventory/inventory_slot/GridContainer/inventory_slot4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.952
+anchor_bottom = 1.048
+offset_left = 0.225449
+offset_top = -0.149799
+offset_right = 1.23345
+offset_bottom = -0.157801
 
 [node name="inventory_slot5" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
+[node name="Button5" type="Button" parent="big_inventory/inventory_slot/GridContainer/inventory_slot5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.952
+anchor_bottom = 1.048
+offset_left = 0.295008
+offset_top = -0.0485809
+offset_right = 1.30301
+offset_bottom = -0.0565796
+
 [node name="inventory_slot6" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+
+[node name="Button6" type="Button" parent="big_inventory/inventory_slot/GridContainer/inventory_slot6"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.225446
+offset_top = 0.356276
+offset_right = 0.225447
+offset_bottom = 0.356276
 
 [node name="inventory_slot7" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
 
+[node name="Button7" type="Button" parent="big_inventory/inventory_slot/GridContainer/inventory_slot7"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.294998
+offset_top = 0.457492
+offset_right = 0.294998
+offset_bottom = 0.457493
+
 [node name="inventory_slot8" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+
+[node name="Button8" type="Button" parent="big_inventory/inventory_slot/GridContainer/inventory_slot8"]
+layout_mode = 2
+anchor_left = 0.011
+anchor_top = 0.071
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.00555237
+offset_top = -0.223794
+offset_right = 0.225449
+offset_bottom = 0.267206
 
 [node name="player_view" type="NinePatchRect" parent="big_inventory"]
 layout_mode = 0
@@ -88,3 +165,12 @@ texture = ExtResource("5_ywyy6")
 hframes = 12
 vframes = 8
 frame = 10
+
+[connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot4/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot5/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot6/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot7/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot8/Button8" to="." method="_on_button_8_pressed"]
