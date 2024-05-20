@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2xj7hjqlence"]
+[gd_scene load_steps=19 format=3 uid="uid://d2xj7hjqlence"]
 
 [ext_resource type="PackedScene" uid="uid://dep6x1wv4t3ns" path="res://scene/penebang_kayu_manager/penebang_kayu_manager.tscn" id="1_4dckh"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_fth7k"]
@@ -15,9 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://c8hkr5cfrve56" path="res://scene/penebang_kayu/spawner_penebang_kayu.tscn" id="14_73hcj"]
 [ext_resource type="Script" path="res://scene/main/NightCycle.gd" id="14_ivo6g"]
 [ext_resource type="Texture2D" uid="uid://bsqls83wqklg1" path="res://asset/environtment/teashop.png" id="14_jap7l"]
-[ext_resource type="Texture2D" uid="uid://re41tnvaqcbf" path="res://asset/control/InventorySlots.png" id="16_coocx"]
-[ext_resource type="Texture2D" uid="uid://b83e6bciube4r" path="res://asset/control/InventorySlotsPrerssed.png" id="17_3p0rx"]
 [ext_resource type="PackedScene" uid="uid://bp8wd0pk0cj58" path="res://scene/UI/inventory_ui/mini_inventory.tscn" id="18_kpq7b"]
+[ext_resource type="PackedScene" uid="uid://bryudnbm3yjh8" path="res://script/inventory/items/ember_item.tscn" id="18_yhth7"]
 [ext_resource type="PackedScene" uid="uid://2l2apuj7e5d1" path="res://script/inventory/items/golden_apple_collectable.tscn" id="19_cvxxi"]
 
 [node name="main" type="Node2D"]
@@ -160,17 +159,12 @@ autostart = true
 
 [node name="inventory" type="CanvasLayer" parent="."]
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="inventory"]
-position = Vector2(261, 309)
-scale = Vector2(1.71429, 1.71429)
-texture_normal = ExtResource("16_coocx")
-texture_pressed = ExtResource("17_3p0rx")
-
 [node name="MiniInventory" parent="inventory" instance=ExtResource("18_kpq7b")]
-offset_left = 248.0
-offset_top = 299.0
-offset_right = 288.0
-offset_bottom = 339.0
+offset_left = 261.0
+offset_top = 309.0
+offset_right = 420.0
+offset_bottom = 366.0
+scale = Vector2(1.18, 1.18)
 
 [node name="Timer_level" type="Timer" parent="."]
 wait_time = 20.0
@@ -206,6 +200,9 @@ position = Vector2(608, 77)
 
 [node name="Golden Apple10" parent="." instance=ExtResource("19_cvxxi")]
 position = Vector2(543, 6)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("18_yhth7")]
+position = Vector2(764, -115)
 
 [connection signal="timeout" from="timer_spawner_PenebangKayu" to="." method="_on_timer_spawner_penebang_kayu_timeout"]
 [connection signal="timeout" from="Timer_level" to="." method="_on_timer_level_timeout"]

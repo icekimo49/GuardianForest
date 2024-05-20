@@ -38,18 +38,25 @@ columns = 3
 layout_mode = 2
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="NinePatchRect/GridContainer/Inventory_UI_Slot"]
+self_modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.21, 0.21)
 texture_normal = ExtResource("4_jdl8j")
 
 [node name="Inventory_UI_Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_v4osw")]
 layout_mode = 2
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="NinePatchRect/GridContainer/Inventory_UI_Slot2"]
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="NinePatchRect/GridContainer/Inventory_UI_Slot2"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.21, 0.21)
+texture_normal = ExtResource("4_jdl8j")
 
 [node name="Inventory_UI_Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_v4osw")]
 layout_mode = 2
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="NinePatchRect/GridContainer/Inventory_UI_Slot3"]
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="NinePatchRect/GridContainer/Inventory_UI_Slot3"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.21, 0.21)
+texture_normal = ExtResource("4_jdl8j")
 
 [node name="more_item" type="Button" parent="."]
 layout_mode = 0
@@ -64,4 +71,6 @@ icon_alignment = 1
 script = ExtResource("4_1ay34")
 
 [connection signal="pressed" from="NinePatchRect/GridContainer/Inventory_UI_Slot/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/GridContainer/Inventory_UI_Slot2/TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
+[connection signal="pressed" from="NinePatchRect/GridContainer/Inventory_UI_Slot3/TouchScreenButton3" to="." method="_on_touch_screen_button_3_pressed"]
 [connection signal="pressed" from="more_item" to="more_item" method="_on_pressed"]

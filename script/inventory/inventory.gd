@@ -22,6 +22,7 @@ func insert(item: InvItem):
 		if !emptyslots.is_empty():
 			emptyslots[0].item = item
 			emptyslots[0].amount = 1
+			print(emptyslots[0].item.name)
 	update.emit()
 
 func swap_item_slot(select1, select2):
@@ -30,4 +31,3 @@ func swap_item_slot(select1, select2):
 		slots[select1] = slots[select2]
 		slots[select2] = temp_inv
 		update.emit()
-		print(slots[7].item.name)

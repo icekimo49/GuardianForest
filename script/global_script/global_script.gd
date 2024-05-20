@@ -12,6 +12,9 @@ var inv_is_open = false
 var drop_item_loc
 var drop_item = false
 var malam : bool = true
+var select1 = null
+var select2 = null
+var item_in_use : String
 
 #pohon
 var posisi_pohon = []
