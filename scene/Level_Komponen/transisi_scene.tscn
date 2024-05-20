@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://dikvjilyy535w"]
+
+[ext_resource type="Script" path="res://scene/Level_Komponen/transisi_scene.gd" id="1_m6kcm"]
+[ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="2_1f764"]
+[ext_resource type="Texture2D" uid="uid://csf53dnfncelm" path="res://scene/UI/menu/font/text-1710175318481.png" id="3_sd16x"]
+[ext_resource type="Texture2D" uid="uid://ct3ic460lyh78" path="res://scene/UI/menu/font/text-1710175169846.png" id="4_fn756"]
+
+[sub_resource type="Animation" id="Animation_st6ll"]
+resource_name = "dissolve"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guardian_forest:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nh1pq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guardian_forest:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3gkn6"]
+_data = {
+"RESET": SubResource("Animation_nh1pq"),
+"dissolve": SubResource("Animation_st6ll")
+}
+
+[node name="transisi_scene" type="CanvasLayer"]
+script = ExtResource("1_m6kcm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16, 9)
+color = Color(0.129412, 0.14902, 0.180392, 1)
+
+[node name="guardian_forest" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(164, 69)
+
+[node name="PointLight2D" type="PointLight2D" parent="guardian_forest"]
+visible = false
+position = Vector2(165, 97)
+scale = Vector2(1.25917, 1.25917)
+color = Color(0.111097, 0.381896, 0.719218, 1)
+energy = 1.12
+shadow_enabled = true
+shadow_filter_smooth = 50.0
+texture = ExtResource("2_1f764")
+texture_scale = 0.8
+
+[node name="Text-1710175318481" type="Sprite2D" parent="guardian_forest"]
+position = Vector2(159, 95)
+texture = ExtResource("3_sd16x")
+
+[node name="Text-1710175169846" type="Sprite2D" parent="guardian_forest/Text-1710175318481"]
+position = Vector2(-1, -6)
+texture = ExtResource("4_fn756")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3gkn6")
+}

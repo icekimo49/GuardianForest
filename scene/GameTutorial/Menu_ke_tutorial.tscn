@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://boyjp71m3uskg"]
+[gd_scene load_steps=39 format=3 uid="uid://boyjp71m3uskg"]
 
 [ext_resource type="Texture2D" uid="uid://md6l6yk48tfj" path="res://asset/environtment/langit/1.png" id="1_i1ag3"]
 [ext_resource type="Script" path="res://scene/GameTutorial/Menu_ke_tutorial.gd" id="1_ir6e8"]
@@ -217,7 +217,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_n7je2"]
 resource_name = "ngedip"
-length = 4.0
+length = 6.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -226,10 +226,10 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_xeqnn"]
@@ -252,6 +252,12 @@ _data = {
 "RESET": SubResource("Animation_xeqnn"),
 "ngedip": SubResource("Animation_n7je2")
 }
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qddek"]
+a = Vector2(-30, -2)
+b = Vector2(1000, -3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upvdv"]
 
 [node name="GameTutorial" type="Node2D"]
 script = ExtResource("1_ir6e8")
@@ -572,4 +578,30 @@ position = Vector2(316, 165)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("22_ub2jm")
 
+[node name="BorderAtasBawah2" type="StaticBody2D" parent="."]
+position = Vector2(-580, 123)
+
+[node name="atas" type="CollisionShape2D" parent="BorderAtasBawah2"]
+position = Vector2(-108, 45)
+rotation = -0.410667
+shape = SubResource("SegmentShape2D_qddek")
+
+[node name="atas2" type="CollisionShape2D" parent="BorderAtasBawah2"]
+position = Vector2(-33, 33)
+rotation = 0.0178484
+shape = SubResource("SegmentShape2D_qddek")
+
+[node name="bawah" type="CollisionShape2D" parent="BorderAtasBawah2"]
+position = Vector2(-112, 54)
+rotation = 0.428805
+shape = SubResource("SegmentShape2D_qddek")
+
+[node name="border_next_stage" type="Area2D" parent="."]
+position = Vector2(-472, 229)
+scale = Vector2(1, 7.67566)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border_next_stage"]
+shape = SubResource("RectangleShape2D_upvdv")
+
 [connection signal="pressed" from="CanvasLayer/tombol_start" to="." method="_on_tombol_start_pressed"]
+[connection signal="body_entered" from="border_next_stage" to="." method="_on_border_next_stage_body_entered"]

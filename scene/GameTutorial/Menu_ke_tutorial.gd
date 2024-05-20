@@ -1,5 +1,6 @@
 extends Node2D
 
+var next_level = false
 var state_start = false
 @onready var joystick = $UI/joystick
 @onready var canvas_layer = $CanvasLayer
@@ -46,13 +47,17 @@ func _physics_process(delta):
 		awan_2.global_position.x -= 3 * delta
 	if !state_start :
 		return
-	animasi()
+	if !next_level :
+		animasi()
+	
 	
 	
 func _on_tombol_start_pressed():
 	state_start = true
 	
 func animasi():
+	if !get_tree():
+		return
 	var delta = get_physics_process_delta_time()
 	main_text.modulate = lerp(main_text.modulate,Color(0,0),10* delta)
 	await get_tree().create_timer(1.0).timeout
@@ -79,6 +84,10 @@ func animasi():
 	analog_tutorial.modulate = lerp(analog_tutorial.modulate, warna_default_joystick, 3 * delta)
 	state_start = true
 	joystick.enable_analog = true
-	await get_tree().create_timer(2).timeout
+	#await get_tree().create_timer(2).timeout
 	$CanvasLayer/analog_tutorial/tutorial_ngedip.play("ngedip")
 
+func _on_border_next_stage_body_entered(body):
+	if body.is_in_group("player"):
+		next_level = true
+		TransisiScene.ganti_scene("res://scene/GameTutorial/game_tutorial.tscn")
