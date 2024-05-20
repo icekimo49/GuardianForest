@@ -133,11 +133,6 @@ position = Vector2(-40, 0)
 [node name="joystick" parent="UI" instance=ExtResource("7_dm7oj")]
 position = Vector2(24, 224)
 
-[node name="tombol_serang" type="CanvasLayer" parent="."]
-
-[node name="tombolSerang" parent="tombol_serang" instance=ExtResource("8_huxm0")]
-position = Vector2(462, 207)
-
 [node name="kolam" parent="." instance=ExtResource("11_vh36d")]
 position = Vector2(249, 0)
 
@@ -170,6 +165,11 @@ scale = Vector2(1.18, 1.18)
 wait_time = 20.0
 one_shot = true
 autostart = true
+
+[node name="tombol_serang" type="CanvasLayer" parent="."]
+
+[node name="tombolSerang" parent="tombol_serang" instance=ExtResource("8_huxm0")]
+position = Vector2(462, 207)
 
 [node name="Golden Apple" parent="." instance=ExtResource("19_cvxxi")]
 position = Vector2(304, -8)
