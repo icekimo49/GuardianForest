@@ -45,8 +45,7 @@ func close():
 func select_item():
 	pass
 
-
-func _on_button_1_pressed():
+func _on_tombol_1_pressed():
 	if select1 == null:
 		select1 = 0
 	elif select2 == null:
@@ -54,9 +53,10 @@ func _on_button_1_pressed():
 	else:
 		select1 = 0
 		select2 = null
-	print("aa")
+	print("Tombol 1")
 
-func _on_button_2_pressed():
+
+func _on_tombol_2_pressed():
 	if select1 == null:
 		select1 = 1
 	elif select2 == null:
@@ -64,8 +64,9 @@ func _on_button_2_pressed():
 	else:
 		select1 = 1
 		select2 = null
+		print("Tombol 2")
 
-func _on_button_3_pressed():
+func _on_tombol_3_pressed():
 	if select1 == null:
 		select1 = 2
 	elif select2 == null:
@@ -73,8 +74,9 @@ func _on_button_3_pressed():
 	else:
 		select1 = 2
 		select2 = null
-
-func _on_button_4_pressed():
+	print('Tombol 3')
+	
+func _on_tombol_4_pressed():
 	if select1 == null:
 		select1 = 3
 	elif select2 == null:
@@ -82,8 +84,9 @@ func _on_button_4_pressed():
 	else:
 		select1 = 3
 		select2 = null
+	print("Tombol 4")
 
-func _on_button_5_pressed():
+func _on_tombol_5_pressed():
 	if select1 == null:
 		select1 = 4
 	elif select2 == null:
@@ -91,8 +94,10 @@ func _on_button_5_pressed():
 	else:
 		select1 = 4
 		select2 = null
+	print("Tombol 5")
+	
 
-func _on_button_6_pressed():
+func _on_tombol_6_pressed():
 	if select1 == null:
 		select1 = 5
 	elif select2 == null:
@@ -100,8 +105,9 @@ func _on_button_6_pressed():
 	else:
 		select1 = 5
 		select2 = null
-
-func _on_button_7_pressed():
+	print("Tombol 6")
+	
+func _on_tombol_7_pressed():
 	if select1 == null:
 		select1 = 6
 	elif select2 == null:
@@ -109,8 +115,9 @@ func _on_button_7_pressed():
 	else:
 		select1 = 6
 		select2 = null
-
-func _on_button_8_pressed():
+	print("Tombol 7")
+	
+func _on_tombol_8_pressed():
 	if select1 == null:
 		select1 = 7
 	elif select2 == null:
@@ -118,3 +125,4 @@ func _on_button_8_pressed():
 	else:
 		select1 = 7
 		select2 = null
+	print("Tombol 8")
