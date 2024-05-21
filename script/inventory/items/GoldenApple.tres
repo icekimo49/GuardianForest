@@ -9,4 +9,4 @@ name = "Golden Apple"
 texture = ExtResource("2_5om0a")
 stack = false
 type = true
-ukuran_item = Vector2(0, 0)
+ukuran_item = Vector2(0.05, 0.05)
