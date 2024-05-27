@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://8l67bi7sx3cp" path="res://asset/environtment/tileset_water.png" id="1_ov82f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_36nbh"]
-radius = 19.0263
+radius = 26.0768
 
 [node name="kolamAir" type="StaticBody2D"]
 
