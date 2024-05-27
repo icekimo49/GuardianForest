@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cd0oh2t77de80"]
+[gd_scene load_steps=15 format=3 uid="uid://cd0oh2t77de80"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_52ebj"]
 [ext_resource type="Texture2D" uid="uid://8l67bi7sx3cp" path="res://asset/environtment/tileset_water.png" id="2_sa1ej"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d60xcrr7mvka" path="res://scene/Kamera/game_camera.tscn" id="9_04cy2"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://scene/pohon.tscn" id="9_jaoby"]
 [ext_resource type="Script" path="res://scene/main/NightCycle.gd" id="10_jx0eh"]
+[ext_resource type="PackedScene" uid="uid://c8hkr5cfrve56" path="res://scene/penebang_kayu/spawner_penebang_kayu.tscn" id="11_q2v3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53gnj"]
 texture = ExtResource("1_52ebj")
@@ -1300,3 +1301,10 @@ position = Vector2(199, 168)
 [node name="NightCycle" type="CanvasModulate" parent="."]
 color = Color(0.160784, 0.380392, 0.509804, 1)
 script = ExtResource("10_jx0eh")
+
+[node name="Spawner_PenebangKayu" parent="." instance=ExtResource("11_q2v3j")]
+position = Vector2(590, -24)
+
+[node name="Spawner_PenebangKayu2" parent="." instance=ExtResource("11_q2v3j")]
+visible = false
+position = Vector2(827, 146)
