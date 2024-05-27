@@ -1,35 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://cs6b5jgiul2ci"]
+[gd_scene load_steps=7 format=3 uid="uid://cs6b5jgiul2ci"]
 
 [ext_resource type="Texture2D" uid="uid://c305dar51nb07" path="res://resources/spr_tree1.png" id="1_2lg1o"]
 [ext_resource type="Script" path="res://scene/pohon.gd" id="1_taq8s"]
 [ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://scene/penebang/api.tscn" id="2_tgoya"]
-[ext_resource type="PackedScene" uid="uid://c2m82o3i8088c" path="res://scene/detektor_pohon.tscn" id="4_nqqod"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4j7r"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_sjc8e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yudq5"]
 radius = 38.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dgi8g"]
 polygon = PackedVector2Array(-6, 10, -4, 18, -8, 21, 3, 21, -7, 23, -3, 26, 6, 25, 10, 19, 3, 15, 5, 9)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8iudl"]
-radius = 12.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_3o3m2"]
-radius = 12.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hv04y"]
-radius = 12.0416
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_j5vjy"]
-radius = 12.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8hrv6"]
-radius = 12.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4jfqb"]
-radius = 12.0
 
 [node name="Pohon" type="StaticBody2D"]
 script = ExtResource("1_taq8s")
@@ -40,7 +21,7 @@ texture = ExtResource("1_2lg1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 18)
-shape = SubResource("RectangleShape2D_w4j7r")
+shape = SubResource("CircleShape2D_sjc8e")
 
 [node name="Area2D" type="Area2D" parent="." groups=["pohon"]]
 collision_layer = 8
@@ -62,57 +43,6 @@ occluder = SubResource("OccluderPolygon2D_dgi8g")
 
 [node name="timer_PenebangKayu" type="Timer" parent="."]
 wait_time = 5.0
-
-[node name="Area2D10" parent="." instance=ExtResource("4_nqqod")]
-position = Vector2(27, 26)
-
-[node name="Area2D2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(38, 0)
-shape = SubResource("CircleShape2D_8iudl")
-
-[node name="Area2D3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(-27, 27)
-shape = SubResource("CircleShape2D_3o3m2")
-
-[node name="Area2D4" type="Area2D" parent="."]
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D4"]
-position = Vector2(27, 26)
-shape = SubResource("CircleShape2D_hv04y")
-
-[node name="Area2D5" type="Area2D" parent="."]
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D5"]
-position = Vector2(0, -38)
-shape = SubResource("CircleShape2D_j5vjy")
-
-[node name="Area2D6" type="Area2D" parent="."]
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D6"]
-position = Vector2(-38, 0)
-shape = SubResource("CircleShape2D_8hrv6")
-
-[node name="Area2D7" type="Area2D" parent="."]
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D7"]
-position = Vector2(0, 38)
-shape = SubResource("CircleShape2D_4jfqb")
-
-[node name="Area2D8" type="Area2D" parent="."]
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Area2D8"]
-position = Vector2(-27, -27)
-shape = SubResource("CircleShape2D_4jfqb")
-
-[node name="Area2D9" type="Area2D" parent="."]
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Area2D9"]
-position = Vector2(28, -26)
-shape = SubResource("CircleShape2D_4jfqb")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

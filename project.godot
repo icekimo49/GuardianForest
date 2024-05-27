@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GuardianForest"
-run/main_scene="res://scene/GameTutorial/Menu_ke_tutorial.tscn"
+run/main_scene="res://scene/main/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -75,7 +75,6 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
 2d/snap/snap_2d_transforms_to_pixel=true

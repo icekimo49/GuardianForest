@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://boyjp71m3uskg"]
+[gd_scene load_steps=41 format=3 uid="uid://boyjp71m3uskg"]
 
 [ext_resource type="Texture2D" uid="uid://md6l6yk48tfj" path="res://asset/environtment/langit/1.png" id="1_i1ag3"]
 [ext_resource type="Script" path="res://scene/GameTutorial/Menu_ke_tutorial.gd" id="1_ir6e8"]
@@ -18,11 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://cepjowy0mhxvl" path="res://environtmen_scene/batang_kayu.tscn" id="10_6aym3"]
 [ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://scene/player/player.tscn" id="12_5amrn"]
 [ext_resource type="Shader" path="res://scene/GameTutorial/game_tutorial.gdshader" id="14_jsffo"]
+[ext_resource type="PackedScene" uid="uid://bd2crlykj5d1l" path="res://scene/shader/awan_hitam.tscn" id="16_8iki7"]
 [ext_resource type="FontFile" uid="uid://bql7walclmmtp" path="res://scene/UI/menu/font/font_1.ttf" id="17_i6obh"]
 [ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="18_sq2jt"]
 [ext_resource type="Texture2D" uid="uid://ct3ic460lyh78" path="res://scene/UI/menu/font/text-1710175169846.png" id="19_gyxmi"]
 [ext_resource type="Texture2D" uid="uid://csf53dnfncelm" path="res://scene/UI/menu/font/text-1710175318481.png" id="20_7e0fi"]
 [ext_resource type="Texture2D" uid="uid://bh7vn5mf20wkr" path="res://scene/UI/menu/font/web-gemastik-alt.png" id="22_ub2jm"]
+[ext_resource type="PackedScene" uid="uid://4tm2rs77s10v" path="res://scene/setting/touch_screen_button.tscn" id="25_x7rp8"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1wwlw"]
 frequency = 0.0075
@@ -281,6 +283,17 @@ position = Vector2(-888, 100)
 scale = Vector2(2.77141, 2.77141)
 texture = ExtResource("2_hugf1")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="ParallaxBackground3/awan2"]
+position = Vector2(272.785, -108.97)
+
+[node name="awan3" type="Sprite2D" parent="ParallaxBackground3"]
+position = Vector2(643, 100)
+scale = Vector2(2.77141, 2.77141)
+texture = ExtResource("2_hugf1")
+
+[node name="awan_3_screen_exit" type="VisibleOnScreenNotifier2D" parent="ParallaxBackground3/awan3"]
+position = Vector2(271.342, -47.6292)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-894, -96)
 rotation = -3.14159
@@ -428,19 +441,7 @@ texture = ExtResource("7_ucn81")
 [node name="Player" parent="." instance=ExtResource("12_5amrn")]
 position = Vector2(-653, 167)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = 10
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-1484, -784)
-motion_mirroring = Vector2(640, 360)
-
-[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
-material = SubResource("ShaderMaterial_m1d80")
-offset_right = 640.0
-offset_bottom = 380.0
-color = Color(0.00235368, 0.00678978, 0.0615438, 1)
-metadata/_edit_use_anchors_ = true
+[node name="ParallaxBackground" parent="." instance=ExtResource("16_8iki7")]
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 10
@@ -578,6 +579,9 @@ position = Vector2(316, 165)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("22_ub2jm")
 
+[node name="tombol_setting" parent="CanvasLayer" instance=ExtResource("25_x7rp8")]
+position = Vector2(8, 8)
+
 [node name="BorderAtasBawah2" type="StaticBody2D" parent="."]
 position = Vector2(-580, 123)
 
@@ -603,5 +607,7 @@ scale = Vector2(1, 7.67566)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border_next_stage"]
 shape = SubResource("RectangleShape2D_upvdv")
 
+[connection signal="screen_exited" from="ParallaxBackground3/awan2/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_exited" from="ParallaxBackground3/awan3/awan_3_screen_exit" to="." method="_on_awan_3_screen_exit_screen_exited"]
 [connection signal="pressed" from="CanvasLayer/tombol_start" to="." method="_on_tombol_start_pressed"]
 [connection signal="body_entered" from="border_next_stage" to="." method="_on_border_next_stage_body_entered"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://7in3xalka303"]
+
+[ext_resource type="FontFile" uid="uid://bql7walclmmtp" path="res://scene/UI/menu/font/font_1.ttf" id="1_fncbl"]
+
+[node name="Credit" type="Node2D"]
+
+[node name="Credit" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -120.0
+offset_right = 20.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00236, 1)
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.39
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_fonts/normal_font = ExtResource("1_fncbl")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Kredit"
+fit_content = true
+tab_size = 0

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd2crlykj5d1l"]
+
+[ext_resource type="Shader" path="res://scene/GameTutorial/game_tutorial.gdshader" id="1_de6yi"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1wwlw"]
+frequency = 0.0075
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ufuh1"]
+width = 640
+height = 380
+seamless = true
+seamless_blend_skirt = 0.754
+noise = SubResource("FastNoiseLite_1wwlw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1d80"]
+shader = ExtResource("1_de6yi")
+shader_parameter/density = 0.25
+shader_parameter/kecepatan = Vector2(0.2, 0.1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ufuh1")
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+layer = 10
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(-1484, -784)
+motion_mirroring = Vector2(640, 360)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer"]
+material = SubResource("ShaderMaterial_m1d80")
+offset_right = 640.0
+offset_bottom = 380.0
+color = Color(0.00235368, 0.00678978, 0.0615438, 1)
+metadata/_edit_use_anchors_ = true
