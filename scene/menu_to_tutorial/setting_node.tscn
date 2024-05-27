@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://djowpa7pk0lmx"]
+
+[ext_resource type="FontFile" uid="uid://bql7walclmmtp" path="res://scene/UI/menu/font/font_1.ttf" id="1_03uyi"]
+
+[node name="settingNode" type="Node2D"]
+
+[node name="settings" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -200.0
+offset_right = 20.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00236, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_fonts/normal_font = ExtResource("1_03uyi")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Pengaturan"
+fit_content = true
+tab_size = 0

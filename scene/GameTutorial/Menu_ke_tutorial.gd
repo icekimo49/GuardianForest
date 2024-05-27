@@ -2,6 +2,17 @@ extends Node2D
 
 var next_level = false
 var state_start = false
+
+@onready var awan_2 = $ParallaxBackground3/awan2
+@onready var awan_3 = $ParallaxBackground3/awan3
+
+
+#Tombol Start
+@onready var tombol_start = $CanvasLayer/tombol_start
+@onready var tombol_setting = $CanvasLayer/tombol_setting
+
+
+
 @onready var joystick = $UI/joystick
 @onready var canvas_layer = $CanvasLayer
 @onready var main_text = $CanvasLayer/RichTextLabel
@@ -15,7 +26,6 @@ var state_start = false
 @onready var latar = $ParallaxBackground3/Latar
 @onready var bulan = $ParallaxBackground3/bulan_bintang_layer
 @onready var klise_bulan = $ParallaxBackground3/klise_bulan
-@onready var awan_2 = $ParallaxBackground3/awan2
 @onready var player = $Player
 
 var awan_sudah_naik = false
@@ -38,13 +48,23 @@ func _ready():
 	player.textAir.visible = false
 	
 	player
+	
+	tombol_setting_mati()
+	
 
+func tombol_setting_mati():
+	tombol_setting.modulate = warna_kosong
+	tombol_setting.set_block_signals(true)
 
+func tombol_setting_nyala():
+	tombol_setting.set_block_signals(false)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	bulan.global_position.x -= 1 * delta
 	if !awan_sudah_naik:
-		awan_2.global_position.x -= 3 * delta
+		awan_3.global_position.x -= 3* delta
+		awan_2.global_position.x -=3 * delta
 	if !state_start :
 		return
 	if !next_level :
@@ -79,6 +99,8 @@ func animasi():
 	camera.global_position = lerp(camera.global_position,Vector2(camera.global_position.x, 213.0),2 * delta)
 	
 	await get_tree().create_timer(1).timeout
+	tombol_setting.modulate = lerp(tombol_setting.modulate, warna_default_joystick,3 * delta)
+	tombol_setting_nyala()
 	joystick.modulate = lerp(joystick.modulate, warna_default_joystick, 3 * delta)
 	await get_tree().create_timer(.5).timeout
 	analog_tutorial.modulate = lerp(analog_tutorial.modulate, warna_default_joystick, 3 * delta)
@@ -91,3 +113,10 @@ func _on_border_next_stage_body_entered(body):
 	if body.is_in_group("player"):
 		next_level = true
 		TransisiScene.ganti_scene("res://scene/GameTutorial/game_tutorial.tscn")
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	awan_2.global_position.x = 250
+	
+func _on_awan_3_screen_exit_screen_exited():
+	awan_3.global_position.x = 250
+	
