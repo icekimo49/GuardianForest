@@ -16,11 +16,13 @@ var state_start = false
 @onready var joystick = $UI/joystick
 @onready var canvas_layer = $CanvasLayer
 @onready var main_text = $CanvasLayer/RichTextLabel
-@onready var guardian_forest = $CanvasLayer/guardian_forest
+@onready var guardian_forest = $guardian_forest
 @onready var gemastik = $CanvasLayer/Gemastik
-@onready var cahaya_GF = $CanvasLayer/guardian_forest/PointLight2D
+@onready var cahaya_GF = $CanvasLayer/PointLight2D
 @onready var camera = $Camera2D
 @onready var analog_tutorial = $CanvasLayer/analog_tutorial
+@onready var unnes = $CanvasLayer/UNNES
+@onready var lucky_semua = $CanvasLayer/LuckySemua
 
 #Animasi Latar
 @onready var latar = $ParallaxBackground3/Latar
@@ -46,7 +48,8 @@ func _ready():
 	analog_tutorial.modulate = warna_kosong
 	player.barDarah.visible = false
 	player.textAir.visible = false
-	
+	unnes.modulate = warna_kosong
+	lucky_semua.modulate = warna_kosong
 	player
 	
 	tombol_setting_mati()
@@ -82,20 +85,30 @@ func animasi():
 	main_text.modulate = lerp(main_text.modulate,Color(0,0),10* delta)
 	await get_tree().create_timer(1.0).timeout
 	
-	cahaya_GF.energy = lerp(cahaya_GF.energy, 1.5, 2 *delta)
-	guardian_forest.modulate = lerp(guardian_forest.modulate,warnaGF,2* delta)
+	lucky_semua.modulate = lerp(lucky_semua.modulate,warnaGF,2* delta)
 	await get_tree().create_timer(2.0).timeout
-	guardian_forest.modulate = lerp(guardian_forest.modulate,Color(0,-2),2* delta)
-	await get_tree().create_timer(1.0).timeout
+	lucky_semua.modulate = lerp(lucky_semua.modulate,Color(0,-2),2* delta)
+	await get_tree().create_timer(2.0).timeout
 	
+	cahaya_GF.energy = lerp(cahaya_GF.energy, 1.5, 2 *delta)
 	gemastik.modulate = lerp(gemastik.modulate,warnaGF,2* delta)
+	unnes.modulate = lerp(unnes.modulate, warnaGF, 2*delta)
 	await get_tree().create_timer(2.0).timeout
 	gemastik.modulate = lerp(gemastik.modulate,Color(0,-2),2* delta)
+	unnes.modulate = lerp(unnes.modulate, Color(0,-2), 2*delta)
 	cahaya_GF.energy = lerp(cahaya_GF.energy, 0.0, 2 *delta)
 	
 	await get_tree().create_timer(2.0).timeout
+	guardian_forest.modulate = lerp(guardian_forest.modulate,warnaGF,2* delta)
+	await get_tree().create_timer(2.0).timeout
+	#guardian_forest.modulate = lerp(guardian_forest.modulate,Color(0,-2),2* delta)
+	
+	
+	
+	await get_tree().create_timer(2.0).timeout
 	awan_sudah_naik = true
-	awan_2.global_position.y = lerp(awan_2.global_position.y, 70.0, lerp(3,0,1*delta) * delta)
+	guardian_forest.global_position.y = lerp(guardian_forest.global_position.y, 70.0,lerp(3,0,1*delta) * delta)
+	awan_2.global_position.y = lerp(awan_2.global_position.y, 60.0, lerp(3,0,1*delta) * delta)
 	camera.global_position = lerp(camera.global_position,Vector2(camera.global_position.x, 213.0),2 * delta)
 	
 	await get_tree().create_timer(1).timeout

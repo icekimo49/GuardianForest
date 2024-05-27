@@ -29,7 +29,6 @@ func _process(delta):
 		#CLAMPER
 		#small_Circle.position = big_Circle.position + (small_Circle.position - big_Circle.position).limit_length(max_distance)
 
-
 func arah():
 	var a = Vector2.RIGHT
 	var b = Vector2(small_Circle.position.x / max_distance, small_Circle.position.y / max_distance)
