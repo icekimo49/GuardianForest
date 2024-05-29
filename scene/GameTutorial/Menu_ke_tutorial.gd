@@ -3,8 +3,6 @@ extends Node2D
 var next_level = false
 var state_start = false
 
-const LOADING_SCREEN_PATH = preload("res://scene/loading_screen/loading_screen.tscn")
-
 @onready var awan_2 = $ParallaxBackground3/awan2
 @onready var awan_3 = $ParallaxBackground3/awan3
 
@@ -127,10 +125,10 @@ func animasi():
 
 func _on_border_next_stage_body_entered(body):
 	if body.is_in_group("player"):
-		set_physics_process(false)
-		$CanvasLayer/analog_tutorial.queue_free()
+		var LOADING_SCREEN_PATH = load("res://scene/loading_screen/loading_screen.tscn")
+		analog_tutorial.modulate = warna_kosong
 		next_level = true
-		TransisiScene.ganti_scene(LOADING_SCREEN_PATH.resource_path)
+		get_tree().change_scene_to_packed(LOADING_SCREEN_PATH)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	awan_2.global_position.x = 250

@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqu3d3hbn70to"]
+[gd_scene load_steps=15 format=3 uid="uid://dqu3d3hbn70to"]
 
 [ext_resource type="Script" path="res://scene/loading_screen/loading_screen.gd" id="1_ak0i6"]
 [ext_resource type="Texture2D" uid="uid://3bqtndhxbppy" path="res://scene/GameTutorial/Tutorial_Item/gambar.jpg" id="1_keu5t"]
-[ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="2_ccida"]
 [ext_resource type="Texture2D" uid="uid://csf53dnfncelm" path="res://scene/UI/menu/font/text-1710175318481.png" id="3_yftcg"]
 [ext_resource type="Texture2D" uid="uid://drw63nhd61m4l" path="res://environtmen_scene/alang txt.png" id="4_87htg"]
 [ext_resource type="PackedScene" uid="uid://dgaunqj7nm4j4" path="res://environtmen_scene/alang_alang.tscn" id="5_17vg4"]
@@ -11,233 +10,41 @@
 [ext_resource type="Texture2D" uid="uid://cugq7tuqnjfx4" path="res://scene/loading_screen/AirLoadingScreenEMPTY.png" id="9_ucmtm"]
 [ext_resource type="Texture2D" uid="uid://b83l3tga7ieph" path="res://scene/loading_screen/AirLoadingScreenFILL.png" id="10_hjvi4"]
 
-[sub_resource type="Animation" id="Animation_nh1pq"]
+[sub_resource type="Animation" id="Animation_3yrqh"]
 length = 0.001
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("guardian_forest:modulate")
+tracks/0/path = NodePath(".:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(576, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
-tracks/1/type = "value"
+tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/path = NodePath(".:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(259, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Node:modulate")
+tracks/2/path = NodePath(".:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Text-1716860562400:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AlangTxt:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AlangTxt:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Node:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Text-1716860562400:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("PenyiramAir:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_st6ll"]
-resource_name = "dissolve"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("guardian_forest:modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.3, 3.3, 4, 4.8, 6.3, 7.2, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Node:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(2.1, 3.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Text-1716860562400:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AlangTxt:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AlangTxt:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Node:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Text-1716860562400:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("PenyiramAir:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3gkn6"]
-_data = {
-"RESET": SubResource("Animation_nh1pq"),
-"dissolve": SubResource("Animation_st6ll")
+"values": [-0.659712]
 }
 
 [sub_resource type="Animation" id="Animation_auwco"]
@@ -279,48 +86,17 @@ tracks/2/keys = {
 "values": [-0.659712, -0.738274, -0.659712]
 }
 
-[sub_resource type="Animation" id="Animation_3yrqh"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(576, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(259, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.659712]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_67mkm"]
 _data = {
 "RESET": SubResource("Animation_3yrqh"),
 "new_animation": SubResource("Animation_auwco")
 }
+
+[sub_resource type="Gradient" id="Gradient_dg3r0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1u5qx"]
+gradient = SubResource("Gradient_dg3r0")
+fill_from = Vector2(1, 0.0299145)
 
 [node name="Loading_Screen" type="Control"]
 layout_mode = 3
@@ -332,37 +108,18 @@ grow_vertical = 2
 script = ExtResource("1_ak0i6")
 
 [node name="ColorRect" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(318, 189)
 scale = Vector2(3.64338, 2.0494)
 texture = ExtResource("1_keu5t")
 
 [node name="guardian_forest" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(164, 69)
-
-[node name="PointLight2D" type="PointLight2D" parent="guardian_forest"]
-visible = false
-position = Vector2(165, 97)
-scale = Vector2(1.25917, 1.25917)
-color = Color(0.111097, 0.381896, 0.719218, 1)
-energy = 1.12
-shadow_enabled = true
-shadow_filter_smooth = 50.0
-texture = ExtResource("2_ccida")
-texture_scale = 0.8
 
 [node name="Text-1710175318481" type="Sprite2D" parent="guardian_forest"]
 position = Vector2(-26, -3)
 texture = ExtResource("3_yftcg")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_3gkn6")
-}
-
 [node name="Node" type="Node2D" parent="."]
-visible = false
 position = Vector2(-62, -59)
 
 [node name="alangAlang1" parent="Node" instance=ExtResource("5_17vg4")]
@@ -380,14 +137,12 @@ rotation = 0.0831349
 scale = Vector2(2.2, 2.2)
 
 [node name="Text-1716860562400" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 2
 position = Vector2(155, 312)
 scale = Vector2(0.27673, 0.27673)
 texture = ExtResource("6_0ri8t")
 
 [node name="AlangTxt" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 2
 position = Vector2(165, 271)
 scale = Vector2(0.841667, 0.841667)
@@ -413,3 +168,22 @@ offset_bottom = 318.0
 fill_mode = 1
 texture_under = ExtResource("9_ucmtm")
 texture_progress = ExtResource("10_hjvi4")
+
+[node name="warnaKosong" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(325, 75)
+rotation = 3.14159
+scale = Vector2(12.1801, -10.5167)
+
+[node name="warnaNormal" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(325, 75)
+rotation = 3.14159
+scale = Vector2(12.1801, -10.5167)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(325, 75)
+scale = Vector2(-12.1801, 10.5167)
+texture = SubResource("GradientTexture2D_1u5qx")
