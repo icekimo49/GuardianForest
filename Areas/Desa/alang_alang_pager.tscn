@@ -1,0 +1,415 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpc7ikqw5cgaq"]
+
+[ext_resource type="PackedScene" uid="uid://dgaunqj7nm4j4" path="res://Character/Tanaman/Alang-Alang/alang_alang.tscn" id="1_2ovey"]
+
+[node name="Alang-Alang" type="Node2D"]
+
+[node name="alangAlang1" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(-1, 16)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang4" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(-40, 60)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang5" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(13, 29)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang6" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(-1, 46)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang7" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(-14, 62)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang8" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(25, 4)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang9" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(45, 16)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang10" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(36, 27)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang11" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(20, 44)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang12" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(12, 59)
+rotation = 3.14159
+scale = Vector2(0.64, -0.64)
+
+[node name="alangAlang2" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(-11, 28)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang3" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(-25, 43)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang13" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(37, 56)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang14" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(47, 37)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang15" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(66, 16)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang16" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(67, 27)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang17" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(67, 42)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang18" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(60, 58)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang19" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(80, 1)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang20" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(92, 15)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang21" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(93, 34)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang22" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(88, 50)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang98" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(88, 50)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang23" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(100, 10)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang24" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(112, 24)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang35" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(257, 41)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang36" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(252, 57)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang37" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(264, 17)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang38" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(276, 31)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang25" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(113, 43)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang26" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(108, 59)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang27" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(125, 10)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang28" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(137, 24)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang29" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(138, 43)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang30" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(137, 55)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang99" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(81, 58)
+scale = Vector2(0.640117, 0.640117)
+
+[node name="alangAlang31" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(148, 8)
+rotation = 3.14159
+scale = Vector2(0.64, -0.640117)
+
+[node name="alangAlang32" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(160, 22)
+rotation = 3.14159
+scale = Vector2(0.64, -0.640117)
+
+[node name="alangAlang33" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(161, 41)
+rotation = 3.14159
+scale = Vector2(0.64, -0.640117)
+
+[node name="alangAlang34" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(161, 57)
+rotation = 3.14159
+scale = Vector2(0.64, -0.640117)
+
+[node name="alangAlang39" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(182, 57)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang40" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(213, 58)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang41" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(229, 58)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang42" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(321, 17)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang43" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(282, 61)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang44" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(335, 30)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang45" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(321, 47)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang46" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(308, 63)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang47" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(347, 5)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang48" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(367, 17)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang49" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(358, 28)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang50" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(342, 45)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang51" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(334, 60)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang52" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(311, 29)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang53" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(297, 44)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang54" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(359, 57)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang55" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(369, 38)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang56" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(388, 17)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang57" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(389, 28)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang58" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(389, 43)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang59" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(382, 59)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang60" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(402, 2)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang61" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(414, 16)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang62" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(415, 35)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang63" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(410, 51)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang64" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(422, 11)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang65" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(434, 25)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang66" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(579, 42)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang67" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(574, 58)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang68" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(586, 18)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang69" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(598, 32)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang70" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(435, 44)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang71" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(430, 60)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang72" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(447, 11)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang73" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(459, 25)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang83" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(501, 12)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang84" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(514, 45)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang85" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(538, 26)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang86" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(530, 6)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang87" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(543, 39)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang88" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(567, 20)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang89" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(608, 7)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang90" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(621, 40)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang92" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(595, 52)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang93" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(605, 27)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang94" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(618, 60)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang95" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(630, 40)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang96" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(640, 15)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang97" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(653, 48)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang91" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(645, 21)
+scale = Vector2(-0.64, 0.640117)
+
+[node name="alangAlang74" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(460, 44)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang75" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(455, 60)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang76" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(470, 9)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang77" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(482, 23)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang78" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(483, 42)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang79" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(483, 58)
+scale = Vector2(0.64, 0.640117)
+
+[node name="alangAlang80" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(504, 58)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang81" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(535, 59)
+scale = Vector2(0.64, 0.64)
+
+[node name="alangAlang82" parent="." instance=ExtResource("1_2ovey")]
+position = Vector2(551, 59)
+scale = Vector2(0.64, 0.64)

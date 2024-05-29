@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://de5spbk16rav2"]
+
+[ext_resource type="Script" path="res://Areas/Desa/Rumah/rumah.gd" id="1_yi7s4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5sxfs"]
+load_path = "res://.godot/imported/tilemap_packed_farm.png-a777ff3d3c6aaaa26fa5762c4b2f6b76.ctex"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkecq"]
+radius = 4.75841
+height = 19.984
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_80myd"]
+load_path = "res://.godot/imported/tilemap_packed_farm.png-a777ff3d3c6aaaa26fa5762c4b2f6b76.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1swi6"]
+load_path = "res://.godot/imported/tilemap_packed_farm.png-a777ff3d3c6aaaa26fa5762c4b2f6b76.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u21ge"]
+load_path = "res://.godot/imported/tilemap_packed_farm.png-a777ff3d3c6aaaa26fa5762c4b2f6b76.ctex"
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ll678"]
+polygon = PackedVector2Array(-16.065, -26.9808, -32.1236, -7.0977, -30.5135, 8.3392, 0.872996, 8.3694, 30.9615, 9.3282, 47.4081, -6.8352, 48.0834, -27.1051)
+
+[node name="Rumah" type="Sprite2D"]
+rotation = -0.00360867
+scale = Vector2(1.43389, 5.37935)
+skew = 0.0314159
+texture = SubResource("CompressedTexture2D_5sxfs")
+region_enabled = true
+region_rect = Rect2(64, 96, 64, 16)
+script = ExtResource("1_yi7s4")
+
+[node name="deteksiPintu" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deteksiPintu"]
+position = Vector2(6.37534, 12.6194)
+shape = SubResource("CapsuleShape2D_bkecq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-32.6237, -6.63358, -32.7205, 10.7403, 0.670086, 11.73, 29.5714, 10.9661, 45.3879, -9.3913, 45.7872, -18.9457, -22.4792, -18.3244)
+
+[node name="dindingKanan" type="Sprite2D" parent="."]
+modulate = Color(0.741385, 0.741385, 0.741385, 1)
+position = Vector2(39.3725, -8.97874)
+rotation = -1.57161
+scale = Vector2(1.24094, 1.49833)
+skew = -0.877901
+texture = SubResource("CompressedTexture2D_80myd")
+region_enabled = true
+region_rect = Rect2(80, 96, 16, 16)
+
+[node name="AtaPD" type="Sprite2D" parent="."]
+position = Vector2(10.7504, -17.2847)
+rotation = -0.00534232
+scale = Vector2(1.03042, 0.882523)
+skew = 0.698132
+texture = SubResource("CompressedTexture2D_1swi6")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(64, 64, 64, 32)
+
+[node name="Pintu" type="Sprite2D" parent="."]
+position = Vector2(-0.139172, -6.08148)
+scale = Vector2(1, 0.939428)
+texture = SubResource("CompressedTexture2D_u21ge")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 112, 16, 16)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ll678")
+
+[connection signal="body_entered" from="deteksiPintu" to="." method="_on_deteksi_pintu_body_entered"]
+[connection signal="body_exited" from="deteksiPintu" to="." method="_on_deteksi_pintu_body_exited"]

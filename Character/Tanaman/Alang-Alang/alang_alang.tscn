@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dgaunqj7nm4j4"]
 
 [ext_resource type="Script" path="res://Character/Tanaman/Alang-Alang/alang_alang.gd" id="1_mcd47"]
-[ext_resource type="Texture2D" uid="uid://bcj4xri331two" path="res://asset/environtment/n_grass_diff_0_03.png" id="2_j5pls"]
+[ext_resource type="Texture2D" uid="uid://cbalr7hhbpkry" path="res://Character/Tanaman/Alang-Alang/Alang-Alang.tres" id="2_nddi1"]
 
 [sub_resource type="Animation" id="Animation_1wgid"]
 length = 0.001
@@ -86,7 +86,7 @@ script = ExtResource("1_mcd47")
 
 [node name="SpriteAlang" type="Sprite2D" parent="."]
 position = Vector2(1, 0)
-texture = ExtResource("2_j5pls")
+texture = ExtResource("2_nddi1")
 offset = Vector2(0, -50)
 hframes = 3
 frame = 2

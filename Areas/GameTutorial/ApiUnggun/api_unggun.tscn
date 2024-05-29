@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://bn1hnbiqhxnw0"]
+
+[ext_resource type="Texture2D" uid="uid://7fsp2781jnt3" path="res://Areas/GameTutorial/ApiUnggun/objects.png" id="1_ccfx8"]
+[ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="2_6s71x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7206p"]
+atlas = ExtResource("1_ccfx8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ar1"]
+atlas = ExtResource("1_ccfx8")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqg8l"]
+atlas = ExtResource("1_ccfx8")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c80ia"]
+atlas = ExtResource("1_ccfx8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0cl0"]
+atlas = ExtResource("1_ccfx8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpaaw"]
+atlas = ExtResource("1_ccfx8")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7tor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7206p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ar1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqg8l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c80ia")
+}],
+"loop": true,
+"name": &"mati",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0cl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpaaw")
+}],
+"loop": true,
+"name": &"panas",
+"speed": 5.0
+}]
+
+[node name="ApiUnggun" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_w7tor")
+animation = &"mati"
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1.96, 1.96)
+color = Color(1, 0.352941, 0, 1)
+energy = 0.7
+shadow_enabled = true
+shadow_filter_smooth = 50.0
+texture = ExtResource("2_6s71x")
+texture_scale = 0.8
