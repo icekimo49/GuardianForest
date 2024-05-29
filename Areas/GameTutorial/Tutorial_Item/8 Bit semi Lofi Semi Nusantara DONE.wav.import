@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bivqxhoudthop"
+path="res://.godot/imported/8 Bit semi Lofi Semi Nusantara DONE.wav-377b69c6ea4577ce040cfb79ef62bd8e.sample"
+
+[deps]
+
+source_file="res://Areas/GameTutorial/Tutorial_Item/8 Bit semi Lofi Semi Nusantara DONE.wav"
+dest_files=["res://.godot/imported/8 Bit semi Lofi Semi Nusantara DONE.wav-377b69c6ea4577ce040cfb79ef62bd8e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=4
+edit/loop_begin=0
+edit/loop_end=1
+compress/mode=0

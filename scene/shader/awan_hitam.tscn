@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bd2crlykj5d1l"]
 
-[ext_resource type="Shader" path="res://scene/GameTutorial/game_tutorial.gdshader" id="1_de6yi"]
+[ext_resource type="Shader" path="res://Areas/GameTutorial/game_tutorial.gdshader" id="1_de6yi"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1wwlw"]
 frequency = 0.0075

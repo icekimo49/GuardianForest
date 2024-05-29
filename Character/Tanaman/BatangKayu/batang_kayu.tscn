@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cepjowy0mhxvl"]
+
+[ext_resource type="Texture2D" uid="uid://dropongjkt8cy" path="res://asset/environtment/pohon bekas tebang 1.png" id="1_1owvp"]
+[ext_resource type="Script" path="res://Character/Tanaman/BatangKayu/batang_kayu.gd" id="1_7306f"]
+[ext_resource type="Texture2D" uid="uid://cs7h7oswosc04" path="res://asset/environtment/pohon bekas tebang 2.png" id="3_rmlfu"]
+
+[node name="Batang_Kayu" type="Sprite2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_7306f")
+
+[node name="kayu1" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.0400684, 0.0400684)
+texture = ExtResource("1_1owvp")
+
+[node name="kayu2" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.0232544, 0.0232544)
+texture = ExtResource("3_rmlfu")

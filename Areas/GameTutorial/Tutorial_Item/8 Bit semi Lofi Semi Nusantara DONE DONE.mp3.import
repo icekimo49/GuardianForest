@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjb62jrn8q847"
+path="res://.godot/imported/8 Bit semi Lofi Semi Nusantara DONE DONE.mp3-dc1b263c57ddf54687c316351c91030b.mp3str"
+
+[deps]
+
+source_file="res://Areas/GameTutorial/Tutorial_Item/8 Bit semi Lofi Semi Nusantara DONE DONE.mp3"
+dest_files=["res://.godot/imported/8 Bit semi Lofi Semi Nusantara DONE DONE.mp3-dc1b263c57ddf54687c316351c91030b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

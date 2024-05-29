@@ -1,5 +1,7 @@
 extends Control
 
+#var namaScene : PackedScene = load("res://Areas/GameTutorial/game_tutorial.tscn")
+
 @onready var penyiram_loading = $PenyiramAir/PenyiramLoading
 @onready var loading_bar = $LoadingBar
 @onready var loading_screen = $"."
@@ -17,7 +19,7 @@ func _ready():
 	warna_normal = warna_normal_sprite.modulate
 	warna_kosong = warna_kosong_sprite.modulate
 	penyiram_loading.play("new_animation")
-	namaScene = "res://scene/GameTutorial/game_tutorial.tscn"
+	namaScene = "res://Areas/GameTutorial/game_tutorial.tscn"
 	ResourceLoader.load_threaded_request(namaScene)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
