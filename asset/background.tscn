@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://re1g3atuhmoy"]
+
+[ext_resource type="AudioStream" path="res://asset/Musik/8 Bit semi Lofi Semi Nusantara DONE.wav" id="1_2cyh7"]
+
+[node name="Background" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_2cyh7")
+autoplay = true

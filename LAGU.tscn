@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcrmelhmr7cxa"]
+
+[ext_resource type="AudioStream" uid="uid://cjb62jrn8q847" path="res://scene/GameTutorial/Tutorial_Item/8 Bit semi Lofi Semi Nusantara DONE DONE.mp3" id="1_brnyb"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_brnyb")
+autoplay = true

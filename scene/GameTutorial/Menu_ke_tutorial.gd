@@ -37,6 +37,8 @@ var warna_kosong = Color(0,0)
 @onready var warnaGF = guardian_forest.modulate
 @onready var warna_default_joystick = joystick.modulate
 @onready var warna_analog_tutorial = analog_tutorial.modulate
+@onready var canvas_layer_2 = $CanvasLayer2
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,7 +53,7 @@ func _ready():
 	unnes.modulate = warna_kosong
 	lucky_semua.modulate = warna_kosong
 	player
-	
+	canvas_layer_2.visible = false
 	tombol_setting_mati()
 	
 
@@ -72,7 +74,6 @@ func _physics_process(delta):
 		return
 	if !next_level :
 		animasi()
-	
 	
 	
 func _on_tombol_start_pressed():
@@ -107,8 +108,8 @@ func animasi():
 	
 	await get_tree().create_timer(2.0).timeout
 	awan_sudah_naik = true
-	guardian_forest.global_position.y = lerp(guardian_forest.global_position.y, 70.0,lerp(3,0,1*delta) * delta)
-	awan_2.global_position.y = lerp(awan_2.global_position.y, 60.0, lerp(3,0,1*delta) * delta)
+	guardian_forest.global_position.y = lerp(guardian_forest.global_position.y, 30.0,lerp(3,0,1*delta) * delta)
+	awan_2.global_position.y = lerp(awan_2.global_position.y, 30.0, lerp(3,0,1*delta) * delta)
 	camera.global_position = lerp(camera.global_position,Vector2(camera.global_position.x, 213.0),2 * delta)
 	
 	await get_tree().create_timer(1).timeout
@@ -133,3 +134,11 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func _on_awan_3_screen_exit_screen_exited():
 	awan_3.global_position.x = 250
 	
+func diam_ditempat():
+	pass
+	
+func _on_tombol_setting_pressed():
+	canvas_layer_2.visible = true
+
+func _on_touch_screen_button_2_pressed():
+	canvas_layer_2.visible = false

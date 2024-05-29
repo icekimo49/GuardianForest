@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://boyjp71m3uskg"]
+[gd_scene load_steps=46 format=3 uid="uid://boyjp71m3uskg"]
 
 [ext_resource type="Texture2D" uid="uid://md6l6yk48tfj" path="res://asset/environtment/langit/1.png" id="1_i1ag3"]
 [ext_resource type="Script" path="res://scene/GameTutorial/Menu_ke_tutorial.gd" id="1_ir6e8"]
@@ -27,6 +27,9 @@
 [ext_resource type="PackedScene" uid="uid://4tm2rs77s10v" path="res://scene/setting/touch_screen_button.tscn" id="25_x7rp8"]
 [ext_resource type="Texture2D" uid="uid://esjxmbchmnp1" path="res://scene/GameTutorial/UNNES.png" id="26_f8x7s"]
 [ext_resource type="Texture2D" uid="uid://buyhvi3iqthle" path="res://scene/GameTutorial/LuckySemua.png" id="27_hax5k"]
+[ext_resource type="PackedScene" uid="uid://djowpa7pk0lmx" path="res://scene/menu_to_tutorial/setting_node.tscn" id="28_yhfcs"]
+[ext_resource type="PackedScene" uid="uid://7in3xalka303" path="res://scene/menu_to_tutorial/credit.tscn" id="29_udolw"]
+[ext_resource type="Texture2D" uid="uid://dt6c2r2r8eoba" path="res://scene/GameTutorial/Tutorial_Item/asap.png" id="30_8dfmb"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1wwlw"]
 frequency = 0.0075
@@ -619,7 +622,30 @@ scale = Vector2(1, 7.67566)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border_next_stage"]
 shape = SubResource("RectangleShape2D_upvdv")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 649.0
+offset_bottom = 365.0
+color = Color(0.0638668, 0.286987, 0.38455, 1)
+
+[node name="settingNode" parent="CanvasLayer2" instance=ExtResource("28_yhfcs")]
+position = Vector2(245, 230)
+
+[node name="Credit" parent="CanvasLayer2" instance=ExtResource("29_udolw")]
+position = Vector2(408, 208)
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer2"]
+position = Vector2(586, 4)
+scale = Vector2(3.04, 3.04)
+texture_normal = ExtResource("30_8dfmb")
+
 [connection signal="screen_exited" from="ParallaxBackground3/awan2/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="screen_exited" from="ParallaxBackground3/awan3/awan_3_screen_exit" to="." method="_on_awan_3_screen_exit_screen_exited"]
 [connection signal="pressed" from="CanvasLayer/tombol_start" to="." method="_on_tombol_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/tombol_setting" to="." method="_on_tombol_setting_pressed"]
 [connection signal="body_entered" from="border_next_stage" to="." method="_on_border_next_stage_body_entered"]
+[connection signal="pressed" from="CanvasLayer2/TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]

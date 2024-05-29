@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GuardianForest"
-run/main_scene="res://scene/main/main.tscn"
+run/main_scene="res://scene/GameTutorial/Menu_ke_tutorial.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ GlobalScript="*res://script/global_script/global_script.gd"
 DamageToPlayer="*res://script/global_script/damage_to_player.gd"
 GameEvent="*res://script/game_event.gd"
 TransisiScene="*res://scene/Level_Komponen/transisi_scene.tscn"
+Lagu="*res://LAGU.tscn"
 
 [display]
 
