@@ -23,3 +23,5 @@ var posisi_pohon = []
 
 #level
 var level_berakhir = false
+
+

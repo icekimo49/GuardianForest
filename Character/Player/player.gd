@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+var save_file_path = "res://Save_file/"
+var save_file_name = "PlayerSave.tres"
+var playerData = PlayerData.new()
+
 const kecepatan : int = 250
 const akselerasi  = 25
 var hp = 100
@@ -16,23 +20,42 @@ var posisi_lama
 @onready var textDamage = $damage_diterima
 @onready var textAir = $airIndikator
 
-@export var inv: Inv
+
+func _ready():
+	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	display_darah_player()
+	verify_save_directory(save_file_path)
+
+func verify_save_directory(path: String):
+	DirAccess.make_dir_absolute(path)
+
+func load_data():
+	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	print("loaded")
+
+func save():
+	ResourceSaver.save(playerData, save_file_path + save_file_name)
+	print("save")
 
 func notif_air_habis():
 	DamageToPlayer.display_air("Air Habis!", textDamage.global_position)
 
 func display_darah_player(): #Buat nampilin sisa darah player
-	barDarah.value = hp
+	barDarah.value = playerData.hp
 
 func display_air_indikator(): #Buat nampilin jumlah sisa air
 	textAir.text = str(GlobalScript.isi_air_gayung) 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	display_darah_player()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_action_just_pressed("save"):
+		save()
+	if Input.is_action_just_pressed("load"):
+		load_data()
+	if Input.is_action_just_pressed("tambah_wave"):
+		playerData.change_wave(1)
 	display_air_indikator()
 	#var arah = get_movement_vector()
 	#var arahNormalized = arah.normalized()
@@ -119,9 +142,9 @@ func _physics_process(delta):
 	api_attack()
 	attack()
 	
-	if hp <= 0:
+	if playerData.hp <= 0:
 		player_alive = false #pindah ke main menu
-		hp = 0
+		playerData.hp = 0
 		self.queue_free()
 		
 func get_movement_vector():
@@ -144,12 +167,12 @@ func _on_player_hitbox_body_exited(body):
 
 func api_attack():
 	if api_inattack_range and api_attack_cooldown == true:
-		hp -= kerusakan
+		playerData.change_hp(-kerusakan)
 		display_darah_player() #Update Value Bar Darah
 		DamageToPlayer.display_damage(kerusakan, textDamage.global_position) #Nampilin Damage
 		api_attack_cooldown = false
 		$api_cooldown.start()
-		print(hp)
+		print(playerData.hp)
 
 func _on_api_cooldown_timeout():
 	api_attack_cooldown = true
@@ -198,4 +221,4 @@ func _on_deal_attack_timer_timeout():
 	$player_hitbox_atas.toggle_collision(false)
 
 func collect(item):
-	inv.insert(item)
+	playerData.inv.insert(item)

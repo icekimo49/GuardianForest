@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cd0oh2t77de80"]
+[gd_scene load_steps=15 format=3 uid="uid://cd0oh2t77de80"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_52ebj"]
 [ext_resource type="Texture2D" uid="uid://8l67bi7sx3cp" path="res://asset/environtment/tileset_water.png" id="2_sa1ej"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d60xcrr7mvka" path="res://Character/Player/Kamera/game_camera.tscn" id="9_04cy2"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://Areas/Hutan/Environment/Pohon/pohon.tscn" id="9_jaoby"]
 [ext_resource type="Script" path="res://scene/main/NightCycle.gd" id="10_jx0eh"]
+[ext_resource type="PackedScene" uid="uid://b6pds7h6kqda8" path="res://Item/Material/Batu/batu_collectable.tscn" id="11_arnem"]
 [ext_resource type="PackedScene" uid="uid://c8hkr5cfrve56" path="res://Character/Musuh/spawner_penebang_kayu.tscn" id="11_q2v3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53gnj"]
@@ -1377,3 +1378,6 @@ position = Vector2(-845, -4)
 
 [node name="Spawner_PenebangKayu6" parent="Spawner" instance=ExtResource("11_q2v3j")]
 position = Vector2(-809, -998)
+
+[node name="batu_collectable" parent="." instance=ExtResource("11_arnem")]
+position = Vector2(670, -124)

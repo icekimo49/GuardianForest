@@ -7,6 +7,7 @@ var timer_duration
 var penebang_kayu = preload("res://Character/Musuh/Penebang_kayu/Penebang_kayu.tscn")
 var musuh
 var timeout : bool
+var playerData : PlayerData
 
 func _ready():
 	get_level()
@@ -37,15 +38,13 @@ func _on_timer_timeout():
 	get_parent().add_child(musuh)
 	timeout = true
 
-
 func get_level():
-	var level = GlobalScript.tingkat_wave
-	if level == 1:
+	if playerData.wave == 1:
 		max_time = 15
 		min_time = 10
-	elif level == 2:
+	elif playerData.wave == 2:
 		max_time = 10
 		min_time = 5
-	elif level == 3:
+	elif playerData.wave == 3:
 		max_time = 5
 		min_time = 1

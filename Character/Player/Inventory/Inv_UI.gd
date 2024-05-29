@@ -1,13 +1,17 @@
 extends Control
 #kalo ubah jumlah slot di playerinv, ubah kode juga di mini_inventory
-@onready var inv: Inv = preload ("res://Character/Player/Inventory/playerinv.tres")
+
 @onready var slots : Array = $big_inventory/inventory_slot/GridContainer.get_children()
 @onready var big_inventory = $big_inventory
+var save_file_path = "res://Save_file/"
+var save_file_name = "PlayerSave.tres"
 var mini_item_state : String
+var playerData = PlayerData.new()
 
 func _ready():
+	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
 	GameEvent.connect("tombol_more_inventory", Callable(self, "_mini_inventory"))
-	inv.update.connect(update_slots)
+	playerData.inv.update.connect(update_slots)
 	update_slots()
 	close()
 
@@ -15,10 +19,13 @@ func _mini_inventory() :
 	kamera_ke_inventory_movement()
 
 func _process(delta):
+	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	playerData.inv.update.connect(update_slots)
+	update_slots()
 	if Input.is_action_just_pressed("inventory_button") :
 		kamera_ke_inventory_movement()
 	if GlobalScript.select1 != null && GlobalScript.select2 != null:
-		inv.swap_item_slot(GlobalScript.select1, GlobalScript.select2)
+		playerData.inv.swap_item_slot(GlobalScript.select1, GlobalScript.select2)
 		GlobalScript.select1 = null
 		GlobalScript.select2 = null
 
@@ -31,8 +38,8 @@ func kamera_ke_inventory_movement():
 		GameEvent.emit_signal("kamera_ke_inventory", true)
 
 func update_slots():
-	for i in range(min(inv.slots.size(), slots.size())):
-		slots[i].update(inv.slots[i])
+	for i in range(min(playerData.inv.slots.size(), slots.size())):
+		slots[i].update(playerData.inv.slots[i])
 
 func open():
 	big_inventory.visible = true

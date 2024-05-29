@@ -171,37 +171,39 @@ autostart = true
 [node name="tombolSerang" parent="tombol_serang" instance=ExtResource("8_huxm0")]
 position = Vector2(462, 207)
 
-[node name="Golden Apple" parent="." instance=ExtResource("19_cvxxi")]
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Golden Apple" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(304, -8)
 
-[node name="Golden Apple2" parent="." instance=ExtResource("19_cvxxi")]
+[node name="Golden Apple2" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(423, -10)
 
-[node name="Golden Apple3" parent="." instance=ExtResource("19_cvxxi")]
+[node name="Golden Apple3" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(486, 27)
 
-[node name="Golden Apple4" parent="." instance=ExtResource("19_cvxxi")]
+[node name="Golden Apple4" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(424, 91)
 
-[node name="Golden Apple5" parent="." instance=ExtResource("19_cvxxi")]
+[node name="Golden Apple5" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(513, 127)
 
-[node name="Golden Apple6" parent="." instance=ExtResource("19_cvxxi")]
+[node name="Golden Apple6" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(342, 151)
 
-[node name="Golden Apple7" parent="." instance=ExtResource("19_cvxxi")]
+[node name="Golden Apple7" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(249, 137)
 
-[node name="Golden Apple8" parent="." instance=ExtResource("19_cvxxi")]
+[node name="Golden Apple8" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(480, 197)
 
-[node name="Golden Apple9" parent="." instance=ExtResource("19_cvxxi")]
+[node name="Golden Apple9" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(608, 77)
 
-[node name="Golden Apple10" parent="." instance=ExtResource("19_cvxxi")]
+[node name="Golden Apple10" parent="CanvasGroup" instance=ExtResource("19_cvxxi")]
 position = Vector2(543, 6)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("18_yhth7")]
+[node name="StaticBody2D" parent="CanvasGroup" instance=ExtResource("18_yhth7")]
 position = Vector2(764, -115)
 
 [connection signal="timeout" from="timer_spawner_PenebangKayu" to="." method="_on_timer_spawner_penebang_kayu_timeout"]
