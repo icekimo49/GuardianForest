@@ -5,11 +5,16 @@ extends Area2D
 @onready var small_Circle = $bigCircle/smallCircle
 @onready var max_distance = $CollisionShape2D.shape.radius
 
+var jarak_small_circle_max
+var small_circle_posisi_awal
 var touched : bool = false
 var arah_baru
 var arah_lama
-
+var i = 1
 var enable_analog  = true
+
+func _ready():
+	small_circle_posisi_awal = $bigCircle/smallCircle.global_position
 
 func _input(event):
 	if !enable_analog :
@@ -23,11 +28,12 @@ func _input(event):
 			else :
 				small_Circle.position = Vector2.ZERO
 				touched = false
+
 func _process(delta):
 	if touched :
 		small_Circle.global_position = get_global_mouse_position()
 		#CLAMPER
-		#small_Circle.position = big_Circle.position + (small_Circle.position - big_Circle.position).limit_length(max_distance)
+		#small_Circle.position = big_Circle.position + small_Circle.position.limit_length(max_distance)
 
 func arah():
 	var a = Vector2.RIGHT

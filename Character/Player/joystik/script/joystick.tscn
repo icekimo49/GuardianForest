@@ -1,24 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://bofr4d4kvf2w6"]
+[gd_scene load_steps=6 format=3 uid="uid://bofr4d4kvf2w6"]
 
 [ext_resource type="Texture2D" uid="uid://civ3eg27ckxoi" path="res://asset/control/background.png" id="1_gl1wl"]
 [ext_resource type="Script" path="res://Character/Player/joystik/script/joystick.gd" id="2_e8arm"]
 [ext_resource type="Texture2D" uid="uid://cw5i7x4cgh0y7" path="res://asset/control/bullet.png" id="3_kifen"]
+[ext_resource type="Script" path="res://Character/Player/joystik/script/bigCircle.gd" id="3_wvx2x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_shc03"]
-radius = 72.0069
+radius = 61.0
 
 [node name="joystick" type="Area2D"]
-position = Vector2(62, 32)
 script = ExtResource("2_e8arm")
 
 [node name="bigCircle" type="Sprite2D" parent="."]
 position = Vector2(60, 60)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_gl1wl")
+script = ExtResource("3_wvx2x")
 
 [node name="smallCircle" type="Sprite2D" parent="bigCircle"]
 texture = ExtResource("3_kifen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(62, 60)
+position = Vector2(60, 59)
 shape = SubResource("CircleShape2D_shc03")

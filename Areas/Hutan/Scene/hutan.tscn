@@ -1358,22 +1358,22 @@ position = Vector2(1170, -448)
 color = Color(0.160784, 0.380392, 0.509804, 1)
 script = ExtResource("10_jx0eh")
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
+[node name="Spawner" type="CanvasGroup" parent="."]
 position = Vector2(1299, 510)
 
-[node name="Spawner_PenebangKayu" parent="CanvasGroup" instance=ExtResource("11_q2v3j")]
+[node name="Spawner_PenebangKayu" parent="Spawner" instance=ExtResource("11_q2v3j")]
 position = Vector2(405, -396)
 
-[node name="Spawner_PenebangKayu2" parent="CanvasGroup" instance=ExtResource("11_q2v3j")]
+[node name="Spawner_PenebangKayu2" parent="Spawner" instance=ExtResource("11_q2v3j")]
 
-[node name="Spawner_PenebangKayu3" parent="CanvasGroup" instance=ExtResource("11_q2v3j")]
+[node name="Spawner_PenebangKayu3" parent="Spawner" instance=ExtResource("11_q2v3j")]
 position = Vector2(184, -1006)
 
-[node name="Spawner_PenebangKayu4" parent="CanvasGroup" instance=ExtResource("11_q2v3j")]
+[node name="Spawner_PenebangKayu4" parent="Spawner" instance=ExtResource("11_q2v3j")]
 position = Vector2(-534, -6)
 
-[node name="Spawner_PenebangKayu5" parent="CanvasGroup" instance=ExtResource("11_q2v3j")]
+[node name="Spawner_PenebangKayu5" parent="Spawner" instance=ExtResource("11_q2v3j")]
 position = Vector2(-845, -4)
 
-[node name="Spawner_PenebangKayu6" parent="CanvasGroup" instance=ExtResource("11_q2v3j")]
+[node name="Spawner_PenebangKayu6" parent="Spawner" instance=ExtResource("11_q2v3j")]
 position = Vector2(-809, -998)
