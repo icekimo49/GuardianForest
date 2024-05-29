@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dqfhckmcatuaa"]
+[gd_scene load_steps=27 format=3 uid="uid://dqfhckmcatuaa"]
 
 [ext_resource type="Script" path="res://scene/GameTutorial/game_tutorial.gd" id="1_0i16w"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_71wjt"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cepjowy0mhxvl" path="res://environtmen_scene/batang_kayu.tscn" id="9_ahpuh"]
 [ext_resource type="Texture2D" uid="uid://co0b60sek3kki" path="res://scene/UI/menu/asset/Sparkle 3.png" id="12_7fv4v"]
 [ext_resource type="Texture2D" uid="uid://b243vple5c284" path="res://scene/GameTutorial/Pager.png" id="14_qbyex"]
+[ext_resource type="PackedScene" uid="uid://dahroltrotu8" path="res://scene/burung_gagak/gagak.tscn" id="15_18cs6"]
 [ext_resource type="PackedScene" uid="uid://dgaunqj7nm4j4" path="res://environtmen_scene/alang_alang.tscn" id="15_h4esx"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1wwlw"]
@@ -279,6 +280,9 @@ position = Vector2(473, 615)
 scale = Vector2(2.52, 2.52)
 texture = ExtResource("5_effs2")
 flip_h = true
+
+[node name="Gagak" parent="." instance=ExtResource("15_18cs6")]
+position = Vector2(462, 192)
 
 [node name="Alang2" type="Node2D" parent="."]
 position = Vector2(83, -54)
