@@ -1529,7 +1529,6 @@ position = Vector2(462, 207)
 enabled = false
 
 [node name="NightCycle" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.160784, 0.380392, 0.509804, 1)
 script = ExtResource("7_3pkqf")
 
