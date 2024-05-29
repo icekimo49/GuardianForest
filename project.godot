@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalScript="*res://script/global_script/global_script.gd"
-DamageToPlayer="*res://script/global_script/damage_to_player.gd"
-GameEvent="*res://script/game_event.gd"
 Lagu="*res://LAGU.tscn"
+GlobalScript="*res://global_script/global_script.gd"
+DamageToPlayer="*res://global_script/damage_to_player.gd"
+GameEvent="*res://Character/Player/game_event.gd"
 
 [display]
 

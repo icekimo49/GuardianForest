@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://2qe8y0et82ko"]
+
+[ext_resource type="Script" path="res://Character/Player/Inventory/inventory_item.gd" id="1_yngog"]
+[ext_resource type="Texture2D" uid="uid://bgip6nwmuf03n" path="res://Item/Material/Batu/batu 2.png" id="2_82pxw"]
+
+[resource]
+script = ExtResource("1_yngog")
+name = "Batu"
+texture = ExtResource("2_82pxw")
+stack = true
+type = true
+ukuran_item = Vector2(0, 0)

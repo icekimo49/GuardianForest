@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfbeqiep442p0"]
+[gd_scene load_steps=13 format=3 uid="uid://30h8c36q3pqr"]
 
-[ext_resource type="Script" path="res://scene/penebang/Penebang_Kayu.gd" id="1_we245"]
+[ext_resource type="Script" path="res://Character/Musuh/Penebang_kayu/Penebang_kayu.gd" id="1_we245"]
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="2_hgfhn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qm6c2"]

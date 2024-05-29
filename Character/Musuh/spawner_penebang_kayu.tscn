@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8hkr5cfrve56"]
+
+[ext_resource type="Script" path="res://Character/Musuh/spawner_penebang_kayu.gd" id="1_pkk43"]
+
+[node name="Spawner_PenebangKayu" type="Node2D"]
+script = ExtResource("1_pkk43")

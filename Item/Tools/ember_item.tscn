@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bryudnbm3yjh8"]
+
+[ext_resource type="Script" path="res://Item/Tools/ember_item.gd" id="1_ek046"]
+[ext_resource type="Texture2D" uid="uid://crnr18hrkjpjq" path="res://Item/Tools/ember.png" id="2_t0eqx"]
+[ext_resource type="Resource" uid="uid://jyfnlm0s5f74" path="res://Item/Tools/Ember.tres" id="2_ygc5k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vpmc4"]
+radius = 59.0085
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_ek046")
+item = ExtResource("2_ygc5k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.567568, 0.567568)
+texture = ExtResource("2_t0eqx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vpmc4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://b3etdhecsp6fs"]
+
+[ext_resource type="Script" path="res://Character/Player/Inventory/inventory_item.gd" id="1_ufwkq"]
+[ext_resource type="Texture2D" uid="uid://ces5j4wqmwiy4" path="res://Item/Material/Golden_Apple/minecraft-golden-apple-pixel-art-item-video-games-minecraft-heart-transparent-removebg-preview-ai-brush-removebg-dgkuplwg.png" id="2_vojgn"]
+
+[resource]
+script = ExtResource("1_ufwkq")
+name = "Golden_apple"
+texture = ExtResource("2_vojgn")
+stack = true
+type = true
+ukuran_item = Vector2(0, 0)

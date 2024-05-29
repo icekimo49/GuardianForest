@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhk5pe4gxt7gi"]
+[gd_scene load_steps=11 format=3 uid="uid://db26m2afepnbf"]
 
-[ext_resource type="Script" path="res://scene/penebang/api.gd" id="1_ktts3"]
+[ext_resource type="Script" path="res://Areas/Hutan/Environment/Api/api.gd" id="1_ktts3"]
 [ext_resource type="PackedScene" uid="uid://cxp32tjv0xv5n" path="res://scene/ability/lemparBotol_controller/lempar_botol_controller.tscn" id="3_d3h3s"]
-[ext_resource type="Texture2D" path="res://scene/api/api.png" id="4_em6x0"]
+[ext_resource type="Texture2D" uid="uid://iic0xk2717jy" path="res://Areas/Hutan/Environment/Api/api.png" id="4_em6x0"]
 [ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="4_jvi2h"]
-[ext_resource type="PackedScene" path="res://scene/Position_Indicator/possindicator.tscn" id="5_e64ov"]
+[ext_resource type="PackedScene" uid="uid://ca2363tgce87v" path="res://Areas/Hutan/UI/Position_Indicator/possindicator.tscn" id="5_e64ov"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnkky"]
 radius = 31.0644
