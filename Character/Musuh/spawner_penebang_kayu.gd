@@ -9,6 +9,7 @@ var musuh
 var timeout : bool
 var playerData : PlayerData
 var wave = null
+
 func _ready():
 	get_level()
 	random()
