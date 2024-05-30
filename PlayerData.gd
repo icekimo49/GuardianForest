@@ -5,6 +5,8 @@ class_name PlayerData
 @export var exp : int
 @export var inv: Inv
 @export var wave = 1
+@export var time:float
+@export var sudah_tutorial = false
 
 func _ready():
 	pass # Replace with function body.
@@ -24,3 +26,6 @@ func simpan_item(item):
 func change_wave(value: int):
 	if wave < 4:
 		wave += value
+
+func save_time():
+	time = GlobalScript.time

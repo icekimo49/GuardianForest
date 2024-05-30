@@ -8,6 +8,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if GlobalScript.hour == 1:
+		$Player.save()
+		get_tree().change_scene_to_packed(load("res://Areas/Hutan/Scene/hutan.tscn"))
 	pass
 
 func _on_pindah_hutan_body_entered(body):

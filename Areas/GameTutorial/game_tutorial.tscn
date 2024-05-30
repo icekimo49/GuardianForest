@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dqfhckmcatuaa"]
+[gd_scene load_steps=38 format=3 uid="uid://dqfhckmcatuaa"]
 
 [ext_resource type="Script" path="res://Areas/GameTutorial/game_tutorial.gd" id="1_0i16w"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_71wjt"]
@@ -120,6 +120,9 @@ animations = [{
 "name": &"panas",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8cb7"]
+size = Vector2(20, 335)
 
 [node name="GameTutorial" type="Node2D"]
 script = ExtResource("1_0i16w")
@@ -1553,4 +1556,11 @@ position = Vector2(1464, 148)
 scale = Vector2(1.67278, 1.67278)
 sprite_frames = SubResource("SpriteFrames_4g5ff")
 
+[node name="pindah_ke_hutan" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pindah_ke_hutan"]
+position = Vector2(2040, 171.5)
+shape = SubResource("RectangleShape2D_c8cb7")
+
 [connection signal="body_entered" from="Area2/ganti_slide" to="." method="_on_ganti_slide_body_entered"]
+[connection signal="body_entered" from="pindah_ke_hutan" to="." method="_on_pindah_ke_hutan_body_entered"]

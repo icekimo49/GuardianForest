@@ -17,8 +17,11 @@ var select2 = null
 var item_in_use : String
 var tingkat_wave = 1
 var mulai_game : bool
-var game_berlangsung : bool
+var game_berlangsung = false
 var enable_analog : bool =false
+var time : float = 0.0
+var hour
+var sudah_tutorial = false
 
 #pohon
 var posisi_pohon = []

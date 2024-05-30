@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bttfnxprkny6n"]
+[gd_scene load_steps=41 format=3 uid="uid://bttfnxprkny6n"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_ba21o"]
 [ext_resource type="Script" path="res://Areas/Desa/desa.gd" id="1_rrtmw"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bp8wd0pk0cj58" path="res://Character/Player/Inventory/mini_inventory.tscn" id="4_w4ytk"]
 [ext_resource type="PackedScene" uid="uid://cl4vpo8abukrq" path="res://Character/Player/Tombol_Serang/tombol_serang.tscn" id="5_uj250"]
 [ext_resource type="PackedScene" uid="uid://d60xcrr7mvka" path="res://Character/Player/Kamera/game_camera.tscn" id="6_t52t4"]
-[ext_resource type="Script" path="res://scene/main/NightCycle.gd" id="7_3pkqf"]
+[ext_resource type="Script" path="res://scene/main/daynightcycle.gd" id="7_3pkqf"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://Areas/Hutan/Environment/Pohon/pohon.tscn" id="9_krr00"]
 [ext_resource type="PackedScene" uid="uid://boe6xjcfkcv8g" path="res://Areas/Desa/Rumah/rumah.tscn" id="9_kt25c"]
 [ext_resource type="Texture2D" uid="uid://b243vple5c284" path="res://Areas/GameTutorial/Pager.png" id="9_n2n83"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cepjowy0mhxvl" path="res://Character/Tanaman/BatangKayu/batang_kayu.tscn" id="13_l4drx"]
 [ext_resource type="Texture2D" uid="uid://cat27ahudphaw" path="res://scene/UI/menu/asset/Sparkle 1.png" id="15_dk8lq"]
 [ext_resource type="PackedScene" uid="uid://bn1hnbiqhxnw0" path="res://Areas/GameTutorial/ApiUnggun/api_unggun.tscn" id="19_p5cye"]
+[ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Main/daynightcycle-gradient-texture.tres" id="22_ixjot"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_qi053"]
 tile_data = PackedInt32Array(0, 786433, 11, 65536, 393217, 11, 131072, 786433, 12, 196608, 786433, 12, 262144, 786433, 12, 327680, 393217, 11, 393216, 393217, 11)
@@ -1533,10 +1534,6 @@ position = Vector2(462, 207)
 [node name="GameCamera" parent="." instance=ExtResource("6_t52t4")]
 enabled = false
 
-[node name="NightCycle" type="CanvasModulate" parent="."]
-color = Color(0.160784, 0.380392, 0.509804, 1)
-script = ExtResource("7_3pkqf")
-
 [node name="Player" parent="." instance=ExtResource("2_m5bgv")]
 texture_filter = 1
 position = Vector2(1140, 200)
@@ -2362,8 +2359,12 @@ shape = SubResource("RectangleShape2D_h88ts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pindah_hutan"]
 position = Vector2(1247.87, 223.023)
-scale = Vector2(1, 1)
 skew = 0.698132
 shape = SubResource("RectangleShape2D_pvpd3")
+
+[node name="NightCycle" type="CanvasModulate" parent="."]
+color = Color(0.160784, 0.380392, 0.509804, 1)
+script = ExtResource("7_3pkqf")
+gradient = ExtResource("22_ixjot")
 
 [connection signal="body_entered" from="pindah_hutan" to="." method="_on_pindah_hutan_body_entered"]

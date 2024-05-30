@@ -22,8 +22,7 @@ var posisi_lama
 
 
 func _ready():
-	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
-	GlobalScript.tingkat_wave = playerData.wave
+	load_data()
 	display_darah_player()
 	verify_save_directory(save_file_path)
 
@@ -32,9 +31,13 @@ func verify_save_directory(path: String):
 
 func load_data():
 	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	GlobalScript.tingkat_wave = playerData.wave
+	GlobalScript.time = playerData.time
+	GlobalScript.sudah_tutorial = playerData.sudah_tutorial
 	print("loaded")
 
 func save():
+	playerData.time = GlobalScript.time 
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
 	print("save")
 
@@ -44,6 +47,9 @@ func change_wave():
 
 func change_exp(value: int):
 	playerData.change_exp(value)
+
+func save_time():
+	playerData.save_time()
 
 func notif_air_habis():
 	DamageToPlayer.display_air("Air Habis!", textDamage.global_position)
@@ -59,6 +65,7 @@ func display_air_indikator(): #Buat nampilin jumlah sisa air
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("save"):
+		save_time()
 		save()
 	if Input.is_action_just_pressed("load"):
 		load_data()

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GuardianForest"
-run/main_scene="res://Areas/GameTutorial/Menu_ke_tutorial.tscn"
+run/main_scene="res://Main/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 

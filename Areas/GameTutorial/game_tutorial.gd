@@ -46,4 +46,10 @@ func posisi_kamera_manager():
 	elif (current_area == AREA.AREA1):
 		kamera_player.limit_left = lerp(kamera_player.limit_left, pos_kamera_area1["KIRI"], get_process_delta_time())
 		kamera_player.limit_right = lerp(kamera_player.limit_right, pos_kamera_area1["KANAN"], get_process_delta_time())
-		
+
+
+
+func _on_pindah_ke_hutan_body_entered(body):
+	if body.is_in_group("player"):
+		var next = load("res://Areas/Hutan/Scene/hutan.tscn")
+		get_tree().change_scene_to_packed(next)

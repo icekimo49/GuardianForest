@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cd0oh2t77de80"]
+[gd_scene load_steps=19 format=3 uid="uid://cd0oh2t77de80"]
 
 [ext_resource type="Script" path="res://Areas/Hutan/Scene/hutan.gd" id="1_4n0fo"]
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_52ebj"]
@@ -9,9 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://cl4vpo8abukrq" path="res://Character/Player/Tombol_Serang/tombol_serang.tscn" id="6_mpcn1"]
 [ext_resource type="PackedScene" uid="uid://d60xcrr7mvka" path="res://Character/Player/Kamera/game_camera.tscn" id="9_04cy2"]
 [ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://Areas/Hutan/Environment/Pohon/pohon.tscn" id="9_jaoby"]
-[ext_resource type="Script" path="res://scene/main/NightCycle.gd" id="10_jx0eh"]
+[ext_resource type="Script" path="res://scene/main/daynightcycle.gd" id="10_jx0eh"]
 [ext_resource type="PackedScene" uid="uid://b6pds7h6kqda8" path="res://Item/Material/Batu/batu_collectable.tscn" id="11_arnem"]
+[ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Main/daynightcycle-gradient-texture.tres" id="11_jk8ti"]
 [ext_resource type="PackedScene" uid="uid://c8hkr5cfrve56" path="res://Character/Musuh/spawner_penebang_kayu.tscn" id="11_q2v3j"]
+[ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://Main/UI/daynightcycle_ui.tscn" id="14_wgrvv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53gnj"]
 texture = ExtResource("1_52ebj")
@@ -1361,10 +1363,6 @@ position = Vector2(435, 35)
 [node name="Pohon152" parent="Pohon" instance=ExtResource("9_jaoby")]
 position = Vector2(1467, -287)
 
-[node name="NightCycle" type="CanvasModulate" parent="."]
-color = Color(0.160784, 0.380392, 0.509804, 1)
-script = ExtResource("10_jx0eh")
-
 [node name="Spawner" type="CanvasGroup" parent="."]
 position = Vector2(2, 0)
 
@@ -1394,7 +1392,6 @@ position = Vector2(1241, 9)
 [node name="masuk_map_ke_mulai_game" type="Timer" parent="Timer"]
 wait_time = 5.0
 one_shot = true
-autostart = true
 
 [node name="durasi_wave" type="Timer" parent="Timer"]
 
@@ -1403,6 +1400,15 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pindah_desa"]
 position = Vector2(13.5, 85.5)
 shape = SubResource("RectangleShape2D_1urei")
+
+[node name="jam" type="CanvasLayer" parent="."]
+
+[node name="DayNightCycleUI" parent="jam" instance=ExtResource("14_wgrvv")]
+
+[node name="NightCycle" type="CanvasModulate" parent="."]
+color = Color(0.160784, 0.380392, 0.509804, 1)
+script = ExtResource("10_jx0eh")
+gradient = ExtResource("11_jk8ti")
 
 [connection signal="timeout" from="Timer/masuk_map_ke_mulai_game" to="." method="_on_masuk_map_ke_mulai_game_timeout"]
 [connection signal="timeout" from="Timer/durasi_wave" to="." method="_on_durasi_wave_timeout"]
