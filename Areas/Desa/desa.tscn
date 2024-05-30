@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://bttfnxprkny6n"]
+[gd_scene load_steps=40 format=3 uid="uid://bttfnxprkny6n"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_ba21o"]
+[ext_resource type="Script" path="res://Areas/Desa/desa.gd" id="1_rrtmw"]
 [ext_resource type="Texture2D" uid="uid://bjoj0d87dxtu1" path="res://Areas/Desa/Tiles.png" id="2_4dyal"]
 [ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://Character/Player/player.tscn" id="2_m5bgv"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://Character/Player/joystik/script/joystick.tscn" id="3_xvpu5"]
@@ -1489,7 +1490,11 @@ size = Vector2(478.838, 28.478)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h88ts"]
 size = Vector2(206.457, 28.478)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvpd3"]
+size = Vector2(48, 167.152)
+
 [node name="Desa" type="Node2D"]
+script = ExtResource("1_rrtmw")
 
 [node name="TileMap2" type="TileMap" parent="."]
 skew = 0.698132
@@ -1529,7 +1534,6 @@ position = Vector2(462, 207)
 enabled = false
 
 [node name="NightCycle" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.160784, 0.380392, 0.509804, 1)
 script = ExtResource("7_3pkqf")
 
@@ -2353,3 +2357,13 @@ shape = SubResource("RectangleShape2D_qojhs")
 position = Vector2(1370, 69)
 rotation = -0.950668
 shape = SubResource("RectangleShape2D_h88ts")
+
+[node name="pindah_hutan" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pindah_hutan"]
+position = Vector2(1247.87, 223.023)
+scale = Vector2(1, 1)
+skew = 0.698132
+shape = SubResource("RectangleShape2D_pvpd3")
+
+[connection signal="body_entered" from="pindah_hutan" to="." method="_on_pindah_hutan_body_entered"]
