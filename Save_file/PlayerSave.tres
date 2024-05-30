@@ -79,8 +79,8 @@ temp_inv = SubResource("Resource_bg6cb")
 [resource]
 script = ExtResource("1_hsyi6")
 hp = 200
-exp = 300
+exp = 0
 inv = SubResource("Resource_u1lml")
-wave = 2
+wave = 1
 time = 0.0
 sudah_tutorial = false
