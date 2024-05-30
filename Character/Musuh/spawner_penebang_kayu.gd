@@ -8,7 +8,6 @@ var penebang_kayu = preload("res://Character/Musuh/Penebang_kayu/Penebang_kayu.t
 var musuh
 var timeout : bool
 var playerData : PlayerData
-var wave = null
 
 func _ready():
 	get_level()
@@ -40,8 +39,6 @@ func _on_timer_timeout():
 	timeout = true
 
 func get_level():
-	if !wave:
-		return
 	if playerData.wave == 1:
 		max_time = 15
 		min_time = 10
