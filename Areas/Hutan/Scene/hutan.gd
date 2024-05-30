@@ -41,5 +41,4 @@ func _on_durasi_wave_timeout():
 func _on_pindah_desa_body_entered(body):
 	if GlobalScript.game_berlangsung == false:
 		if body.is_in_group("player"):
-			var pindah_area = load("res://Areas/Desa/desa.tscn")
-			get_tree().change_scene_to_packed(pindah_area)
+			get_tree().change_scene_to_packed(load("res://Areas/Desa/desa.tscn"))

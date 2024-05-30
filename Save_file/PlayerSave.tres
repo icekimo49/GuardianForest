@@ -82,5 +82,5 @@ hp = 200
 exp = 300
 inv = SubResource("Resource_u1lml")
 wave = 2
-time = 0.25
+time = 0.0
 sudah_tutorial = false

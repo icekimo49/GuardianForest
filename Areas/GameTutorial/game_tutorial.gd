@@ -51,5 +51,5 @@ func posisi_kamera_manager():
 
 func _on_pindah_ke_hutan_body_entered(body):
 	if body.is_in_group("player"):
-		var next = load("res://Areas/Hutan/Scene/hutan.tscn")
-		get_tree().change_scene_to_packed(next)
+		GlobalScript.sudah_tutorial = true
+		get_tree().change_scene_to_packed(load("res://Areas/Hutan/Scene/hutan.tscn"))

@@ -38,6 +38,8 @@ func load_data():
 
 func save():
 	playerData.time = GlobalScript.time 
+	playerData.sudah_tutorial = GlobalScript.sudah_tutorial
+	playerData.wave = GlobalScript.tingkat_wave
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
 	print("save")
 
