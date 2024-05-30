@@ -5,6 +5,8 @@ var speed = 200
 var kabur = false
 var player = null
 @export var batu = preload("res://Item/Material/Batu/batu_collectable.tscn")
+@onready var navAgent = $Navigasi/NavigationAgent2D
+
 
 func _ready():
 	set_physics_process(false)
@@ -13,6 +15,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	tujuan()
 	set_next_target()
 	if kabur :
 		var direction = (Vector2(2000,2000) - position).normalized()
@@ -22,12 +25,12 @@ func _physics_process(delta):
 
 func tujuan():
 	print(GlobalScript.posisi_pohon[randi_range(0, GlobalScript.posisi_pohon.size()-1)])
-	$NavigationAgent2D.target_position = Vector2(260.0, 48.0)
+	navAgent.target_position = Vector2(260.0, 48.0)
 
 func set_next_target():
-	if $NavigationAgent2D.is_navigation_finished() == false:
-		var next_target = $NavigationAgent2D.get_next_path_position()
-		if $NavigationAgent2D.is_target_reachable() == false :
+	if navAgent.is_navigation_finished() == false:
+		var next_target = navAgent.get_next_path_position()
+		if navAgent.is_target_reachable() == false :
 			tujuan()
 			print("gabisa")
 			return

@@ -108,14 +108,13 @@ radius = 25.02
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4rcqe"]
 polygon = PackedVector2Array(-9, -7, -11, -3, -14, 0, -16, 5, -17, 8, -23, 10, -24, 18, -14, 18, -17, 14, -17, 12, -13, 13, -16, 22, -12, 22, -9, 13, -6, 13, -3, 23, 0, 23, 0, 17, -2, 13, -1, 10, 1, 10, -1, 6, -3, -3, -4, -3, -5, -7)
 
-[node name="Musuh" type="CharacterBody2D" node_paths=PackedStringArray("navAgent")]
+[node name="Musuh" type="CharacterBody2D"]
 position = Vector2(2, -1)
 collision_layer = 16
 collision_mask = 17
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_we245")
-navAgent = NodePath("Navigasi/NavigationAgent2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
