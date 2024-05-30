@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgaunqj7nm4j4"]
+[gd_scene load_steps=11 format=3 uid="uid://dgaunqj7nm4j4"]
 
 [ext_resource type="Script" path="res://Character/Tanaman/Alang-Alang/alang_alang.gd" id="1_mcd47"]
 [ext_resource type="Texture2D" uid="uid://cbalr7hhbpkry" path="res://Character/Tanaman/Alang-Alang/Alang-Alang.tres" id="2_nddi1"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tujue"]
+polygon = PackedVector2Array(-20, -13, -2, 2, 7, -9, 8, -17, 6, -28, 1, -8, -8, -50, -13, -19, -12, -12)
 
 [sub_resource type="Animation" id="Animation_1wgid"]
 length = 0.001
@@ -90,6 +93,10 @@ texture = ExtResource("2_nddi1")
 offset = Vector2(0, -50)
 hframes = 3
 frame = 2
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SpriteAlang"]
+position = Vector2(-1, 0)
+occluder = SubResource("OccluderPolygon2D_tujue")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

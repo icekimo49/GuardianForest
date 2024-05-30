@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn1hnbiqhxnw0"]
+[gd_scene load_steps=14 format=3 uid="uid://bn1hnbiqhxnw0"]
 
 [ext_resource type="Texture2D" uid="uid://7fsp2781jnt3" path="res://Areas/GameTutorial/ApiUnggun/objects.png" id="1_ccfx8"]
 [ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="2_6s71x"]
+[ext_resource type="Script" path="res://Areas/GameTutorial/ApiUnggun/api_unggun.gd" id="2_v72mb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7206p"]
 atlas = ExtResource("1_ccfx8")
@@ -63,10 +64,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ApiUnggun" type="AnimatedSprite2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbs7c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jsgkd"]
+radius = 31.0644
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imkn6"]
+radius = 33.0606
+
+[node name="ApiUnggun" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("2_v72mb")
+
+[node name="ApiUnggunSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w7tor")
 animation = &"mati"
 autoplay = "default"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jbs7c")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(1.96, 1.96)
@@ -76,3 +93,21 @@ shadow_enabled = true
 shadow_filter_smooth = 50.0
 texture = ExtResource("2_6s71x")
 texture_scale = 0.8
+
+[node name="Area2D" type="Area2D" parent="." groups=["api"]]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.531461, 0.531461)
+shape = SubResource("CircleShape2D_jsgkd")
+
+[node name="api_hitbox2" type="Area2D" parent="."]
+scale = Vector2(0.482722, 0.482722)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="api_hitbox2"]
+scale = Vector2(0.85686, 0.85686)
+shape = SubResource("CircleShape2D_imkn6")
+
+[connection signal="body_entered" from="api_hitbox2" to="ApiUnggunSprite" method="_on_api_hitbox_2_body_entered"]
+[connection signal="body_exited" from="api_hitbox2" to="ApiUnggunSprite" method="_on_api_hitbox_2_body_exited"]
