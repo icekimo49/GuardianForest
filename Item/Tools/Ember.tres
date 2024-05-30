@@ -9,4 +9,4 @@ name = "Ember"
 texture = ExtResource("2_fdtfq")
 stack = false
 type = false
-ukuran_item = Vector2(0, 0)
+ukuran_item = Vector2(0.5, 0.5)

@@ -75,6 +75,8 @@ radius = 33.0606
 [node name="ApiUnggun" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 9
 collision_mask = 9
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("2_v72mb")
 
 [node name="ApiUnggunSprite" type="AnimatedSprite2D" parent="."]

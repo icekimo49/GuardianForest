@@ -9,7 +9,6 @@ position = Vector2(184, 100)
 script = ExtResource("1_tnjo7")
 
 [node name="Player" parent="." instance=ExtResource("1_hh63w")]
-visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 visible = false
