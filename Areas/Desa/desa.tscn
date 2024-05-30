@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bttfnxprkny6n"]
+[gd_scene load_steps=42 format=3 uid="uid://bttfnxprkny6n"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_ba21o"]
 [ext_resource type="Script" path="res://Areas/Desa/desa.gd" id="1_rrtmw"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cat27ahudphaw" path="res://scene/UI/menu/asset/Sparkle 1.png" id="15_dk8lq"]
 [ext_resource type="PackedScene" uid="uid://bn1hnbiqhxnw0" path="res://Areas/GameTutorial/ApiUnggun/api_unggun.tscn" id="19_p5cye"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Main/daynightcycle-gradient-texture.tres" id="22_ixjot"]
+[ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://Main/UI/daynightcycle_ui.tscn" id="23_k8d0c"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_qi053"]
 tile_data = PackedInt32Array(0, 786433, 11, 65536, 393217, 11, 131072, 786433, 12, 196608, 786433, 12, 262144, 786433, 12, 327680, 393217, 11, 393216, 393217, 11)
@@ -2366,5 +2367,9 @@ shape = SubResource("RectangleShape2D_pvpd3")
 color = Color(0.160784, 0.380392, 0.509804, 1)
 script = ExtResource("7_3pkqf")
 gradient = ExtResource("22_ixjot")
+
+[node name="jam" type="CanvasLayer" parent="."]
+
+[node name="DayNightCycleUI" parent="jam" instance=ExtResource("23_k8d0c")]
 
 [connection signal="body_entered" from="pindah_hutan" to="." method="_on_pindah_hutan_body_entered"]

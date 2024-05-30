@@ -1,17 +1,16 @@
 extends Control
 
-@onready var inv : Inv = preload("res://Character/Player/Inventory/playerinv.tres")
 @onready var slots : Array = $NinePatchRect/GridContainer.get_children()
 var use_item = false
 
 func update_slots():
 	var j = 8
-	for i in range(min(inv.slots.size(), slots.size())):
-		slots[i].update(inv.slots[j])
+	for i in range(min(GlobalScript.inv.slots.size(), slots.size())):
+		slots[i].update(GlobalScript.inv.slots[j])
 		j+=1
 
 func _ready():
-	inv.update.connect(update_slots)
+	GlobalScript.inv.update.connect(update_slots)
 	update_slots()
 
 func _on_touch_screen_button_pressed():
@@ -25,9 +24,9 @@ func _on_touch_screen_button_pressed():
 			use_item = false 
 			GlobalScript.item_in_use = ""
 		else:
-			if inv.slots[8].item.type == false:
+			if GlobalScript.inv.slots[8].item.type == false:
 				use_item = true
-				GlobalScript.item_in_use = inv.slots[8].item.name
+				GlobalScript.item_in_use = GlobalScript.inv.slots[8].item.name
 		print(GlobalScript.item_in_use)
 
 func _on_touch_screen_button_2_pressed():
@@ -41,9 +40,9 @@ func _on_touch_screen_button_2_pressed():
 			use_item = false 
 			GlobalScript.item_in_use = ""
 		else:
-			if inv.slots[9].item.type == false:
+			if GlobalScript.inv.slots[9].item.type == false:
 				use_item = true
-				GlobalScript.item_in_use = inv.slots[9].item.name
+				GlobalScript.item_in_use = GlobalScript.inv.slots[9].item.name
 		print(GlobalScript.item_in_use)
 
 func _on_touch_screen_button_3_pressed():
@@ -57,7 +56,7 @@ func _on_touch_screen_button_3_pressed():
 			use_item = false 
 			GlobalScript.item_in_use = ""
 		else:
-			if inv.slots[10].item.type == false:
+			if GlobalScript.inv.slots[10].item.type == false:
 				use_item = true
-				GlobalScript.item_in_use = inv.slots[10].item.name
+				GlobalScript.item_in_use = GlobalScript.inv.slots[10].item.name
 		print(GlobalScript.item_in_use)

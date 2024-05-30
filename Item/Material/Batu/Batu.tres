@@ -7,6 +7,6 @@
 script = ExtResource("1_yngog")
 name = "Batu"
 texture = ExtResource("2_82pxw")
-stack = true
+stack = false
 type = true
-ukuran_item = Vector2(0, 0)
+ukuran_item = Vector2(0.5, 0)

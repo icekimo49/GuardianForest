@@ -7,6 +7,7 @@ var durasi_game
 
 func _ready():
 	daynightcycle.time_tick.connect(ui_jam.set_daytime)
+	GlobalScript.path_screen_terakhir_sebelum_loading= "res://Areas/Hutan/Scene/hutan.tscn"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -42,4 +43,5 @@ func _on_durasi_wave_timeout():
 func _on_pindah_desa_body_entered(body):
 	if GlobalScript.game_berlangsung == false:
 		if body.is_in_group("player"):
+			$Player.save()
 			get_tree().change_scene_to_packed(load("res://Areas/Desa/desa.tscn"))

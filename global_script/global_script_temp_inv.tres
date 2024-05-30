@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=16 format=3 uid="uid://c7a6yw7xnqbju"]
+
+[ext_resource type="Script" path="res://Character/Player/Inventory/inventory.gd" id="1_8554g"]
+[ext_resource type="Script" path="res://Character/Player/Inventory/Inv_slot.gd" id="2_y10sn"]
+
+[sub_resource type="Resource" id="Resource_8s8dc"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_03s7f"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_r8h2p"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_q2wto"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_3ynx0"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_im5fg"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_37jnp"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_n8qyh"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_nypy1"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_q1spi"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_ijr4b"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_2yuri"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_ulamv"]
+script = ExtResource("2_y10sn")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[resource]
+script = ExtResource("1_8554g")
+slots = Array[ExtResource("2_y10sn")]([SubResource("Resource_8s8dc"), SubResource("Resource_03s7f"), SubResource("Resource_r8h2p"), SubResource("Resource_q2wto"), SubResource("Resource_3ynx0"), SubResource("Resource_im5fg"), SubResource("Resource_37jnp"), SubResource("Resource_n8qyh"), SubResource("Resource_nypy1"), SubResource("Resource_q1spi"), SubResource("Resource_ijr4b"), SubResource("Resource_2yuri")])
+temp_inv = SubResource("Resource_ulamv")

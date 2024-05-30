@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cd0oh2t77de80"]
+[gd_scene load_steps=20 format=3 uid="uid://cd0oh2t77de80"]
 
 [ext_resource type="Script" path="res://Areas/Hutan/Scene/hutan.gd" id="1_4n0fo"]
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_52ebj"]
@@ -865,6 +865,10 @@ sources/1 = SubResource("TileSetAtlasSource_cxvq7")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1urei"]
 size = Vector2(47, 39)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_v13fq"]
+outlines = Array[PackedVector2Array]([PackedVector2Array(407, -393, -255, 391, 1456, 395, 2113, -391)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="Hutan" type="Node2D"]
 script = ExtResource("1_4n0fo")
 
@@ -906,6 +910,7 @@ position = Vector2(462, 207)
 [node name="SumberAir" type="CanvasGroup" parent="."]
 
 [node name="Pohon" type="CanvasGroup" parent="."]
+visible = false
 
 [node name="Pohon84" parent="Pohon" instance=ExtResource("9_jaoby")]
 position = Vector2(351, -168)
@@ -1364,6 +1369,7 @@ position = Vector2(435, 35)
 position = Vector2(1467, -287)
 
 [node name="Spawner" type="CanvasGroup" parent="."]
+visible = false
 position = Vector2(2, 0)
 
 [node name="Spawner_PenebangKayu" parent="Spawner" instance=ExtResource("11_q2v3j")]
@@ -1385,9 +1391,11 @@ position = Vector2(1858, -374)
 position = Vector2(911, -370)
 
 [node name="batu_collectable" parent="." instance=ExtResource("11_arnem")]
+visible = false
 position = Vector2(1241, 9)
 
 [node name="Timer" type="CanvasGroup" parent="."]
+visible = false
 
 [node name="masuk_map_ke_mulai_game" type="Timer" parent="Timer"]
 wait_time = 5.0
@@ -1396,6 +1404,7 @@ one_shot = true
 [node name="durasi_wave" type="Timer" parent="Timer"]
 
 [node name="pindah_desa" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pindah_desa"]
 position = Vector2(13.5, 85.5)
@@ -1409,6 +1418,9 @@ shape = SubResource("RectangleShape2D_1urei")
 color = Color(0.160784, 0.380392, 0.509804, 1)
 script = ExtResource("10_jx0eh")
 gradient = ExtResource("11_jk8ti")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_v13fq")
 
 [connection signal="timeout" from="Timer/masuk_map_ke_mulai_game" to="." method="_on_masuk_map_ke_mulai_game_timeout"]
 [connection signal="timeout" from="Timer/durasi_wave" to="." method="_on_durasi_wave_timeout"]

@@ -34,12 +34,14 @@ func load_data():
 	GlobalScript.tingkat_wave = playerData.wave
 	GlobalScript.time = playerData.time
 	GlobalScript.sudah_tutorial = playerData.sudah_tutorial
+	GlobalScript.inv = playerData.inv
 	print("loaded")
 
 func save():
 	playerData.time = GlobalScript.time 
 	playerData.sudah_tutorial = GlobalScript.sudah_tutorial
 	playerData.wave = GlobalScript.tingkat_wave
+	playerData.inv = GlobalScript.inv
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
 	print("save")
 

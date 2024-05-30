@@ -1,5 +1,6 @@
 extends Node
 
+var inv : Inv = preload("res://global_script/global_script_temp_inv.tres")
 var tombol_serang : bool = false
 var player_current_attack = false
 var pencet = false
@@ -22,6 +23,7 @@ var enable_analog : bool =false
 var time : float = 0.0
 var hour
 var sudah_tutorial = false
+var path_screen_terakhir_sebelum_loading
 
 #pohon
 var posisi_pohon = []
