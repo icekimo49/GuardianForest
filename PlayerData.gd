@@ -22,5 +22,5 @@ func simpan_item(item):
 	inv.insert(item)
 
 func change_wave(value: int):
-	wave += 1
-	print(wave)
+	if wave < 4:
+		wave += value

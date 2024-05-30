@@ -15,7 +15,9 @@ var malam : bool = true
 var select1 = null
 var select2 = null
 var item_in_use : String
-var tingkat_wave = 2
+var tingkat_wave = 1
+var mulai_game : bool
+var game_berlangsung : bool
 var enable_analog : bool =false
 
 #pohon

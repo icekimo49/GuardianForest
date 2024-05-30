@@ -23,6 +23,7 @@ var posisi_lama
 
 func _ready():
 	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	GlobalScript.tingkat_wave = playerData.wave
 	display_darah_player()
 	verify_save_directory(save_file_path)
 
@@ -36,6 +37,13 @@ func load_data():
 func save():
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
 	print("save")
+
+func change_wave():
+	playerData.change_wave(1)
+	GlobalScript.tingkat_wave = playerData.wave
+
+func change_exp(value: int):
+	playerData.change_exp(value)
 
 func notif_air_habis():
 	DamageToPlayer.display_air("Air Habis!", textDamage.global_position)
@@ -54,8 +62,6 @@ func _process(delta):
 		save()
 	if Input.is_action_just_pressed("load"):
 		load_data()
-	if Input.is_action_just_pressed("tambah_wave"):
-		playerData.change_wave(1)
 	display_air_indikator()
 	#var arah = get_movement_vector()
 	#var arahNormalized = arah.normalized()

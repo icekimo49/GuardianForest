@@ -31,8 +31,6 @@ func _ready():
 	#home_position = self.global_position 
 	#navAgent.path_desired_distance = 4
 	#navAgent.target_desired_distance = 4
-	
-	print(array_posisi_pohon.size())
 	pass
 
 func _physics_process(delta):
