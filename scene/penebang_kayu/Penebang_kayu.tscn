@@ -69,6 +69,8 @@ collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_we245")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xcfdp")
 autoplay = "default"

@@ -866,6 +866,8 @@ sources/1 = SubResource("TileSetAtlasSource_cxvq7")
 size = Vector2(47, 39)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_v13fq"]
+vertices = PackedVector2Array(411, -382, 2091, -381, 1451, 384, 371, -130, 371, -170, -233, 381, 331, -130, 331, -170)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(3, 2, 5, 6), PackedInt32Array(0, 4, 7), PackedInt32Array(5, 0, 7), PackedInt32Array(5, 7, 6)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(407, -393, -255, 391, 1456, 395, 2113, -391)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
@@ -909,493 +911,10 @@ position = Vector2(462, 207)
 
 [node name="SumberAir" type="CanvasGroup" parent="."]
 
-[node name="Pohon" type="CanvasGroup" parent="."]
-visible = false
-
-[node name="Pohon84" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(351, -168)
-
-[node name="Pohon86" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(328, -151)
-
-[node name="Pohon91" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(372, -149)
-
-[node name="Pohon87" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(394, -153)
-
-[node name="Pohon" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(362, -121)
-
-[node name="Pohon90" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(335, -114)
-
-[node name="Pohon89" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(305, -142)
-
-[node name="Pohon88" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(301, -115)
-
-[node name="Pohon3" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(407, -123)
-
-[node name="Pohon85" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(287, -99)
-
-[node name="Pohon119" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(324, -93)
-
-[node name="Pohon2" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(385, -104)
-
-[node name="Pohon30" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(416, 101)
-
-[node name="Pohon29" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(395, 120)
-
-[node name="Pohon4" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(363, 130)
-
-[node name="Pohon31" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(545, 78)
-
-[node name="Pohon32" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(584, 90)
-
-[node name="Pohon33" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(623, 93)
-
-[node name="Pohon34" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(544, 110)
-
-[node name="Pohon35" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(544, 110)
-
-[node name="Pohon36" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(585, 117)
-
-[node name="Pohon37" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(585, 117)
-
-[node name="Pohon38" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(618, 132)
-
-[node name="Pohon39" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(592, 143)
-
-[node name="Pohon40" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(553, 146)
-
-[node name="Pohon41" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(510, 151)
-
-[node name="Pohon42" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(524, 180)
-
-[node name="Pohon43" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(573, 180)
-
-[node name="Pohon44" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(564, 207)
-
-[node name="Pohon45" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(533, 204)
-
-[node name="Pohon46" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(507, 211)
-
-[node name="Pohon47" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(537, 231)
-
-[node name="Pohon48" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(565, 228)
-
-[node name="Pohon49" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(756, 173)
-
-[node name="Pohon50" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(719, 188)
-
-[node name="Pohon51" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(736, 202)
-
-[node name="Pohon52" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(723, 219)
-
-[node name="Pohon53" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(677, 224)
-
-[node name="Pohon54" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(676, 247)
-
-[node name="Pohon55" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(648, 260)
-
-[node name="Pohon56" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(693, 255)
-
-[node name="Pohon57" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(673, 272)
-
-[node name="Pohon58" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(654, 295)
-
-[node name="Pohon59" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(621, 290)
-
-[node name="Pohon60" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(604, 305)
-
-[node name="Pohon61" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(629, 320)
-
-[node name="Pohon62" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(606, 329)
-
-[node name="Pohon63" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(587, 341)
-
-[node name="Pohon64" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(628, -10)
-
-[node name="Pohon65" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(657, -12)
-
-[node name="Pohon66" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(700, -9)
-
-[node name="Pohon67" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(686, 16)
-
-[node name="Pohon68" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(740, 13)
-
-[node name="Pohon69" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(776, -10)
-
-[node name="Pohon70" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(814, -7)
-
-[node name="Pohon71" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(845, -1)
-
-[node name="Pohon72" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(870, 14)
-
-[node name="Pohon73" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(796, 32)
-
-[node name="Pohon74" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(728, 18)
-
-[node name="Pohon75" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(770, 31)
-
-[node name="Pohon76" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(843, 34)
-
-[node name="Pohon77" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(902, 0)
-
-[node name="Pohon78" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(868, 49)
-
-[node name="Pohon79" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(817, 50)
-
-[node name="Pohon80" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(795, 55)
-
-[node name="Pohon81" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(832, 74)
-
-[node name="Pohon82" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(805, 85)
-
-[node name="Pohon83" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(828, 97)
-
-[node name="Pohon28" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(344, 141)
-
-[node name="Pohon5" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(348, 181)
-
-[node name="Pohon9" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(319, 143)
-
-[node name="Pohon6" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(314, 176)
-
-[node name="Pohon7" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(357, 226)
-
-[node name="Pohon8" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(335, 200)
-
-[node name="Pohon10" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(384, 250)
-
-[node name="Pohon11" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(319, 234)
-
-[node name="Pohon12" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(324, 260)
-
-[node name="Pohon13" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(307, 297)
-
-[node name="Pohon14" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(374, 292)
-
-[node name="Pohon15" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(417, 276)
-
-[node name="Pohon16" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(455, 287)
-
-[node name="Pohon17" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(491, 310)
-
-[node name="Pohon18" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(433, 317)
-
-[node name="Pohon19" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(411, 306)
-
-[node name="Pohon20" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(343, 316)
-
-[node name="Pohon21" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(310, 329)
-
-[node name="Pohon22" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(278, 342)
-
-[node name="Pohon23" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(348, 335)
-
-[node name="Pohon92" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(341, 348)
-
-[node name="Pohon93" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(304, 354)
-
-[node name="Pohon94" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(254, 361)
-
-[node name="Pohon95" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(396, 362)
-
-[node name="Pohon96" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(441, 365)
-
-[node name="Pohon24" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(398, 316)
-
-[node name="Pohon25" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(418, 337)
-
-[node name="Pohon26" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(468, 338)
-
-[node name="Pohon27" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(479, 357)
-
-[node name="Pohon97" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(118, 321)
-
-[node name="Pohon98" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(144, 338)
-
-[node name="Pohon99" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(152, 360)
-
-[node name="Pohon100" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(101, 342)
-
-[node name="Pohon101" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(113, 359)
-
-[node name="Pohon102" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(73, 357)
-
-[node name="Pohon103" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(187, 204)
-
-[node name="Pohon104" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(156, 231)
-
-[node name="Pohon105" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(206, 228)
-
-[node name="Pohon106" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(217, 249)
-
-[node name="Pohon107" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(182, 236)
-
-[node name="Pohon108" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(143, 247)
-
-[node name="Pohon109" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(181, 260)
-
-[node name="Pohon110" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(202, 125)
-
-[node name="Pohon111" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(242, 126)
-
-[node name="Pohon112" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(245, 147)
-
-[node name="Pohon113" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(220, 148)
-
-[node name="Pohon114" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(172, 133)
-
-[node name="Pohon115" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(146, 145)
-
-[node name="Pohon116" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(157, 164)
-
-[node name="Pohon117" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(184, 153)
-
-[node name="Pohon118" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(199, 168)
-
-[node name="Pohon120" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(357, -83)
-
-[node name="Pohon121" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(402, -84)
-
-[node name="Pohon122" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(430, -93)
-
-[node name="Pohon123" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(452, -75)
-
-[node name="Pohon124" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(458, -50)
-
-[node name="Pohon125" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(420, -69)
-
-[node name="Pohon126" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(388, -66)
-
-[node name="Pohon127" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(336, -52)
-
-[node name="Pohon128" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(286, -60)
-
-[node name="Pohon129" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(266, -36)
-
-[node name="Pohon130" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(314, -27)
-
-[node name="Pohon131" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(368, -47)
-
-[node name="Pohon132" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(398, -25)
-
-[node name="Pohon133" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(431, -48)
-
-[node name="Pohon134" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(454, -22)
-
-[node name="Pohon135" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(426, -11)
-
-[node name="Pohon136" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(363, -8)
-
-[node name="Pohon137" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(323, 4)
-
-[node name="Pohon138" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(283, -7)
-
-[node name="Pohon139" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(249, -23)
-
-[node name="Pohon140" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(241, 8)
-
-[node name="Pohon141" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(273, 19)
-
-[node name="Pohon142" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(328, 23)
-
-[node name="Pohon143" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(394, 21)
-
-[node name="Pohon144" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(361, 29)
-
-[node name="Pohon145" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(313, 48)
-
-[node name="Pohon146" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(275, 46)
-
-[node name="Pohon147" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(231, 49)
-
-[node name="Pohon148" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(450, 7)
-
-[node name="Pohon149" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(424, 23)
-
-[node name="Pohon150" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(403, 35)
-
-[node name="Pohon151" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(435, 35)
-
-[node name="Pohon152" parent="Pohon" instance=ExtResource("9_jaoby")]
-position = Vector2(1467, -287)
-
-[node name="Spawner" type="CanvasGroup" parent="."]
-visible = false
-position = Vector2(2, 0)
-
-[node name="Spawner_PenebangKayu" parent="Spawner" instance=ExtResource("11_q2v3j")]
-position = Vector2(1697, 92)
-
-[node name="Spawner_PenebangKayu2" parent="Spawner" instance=ExtResource("11_q2v3j")]
-position = Vector2(1180, 377)
-
-[node name="Spawner_PenebangKayu4" parent="Spawner" instance=ExtResource("11_q2v3j")]
-position = Vector2(897, 376)
-
-[node name="Spawner_PenebangKayu5" parent="Spawner" instance=ExtResource("11_q2v3j")]
-position = Vector2(511, 386)
-
-[node name="Spawner_PenebangKayu6" parent="Spawner" instance=ExtResource("11_q2v3j")]
-position = Vector2(1858, -374)
-
-[node name="Spawner_PenebangKayu7" parent="Spawner" instance=ExtResource("11_q2v3j")]
-position = Vector2(911, -370)
-
 [node name="batu_collectable" parent="." instance=ExtResource("11_arnem")]
-visible = false
 position = Vector2(1241, 9)
 
 [node name="Timer" type="CanvasGroup" parent="."]
-visible = false
 
 [node name="masuk_map_ke_mulai_game" type="Timer" parent="Timer"]
 wait_time = 5.0
@@ -1404,7 +923,6 @@ one_shot = true
 [node name="durasi_wave" type="Timer" parent="Timer"]
 
 [node name="pindah_desa" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pindah_desa"]
 position = Vector2(13.5, 85.5)
@@ -1420,7 +938,32 @@ script = ExtResource("10_jx0eh")
 gradient = ExtResource("11_jk8ti")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(9, -4)
 navigation_polygon = SubResource("NavigationPolygon_v13fq")
+
+[node name="Pohon153" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
+position = Vector2(425, 89)
+
+[node name="Spawner" type="CanvasGroup" parent="NavigationRegion2D"]
+position = Vector2(-7, 4)
+
+[node name="Spawner_PenebangKayu2" parent="NavigationRegion2D/Spawner" instance=ExtResource("11_q2v3j")]
+position = Vector2(1180, 347)
+
+[node name="Spawner_PenebangKayu4" parent="NavigationRegion2D/Spawner" instance=ExtResource("11_q2v3j")]
+position = Vector2(914, 336)
+
+[node name="Spawner_PenebangKayu5" parent="NavigationRegion2D/Spawner" instance=ExtResource("11_q2v3j")]
+position = Vector2(528, 344)
+
+[node name="Spawner_PenebangKayu6" parent="NavigationRegion2D/Spawner" instance=ExtResource("11_q2v3j")]
+position = Vector2(1784, -338)
+
+[node name="Spawner_PenebangKayu7" parent="NavigationRegion2D/Spawner" instance=ExtResource("11_q2v3j")]
+position = Vector2(843, -353)
+
+[node name="Spawner_PenebangKayu" parent="NavigationRegion2D" instance=ExtResource("11_q2v3j")]
+position = Vector2(1630, 75)
 
 [connection signal="timeout" from="Timer/masuk_map_ke_mulai_game" to="." method="_on_masuk_map_ke_mulai_game_timeout"]
 [connection signal="timeout" from="Timer/durasi_wave" to="." method="_on_durasi_wave_timeout"]

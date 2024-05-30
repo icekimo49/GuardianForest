@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bttfnxprkny6n"]
+[gd_scene load_steps=43 format=3 uid="uid://bttfnxprkny6n"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_ba21o"]
 [ext_resource type="Script" path="res://Areas/Desa/desa.gd" id="1_rrtmw"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cv1cqfptwyqiw" path="res://scene/UI/menu/asset/Pohon 2.png" id="10_0pnf2"]
 [ext_resource type="PackedScene" uid="uid://de5spbk16rav2" path="res://Areas/Desa/Rumah/rumah_putih.tscn" id="11_mhw6j"]
 [ext_resource type="Texture2D" uid="uid://d1b8u23q5k1gb" path="res://scene/UI/menu/asset/Sparkle 2.png" id="11_vtxbm"]
-[ext_resource type="PackedScene" uid="uid://dpc7ikqw5cgaq" path="res://Areas/Desa/alang_alang_pager.tscn" id="11_y36hm"]
+[ext_resource type="PackedScene" path="res://Areas/Desa/alang_alang_pager.tscn" id="11_y36hm"]
 [ext_resource type="Texture2D" uid="uid://be6e84ghfocia" path="res://scene/UI/menu/asset/Pohon.png" id="12_e57jg"]
 [ext_resource type="PackedScene" uid="uid://bdwqgubrtn8yt" path="res://Areas/Desa/Rumah/rumah_putih_tinggi.tscn" id="12_sx0mj"]
 [ext_resource type="PackedScene" uid="uid://cepjowy0mhxvl" path="res://Character/Tanaman/BatangKayu/batang_kayu.tscn" id="13_l4drx"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bn1hnbiqhxnw0" path="res://Areas/GameTutorial/ApiUnggun/api_unggun.tscn" id="19_p5cye"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Main/daynightcycle-gradient-texture.tres" id="22_ixjot"]
 [ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://Main/UI/daynightcycle_ui.tscn" id="23_k8d0c"]
+[ext_resource type="PackedScene" uid="uid://c0fyfkfnyjt36" path="res://Character/Musuh/pelempar_api/pelempar_api.tscn" id="24_a431p"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_qi053"]
 tile_data = PackedInt32Array(0, 786433, 11, 65536, 393217, 11, 131072, 786433, 12, 196608, 786433, 12, 262144, 786433, 12, 327680, 393217, 11, 393216, 393217, 11)
@@ -1518,15 +1519,6 @@ layer_0/tile_data = PackedInt32Array(1900544, 65536, 2, 1966080, 65536, 2, 20316
 [node name="joystick" parent="UI" instance=ExtResource("3_xvpu5")]
 position = Vector2(24, 224)
 
-[node name="inventory" type="CanvasLayer" parent="."]
-
-[node name="MiniInventory" parent="inventory" instance=ExtResource("4_w4ytk")]
-offset_left = 261.0
-offset_top = 309.0
-offset_right = 420.0
-offset_bottom = 366.0
-scale = Vector2(1.18, 1.18)
-
 [node name="tombol_serang" type="CanvasLayer" parent="."]
 
 [node name="tombolSerang" parent="tombol_serang" instance=ExtResource("5_uj250")]
@@ -2368,8 +2360,20 @@ color = Color(0.160784, 0.380392, 0.509804, 1)
 script = ExtResource("7_3pkqf")
 gradient = ExtResource("22_ixjot")
 
+[node name="pelempar_api" parent="." instance=ExtResource("24_a431p")]
+position = Vector2(1044, 210)
+
 [node name="jam" type="CanvasLayer" parent="."]
 
 [node name="DayNightCycleUI" parent="jam" instance=ExtResource("23_k8d0c")]
+
+[node name="inventory" type="CanvasLayer" parent="."]
+
+[node name="MiniInventory" parent="inventory" instance=ExtResource("4_w4ytk")]
+offset_left = 261.0
+offset_top = 309.0
+offset_right = 420.0
+offset_bottom = 366.0
+scale = Vector2(1.18, 1.18)
 
 [connection signal="body_entered" from="pindah_hutan" to="." method="_on_pindah_hutan_body_entered"]

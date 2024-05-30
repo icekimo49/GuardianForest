@@ -6,14 +6,15 @@ extends Node2D
 var durasi_game
 
 func _ready():
+	$NavigationRegion2D.bake_navigation_polygon(true)
+	print(GlobalScript.posisi_pohon)
 	daynightcycle.time_tick.connect(ui_jam.set_daytime)
 	GlobalScript.path_screen_terakhir_sebelum_loading= "res://Areas/Hutan/Scene/hutan.tscn"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if GlobalScript.hour == 1 and GlobalScript.game_berlangsung == false:
-		await get_tree().create_timer(5.0).timeout
-		print("wave ke-", GlobalScript.tingkat_wave, "dimulai!!!!!")
+		print("wave ke-", GlobalScript.tingkat_wave, " dimulai!!!!!")
 		GlobalScript.game_berlangsung = true
 		$Timer/masuk_map_ke_mulai_game.start()
 	pass

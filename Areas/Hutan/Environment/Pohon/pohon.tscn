@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Areas/Hutan/Environment/Pohon/pohon.gd" id="1_taq8s"]
 [ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://Areas/Hutan/Environment/Api/api.tscn" id="2_tgoya"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sjc8e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60x50"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yudq5"]
 radius = 38.0
@@ -21,7 +21,7 @@ texture = ExtResource("1_2lg1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 18)
-shape = SubResource("CircleShape2D_sjc8e")
+shape = SubResource("RectangleShape2D_60x50")
 
 [node name="Area2D" type="Area2D" parent="." groups=["pohon"]]
 collision_layer = 8
@@ -43,6 +43,9 @@ occluder = SubResource("OccluderPolygon2D_dgi8g")
 
 [node name="timer_PenebangKayu" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-9, 15, 10, 15, 9, 28, -9, 28)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
