@@ -63,3 +63,6 @@ func _on_touch_screen_button_3_pressed():
 					use_item = true
 					GlobalScript.item_in_use = GlobalScript.inv.slots[10].item.name
 		print(GlobalScript.item_in_use)
+
+func more_item():
+	GameEvent.emit_signal("tombol_more_inventory")

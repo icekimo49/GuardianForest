@@ -10,3 +10,4 @@ func _process(delta):
 
 func _on_pressed():
 		GameEvent.emit_signal("tombol_more_inventory")
+		
