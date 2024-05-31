@@ -12,7 +12,6 @@ func _ready():
 	waktu_muncul = GlobalScript.time
 
 func _process(delta):
-	print(get_parent())
 	if GlobalScript.time - waktu_muncul >= 0.1:
 		var instance = pohon_gede.instantiate()
 		instance.position = global_position
