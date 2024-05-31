@@ -3,6 +3,10 @@ extends Node2D
 @onready var ui_jam = $jam/DayNightCycleUI
 @onready var daynightcycle = $NightCycle
 
+@onready var info_wave = $InfoWave
+@onready var info_wave_color = $inforWaveCanvas/InfoWave
+@onready var animasi_wave = $inforWaveCanvas/InfoWave/AnimationPlayer
+
 var durasi_game
 
 func _ready():
@@ -17,6 +21,9 @@ func _process(delta):
 		print("wave ke-", GlobalScript.tingkat_wave, " dimulai!!!!!")
 		GlobalScript.game_berlangsung = true
 		$Timer/masuk_map_ke_mulai_game.start()
+	pass
+
+func animasi_wave_player():
 	pass
 
 func _on_masuk_map_ke_mulai_game_timeout():
