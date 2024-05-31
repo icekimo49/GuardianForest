@@ -19,6 +19,7 @@ var posisi_lama
 @onready var barDarah = $barDarah
 @onready var textDamage = $damage_diterima
 @onready var textAir = $airIndikator
+var pohon_kecil = preload("res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/pohon_kecil.tscn")
 
 
 func _ready():
@@ -244,4 +245,7 @@ func _on_player_hitbox_area_exited(area):
 		api_inattack_range = false
 
 func tanam_pohon():
-	pass
+	var instance = pohon_kecil.instantiate()
+	instance.position = global_position
+	var parent_node = get_parent().get_node("NavigationRegion2D")
+	parent_node.add_child(instance)

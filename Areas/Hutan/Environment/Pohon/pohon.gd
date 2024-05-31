@@ -3,28 +3,35 @@ extends StaticBody2D
 var posisi = position
 @export var api : PackedScene
 var deteksi = false
-var kebakar = null
-var timer: Timer
-var timer2: Timer
+var kebakar = false
+var timer1 = Timer.new()
+var timer2 = Timer.new()
 
 func _ready():
-	timer = $Timer
-	timer2 = $Timer2
 	GlobalScript.posisi_pohon.append(self.global_position)
-	
+
 func mulai_timer1():
-	timer.start()
-	
-func _on_timer_timeout():
+	timer1.set_wait_time(3.0)
+	timer1.connect("timeout", Callable(self, "_on_timer1_timeout"))
+	add_child(timer1)
+	timer1.one_shot = true
+	timer1.start()
+
+func _on_timer1_timeout():
 	var instance = api.instantiate()
 	instance.position = posisi
 	add_child(instance)
+	kebakar = true
 	mulai_timer2()
 
 func mulai_timer2():
+	timer2.set_wait_time(5.0)
+	timer2.connect("timeout", Callable(self, "_on_timer2_timeout"))
+	add_child(timer2)
+	timer2.one_shot = true
 	timer2.start()
 
-func _on_timer_2_timeout():
+func _on_timer2_timeout():
 	queue_free()
 
 func _on_timer_penebang_kayu_timeout():
@@ -36,7 +43,6 @@ func _on_area_2d_area_entered(area):
 		$timer_PenebangKayu.start()
 	if area.name == "api_hitbox":
 		if deteksi == false:
-			print("menyala abangkuh")
 			mulai_timer1()
 			deteksi = true
 
@@ -44,8 +50,9 @@ func _on_area_2d_area_exited(area):
 	if area.name == "area_penebang_kayu":
 		$timer_PenebangKayu.stop()
 	if area.name == "api_hitbox":
-		timer.stop()
-		timer2.stop()
+		if !kebakar:
+			timer1.stop()
+			timer2.stop()
 
 func pohon():
 	pass

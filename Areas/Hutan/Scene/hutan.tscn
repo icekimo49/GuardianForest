@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cd0oh2t77de80"]
+[gd_scene load_steps=26 format=3 uid="uid://cd0oh2t77de80"]
 
 [ext_resource type="Script" path="res://Areas/Hutan/Scene/hutan.gd" id="1_4n0fo"]
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_52ebj"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Main/daynightcycle-gradient-texture.tres" id="11_jk8ti"]
 [ext_resource type="PackedScene" uid="uid://c8hkr5cfrve56" path="res://Character/Musuh/spawner_penebang_kayu.tscn" id="11_q2v3j"]
 [ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://Main/UI/daynightcycle_ui.tscn" id="14_wgrvv"]
+[ext_resource type="PackedScene" uid="uid://db5x3x3nhdeag" path="res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/pohon_kecil.tscn" id="15_jblt6"]
 [ext_resource type="PackedScene" uid="uid://biakaku2x6hdt" path="res://Item/Material/biji/biji.tscn" id="16_eyntx"]
 [ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://Areas/Hutan/Environment/Api/api.tscn" id="16_xe2fl"]
 [ext_resource type="PackedScene" uid="uid://bryudnbm3yjh8" path="res://Item/Tools/ember_item.tscn" id="17_y118e"]
@@ -908,7 +909,6 @@ offset_bottom = 366.0
 scale = Vector2(1.18, 1.18)
 
 [node name="tombol_serang" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="tombolSerang" parent="tombol_serang" instance=ExtResource("6_mpcn1")]
 position = Vector2(462, 207)
@@ -970,16 +970,28 @@ position = Vector2(26, -1)
 navigation_polygon = SubResource("NavigationPolygon_v13fq")
 
 [node name="Pohon153" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(624, 65)
+position = Vector2(657, 33)
+
+[node name="Pohon157" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
+position = Vector2(704, 10)
+
+[node name="Pohon158" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
+position = Vector2(665, 1)
 
 [node name="Pohon154" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
 position = Vector2(668, 67)
 
 [node name="Pohon155" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(720, 68)
+position = Vector2(712, 63)
+
+[node name="Pohon156" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
+position = Vector2(727, 19)
+
+[node name="pohon_kecil" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
+position = Vector2(602, 13)
 
 [node name="api" parent="." instance=ExtResource("16_xe2fl")]
-position = Vector2(604, 64)
+position = Vector2(648, -34)
 
 [node name="biji" parent="." instance=ExtResource("16_eyntx")]
 position = Vector2(425, 114)
@@ -994,7 +1006,6 @@ position = Vector2(494, 170)
 position = Vector2(530, 95)
 
 [node name="area_tanam" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="area_tanam"]
 polygon = PackedVector2Array(229, 61, 371, 65, 382, 52, 480, 53, 486, 37, 508, 41, 513, 26, 530, 28, 590, -47, 579, -48, 584, -59, 553, -59, 575, -85, 558, -85, 586, -121, 544, -121, 550, -134, 523, -134)

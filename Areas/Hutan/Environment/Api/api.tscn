@@ -33,7 +33,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_plxj5"]
-radius = 33.0606
+radius = 24.0
 
 [node name="api" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_ktts3")

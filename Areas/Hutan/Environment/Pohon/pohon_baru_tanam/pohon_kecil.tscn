@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://db5x3x3nhdeag"]
+[gd_scene load_steps=6 format=3 uid="uid://db5x3x3nhdeag"]
 
 [ext_resource type="Script" path="res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/pohon_kecil.gd" id="1_oftbf"]
 [ext_resource type="Texture2D" uid="uid://cdsls6t846qc1" path="res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/kayaknya_pohon.png" id="1_p0cmg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7d0e"]
 radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ykp3y"]
+radius = 28.0179
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q5gpu"]
+polygon = PackedVector2Array(-6, 0, -10, 6, -12, 19, -11, 21, -7, 23, -3, 26, 10, 23, 10, 19, 10, 4, 4, 0)
 
 [node name="pohon_kecil" type="StaticBody2D"]
 script = ExtResource("1_oftbf")
@@ -15,3 +21,18 @@ texture = ExtResource("1_p0cmg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g7d0e")
+
+[node name="pohon" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pohon"]
+shape = SubResource("CircleShape2D_ykp3y")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, -13)
+occluder = SubResource("OccluderPolygon2D_q5gpu")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-12, 3, -9, 1, -4, -1, 2, -1, 9, -1, 10, 1, 11, 3, 12, 5, 11, 7, 9, 9, 8, 9, 7, 10, 0, 11, -4, 11, -7, 11, -10, 9, -12, 7, -12, 4)
+
+[connection signal="area_entered" from="pohon" to="." method="_on_pohon_area_entered"]
+[connection signal="area_exited" from="pohon" to="." method="_on_pohon_area_exited"]
