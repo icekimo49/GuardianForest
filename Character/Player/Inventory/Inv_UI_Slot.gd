@@ -17,5 +17,5 @@ func update(slot: InvSlot):
 		item_visual.scale = slot.item.ukuran_item
 		item_visual.visible = true
 		item_visual.texture = slot.item.texture
-		amount_text.visible = true
+		amount_text.visible = false
 		amount_text.text = str(slot.amount)

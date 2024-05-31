@@ -24,9 +24,10 @@ func _on_touch_screen_button_pressed():
 			use_item = false 
 			GlobalScript.item_in_use = ""
 		else:
-			if GlobalScript.inv.slots[8].item.type == false:
-				use_item = true
-				GlobalScript.item_in_use = GlobalScript.inv.slots[8].item.name
+			if GlobalScript.inv.slots[8] != null:
+				if GlobalScript.inv.slots[8].item.type == false:
+					use_item = true
+					GlobalScript.item_in_use = GlobalScript.inv.slots[8].item.name
 		print(GlobalScript.item_in_use)
 
 func _on_touch_screen_button_2_pressed():
@@ -40,9 +41,10 @@ func _on_touch_screen_button_2_pressed():
 			use_item = false 
 			GlobalScript.item_in_use = ""
 		else:
-			if GlobalScript.inv.slots[9].item.type == false:
-				use_item = true
-				GlobalScript.item_in_use = GlobalScript.inv.slots[9].item.name
+			if GlobalScript.inv.slots[9] != null:
+				if GlobalScript.inv.slots[9].item.type == false:
+					use_item = true
+					GlobalScript.item_in_use = GlobalScript.inv.slots[9].item.name
 		print(GlobalScript.item_in_use)
 
 func _on_touch_screen_button_3_pressed():
@@ -56,7 +58,8 @@ func _on_touch_screen_button_3_pressed():
 			use_item = false 
 			GlobalScript.item_in_use = ""
 		else:
-			if GlobalScript.inv.slots[10].item.type == false:
-				use_item = true
-				GlobalScript.item_in_use = GlobalScript.inv.slots[10].item.name
+			if GlobalScript.inv.slots[10] != null:
+				if GlobalScript.inv.slots[10].item.type == false:
+					use_item = true
+					GlobalScript.item_in_use = GlobalScript.inv.slots[10].item.name
 		print(GlobalScript.item_in_use)

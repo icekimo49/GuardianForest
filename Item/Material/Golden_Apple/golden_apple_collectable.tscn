@@ -5,15 +5,15 @@
 [ext_resource type="Resource" uid="uid://b3etdhecsp6fs" path="res://Item/Material/Golden_Apple/Golden_Apple.tres" id="2_45dxo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0pdj3"]
-radius = 32.0156
+radius = 21.3776
 
 [node name="Golden Apple" type="StaticBody2D"]
 script = ExtResource("1_k17he")
 item = ExtResource("2_45dxo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(6, 5)
-scale = Vector2(0.0164561, 0.0164561)
+position = Vector2(5, 4)
+scale = Vector2(0.0118902, 0.0118902)
 texture = ExtResource("1_w0lgi")
 
 [node name="Area2D" type="Area2D" parent="."]

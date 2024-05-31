@@ -24,8 +24,6 @@ position = Vector2(0, 18)
 shape = SubResource("RectangleShape2D_60x50")
 
 [node name="Area2D" type="Area2D" parent="." groups=["pohon"]]
-collision_layer = 8
-collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 17
@@ -37,6 +35,7 @@ one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_dgi8g")
@@ -45,10 +44,13 @@ occluder = SubResource("OccluderPolygon2D_dgi8g")
 wait_time = 5.0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-9, 15, 10, 15, 9, 28, -9, 28)
+polygon = PackedVector2Array(-10, 8, 10, 8, 10, 28, -10, 28)
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="timer_PenebangKayu" to="." method="_on_timer_penebang_kayu_timeout"]

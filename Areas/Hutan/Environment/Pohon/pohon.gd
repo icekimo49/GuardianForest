@@ -6,23 +6,6 @@ var deteksi = false
 var kebakar = null
 var timer: Timer
 var timer2: Timer
-var kondisi_area_pohon: Array
-
-func _on_area_2d_body_entered(body):
-	if body.has_method("penebang_kayu"):
-		$timer_PenebangKayu.start()
-	if body.has_method("api"):
-		if deteksi == false:
-			mulai_timer1()
-			deteksi = true
-
-func _on_area_2d_body_exited(body):
-	if body.has_method("penebang_kayu"):
-		$timer_PenebangKayu.stop()
-	var pohon = $Area2D/CollisionShape2D
-	pohon.apply_scale(Vector2(3,3))
-	timer.stop()
-	timer2.stop()
 
 func _ready():
 	timer = $Timer
@@ -48,3 +31,21 @@ func _on_timer_penebang_kayu_timeout():
 	queue_free()
 	$timer_PenebangKayu.stop()
 
+func _on_area_2d_area_entered(area):
+	if area.name == "area_penebangkayu":
+		$timer_PenebangKayu.start()
+	if area.name == "api_hitbox":
+		if deteksi == false:
+			print("menyala abangkuh")
+			mulai_timer1()
+			deteksi = true
+
+func _on_area_2d_area_exited(area):
+	if area.name == "area_penebang_kayu":
+		$timer_PenebangKayu.stop()
+	if area.name == "api_hitbox":
+		timer.stop()
+		timer2.stop()
+
+func pohon():
+	pass

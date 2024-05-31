@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://db26m2afepnbf"]
+[gd_scene load_steps=10 format=3 uid="uid://db26m2afepnbf"]
 
 [ext_resource type="Script" path="res://Areas/Hutan/Environment/Api/api.gd" id="1_ktts3"]
 [ext_resource type="PackedScene" uid="uid://cxp32tjv0xv5n" path="res://scene/ability/lemparBotol_controller/lempar_botol_controller.tscn" id="3_d3h3s"]
@@ -8,9 +8,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnkky"]
 radius = 31.0644
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b14ok"]
-size = Vector2(17, 35)
 
 [sub_resource type="Animation" id="Animation_kv01d"]
 resource_name = "menyala"
@@ -39,8 +36,6 @@ _data = {
 radius = 33.0606
 
 [node name="api" type="CharacterBody2D" groups=["enemy"]]
-collision_layer = 9
-collision_mask = 9
 script = ExtResource("1_ktts3")
 
 [node name="Area2D" type="Area2D" parent="." groups=["api"]]
@@ -62,10 +57,6 @@ hframes = 4
 vframes = 5
 frame = 18
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_b14ok")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_vf0gu")
@@ -73,7 +64,7 @@ libraries = {
 autoplay = "menyala"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 15.0
 autostart = true
 
 [node name="api_hitbox" type="Area2D" parent="."]

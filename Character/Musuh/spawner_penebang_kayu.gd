@@ -4,10 +4,10 @@ var min_time : int
 var max_time : int
 var random_time
 var timer_duration
-var penebang_kayu = preload("res://Character/Musuh/Penebang_kayu/Penebang_kayu.tscn")
 var musuh
 var timeout : bool
 var timer = Timer.new()
+var arr_musuh = [preload("res://Character/Musuh/Penebang_kayu/Penebang_kayu.tscn"), preload("res://Character/Musuh/pelempar_api/pelempar_api.tscn")]
 
 func _ready():
 	timeout = true
@@ -31,10 +31,10 @@ func start_timer(duration):
 	add_child(timer)
 	timer.one_shot = true
 	timer.start()
-	print("Timer dimulai dengan durasi: ", timer_duration, " detik")
 
 func _on_timer_timeout():
-	musuh = penebang_kayu.instantiate()
+	var musuh_terpilih = arr_musuh[randi_range(0, arr_musuh.size())]
+	musuh = musuh_terpilih.instantiate()
 	musuh.global_position = self.global_position
 	get_parent().add_child(musuh)
 	timeout = true

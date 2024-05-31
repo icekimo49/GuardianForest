@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwdr6l8bsa4b3"]
+
+[ext_resource type="Script" path="res://Item/Tools/kentongan/kentongan.gd" id="1_h7vst"]
+[ext_resource type="Resource" uid="uid://df2grqymlof6r" path="res://Item/Tools/kentongan/kentongan.tres" id="2_s6ed5"]
+[ext_resource type="Texture2D" uid="uid://v8hbd6y5lpfh" path="res://Item/Tools/kentongan/kentongan.png" id="2_vn0fp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvy57"]
+radius = 32.0156
+
+[node name="kentongan" type="StaticBody2D"]
+script = ExtResource("1_h7vst")
+item = ExtResource("2_s6ed5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0975448, 0.0975448)
+texture = ExtResource("2_vn0fp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_tvy57")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

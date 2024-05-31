@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_kqysc")
-name = "Ember"
+name = "ember"
 texture = ExtResource("2_fdtfq")
 stack = false
 type = false
-ukuran_item = Vector2(0.5, 0.5)
+ukuran_item = Vector2(0.075, 0.075)

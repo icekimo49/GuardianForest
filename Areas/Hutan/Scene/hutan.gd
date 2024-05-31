@@ -46,3 +46,11 @@ func _on_pindah_desa_body_entered(body):
 		if body.is_in_group("player"):
 			$Player.save()
 			get_tree().change_scene_to_packed(load("res://Areas/Desa/desa.tscn"))
+
+func _on_area_tanam_body_entered(body):
+	if body.has_method("player"):
+		GlobalScript.boleh_tanam = true
+
+func _on_area_tanam_body_exited(body):
+	if body.has_method("player"):
+		GlobalScript.boleh_tanam = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cfbeqiep442p0"]
+[gd_scene load_steps=14 format=3 uid="uid://cfbeqiep442p0"]
 
 [ext_resource type="Script" path="res://Character/Musuh/Penebang_kayu/Penebang_kayu.gd" id="1_we245"]
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="2_hgfhn"]
@@ -59,51 +59,8 @@ size = Vector2(26, 32)
 [sub_resource type="CircleShape2D" id="CircleShape2D_l85rn"]
 radius = 87.0057
 
-[sub_resource type="Animation" id="Animation_ltu3i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_db4e3"]
-resource_name = "menebang"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.075, 0.15, 0.225, 0.3, 0.375),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xc8qe"]
-_data = {
-"RESET": SubResource("Animation_ltu3i"),
-"menebang": SubResource("Animation_db4e3")
-}
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_05h5y"]
-radius = 17.1172
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_uwhyp"]
-radius = 320.264
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ammr1"]
-radius = 25.02
+radius = 33.0151
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4rcqe"]
 polygon = PackedVector2Array(-9, -7, -11, -3, -14, 0, -16, 5, -17, 8, -23, 10, -24, 18, -14, 18, -17, 14, -17, 12, -13, 13, -16, 22, -12, 22, -9, 13, -6, 13, -3, 23, 0, 23, 0, 17, -2, 13, -1, 10, 1, 10, -1, 6, -3, -3, -4, -3, -5, -7)
@@ -117,7 +74,6 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_we245")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_xcfdp")
 autoplay = "default"
 frame_progress = 0.32115
@@ -137,15 +93,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_l85rn")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_xc8qe")
-}
-autoplay = "menebang"
+[node name="area_penebang_kayu" type="Area2D" parent="."]
 
-[node name="Area2D2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_penebang_kayu"]
+position = Vector2(-3, 2)
 shape = SubResource("CircleShape2D_05h5y")
 
 [node name="Timer" type="Timer" parent="."]
@@ -160,28 +111,10 @@ debug_enabled = true
 wait_time = 0.682
 autostart = true
 
-[node name="arahPathFinding" type="Node2D" parent="."]
-
-[node name="lingkarJauh" type="Area2D" parent="arahPathFinding"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="arahPathFinding/lingkarJauh"]
-modulate = Color(0.631373, 0.129412, 1, 1)
-shape = SubResource("CircleShape2D_uwhyp")
-
-[node name="lingkarDekat" type="Area2D" parent="arahPathFinding"]
-collision_layer = 0
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="arahPathFinding/lingkarDekat"]
-modulate = Color(1, 1, 0.0313726, 1)
-scale = Vector2(8.53, 8.53)
-shape = SubResource("CircleShape2D_ammr1")
-
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_4rcqe")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Navigasi/pathfindingTimer" to="." method="_on_pathfinding_timer_timeout"]
-[connection signal="area_entered" from="arahPathFinding/lingkarJauh" to="." method="_on_lingkar_jauh_area_entered"]
-[connection signal="area_entered" from="arahPathFinding/lingkarDekat" to="." method="_on_lingkar_dekat_area_entered"]

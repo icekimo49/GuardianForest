@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://db5x3x3nhdeag"]
+
+[ext_resource type="Script" path="res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/pohon_kecil.gd" id="1_oftbf"]
+[ext_resource type="Texture2D" uid="uid://cdsls6t846qc1" path="res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/kayaknya_pohon.png" id="1_p0cmg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g7d0e"]
+radius = 15.0
+
+[node name="pohon_kecil" type="StaticBody2D"]
+script = ExtResource("1_oftbf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.00976565, 0.00976565)
+texture = ExtResource("1_p0cmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g7d0e")

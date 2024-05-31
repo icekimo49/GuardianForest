@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwg2k40ry8u0q"]
 
-[ext_resource type="Texture2D" uid="uid://bgfe4k4l63qbb" path="res://scene/tombolSerang/Menyiram.png" id="1_yn8hv"]
+[ext_resource type="Texture2D" uid="uid://bgfe4k4l63qbb" path="res://Character/Player/Tombol_Serang/Menyiram.png" id="1_yn8hv"]
 
 [node name="Button" type="Button"]
 offset_right = 8.0

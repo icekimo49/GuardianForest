@@ -24,6 +24,7 @@ var time : float = 0.0
 var hour
 var sudah_tutorial = false
 var path_screen_terakhir_sebelum_loading
+var boleh_tanam = false
 
 #pohon
 var posisi_pohon = []
