@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cd0oh2t77de80"]
+[gd_scene load_steps=41 format=3 uid="uid://cd0oh2t77de80"]
 
 [ext_resource type="Script" path="res://Areas/Hutan/Scene/hutan.gd" id="1_4n0fo"]
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_52ebj"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://be6e84ghfocia" path="res://scene/UI/menu/asset/Pohon.png" id="23_bk44a"]
 [ext_resource type="PackedScene" uid="uid://cepjowy0mhxvl" path="res://Character/Tanaman/BatangKayu/batang_kayu.tscn" id="24_dqvkg"]
 [ext_resource type="Texture2D" uid="uid://cat27ahudphaw" path="res://scene/UI/menu/asset/Sparkle 1.png" id="25_3comt"]
+[ext_resource type="FontFile" uid="uid://bql7walclmmtp" path="res://scene/UI/menu/font/font_1.ttf" id="27_6w3c3"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_qi053"]
 tile_data = PackedInt32Array(0, 786433, 11, 65536, 393217, 11, 131072, 786433, 12, 196608, 786433, 12, 262144, 786433, 12, 327680, 393217, 11, 393216, 393217, 11)
@@ -2267,6 +2268,14 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(377, -390, -278, 388, 1440, 393, 2085, -390)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
+[sub_resource type="Animation" id="Animation_pfb6f"]
+resource_name = "wave"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j20x1"]
+_data = {
+"wave": SubResource("Animation_pfb6f")
+}
+
 [node name="Hutan" type="Node2D"]
 script = ExtResource("1_4n0fo")
 
@@ -2382,7 +2391,6 @@ shape = SubResource("RectangleShape2D_1urei")
 [node name="DayNightCycleUI" parent="jam" instance=ExtResource("14_wgrvv")]
 
 [node name="NightCycle" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.160784, 0.380392, 0.509804, 1)
 script = ExtResource("10_jx0eh")
 gradient = ExtResource("11_jk8ti")
@@ -3811,15 +3819,23 @@ flip_h = true
 [node name="inforWaveCanvas" type="CanvasLayer" parent="."]
 
 [node name="InfoWave2" type="Label" parent="inforWaveCanvas"]
-offset_left = 283.0
-offset_top = 140.0
+offset_left = 259.0
+offset_top = 143.0
 offset_right = 323.0
-offset_bottom = 163.0
+offset_bottom = 166.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("27_6w3c3")
+text = "WAVE"
 
 [node name="InfoWave" type="CanvasModulate" parent="inforWaveCanvas"]
+visible = false
 color = Color(0.160784, 0.380392, 0.509804, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="inforWaveCanvas/InfoWave"]
+libraries = {
+"": SubResource("AnimationLibrary_j20x1")
+}
 
 [connection signal="timeout" from="Timer/masuk_map_ke_mulai_game" to="." method="_on_masuk_map_ke_mulai_game_timeout"]
 [connection signal="timeout" from="Timer/durasi_wave" to="." method="_on_durasi_wave_timeout"]

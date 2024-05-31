@@ -10,6 +10,7 @@ extends Node2D
 var durasi_game
 
 func _ready():
+	animasi_wave
 	$NavigationRegion2D.bake_navigation_polygon(true)
 	print(GlobalScript.posisi_pohon)
 	daynightcycle.time_tick.connect(ui_jam.set_daytime)
@@ -18,7 +19,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if GlobalScript.hour == 1 and GlobalScript.game_berlangsung == false:
-		print("wave ke-", GlobalScript.tingkat_wave, " dimulai!!!!!")
+		var wave = $inforWaveCanvas/InfoWave2
+		wave.text = "Wave " + str(GlobalScript.tingkat_wave)
+		
+		#print("wave ke-", GlobalScript.tingkat_wave, " dimulai!!!!!")
+		
 		GlobalScript.game_berlangsung = true
 		$Timer/masuk_map_ke_mulai_game.start()
 	pass
