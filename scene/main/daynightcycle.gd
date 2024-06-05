@@ -3,6 +3,7 @@ extends CanvasModulate
 const minute_per_day = 1440
 const minute_per_hour = 60
 const ingame_to_real_minute_duration = (2 * PI) / minute_per_day
+var time_stop = false
 
 signal time_tick(day:int, hour:int, minute:int)
 
@@ -19,10 +20,11 @@ func _ready():
 	pass
 
 func _process(delta:float):
-	GlobalScript.time += delta * ingame_to_real_minute_duration * ingame_time_speed
-	var value = (sin(GlobalScript.time - PI / 2) + 1.0) / 2.0
-	self.color = gradient.gradient.sample(value)
-	_recalculate_time()
+	if time_stop == false:
+		GlobalScript.time += delta * ingame_to_real_minute_duration * ingame_time_speed
+		var value = (sin(GlobalScript.time - PI / 2) + 1.0) / 2.0
+		self.color = gradient.gradient.sample(value)
+		_recalculate_time()
 
 func _recalculate_time():
 	var total_minutes = int(GlobalScript.time / ingame_to_real_minute_duration)
