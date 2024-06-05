@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cj63yoh1hff6t"]
+[gd_scene load_steps=8 format=3 uid="uid://cj63yoh1hff6t"]
 
-[ext_resource type="Texture2D" uid="uid://dx422gf4w7rdm" path="res://scene/analog/idle.png" id="1_ni8k5"]
-[ext_resource type="Script" path="res://scene/analog/script/analog.gd" id="1_r81ff"]
-[ext_resource type="Texture2D" uid="uid://bkqb6bvxu5g2l" path="res://scene/analog/kiri.png" id="3_hn7ib"]
-[ext_resource type="Texture2D" uid="uid://44e0rhrkwfdb" path="res://scene/analog/kanan.png" id="4_5gitq"]
-[ext_resource type="Texture2D" uid="uid://dne7djagwdtau" path="res://scene/analog/atas.png" id="5_q4hyq"]
-[ext_resource type="Texture2D" uid="uid://bb3qeyfovcmq7" path="res://scene/analog/bawah.png" id="6_tj07f"]
+[ext_resource type="Texture2D" uid="uid://dx422gf4w7rdm" path="res://Character/Player/joystik/idle.png" id="1_ni8k5"]
+[ext_resource type="Texture2D" uid="uid://bkqb6bvxu5g2l" path="res://Character/Player/joystik/kiri.png" id="3_hn7ib"]
+[ext_resource type="Texture2D" uid="uid://44e0rhrkwfdb" path="res://Character/Player/joystik/kanan.png" id="4_5gitq"]
+[ext_resource type="Texture2D" uid="uid://dne7djagwdtau" path="res://Character/Player/joystik/atas.png" id="5_q4hyq"]
+[ext_resource type="Texture2D" uid="uid://bb3qeyfovcmq7" path="res://Character/Player/joystik/bawah.png" id="6_tj07f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xq51x"]
 
@@ -13,7 +12,6 @@
 
 [node name="analog" type="Node2D"]
 position = Vector2(307, 249)
-script = ExtResource("1_r81ff")
 
 [node name="idle" type="TouchScreenButton" parent="."]
 position = Vector2(-69, -60)
@@ -60,8 +58,7 @@ scale = Vector2(-3.59909, -5.22396)
 shape = SubResource("RectangleShape2D_ieme6")
 
 [node name="Bawah" type="Sprite2D" parent="bawah"]
-visible = false
-position = Vector2(0.277847, 14.7398)
+position = Vector2(9.15527e-05, 15.1227)
 rotation = 3.14159
 scale = Vector2(0.277848, 0.191426)
 texture = ExtResource("6_tj07f")
