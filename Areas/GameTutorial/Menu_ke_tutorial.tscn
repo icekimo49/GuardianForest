@@ -266,7 +266,7 @@ b = Vector2(1000, -3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upvdv"]
 
-[node name="GameTutorial" type="Node2D"]
+[node name="MainMenu" type="Node2D"]
 script = ExtResource("1_ir6e8")
 
 [node name="ParallaxBackground3" type="Node2D" parent="."]
@@ -306,9 +306,10 @@ scale = Vector2(10.5516, 10.5516)
 zoom = Vector2(0.76, 0.76)
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="joystick" parent="UI" instance=ExtResource("1_leoae")]
-position = Vector2(24, 224)
+position = Vector2(82, 279)
 
 [node name="TileMapFarm" type="TileMap" parent="."]
 position = Vector2(-95, 38)
@@ -538,6 +539,7 @@ fit_content = true
 tab_size = 0
 
 [node name="analog_tutorial" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
 texture_filter = 2
 anchors_preset = 5
 anchor_left = 0.5
@@ -598,6 +600,28 @@ shadow_filter_smooth = 50.0
 texture = ExtResource("18_sq2jt")
 texture_scale = 0.8
 
+[node name="Tombol" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Tombol"]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 270.0
+offset_right = 399.0
+offset_bottom = 310.0
+columns = 2
+
+[node name="Mulai" type="Button" parent="CanvasLayer/Tombol/GridContainer"]
+layout_mode = 2
+text = "Mulai"
+
+[node name="Lanjutkan" type="Button" parent="CanvasLayer/Tombol/GridContainer"]
+layout_mode = 2
+text = "Lanjutkan"
+
 [node name="BorderAtasBawah2" type="StaticBody2D" parent="."]
 position = Vector2(-580, 123)
 
@@ -648,5 +672,7 @@ texture_normal = ExtResource("30_8dfmb")
 [connection signal="screen_exited" from="ParallaxBackground3/awan3/awan_3_screen_exit" to="." method="_on_awan_3_screen_exit_screen_exited"]
 [connection signal="pressed" from="CanvasLayer/tombol_start" to="." method="_on_tombol_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/tombol_setting" to="." method="_on_tombol_setting_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tombol/GridContainer/Mulai" to="." method="_on_mulai_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tombol/GridContainer/Lanjutkan" to="." method="_on_lanjutkan_pressed"]
 [connection signal="body_entered" from="border_next_stage" to="." method="_on_border_next_stage_body_entered"]
 [connection signal="pressed" from="CanvasLayer2/TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]

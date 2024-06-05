@@ -33,7 +33,7 @@ func start_timer(duration):
 	timer.start()
 
 func _on_timer_timeout():
-	var musuh_terpilih = arr_musuh[randi_range(0, arr_musuh.size())]
+	var musuh_terpilih = arr_musuh[randi_range(0, arr_musuh.size()-1)]
 	musuh = musuh_terpilih.instantiate()
 	musuh.global_position = self.global_position
 	get_parent().add_child(musuh)

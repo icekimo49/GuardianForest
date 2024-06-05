@@ -3,13 +3,13 @@ class_name PlayerData
 
 @export var hp = 200
 @export var exp : int
-@export var inv: Inv
+@export var inv : Inv
 @export var wave = 1
-@export var time:float
+@export var time = 0.0
 @export var sudah_tutorial = false
 
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func _process(delta):
 	pass

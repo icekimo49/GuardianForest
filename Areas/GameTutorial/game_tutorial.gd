@@ -1,7 +1,8 @@
 extends Node2D
-
+@onready var api = $api
 @onready var kamera_player = $Area1/Player/Camera2D
 @onready var kamera_2 = $kamera2
+var boleh_pindah = false
 
 enum AREA {
 	AREA1= 1,
@@ -19,7 +20,10 @@ var current_area = AREA.AREA1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	api.timer.stop()
+	$inventory/MiniInventory.visible = false
+	$tombol_serang/tombolSerang.visible = false
+	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()
 	pass
 
 
@@ -27,13 +31,18 @@ func _ready():
 func _process(delta):
 	Lagu.volume_db = lerp(Lagu.volume_db, -70.0, delta)
 	kamera_2.global_position = kamera_player.global_position
+	if api == null:
+		boleh_pindah = true
+	#if current_area == AREA.AREA2:
+		#dialog_sebelum_api()
 
 func _physics_process(delta):
 	posisi_kamera_manager()
-	print(AREA.AREA1)
 
 func _on_ganti_slide_body_entered(body):
 	if body.is_in_group("player"):
+		$inventory/MiniInventory.visible = true
+		$tombol_serang/tombolSerang.visible = true
 		if current_area == AREA.AREA1:
 			current_area = AREA.AREA2
 		else :
@@ -47,9 +56,18 @@ func posisi_kamera_manager():
 		kamera_player.limit_left = lerp(kamera_player.limit_left, pos_kamera_area1["KIRI"], get_process_delta_time())
 		kamera_player.limit_right = lerp(kamera_player.limit_right, pos_kamera_area1["KANAN"], get_process_delta_time())
 
-
-
 func _on_pindah_ke_hutan_body_entered(body):
 	if body.is_in_group("player"):
-		GlobalScript.sudah_tutorial = true
-		get_tree().change_scene_to_packed(load("res://Areas/Hutan/Scene/hutan.tscn"))
+		if boleh_pindah:
+			get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
+
+func dialog_sebelum_api():
+	var distance = $Area1/Player.global_position.distance_to(Vector2(1265.188, 224.8908))
+	var dialog = false
+	if distance > 2:
+		$Area1/Player.gerakan_tutorial(Vector2(1265.188, 224.8908), "kanan")
+		$Area1/UI/joystick.no_input = true
+	elif distance <= 2 and dialog == false:
+		$Area1/Player.dialog_player_sendiri("mainmenu")
+		$Area1/UI/joystick.no_input = false
+		dialog = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bjxhj32neycau"]
+[gd_scene load_steps=40 format=3 uid="uid://bjxhj32neycau"]
 
 [ext_resource type="Script" path="res://Character/Player/player.gd" id="1_7c5n1"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://Character/Player/Character_Asset/Actor1.png" id="2_0qjyr"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="4_hw3ry"]
 [ext_resource type="Script" path="res://Character/Player/player_hitbox_atas.gd" id="6_3nybf"]
 [ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="6_86ekm"]
-[ext_resource type="PackedScene" uid="uid://ccgbi3dh1ll2b" path="res://Character/Player/Inventory/Inv_UI.tscn" id="8_3p8na"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eewc5"]
+light_mode = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qruo"]
 bg_color = Color(0.247059, 0.14902, 0.192157, 1)
@@ -236,19 +238,23 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_my3qs"]
 radius = 19.2354
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xya8s"]
-size = Vector2(20, 12)
+[sub_resource type="CircleShape2D" id="CircleShape2D_1aifa"]
+radius = 21.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h7sq"]
-size = Vector2(11.75, 20)
+[sub_resource type="CircleShape2D" id="CircleShape2D_g61co"]
+radius = 21.0238
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj851"]
-size = Vector2(12, 20)
+[sub_resource type="CircleShape2D" id="CircleShape2D_nwtx7"]
+radius = 21.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_afvx6"]
+radius = 21.0238
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_orxg3"]
 polygon = PackedVector2Array(-7, -15, -8, -9, -3, -2, -4, 2, -5, 7, -5, 10, -3, 10, 0, 6, 3, 10, 5, 9, 4, 5, 4, 2, 3, -1, 8, -7, 6, -11, 1, -14)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+material = SubResource("CanvasItemMaterial_eewc5")
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_7c5n1")
@@ -286,6 +292,7 @@ text = "0
 "
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 energy = 0.2
 range_item_cull_mask = 7
 shadow_enabled = true
@@ -317,23 +324,23 @@ position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_my3qs")
 
 [node name="player_hitbox_atas" type="CollisionShape2D" parent="."]
-position = Vector2(0, -18)
-shape = SubResource("RectangleShape2D_xya8s")
+position = Vector2(0, -37)
+shape = SubResource("CircleShape2D_1aifa")
 script = ExtResource("6_3nybf")
 
 [node name="player_hitbox_bawah" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_xya8s")
+position = Vector2(32, -6)
+shape = SubResource("CircleShape2D_g61co")
 script = ExtResource("6_3nybf")
 
 [node name="player_hitbox_kiri" type="CollisionShape2D" parent="."]
-position = Vector2(-11.875, -6)
-shape = SubResource("RectangleShape2D_3h7sq")
+position = Vector2(-31, -6)
+shape = SubResource("CircleShape2D_nwtx7")
 script = ExtResource("6_3nybf")
 
 [node name="player_hitbox_kanan" type="CollisionShape2D" parent="."]
-position = Vector2(12, -6)
-shape = SubResource("RectangleShape2D_oj851")
+position = Vector2(0, 25)
+shape = SubResource("CircleShape2D_afvx6")
 script = ExtResource("6_3nybf")
 
 [node name="api_cooldown" type="Timer" parent="."]
@@ -343,13 +350,6 @@ wait_time = 0.439
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_orxg3")
-
-[node name="Inv_UI" parent="." instance=ExtResource("8_3p8na")]
-z_index = 5
-offset_left = -73.0
-offset_top = -183.0
-offset_right = 73.0
-offset_bottom = -37.0
 
 [connection signal="area_entered" from="player_hitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="area_exited" from="player_hitbox" to="." method="_on_player_hitbox_area_exited"]

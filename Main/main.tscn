@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2xj7hjqlence"]
+[gd_scene load_steps=5 format=3 uid="uid://d2xj7hjqlence"]
 
 [ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://Character/Player/player.tscn" id="1_hh63w"]
 [ext_resource type="Script" path="res://Main/main.gd" id="1_tnjo7"]
+[ext_resource type="PackedScene" uid="uid://cl4vpo8abukrq" path="res://Character/Player/Tombol_Serang/tombol_serang.tscn" id="3_33hef"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://Character/Player/joystik/script/joystick.tscn" id="7_dm7oj"]
 
 [node name="main" type="Node2D"]
@@ -10,8 +11,13 @@ script = ExtResource("1_tnjo7")
 
 [node name="Player" parent="." instance=ExtResource("1_hh63w")]
 
+[node name="tombol_serang" type="CanvasLayer" parent="."]
+
+[node name="tombolSerang" parent="tombol_serang" instance=ExtResource("3_33hef")]
+position = Vector2(462, 207)
+
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="joystick" parent="UI" instance=ExtResource("7_dm7oj")]
-position = Vector2(24, 224)
+position = Vector2(63, 283)
+scale = Vector2(1, 1)

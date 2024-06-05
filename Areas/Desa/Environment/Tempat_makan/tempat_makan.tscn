@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt8qonfwtuxfn"]
+
+[ext_resource type="Script" path="res://Areas/Desa/Environment/Tempat_makan/tempat_makan.gd" id="1_6533m"]
+[ext_resource type="Texture2D" uid="uid://e2imia7qj3tj" path="res://Areas/Desa/Environment/Tempat_makan/warungmbokyem.jpeg" id="1_jtxhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nac4r"]
+size = Vector2(96, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qon5o"]
+size = Vector2(119, 82)
+
+[node name="tempat_makan" type="StaticBody2D"]
+script = ExtResource("1_6533m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.127, 0.127)
+texture = ExtResource("1_jtxhx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nac4r")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, 4)
+shape = SubResource("RectangleShape2D_qon5o")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,11 @@
+join penjual_makanan 1
+penjual_makanan: ehh inun...
+join Player 3
+Player: misi mbok...
+penjual_makanan: mau beli apa le?
+- roti
+	penjual_makanan: abis blok buta lu!
+	[signal arg="beli_roti"]
+- jamu
+	penjual_makanan: jamu tahan lama ya le
+	[signal arg="beli_jamu"]

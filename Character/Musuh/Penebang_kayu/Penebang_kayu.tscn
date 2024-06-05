@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cfbeqiep442p0"]
+[gd_scene load_steps=15 format=3 uid="uid://cfbeqiep442p0"]
 
 [ext_resource type="Script" path="res://Character/Musuh/Penebang_kayu/Penebang_kayu.gd" id="1_we245"]
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="2_hgfhn"]
+[ext_resource type="PackedScene" uid="uid://ca2363tgce87v" path="res://Areas/Hutan/UI/Position_Indicator/possindicator.tscn" id="3_khmmb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qm6c2"]
 atlas = ExtResource("2_hgfhn")
@@ -113,6 +114,8 @@ autostart = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_4rcqe")
+
+[node name="poss" parent="." instance=ExtResource("3_khmmb")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

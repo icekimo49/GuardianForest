@@ -12,28 +12,64 @@ var arah_baru
 var arah_lama
 var i = 1
 var enable_analog  = true
+var no_input = false
 
 func _ready():
 	small_circle_posisi_awal = $bigCircle/smallCircle.global_position
 
-func _input(event):
-	if !enable_analog :
-		return
+var state = {}
+
+func _unhandled_input(event):
 	if event is InputEventScreenTouch:
-		if GlobalScript.inv_is_open == false:
-			var distance = event.position.distance_to(big_Circle.global_position)
-			if not touched:
-				if distance < max_distance :
-					touched = true
-			else :
-				small_Circle.position = Vector2.ZERO
-				touched = false
+		if event.pressed:
+			state[event.index] = event.position
+		else:
+			state.erase(event.index)
+		get_viewport().set_input_as_handled()
+	elif event is InputEventScreenDrag:
+		state[event.index] = event.position
+		get_viewport().set_input_as_handled()
+
+func _input(event):
+	#if event is InputEventScreenTouch:
+		#if GlobalScript.inv_is_open == false:
+			#var distance = event.position.distance_to(big_Circle.global_position)
+			#if not touched:
+				#if distance < max_distance :
+					#touched = true
+			#else :
+				#small_Circle.position = Vector2.ZERO
+				#touched = false
+	pass
 
 func _process(delta):
-	if touched :
-		small_Circle.global_position = get_global_mouse_position()
-		#CLAMPER
-		#small_Circle.position = big_Circle.position + small_Circle.position.limit_length(max_distance)
+	var pos
+	var multitouch = state
+	if !enable_analog :
+		return
+	for ptr_index in multitouch.keys():
+		if GlobalScript.inv_is_open == false:
+			pos = multitouch[ptr_index]
+			var distance = pos.distance_to(big_Circle.global_position)
+			if not touched:
+				if distance < max_distance:
+					touched = true
+				else:
+					small_Circle.position = Vector2.ZERO
+					touched = false
+	if touched and no_input == false:
+		if pos != null:
+				if pos.distance_to(big_Circle.global_position) < max_distance:
+					small_Circle.global_position = pos
+			#CLAMPER
+					small_Circle.position = big_Circle.position + (small_Circle.position - big_Circle.position).limit_length(max_distance)
+				else:
+					
+					touched = false
+		elif pos == null:
+			small_Circle.position = Vector2.ZERO
+			touched = false
+	
 
 func arah():
 	var a = Vector2.RIGHT

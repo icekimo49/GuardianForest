@@ -1,110 +1,84 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=26 format=3 uid="uid://dhgry454buw1w"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=18 format=3 uid="uid://cv47timeoehxo"]
 
 [ext_resource type="Script" path="res://PlayerData.gd" id="1_hsyi6"]
-[ext_resource type="Script" path="res://Character/Player/Inventory/inventory.gd" id="1_yctm4"]
-[ext_resource type="Resource" uid="uid://dj6yuumdtvmv0" path="res://Item/Material/biji/biji.tres" id="2_oyj6f"]
-[ext_resource type="Script" path="res://Character/Player/Inventory/Inv_slot.gd" id="3_xdgn6"]
-[ext_resource type="Resource" uid="uid://b3etdhecsp6fs" path="res://Item/Material/Golden_Apple/Golden_Apple.tres" id="4_4sra1"]
-[ext_resource type="Resource" uid="uid://2qe8y0et82ko" path="res://Item/Material/Batu/Batu.tres" id="5_k63xo"]
-[ext_resource type="Resource" uid="uid://df2grqymlof6r" path="res://Item/Tools/kentongan/kentongan.tres" id="6_aujdn"]
-[ext_resource type="Resource" uid="uid://jyfnlm0s5f74" path="res://Item/Tools/Ember.tres" id="6_enqgm"]
-[ext_resource type="Script" path="res://Character/Player/Inventory/inventory_item.gd" id="8_oq22x"]
+[ext_resource type="Script" path="res://Character/Player/Inventory/inventory.gd" id="1_jngxf"]
+[ext_resource type="Script" path="res://Character/Player/Inventory/Inv_slot.gd" id="2_k3oy5"]
 
-[sub_resource type="Resource" id="Resource_2i6fh"]
-script = ExtResource("3_xdgn6")
-item = ExtResource("6_aujdn")
-amount = 1
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_gejt1"]
-script = ExtResource("3_xdgn6")
-item = ExtResource("4_4sra1")
-amount = 4
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_m7ild"]
-script = ExtResource("3_xdgn6")
-item = ExtResource("5_k63xo")
-amount = 2
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_5emft"]
-script = ExtResource("3_xdgn6")
-item = ExtResource("6_aujdn")
-amount = 1
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_lbuh0"]
-script = ExtResource("3_xdgn6")
-item = ExtResource("6_enqgm")
-amount = 1
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_n74nu"]
-script = ExtResource("3_xdgn6")
-item = ExtResource("6_aujdn")
-amount = 1
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_qrby1"]
-script = ExtResource("3_xdgn6")
+[sub_resource type="Resource" id="Resource_8s8dc"]
+script = ExtResource("2_k3oy5")
 amount = 0
 ukuran = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_yuut5"]
-script = ExtResource("3_xdgn6")
+[sub_resource type="Resource" id="Resource_03s7f"]
+script = ExtResource("2_k3oy5")
 amount = 0
 ukuran = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_kbio7"]
-script = ExtResource("3_xdgn6")
-item = ExtResource("6_enqgm")
-amount = 1
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_n4s2x"]
-script = ExtResource("3_xdgn6")
-item = ExtResource("2_oyj6f")
-amount = 4
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_17u66"]
-script = ExtResource("3_xdgn6")
+[sub_resource type="Resource" id="Resource_r8h2p"]
+script = ExtResource("2_k3oy5")
 amount = 0
 ukuran = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_xmkug"]
-script = ExtResource("3_xdgn6")
+[sub_resource type="Resource" id="Resource_q2wto"]
+script = ExtResource("2_k3oy5")
 amount = 0
 ukuran = Vector2(0, 0)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ans2i"]
-load_path = "res://.godot/imported/minecraft-golden-apple-pixel-art-item-video-games-minecraft-heart-transparent-removebg-preview-ai-brush-removebg-dgkuplwg.png-389977fc40c6f3ac2c3634076914b310.ctex"
-
-[sub_resource type="Resource" id="Resource_0l8qe"]
-script = ExtResource("8_oq22x")
-name = "Golden_apple"
-texture = SubResource("CompressedTexture2D_ans2i")
-stack = true
-type = true
-ukuran_item = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_w6cnf"]
-script = ExtResource("3_xdgn6")
-item = SubResource("Resource_0l8qe")
-amount = 4
+[sub_resource type="Resource" id="Resource_3ynx0"]
+script = ExtResource("2_k3oy5")
+amount = 0
 ukuran = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_1mhf6"]
-script = ExtResource("1_yctm4")
-slots = Array[ExtResource("3_xdgn6")]([SubResource("Resource_2i6fh"), SubResource("Resource_gejt1"), SubResource("Resource_m7ild"), SubResource("Resource_5emft"), SubResource("Resource_lbuh0"), SubResource("Resource_n74nu"), SubResource("Resource_qrby1"), SubResource("Resource_yuut5"), SubResource("Resource_kbio7"), SubResource("Resource_n4s2x"), SubResource("Resource_17u66"), SubResource("Resource_xmkug")])
-temp_inv = SubResource("Resource_w6cnf")
+[sub_resource type="Resource" id="Resource_im5fg"]
+script = ExtResource("2_k3oy5")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_37jnp"]
+script = ExtResource("2_k3oy5")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_n8qyh"]
+script = ExtResource("2_k3oy5")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_nypy1"]
+script = ExtResource("2_k3oy5")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_q1spi"]
+script = ExtResource("2_k3oy5")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_ijr4b"]
+script = ExtResource("2_k3oy5")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_2yuri"]
+script = ExtResource("2_k3oy5")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_4556q"]
+script = ExtResource("2_k3oy5")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_i0311"]
+script = ExtResource("1_jngxf")
+slots = Array[ExtResource("2_k3oy5")]([SubResource("Resource_8s8dc"), SubResource("Resource_03s7f"), SubResource("Resource_r8h2p"), SubResource("Resource_q2wto"), SubResource("Resource_3ynx0"), SubResource("Resource_im5fg"), SubResource("Resource_37jnp"), SubResource("Resource_n8qyh"), SubResource("Resource_nypy1"), SubResource("Resource_q1spi"), SubResource("Resource_ijr4b"), SubResource("Resource_2yuri")])
+temp_inv = SubResource("Resource_4556q")
 
 [resource]
 script = ExtResource("1_hsyi6")
 hp = 200
 exp = 0
-inv = SubResource("Resource_1mhf6")
+inv = SubResource("Resource_i0311")
 wave = 1
 time = 0.0
 sudah_tutorial = false

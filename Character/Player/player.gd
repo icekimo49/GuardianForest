@@ -3,6 +3,7 @@ extends CharacterBody2D
 var save_file_path = "res://Save_file/"
 var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
+var data_awal = PlayerData.new()
 
 const kecepatan : int = 250
 const akselerasi  = 25
@@ -16,6 +17,7 @@ var attack_in_progress = false
 var animasi_player
 var a = 1
 var posisi_lama
+var layout
 @onready var barDarah = $barDarah
 @onready var textDamage = $damage_diterima
 @onready var textAir = $airIndikator
@@ -36,6 +38,7 @@ func load_data():
 	GlobalScript.time = playerData.time
 	GlobalScript.sudah_tutorial = playerData.sudah_tutorial
 	GlobalScript.inv = playerData.inv
+	GlobalScript.exp = playerData.exp
 	print("loaded")
 
 func save():
@@ -43,8 +46,13 @@ func save():
 	playerData.sudah_tutorial = GlobalScript.sudah_tutorial
 	playerData.wave = GlobalScript.tingkat_wave
 	playerData.inv = GlobalScript.inv
+	playerData.exp = GlobalScript.exp
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
 	print("save")
+
+func new_game(): 
+	data_awal.inv = preload("res://global_script/global_script_temp_inv.tres")
+	ResourceSaver.save(data_awal, save_file_path + save_file_name)
 
 func change_wave():
 	playerData.change_wave(1)
@@ -249,3 +257,24 @@ func tanam_pohon():
 	instance.position = global_position
 	var parent_node = get_parent().get_node("NavigationRegion2D")
 	parent_node.add_child(instance)
+
+func gerakan_tutorial(tujuan, arah):
+	velocity = global_position.direction_to(tujuan) * 150
+	animasi_player = arah
+	animasi(1)
+	move_and_slide()
+
+func dialog_player_sendiri(lokasi):
+	if lokasi == "mainmenu":
+		#disesuaikan sama jumlah dialog yang ada
+		var opsi = randi_range(1,1)
+		layout = Dialogic.start("mainmenu_" + str(opsi))
+	elif lokasi == "gametutorial":
+		#disesuaikan sama jumlah dialog yang ada
+		var opsi = randi_range(1,1)
+		layout = Dialogic.start("mainmenu_" + str(opsi))
+	layout.register_character(load("res://Dialogic/Player/Player.dch"), $".")
+	await get_tree().create_timer(1.5).timeout
+	Dialogic.Inputs.auto_skip.enabled = !Dialogic.Inputs.auto_skip.enabled
+	
+	

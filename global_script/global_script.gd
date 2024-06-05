@@ -25,6 +25,8 @@ var hour
 var sudah_tutorial = false
 var path_screen_terakhir_sebelum_loading
 var boleh_tanam = false
+var exp
+var scene_sebelum_loading
 
 #pohon
 var posisi_pohon = []

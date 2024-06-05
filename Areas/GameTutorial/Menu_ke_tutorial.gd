@@ -2,6 +2,7 @@ extends Node2D
 
 var next_level = false
 var state_start = false
+var next_target
 
 @onready var awan_2 = $ParallaxBackground3/awan2
 @onready var awan_3 = $ParallaxBackground3/awan3
@@ -39,7 +40,7 @@ var warna_kosong = Color(0,0)
 @onready var warna_analog_tutorial = analog_tutorial.modulate
 @onready var canvas_layer_2 = $CanvasLayer2
 
-
+@onready var tombol = $CanvasLayer/Tombol
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cahaya_GF.energy = 0
@@ -54,8 +55,9 @@ func _ready():
 	lucky_semua.modulate = warna_kosong
 	player
 	canvas_layer_2.visible = false
+	tombol.visible = false
 	tombol_setting_mati()
-	
+	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()
 
 func tombol_setting_mati():
 	tombol_setting.modulate = warna_kosong
@@ -74,7 +76,8 @@ func _physics_process(delta):
 		return
 	if !next_level :
 		animasi()
-	
+	if next_target != null:
+		$Player.gerakan_tutorial(next_target, "kanan")
 	
 func _on_tombol_start_pressed():
 	state_start = true
@@ -115,13 +118,14 @@ func animasi():
 	await get_tree().create_timer(1).timeout
 	tombol_setting.modulate = lerp(tombol_setting.modulate, warna_default_joystick,3 * delta)
 	tombol_setting_nyala()
-	joystick.modulate = lerp(joystick.modulate, warna_default_joystick, 3 * delta)
-	await get_tree().create_timer(.5).timeout
-	analog_tutorial.modulate = lerp(analog_tutorial.modulate, warna_default_joystick, 3 * delta)
+	#joystick.modulate = lerp(joystick.modulate, warna_default_joystick, 3 * delta)
+	#await get_tree().create_timer(.5).timeout
+	#analog_tutorial.modulate = lerp(analog_tutorial.modulate, warna_default_joystick, 3 * delta)
 	state_start = true
-	joystick.enable_analog = true
+	tombol.visible = true
+	#joystick.enable_analog = true
 	#await get_tree().create_timer(2).timeout
-	$CanvasLayer/analog_tutorial/tutorial_ngedip.play("ngedip")
+	#$CanvasLayer/analog_tutorial/tutorial_ngedip.play("ngedip")
 
 func _on_border_next_stage_body_entered(body):
 	if body.is_in_group("player"):
@@ -144,3 +148,15 @@ func _on_tombol_setting_pressed():
 
 func _on_touch_screen_button_2_pressed():
 	canvas_layer_2.visible = false
+
+func _on_mulai_pressed():
+	$Player.new_game()
+	#mulai dialog
+	$Player.dialog_player_sendiri("mainmenu")
+	await get_tree().create_timer(2.0).timeout
+	next_target = Vector2(-472, 229)
+
+func _on_lanjutkan_pressed():
+	$Player.dialog_player_sendiri("mainmenu")
+	await get_tree().create_timer(2.0).timeout
+	next_target = Vector2(-472, 229)
