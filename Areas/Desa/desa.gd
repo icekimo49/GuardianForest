@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var ui_jam = $jam/DayNightCycleUI
 @onready var daynightcycle = $NightCycle
-@onready
+
 #alur_cerita_tutorial_selesai jadiin true kalo cerita pas awal tutorialnya abis dan player mau ke hutan
 var alur_cerita_tutorial_selesai = false
 var sudah_masuk_story = false

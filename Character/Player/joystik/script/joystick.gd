@@ -4,7 +4,7 @@ extends Area2D
 @onready var big_Circle = $bigCircle
 @onready var small_Circle = $bigCircle/smallCircle
 @onready var max_distance = $CollisionShape2D.shape.radius
-
+@onready var max_distance2 = $buatsmallcircle.shape.radius
 var jarak_small_circle_max
 var small_circle_posisi_awal
 var touched : bool = false
@@ -62,9 +62,8 @@ func _process(delta):
 				if pos.distance_to(big_Circle.global_position) < max_distance:
 					small_Circle.global_position = pos
 			#CLAMPER
-					small_Circle.position = big_Circle.position + (small_Circle.position - big_Circle.position).limit_length(max_distance)
-				else:
-					
+					small_Circle.position = big_Circle.position + (small_Circle.position - big_Circle.position).limit_length(max_distance2)
+				else: 
 					touched = false
 		elif pos == null:
 			small_Circle.position = Vector2.ZERO

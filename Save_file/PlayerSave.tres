@@ -64,21 +64,21 @@ script = ExtResource("2_k3oy5")
 amount = 0
 ukuran = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_4556q"]
+[sub_resource type="Resource" id="Resource_odmv7"]
 script = ExtResource("2_k3oy5")
 amount = 0
 ukuran = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_i0311"]
+[sub_resource type="Resource" id="Resource_bgymb"]
 script = ExtResource("1_jngxf")
 slots = Array[ExtResource("2_k3oy5")]([SubResource("Resource_8s8dc"), SubResource("Resource_03s7f"), SubResource("Resource_r8h2p"), SubResource("Resource_q2wto"), SubResource("Resource_3ynx0"), SubResource("Resource_im5fg"), SubResource("Resource_37jnp"), SubResource("Resource_n8qyh"), SubResource("Resource_nypy1"), SubResource("Resource_q1spi"), SubResource("Resource_ijr4b"), SubResource("Resource_2yuri")])
-temp_inv = SubResource("Resource_4556q")
+temp_inv = SubResource("Resource_odmv7")
 
 [resource]
 script = ExtResource("1_hsyi6")
 hp = 200
 exp = 0
-inv = SubResource("Resource_i0311")
+inv = SubResource("Resource_bgymb")
 wave = 1
 time = 0.0
-sudah_tutorial = false
+sudah_tutorial = true

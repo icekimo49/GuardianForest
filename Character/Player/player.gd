@@ -225,7 +225,7 @@ func attack():
 				if GlobalScript.boleh_tanam:
 					tanam_pohon()
 	await get_tree().create_timer(2.0).timeout
-	GlobalScript.pencet = false
+	#GlobalScript.pencet = false
 
 
 func _on_deal_attack_timer_timeout():
