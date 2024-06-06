@@ -281,4 +281,4 @@ func dialog_player_sendiri(lokasi):
 	Dialogic.Inputs.auto_skip.enabled = !Dialogic.Inputs.auto_skip.enabled
 
 func _on_player_hitbox_body_entered(body):
-	print(body.name)
+	pass

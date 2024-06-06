@@ -19,18 +19,22 @@ func _ready():
 
 var state = {}
 
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventScreenTouch:
+		print("lalala")
 		if event.pressed:
 			state[event.index] = event.position
+			print(event.position)
 		else:
 			state.erase(event.index)
 		get_viewport().set_input_as_handled()
 	elif event is InputEventScreenDrag:
+		print("lilili")
 		state[event.index] = event.position
+		print(event.position)
 		get_viewport().set_input_as_handled()
 
-func _input(event):
+#func _input(event):
 	#if event is InputEventScreenTouch:
 		#if GlobalScript.inv_is_open == false:
 			#var distance = event.position.distance_to(big_Circle.global_position)
@@ -40,7 +44,7 @@ func _input(event):
 			#else :
 				#small_Circle.position = Vector2.ZERO
 				#touched = false
-	pass
+
 
 func _process(delta):
 	var pos
