@@ -80,5 +80,5 @@ hp = 200
 exp = 0
 inv = SubResource("Resource_bgymb")
 wave = 1
-time = 0.0
+time = 0.26
 sudah_tutorial = true

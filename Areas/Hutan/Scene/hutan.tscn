@@ -2422,7 +2422,6 @@ position = Vector2(843, -353)
 position = Vector2(1637, 71)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(67, 30)
 navigation_polygon = SubResource("NavigationPolygon_v13fq")
 
 [node name="Pohon153" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
@@ -3848,6 +3847,14 @@ offset_left = 257.0
 offset_top = 96.0
 offset_right = 403.0
 offset_bottom = 242.0
+
+[node name="musuh" type="Node2D" parent="."]
+
+[node name="biji2" parent="." instance=ExtResource("16_eyntx")]
+position = Vector2(393, 60)
+
+[node name="biji3" parent="." instance=ExtResource("16_eyntx")]
+position = Vector2(455, 58)
 
 [connection signal="timeout" from="Timer/masuk_map_ke_mulai_game" to="." method="_on_masuk_map_ke_mulai_game_timeout"]
 [connection signal="timeout" from="Timer/durasi_wave" to="." method="_on_durasi_wave_timeout"]

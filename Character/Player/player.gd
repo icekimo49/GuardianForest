@@ -196,37 +196,46 @@ func attack():
 	var arah = animasi_player
 	if GlobalScript.inv_is_open == false:
 		if GlobalScript.item_in_use == "ember":
-			if GlobalScript.pencet && GlobalScript.isi_air_gayung == 0:#notif ammo habis
-				notif_air_habis()
-			if GlobalScript.pencet && GlobalScript.isi_air_gayung > 0:
-				GlobalScript.player_current_attack = true
-				attack_in_progress = true
-				if arah == "kanan":
-					$AnimatedSprite2D.play("serang_kanan")
-					$deal_attack_timer.start()
-					$player_hitbox_kanan.toggle_collision(true)
-				if arah == "kiri":
-					$AnimatedSprite2D.flip_h = true
-					$AnimatedSprite2D.play("serang_kanan")
-					$deal_attack_timer.start()
-					$player_hitbox_kiri.toggle_collision(true)
-				if arah == "bawah":
-					$AnimatedSprite2D.play("serang_bawah")
-					$deal_attack_timer.start()
-					$player_hitbox_bawah.toggle_collision(true)
-				if arah == "atas":
-					$AnimatedSprite2D.play("serang_atas")
-					$deal_attack_timer.start()
-					$player_hitbox_atas.toggle_collision(true)
-				GlobalScript.isi_air_gayung -=1
-				print(GlobalScript.isi_air_gayung)
+			attack_ember()
 		elif GlobalScript.item_in_use == "biji":
-			if GlobalScript.pencet:
-				if GlobalScript.boleh_tanam:
-					tanam_pohon()
+			tanam_pohon()
 	await get_tree().create_timer(2.0).timeout
-	#GlobalScript.pencet = false
+	GlobalScript.pencet = false
 
+func attack_ember():
+	var arah = animasi_player
+	if GlobalScript.pencet && GlobalScript.isi_air_gayung == 0:#notif ammo habis
+		notif_air_habis()
+	if GlobalScript.pencet && GlobalScript.isi_air_gayung > 0:
+		GlobalScript.player_current_attack = true
+		attack_in_progress = true
+		if arah == "kanan":
+			$AnimatedSprite2D.play("serang_kanan")
+			$deal_attack_timer.start()
+			$player_hitbox_kanan.toggle_collision(true)
+		if arah == "kiri":
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play("serang_kanan")
+			$deal_attack_timer.start()
+			$player_hitbox_kiri.toggle_collision(true)
+		if arah == "bawah":
+			$AnimatedSprite2D.play("serang_bawah")
+			$deal_attack_timer.start()
+			$player_hitbox_bawah.toggle_collision(true)
+		if arah == "atas":
+			$AnimatedSprite2D.play("serang_atas")
+			$deal_attack_timer.start()
+			$player_hitbox_atas.toggle_collision(true)
+		GlobalScript.isi_air_gayung -=1
+
+func tanam_pohon():
+	if GlobalScript.pencet:
+		if GlobalScript.boleh_tanam:
+			var instance = pohon_kecil.instantiate()
+			instance.global_position = self.global_position
+			var parent_node = get_parent().get_node("NavigationRegion2D")
+			parent_node.add_child(instance)
+			playerData.inv.decrease("biji")
 
 func _on_deal_attack_timer_timeout():
 	print("aselole")
@@ -252,12 +261,6 @@ func _on_player_hitbox_area_exited(area):
 	if area.name == "api_hitbox":
 		api_inattack_range = false
 
-func tanam_pohon():
-	var instance = pohon_kecil.instantiate()
-	instance.position = global_position
-	var parent_node = get_parent().get_node("NavigationRegion2D")
-	parent_node.add_child(instance)
-
 func gerakan_tutorial(tujuan, arah):
 	velocity = global_position.direction_to(tujuan) * 150
 	animasi_player = arah
@@ -276,5 +279,6 @@ func dialog_player_sendiri(lokasi):
 	layout.register_character(load("res://Dialogic/Player/Player.dch"), $".")
 	await get_tree().create_timer(1.5).timeout
 	Dialogic.Inputs.auto_skip.enabled = !Dialogic.Inputs.auto_skip.enabled
-	
-	
+
+func _on_player_hitbox_body_entered(body):
+	print(body.name)

@@ -34,9 +34,17 @@ func start_timer(duration):
 
 func _on_timer_timeout():
 	var musuh_terpilih = arr_musuh[randi_range(0, arr_musuh.size()-1)]
+	var parent_node = get_parent().get_parent().get_node("musuh")
+	if parent_node == null:
+		print("null")
+	var child_count = parent_node.get_child_count()
+	if child_count == null:
+		child_count = 0
 	musuh = musuh_terpilih.instantiate()
+	musuh.name = "penebang ke-" + str(child_count + 1)
 	musuh.global_position = self.global_position
-	get_parent().add_child(musuh)
+	print(musuh.name)
+	parent_node.add_child(musuh)
 	timeout = true
 
 func jeda_muncul():

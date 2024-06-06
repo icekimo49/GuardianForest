@@ -25,6 +25,12 @@ func insert(item: InvItem):
 			print(emptyslots[0].item.name)
 	update.emit()
 
+func decrease(item:String):
+	var itemslots = slots.filter(func(slot): return slot.item.name == item)
+	if !itemslots.is_empty():
+		itemslots[0].amount -=1
+	update.emit()
+
 func swap_item_slot(select1, select2):
 	if select1 != null && select2 != null:
 		temp_inv = slots[select1]

@@ -38,13 +38,11 @@ func set_next_target():
 func _on_area_2d_body_entered(body):
 	if body.has_method("player"):
 		kabur_gak_nich = true
-		print("kabur ga nih true")
 		player = body
 
 func _on_area_2d_body_exited(body):
 	if body.has_method("player"):
 		kabur_gak_nich = false
-		print("cupu luh")
 
 func _on_timer_timeout():
 	queue_free()
