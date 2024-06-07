@@ -1,5 +1,5 @@
 join paman 1
-paman (normal): lolololol
+paman (normal): Sepertinya ada yang sedang tidak beres di hutan. Ayo Inun, ikut Paman!
 join player_visualnovel 3
-player_visualnovel (New portrait): xixixixi
+player_visualnovel (New portrait): Baik Paman
 [signal arg="dialog_desa_2_selesai"]

@@ -4,9 +4,10 @@ extends Node2D
 @onready var daynightcycle = $NightCycle
 @onready var info_wave = $InfoWave
 @onready var info_wave_color = $inforWaveCanvas/InfoWave
-@onready var animasi_wave = $inforWaveCanvas/InfoWave/AnimationPlayer
+@onready var animasi_wave = $inforWaveCanvas/animasiWave
 @onready var camera_cs = $cameraCS
 @onready var game_camera = $GameCamera
+@onready var intro = $introCanvas/intro
 
 
 var durasi_game
@@ -14,6 +15,8 @@ var dialog1 = false
 var dialog2 = false
 var api_selesai_dilempar = false
 var api_muncul = false
+var isi_air_sungai = false
+var bisa_isi_air = false
 
 
 func _ready():
@@ -32,20 +35,28 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	isi_air()
 	if api_selesai_dilempar == true:
 		ubah_kamera()
 		api_selesai_dilempar = false
 	if get_node("api_tutorial") == null and api_muncul:
+		intro.play("temui_paman")
 		var distance = $Player.global_position.distance_to(Vector2(99, 81))
-		if distance > 5:
-			$Player.gerakan_tutorial(Vector2(99, 81), "kiri")
+		print(distance)
+		if distance > 20:
+			#$Player.gerakan_tutorial(Vector2(99, 81), "kiri")
+			$Player.nav.target_position = Vector2(99, 81)
+			$Player.gerak_path_finding(Vector2(99, 81))
 		else:
 			api_muncul = false
 			$tutorial/paman.dialog_paman_inun_hutan_3()
 			GlobalScript.tutorial_desa_1 = true
 	if GlobalScript.hour == 1 and GlobalScript.minute == 0 and GlobalScript.game_berlangsung == false and GlobalScript.sudah_tutorial:
-		var wave = $inforWaveCanvas/InfoWave2
-		wave.text = "Wave " + str(GlobalScript.tingkat_wave) + " dimulai!!!!"
+		var bersiap = $inforWaveCanvas/CenterContainer/InfoWave2
+		var wave = $inforWaveCanvas/CenterContainer/InfoWave3
+		animasi_wave.play("bersiap")
+		wave.text = "Wave " + str(GlobalScript.tingkat_wave) + " dimulai!"
+		animasi_wave.queue("wave_mulai")
 		GlobalScript.game_berlangsung = true
 		$Timer/masuk_map_ke_mulai_game.start()
 
@@ -56,6 +67,7 @@ func tutorial():
 	elif dialog2 == true:
 		$tutorial/paman.dialog_paman_inun_hutan_2()
 		dialog2 = false
+		intro.play("padamkan_api")
 
 func ubah_kamera():
 	if $tutorial/pelempar_api/camera_musuh == null:
@@ -85,11 +97,13 @@ func mulai_wave(durasi_game):
 	$Timer/durasi_wave.start()
 
 func _on_durasi_wave_timeout():
+	animasi_wave.queue("wave_selesai")
 	GlobalScript.game_berlangsung = false
 	print(GlobalScript.tingkat_wave)
 	$Player.change_wave()
 	print(GlobalScript.tingkat_wave)
 	print("game selesai")
+	
 	$Player.change_exp(100)
 
 func _on_pindah_desa_body_entered(body):
@@ -109,3 +123,23 @@ func _on_area_tanam_body_exited(body):
 
 func balik_desa():
 	get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
+	$Player.save()
+
+func _on_area_2d_body_entered(body):
+	if body.name == "Player":
+		bisa_isi_air = true
+
+func _on_timer_sungai_timeout():
+	bisa_isi_air = true
+
+func _on_area_2d_body_exited(body):
+	if body.name == "Player":
+		$NavigationRegion2D/sungai/timer_sungai.stop()
+		bisa_isi_air = false
+
+func isi_air():
+	if GlobalScript.item_in_use == "ember":
+			if bisa_isi_air:
+				GlobalScript.isi_air_gayung +=1
+				bisa_isi_air = false
+				$NavigationRegion2D/sungai/timer_sungai.start()

@@ -16,6 +16,8 @@ var warna_normal = Color(1,1,1,1)
 var warna_kosong = Color(1,1,1,1)
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Player.visible = false
+	$UI/joystick.visible = false
 	warna_normal = warna_normal_sprite.modulate
 	warna_kosong = warna_kosong_sprite.modulate
 	penyiram_loading.play("new_animation")
@@ -24,7 +26,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(loading_screen.modulate)
 	sprite_2d.modulate = lerp(sprite_2d.modulate, warna_kosong, delta)
 	loading_status = ResourceLoader.load_threaded_get_status(namaScene, progress)
 	loading_bar.value = floor((progress[0]*100))
@@ -36,6 +37,7 @@ func _process(delta):
 func kemana_kita_le():
 	var awal = GlobalScript.scene_sebelum_loading
 	var tujuan
+	print(GlobalScript.sudah_tutorial, awal)
 	if awal == "MainMenu" and GlobalScript.sudah_tutorial == false:
 		tujuan = "res://Areas/GameTutorial/game_tutorial.tscn"
 	elif awal == "MainMenu" and GlobalScript.sudah_tutorial == true:

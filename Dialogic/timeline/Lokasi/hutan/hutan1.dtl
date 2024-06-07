@@ -1,5 +1,5 @@
 join paman 1
 paman (normal): inun, lihat disana
 join player_visualnovel 3
-player_visualnovel (New portrait): NANIIII!!!
+player_visualnovel (New portrait): Ada yang membakar hutan dengan sengaja?
 [signal arg="dialog_hutan_1_selesai"]

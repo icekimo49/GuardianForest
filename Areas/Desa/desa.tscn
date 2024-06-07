@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bttfnxprkny6n"]
+[gd_scene load_steps=50 format=3 uid="uid://bttfnxprkny6n"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_ba21o"]
 [ext_resource type="Script" path="res://Areas/Desa/desa.gd" id="1_rrtmw"]
@@ -1499,6 +1499,59 @@ size = Vector2(206.457, 28.478)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvpd3"]
 size = Vector2(48, 167.152)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghdj6"]
+
+[sub_resource type="Animation" id="Animation_pwxwu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_na61c"]
+resource_name = "time_skip"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_besok"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bh5o"]
+_data = {
+"RESET": SubResource("Animation_pwxwu"),
+"time_skip": SubResource("Animation_na61c")
+}
+
 [node name="Desa" type="Node2D"]
 script = ExtResource("1_rrtmw")
 
@@ -2418,7 +2471,21 @@ position = Vector2(344, 428)
 
 [node name="kamera_toko_peralatan" type="Camera2D" parent="toko_peralatan"]
 
+[node name="timeSkip" type="Area2D" parent="."]
+position = Vector2(-292, 545)
+
+[node name="zonaTimeSkip" type="CollisionShape2D" parent="timeSkip"]
+scale = Vector2(2.04, 2.16078)
+shape = SubResource("CircleShape2D_ghdj6")
+
+[node name="timeSkipAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0bh5o")
+}
+
 [connection signal="body_entered" from="pindah_hutan" to="." method="_on_pindah_hutan_body_entered"]
 [connection signal="timeout" from="timer_setelah_api" to="." method="_on_timer_setelah_api_timeout"]
 [connection signal="timeout" from="timer/timer_dialog_penjual_makan" to="." method="_on_timer_dialog_penjual_makan_timeout"]
 [connection signal="timeout" from="timer/timer_dialog_toko_peralatan" to="." method="_on_timer_dialog_toko_peralatan_timeout"]
+[connection signal="body_entered" from="timeSkip" to="." method="_on_time_skip_body_entered"]
+[connection signal="body_exited" from="timeSkip" to="." method="_on_time_skip_body_exited"]

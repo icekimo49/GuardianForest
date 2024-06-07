@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqu3d3hbn70to"]
+[gd_scene load_steps=17 format=3 uid="uid://dqu3d3hbn70to"]
 
 [ext_resource type="Script" path="res://scene/loading_screen/loading_screen.gd" id="1_ak0i6"]
 [ext_resource type="Texture2D" uid="uid://3bqtndhxbppy" path="res://Areas/GameTutorial/Tutorial_Item/gambar.jpg" id="1_keu5t"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://usj12h2fywta" path="res://Areas/GameTutorial/environtmen_scene/text-1716860562400.png" id="6_0ri8t"]
 [ext_resource type="Texture2D" uid="uid://cfjlw7fy8ur4p" path="res://scene/loading_screen/Penyiram Air.png" id="8_a48kg"]
 [ext_resource type="Texture2D" uid="uid://cugq7tuqnjfx4" path="res://scene/loading_screen/AirLoadingScreenEMPTY.png" id="9_ucmtm"]
+[ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://Character/Player/player.tscn" id="10_dq2cd"]
 [ext_resource type="Texture2D" uid="uid://b83l3tga7ieph" path="res://scene/loading_screen/AirLoadingScreenFILL.png" id="10_hjvi4"]
+[ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://Character/Player/joystik/script/joystick.tscn" id="11_awfuu"]
 
 [sub_resource type="Animation" id="Animation_3yrqh"]
 length = 0.001
@@ -187,3 +189,13 @@ scale = Vector2(12.1801, -10.5167)
 position = Vector2(325, 75)
 scale = Vector2(-12.1801, 10.5167)
 texture = SubResource("GradientTexture2D_1u5qx")
+
+[node name="Player" parent="." instance=ExtResource("10_dq2cd")]
+visible = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="joystick" parent="UI" instance=ExtResource("11_awfuu")]
+position = Vector2(63, 283)
+scale = Vector2(1, 1)

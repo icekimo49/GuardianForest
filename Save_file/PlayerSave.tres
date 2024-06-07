@@ -1,92 +1,13 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=22 format=3 uid="uid://bdcumxowqdu8l"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=3 format=3 uid="uid://b8aq8p1k0yxm1"]
 
-[ext_resource type="Script" path="res://Character/Player/Inventory/inventory.gd" id="1_3nspm"]
 [ext_resource type="Script" path="res://PlayerData.gd" id="1_hsyi6"]
-[ext_resource type="Resource" uid="uid://jyfnlm0s5f74" path="res://Item/Tools/Ember.tres" id="2_hk7b6"]
-[ext_resource type="Script" path="res://Character/Player/Inventory/Inv_slot.gd" id="3_pf3gh"]
-[ext_resource type="Resource" uid="uid://dj6yuumdtvmv0" path="res://Item/Material/biji/biji.tres" id="4_tkta0"]
-[ext_resource type="Resource" uid="uid://df2grqymlof6r" path="res://Item/Tools/kentongan/kentongan.tres" id="5_j7m5j"]
-[ext_resource type="Resource" uid="uid://2qe8y0et82ko" path="res://Item/Material/Batu/Batu.tres" id="6_upcg2"]
-
-[sub_resource type="Resource" id="Resource_8s8dc"]
-script = ExtResource("3_pf3gh")
-item = ExtResource("2_hk7b6")
-amount = 1
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_03s7f"]
-script = ExtResource("3_pf3gh")
-item = ExtResource("4_tkta0")
-amount = 3
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_r8h2p"]
-script = ExtResource("3_pf3gh")
-item = ExtResource("5_j7m5j")
-amount = 1
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_q2wto"]
-script = ExtResource("3_pf3gh")
-amount = 0
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_3ynx0"]
-script = ExtResource("3_pf3gh")
-amount = 0
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_im5fg"]
-script = ExtResource("3_pf3gh")
-amount = 0
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_37jnp"]
-script = ExtResource("3_pf3gh")
-amount = 0
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_n8qyh"]
-script = ExtResource("3_pf3gh")
-amount = 0
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_nypy1"]
-script = ExtResource("3_pf3gh")
-item = ExtResource("6_upcg2")
-amount = 1
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_q1spi"]
-script = ExtResource("3_pf3gh")
-amount = 0
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_ijr4b"]
-script = ExtResource("3_pf3gh")
-amount = 0
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_2yuri"]
-script = ExtResource("3_pf3gh")
-amount = 0
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_tjiwx"]
-script = ExtResource("3_pf3gh")
-amount = 0
-ukuran = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_75qd2"]
-script = ExtResource("1_3nspm")
-slots = Array[ExtResource("3_pf3gh")]([SubResource("Resource_8s8dc"), SubResource("Resource_03s7f"), SubResource("Resource_r8h2p"), SubResource("Resource_q2wto"), SubResource("Resource_3ynx0"), SubResource("Resource_im5fg"), SubResource("Resource_37jnp"), SubResource("Resource_n8qyh"), SubResource("Resource_nypy1"), SubResource("Resource_q1spi"), SubResource("Resource_ijr4b"), SubResource("Resource_2yuri")])
-temp_inv = SubResource("Resource_tjiwx")
+[ext_resource type="Resource" uid="uid://c7a6yw7xnqbju" path="res://global_script/global_script_temp_inv.tres" id="1_v1qap"]
 
 [resource]
 script = ExtResource("1_hsyi6")
-hp = 180
+hp = 200
 exp = 0
-inv = SubResource("Resource_75qd2")
+inv = ExtResource("1_v1qap")
 wave = 1
-time = 0.120017
-sudah_tutorial = true
+time = 0.0
+sudah_tutorial = false

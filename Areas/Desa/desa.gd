@@ -4,6 +4,7 @@ extends Node2D
 @onready var daynightcycle = $NightCycle
 @onready var api = preload("res://scene/penebang/api.tscn")
 @onready var paman = $npc/paman
+@onready var anim = $timeSkipAnim
 
 
 #alur_cerita_tutorial_selesai jadiin true kalo cerita pas awal tutorialnya abis dan player mau ke hutan
@@ -106,3 +107,19 @@ func kamera_ke_toko_peralatan():
 func _on_timer_dialog_toko_peralatan_timeout():
 	$Player/Camera2D.make_current()
 	paman.dialog_paman_inun_desa_5()
+
+func _on_time_skip_body_entered(body):
+	if body.is_in_group("player") && GlobalScript.hour != 0 :
+		Engine.time_scale = 20
+		await get_tree().create_timer(3)
+		anim.play("time_skip")
+	else :
+		Engine.time_scale = 1
+
+func set_besok():
+	GlobalScript.time = GlobalScript.time + 12
+	
+
+func _on_time_skip_body_exited(body):
+	if body.is_in_group("player") :
+		Engine.time_scale = 1

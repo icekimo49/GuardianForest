@@ -21,6 +21,8 @@ var layout
 @onready var barDarah = $barDarah
 @onready var textDamage = $damage_diterima
 @onready var textAir = $airIndikator
+@onready var nav = $NavigationAgent2D
+
 var pohon_kecil = preload("res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/pohon_kecil.tscn")
 
 
@@ -52,7 +54,9 @@ func save():
 
 func new_game(): 
 	data_awal.inv = preload("res://global_script/global_script_temp_inv.tres")
+	data_awal.sudah_tutorial = false
 	ResourceSaver.save(data_awal, save_file_path + save_file_name)
+	print(data_awal.sudah_tutorial)
 
 func change_wave():
 	playerData.change_wave(1)
@@ -285,3 +289,9 @@ func dialog_player_sendiri(lokasi):
 
 func _on_player_hitbox_body_entered(body):
 	pass
+
+func gerak_path_finding(target):
+	if nav.is_navigation_finished() == false:
+		var next_target = nav.get_next_path_position()
+		velocity = global_position.direction_to(target) * kecepatan
+		move_and_slide()

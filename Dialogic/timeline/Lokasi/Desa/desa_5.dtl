@@ -1,4 +1,5 @@
 join paman 1
-paman: dan jangan lupa untuk membersihkan pekarangan rumahmu, itu terlihat sangat kotor
-paman: adios
+paman: dan jangan lupa untuk membersihkan pekarangan rumah, Ya! Paman akan ke hutan utara untuk beberapa waktu
+join paman 1
+paman: Oh iya, sebelum hari berganti. Ada sesuatu yang ingin paman berikan
 [signal arg="dialog_desa_5_selesai"]

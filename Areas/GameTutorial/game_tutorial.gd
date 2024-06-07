@@ -2,9 +2,12 @@ extends Node2D
 @onready var api = $api
 @onready var kamera_player = $Area1/Player/Camera2D
 @onready var kamera_2 = $kamera2
+@onready var intro = $introCanvas/intro
+
 var boleh_pindah = false
 var sudah_di_api = false
 var dialog_di_liat_api = false
+
 
 signal sudah_di_area2
 
@@ -24,6 +27,8 @@ var current_area = AREA.AREA1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	intro.play("permulaan")
+	intro.queue("analog")
 	api.timer.stop()
 	$inventory/MiniInventory.visible = false
 	$tombol_serang/tombolSerang.visible = false
@@ -37,6 +42,7 @@ func _process(delta):
 	Lagu.volume_db = lerp(Lagu.volume_db, -70.0, delta)
 	kamera_2.global_position = kamera_player.global_position
 	if api == null:
+		intro.stop()
 		boleh_pindah = true
 	if dialog_di_liat_api:
 		dialog_sebelum_api()
@@ -77,6 +83,7 @@ func dialog_sebelum_api():
 	if distance > 5:
 		$Area1/Player.gerakan_tutorial(Vector2(1305, 214), "kanan")
 	else:
+		intro.play("matikan_api")
 		$Area1/Player.dialog_player_sendiri("gametutorial")
 		dialog_di_liat_api = false
 	#if sudah_di_api and dialog == false:
