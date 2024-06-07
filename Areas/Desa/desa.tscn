@@ -1575,7 +1575,7 @@ enabled = false
 
 [node name="Player" parent="." instance=ExtResource("2_m5bgv")]
 texture_filter = 1
-position = Vector2(1183, 209)
+position = Vector2(1136, 211)
 scale = Vector2(0.988421, 0.968354)
 collision_layer = 3
 collision_mask = 3
@@ -2341,7 +2341,7 @@ texture = ExtResource("10_0pnf2")
 flip_h = true
 
 [node name="ApiUnggun" parent="Environment" instance=ExtResource("19_p5cye")]
-position = Vector2(1132, 88)
+position = Vector2(1118, 88)
 scale = Vector2(2.28657, 2.28657)
 
 [node name="PohonDesa" parent="." instance=ExtResource("9_krr00")]

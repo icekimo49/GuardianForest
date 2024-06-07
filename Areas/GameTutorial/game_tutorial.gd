@@ -48,7 +48,9 @@ func _process(delta):
 		dialog_sebelum_api()
 	#if current_area == AREA.AREA2:
 		#dialog_sebelum_api()
-	
+	if $Area1/Player == null:
+		get_tree().reload_scene()
+
 
 
 func _physics_process(delta):

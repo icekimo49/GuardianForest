@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=3 format=3 uid="uid://b8aq8p1k0yxm1"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=3 format=3]
 
+[ext_resource type="Resource" path="res://global_script/global_script_temp_inv.tres" id="1_82vbx"]
 [ext_resource type="Script" path="res://PlayerData.gd" id="1_hsyi6"]
-[ext_resource type="Resource" uid="uid://c7a6yw7xnqbju" path="res://global_script/global_script_temp_inv.tres" id="1_v1qap"]
 
 [resource]
 script = ExtResource("1_hsyi6")
 hp = 200
 exp = 0
-inv = ExtResource("1_v1qap")
+inv = ExtResource("1_82vbx")
 wave = 1
 time = 0.0
 sudah_tutorial = false

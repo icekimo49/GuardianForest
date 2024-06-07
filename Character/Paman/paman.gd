@@ -54,6 +54,8 @@ func dialogselesai(arg:String):
 	elif arg == "dialog_hutan_3_selesai":
 		nyalainvinsible()
 		get_parent().get_parent().balik_desa()
+	elif arg == "jam_nyala_desa":
+		get_parent().get_parent().get_node("jam").get_node("DayNightCycleUI").visible = true
 
 func gerakan_tutorial(tujuan):
 	velocity = global_position.direction_to(tujuan) * 150

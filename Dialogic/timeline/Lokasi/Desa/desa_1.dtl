@@ -3,6 +3,7 @@ paman (normal): Kamu sudah kembali, Inun?
 join paman 1
 paman: Oh iya, sebelum hari berganti. Ada sesuatu yang ingin paman berikan
 join jam 2
+[signal arg="jam_nyala_desa"]
 paman (normal): Oh iya, sebelum hari berganti. Ada sesuatu yang ingin paman berikan. Ini adalah peninggalan orang tuamu
 leave jam
 join player_visualnovel 3

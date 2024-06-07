@@ -25,7 +25,10 @@ var lalala = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if alur_cerita_tutorial_selesai == false and !GlobalScript.sudah_tutorial:
+	if GlobalScript.sudah_tutorial:
+		alur_cerita_tutorial_selesai = true
+		GlobalScript.tutorial_desa_1 = true
+	if alur_cerita_tutorial_selesai == false and !GlobalScript.sudah_tutorial and GlobalScript.scene_sebelum_loading != "Hutan":
 		paman.matiinvisible()
 		$jam/DayNightCycleUI.visible = false
 	distance = $Player.global_position.distance_to(Vector2(895.0, 228.0))
@@ -77,15 +80,14 @@ func _process(delta):
 		else:
 			lalala = true
 			paman.dialog_paman_inun_desa_3()
-		
-	if GlobalScript.hour == 1 and GlobalScript.sudah_tutorial:
+	if GlobalScript.hour == 1  and GlobalScript.minute == 0 and GlobalScript.sudah_tutorial:
 		$Player.save()
 		get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
 	pass
 
 func _on_pindah_hutan_body_entered(body):
 	if body.is_in_group("player"):
-		if alur_cerita_tutorial_selesai:
+		if alur_cerita_tutorial_selesai or GlobalScript.sudah_tutorial:
 			$Player.save()
 			get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
 
@@ -117,7 +119,7 @@ func _on_time_skip_body_entered(body):
 		Engine.time_scale = 1
 
 func set_besok():
-	GlobalScript.time = GlobalScript.time + 12
+	GlobalScript.time = 6
 	
 
 func _on_time_skip_body_exited(body):

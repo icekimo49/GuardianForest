@@ -55,6 +55,7 @@ func save():
 func new_game(): 
 	data_awal.inv = preload("res://global_script/global_script_temp_inv.tres")
 	data_awal.sudah_tutorial = false
+	data_awal.wave = 1
 	ResourceSaver.save(data_awal, save_file_path + save_file_name)
 	print(data_awal.sudah_tutorial)
 
