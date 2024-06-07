@@ -1,0 +1,5 @@
+join paman 1
+paman (normal): inun, lihat disana
+join player_visualnovel 3
+player_visualnovel (New portrait): NANIIII!!!
+[signal arg="dialog_hutan_1_selesai"]

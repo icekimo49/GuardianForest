@@ -150,6 +150,7 @@ func _on_touch_screen_button_2_pressed():
 	canvas_layer_2.visible = false
 
 func _on_mulai_pressed():
+	$CanvasLayer/Tombol/GridContainer/Mulai.disabled = true
 	$Player.new_game()
 	#mulai dialog
 	$Player.dialog_player_sendiri("mainmenu")
@@ -157,6 +158,8 @@ func _on_mulai_pressed():
 	next_target = Vector2(-472, 229)
 
 func _on_lanjutkan_pressed():
+	$CanvasLayer/Tombol/GridContainer/Lanjutkan.disabled = true
 	$Player.dialog_player_sendiri("mainmenu")
 	await get_tree().create_timer(2.0).timeout
 	next_target = Vector2(-472, 229)
+

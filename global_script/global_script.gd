@@ -27,7 +27,9 @@ var path_screen_terakhir_sebelum_loading
 var boleh_tanam = false
 var exp
 var scene_sebelum_loading
-
+var tutorial_desa_1
+var tutorial_desa_2
+var minute
 #pohon
 var posisi_pohon = []
 

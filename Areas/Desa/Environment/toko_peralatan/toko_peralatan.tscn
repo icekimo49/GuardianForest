@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b22dn0ahgadho"]
+
+[ext_resource type="Texture2D" uid="uid://bdbh2swb64yre" path="res://Areas/Desa/Environment/toko_peralatan/Pilih-Bengkel-Motor-Resmi-atau-Non-Resmi-Ini-Perbedaannya.jpg" id="1_8rno6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvfpv"]
+size = Vector2(1941.14, 1103.79)
+
+[node name="toko_peralatan" type="StaticBody2D"]
+scale = Vector2(0.0525463, 0.0525463)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8rno6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.72238e-05, 0)
+shape = SubResource("RectangleShape2D_dvfpv")

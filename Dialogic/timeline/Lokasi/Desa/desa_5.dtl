@@ -1,0 +1,4 @@
+join paman 1
+paman: dan jangan lupa untuk membersihkan pekarangan rumahmu, itu terlihat sangat kotor
+paman: adios
+[signal arg="dialog_desa_5_selesai"]

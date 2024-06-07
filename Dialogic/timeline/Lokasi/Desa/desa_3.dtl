@@ -1,0 +1,4 @@
+join paman 1
+paman: ini uang untuk kamu nun!, dan paman akan pergi menjaga hutan area utara!
+paman: kamu bisa menggunakan uang ini untuk membeli jamu disana
+[signal arg="dialog_desa_3_selesai"]

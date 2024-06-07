@@ -8,8 +8,8 @@ var player_inattack_zone = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timer = $Timer
-	timer.start()
+		timer = $Timer
+		timer.start()
 
 func _physics_process(delta):
 	deal_damage()

@@ -165,7 +165,6 @@ func animasi(movement):
 func _physics_process(delta):
 	api_attack()
 	attack()
-	
 	if playerData.hp <= 0:
 		player_alive = false #pindah ke main menu
 		playerData.hp = 0
@@ -267,6 +266,10 @@ func gerakan_tutorial(tujuan, arah):
 	animasi(1)
 	move_and_slide()
 
+func posisi_tutorial(arah):
+	animasi_player = arah
+	animasi(0)
+
 func dialog_player_sendiri(lokasi):
 	if lokasi == "mainmenu":
 		#disesuaikan sama jumlah dialog yang ada
@@ -275,9 +278,9 @@ func dialog_player_sendiri(lokasi):
 	elif lokasi == "gametutorial":
 		#disesuaikan sama jumlah dialog yang ada
 		var opsi = randi_range(1,1)
-		layout = Dialogic.start("mainmenu_" + str(opsi))
+		layout = Dialogic.start("gametutorial_" + str(opsi))
 	layout.register_character(load("res://Dialogic/Player/Player.dch"), $".")
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2).timeout
 	Dialogic.Inputs.auto_skip.enabled = !Dialogic.Inputs.auto_skip.enabled
 
 func _on_player_hitbox_body_entered(body):

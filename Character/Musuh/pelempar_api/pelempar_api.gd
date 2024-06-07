@@ -6,21 +6,37 @@ var kabur = false
 @onready var nav = $NavigationAgent2D
 @onready var api = preload("res://Areas/Hutan/Environment/Api/api.tscn")
 var lok_api
+var boleh_gerak = true
+var tutorial = false
+var i =0 
 
 func _ready():
-	tujuan()
+	if get_tree().current_scene.get_name() == "Hutan" and GlobalScript.sudah_tutorial == false:
+		boleh_gerak = false
+		tutorial = true
+	if tutorial == false:
+		tujuan()
+	else:
+		tujuan_tutorial()
 
 func _physics_process(delta):
-	set_next_target()
-	if nav.is_navigation_finished() == true and kabur == true:
-		queue_free()
-	if nav.distance_to_target() < 50.0:
-		lok_api = nav.target_position
-		nav.target_position = self.position
-		lempar_api()
-		kabur = true
-	if kabur == true:
-		nav.target_position = Vector2(1678.0, 79.0)
+	if boleh_gerak:
+		set_next_target()
+		if nav.is_navigation_finished() == true and kabur == true:
+			if tutorial == true:
+				get_parent().get_parent().api_selesai_dilempar = true
+			queue_free()
+		if nav.distance_to_target() < 50.0:
+			lok_api = nav.target_position
+			nav.target_position = self.position
+			lempar_api()
+			kabur = true
+		if kabur == true:
+			if tutorial:
+				nav.target_position = Vector2(1784,-300)
+			else:
+				nav.target_position = Vector2(1678.0, 79.0)
+			
 
 func tujuan():
 		nav.target_position = GlobalScript.posisi_pohon[randi_range(0, GlobalScript.posisi_pohon.size()-1)]
@@ -34,14 +50,20 @@ func set_next_target():
 		velocity = global_position.direction_to(next_target) * speed
 		move_and_slide()
 
+func tujuan_tutorial():
+	nav.target_position = Vector2(1441, -119)
+
+func kabur_tutorial():
+	nav.target_position = Vector2(1784,-300)
+
 func lempar_api():
 	if kabur == false:
-		var timer = Timer.new()
-		add_child(timer)
-		timer.wait_time = 2.0
-		timer.one_shot = true
-		timer.start()
-		await timer.timeout
+		print("cihuy")
 		var instance = api.instantiate()
 		instance.position = lok_api
-		get_parent().add_child(instance)
+		if tutorial:
+			instance.name = "api_tutorial"
+			get_parent().get_parent().api_muncul = true
+		get_tree().get_first_node_in_group("hutan").add_child(instance)
+		if tutorial:
+			instance.timer.stop()

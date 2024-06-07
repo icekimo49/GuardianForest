@@ -3,6 +3,10 @@ extends Node2D
 @onready var kamera_player = $Area1/Player/Camera2D
 @onready var kamera_2 = $kamera2
 var boleh_pindah = false
+var sudah_di_api = false
+var dialog_di_liat_api = false
+
+signal sudah_di_area2
 
 enum AREA {
 	AREA1= 1,
@@ -24,6 +28,7 @@ func _ready():
 	$inventory/MiniInventory.visible = false
 	$tombol_serang/tombolSerang.visible = false
 	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()
+	connect("sudah_di_area2",Callable(self,"dialog_sebelum_api"))
 	pass
 
 
@@ -33,16 +38,22 @@ func _process(delta):
 	kamera_2.global_position = kamera_player.global_position
 	if api == null:
 		boleh_pindah = true
+	if dialog_di_liat_api:
+		dialog_sebelum_api()
 	#if current_area == AREA.AREA2:
 		#dialog_sebelum_api()
+	
+
 
 func _physics_process(delta):
 	posisi_kamera_manager()
 
 func _on_ganti_slide_body_entered(body):
 	if body.is_in_group("player"):
+		#emit_signal("sudah_di_area2")
 		$inventory/MiniInventory.visible = true
 		$tombol_serang/tombolSerang.visible = true
+		dialog_di_liat_api = true
 		if current_area == AREA.AREA1:
 			current_area = AREA.AREA2
 		else :
@@ -62,12 +73,24 @@ func _on_pindah_ke_hutan_body_entered(body):
 			get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
 
 func dialog_sebelum_api():
-	var distance = $Area1/Player.global_position.distance_to(Vector2(1265.188, 224.8908))
-	var dialog = false
-	if distance > 2:
-		$Area1/Player.gerakan_tutorial(Vector2(1265.188, 224.8908), "kanan")
-		$Area1/UI/joystick.no_input = true
-	elif distance <= 2 and dialog == false:
-		$Area1/Player.dialog_player_sendiri("mainmenu")
-		$Area1/UI/joystick.no_input = false
-		dialog = true
+	var distance = $Area1/Player.global_position.distance_to(Vector2(1305, 214))
+	if distance > 5:
+		$Area1/Player.gerakan_tutorial(Vector2(1305, 214), "kanan")
+	else:
+		$Area1/Player.dialog_player_sendiri("gametutorial")
+		dialog_di_liat_api = false
+	#if sudah_di_api and dialog == false:
+		#$Area1/Player.dialog_player_sendiri("gametutorial")
+		#$Area1/UI/joystick.no_input = false
+		#dialog = true
+		#print(dialog)
+	#elif sudah_di_api:
+		#$Area1/Player.gerakan_tutorial(Vector2(1265.188, 224.8908), "kanan")
+		#$Area1/UI/joystick.no_input = true
+	
+	
+	
+func _on_cutscene_api_body_entered(body):
+	sudah_di_api = true
+	if body.is_in_group("player"):
+		emit_signal("sudah_di_area2")

@@ -21,17 +21,13 @@ var state = {}
 
 func _input(event):
 	if event is InputEventScreenTouch:
-		print("lalala")
 		if event.pressed:
 			state[event.index] = event.position
-			print(event.position)
 		else:
 			state.erase(event.index)
 		get_viewport().set_input_as_handled()
 	elif event is InputEventScreenDrag:
-		print("lilili")
 		state[event.index] = event.position
-		print(event.position)
 		get_viewport().set_input_as_handled()
 
 #func _input(event):
@@ -72,7 +68,8 @@ func _process(delta):
 		elif pos == null:
 			small_Circle.position = Vector2.ZERO
 			touched = false
-	
+	if no_input == true:
+		small_Circle.position = Vector2.ZERO
 
 func arah():
 	var a = Vector2.RIGHT

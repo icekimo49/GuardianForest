@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cd0oh2t77de80"]
+[gd_scene load_steps=43 format=3 uid="uid://cd0oh2t77de80"]
 
 [ext_resource type="Script" path="res://Areas/Hutan/Scene/hutan.gd" id="1_4n0fo"]
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_52ebj"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Main/daynightcycle-gradient-texture.tres" id="11_jk8ti"]
 [ext_resource type="PackedScene" uid="uid://c8hkr5cfrve56" path="res://Character/Musuh/spawner_penebang_kayu.tscn" id="11_q2v3j"]
 [ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://Main/UI/daynightcycle_ui.tscn" id="14_wgrvv"]
-[ext_resource type="PackedScene" uid="uid://db5x3x3nhdeag" path="res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/pohon_kecil.tscn" id="15_jblt6"]
 [ext_resource type="PackedScene" uid="uid://biakaku2x6hdt" path="res://Item/Material/biji/biji.tscn" id="16_eyntx"]
 [ext_resource type="PackedScene" uid="uid://db26m2afepnbf" path="res://Areas/Hutan/Environment/Api/api.tscn" id="16_xe2fl"]
 [ext_resource type="PackedScene" uid="uid://bryudnbm3yjh8" path="res://Item/Tools/ember_item.tscn" id="17_y118e"]
@@ -28,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://cat27ahudphaw" path="res://scene/UI/menu/asset/Sparkle 1.png" id="25_3comt"]
 [ext_resource type="FontFile" uid="uid://bql7walclmmtp" path="res://scene/UI/menu/font/font_1.ttf" id="27_6w3c3"]
 [ext_resource type="PackedScene" uid="uid://ccgbi3dh1ll2b" path="res://Character/Player/Inventory/Inv_UI.tscn" id="28_axyc1"]
+[ext_resource type="PackedScene" uid="uid://c0fyfkfnyjt36" path="res://Character/Musuh/pelempar_api/pelempar_api.tscn" id="28_om3wg"]
+[ext_resource type="PackedScene" uid="uid://c05txpvyplb1k" path="res://Character/Paman/paman.tscn" id="29_tmts1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_qi053"]
 tile_data = PackedInt32Array(0, 786433, 11, 65536, 393217, 11, 131072, 786433, 12, 196608, 786433, 12, 262144, 786433, 12, 327680, 393217, 11, 393216, 393217, 11)
@@ -2264,9 +2265,9 @@ pattern_0 = SubResource("TileMapPattern_empey")
 size = Vector2(47, 39)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_v13fq"]
-vertices = PackedVector2Array(1076, 117, 1094, 131, 1090, 131, 1027, 110, 1013, 113, 1013, 109, 1055, 109, 1053, 116, 1090, 154, 1074, 154, 1068, 135, 1073, 105, 1055, 105, 369, -300, 379, -297, 362, -297, 359, -310, 238, 142, 240, 144, 231, 142, 431, 259, 442, 181, 988, 181, 1007, 196, 1043, 234, 1054, 268, -213, 358, 282, -230, 282, -176, 922, -38, 919, -35, 919, -65, 922, -71, 2022, -360, 1525, 97, 1525, 17, 606, -360, 1502, 8, 1156, 71, 1144, 56, 1161, 56, 1178, 67, 967, 152, 983, 152, 982, 155, 967, 153, 601, 59, 617, 55, 617, 91, 442, 101, 1027, 202, 1043, 198, 740, -76, 740, -58, 716, -64, 606, -300, 186, 187, 190, 204, 183, 204, 887, 153, 232, 116, 1314, 33, 1315, 39, 1291, 39, 1286, 33, 362, -176, 362, -183, 423, -183, 420, 92, 423, -187, 467, -187, 467, -228, 498, -228, 498, -232, 542, -232, 627, -27, 542, -276, 557, -276, 696, -58, 677, -43, 632, -21, 557, -300, 1502, 17, 1422, 8, 1385, -7, 1422, 31, 1406, 31, 1400, 12, 1178, 90, 1162, 90, 1161, 52, 1205, 52, 1216, 67, 1221, 50, 1205, 8, 1238, 33, 1220, 8, 1220, -72, 1197, -72, 1197, -81, 1158, -81, 1158, -90, 1010, -61, 1002, -61, 1002, -71, 1015, -81, 820, -76, 839, -65, 839, -43, 824, -43, 820, -44, 628, 91, 628, 125, 708, 125, 708, 121, 752, 121, 752, 94, 823, 94, 835, 111, 823, 90, 835, 90, 876, 111, 876, 119, 887, 119, 562, -12, 556, 13, 420, 101, 340, 92, 340, 115, 324, 115, 318, 96, 183, 232, 153, 232, 233, 312, 233, 284, 258, 284, 258, 300, 338, 300, 338, 296, 382, 296, 1426, 362, 382, 259, 431, 181, 1054, 234, 1134, 268, 1134, 264, 1178, 264, 1178, 220, 1183, 220, 1183, 261, 1263, 261, 1263, 214, 1310, 214, 1373, 218, 1310, 185, 1367, 185, 1367, 181, 1373, 181, 1453, 218, 1453, 145, 1466, 145, 1466, 141, 1510, 141, 1510, 97, 672, -21, 581, 53, 562, 38, 209, 148, 1260, 27, 1320, 8, 1359, -13, 303, 77, 1339, -7, 1085, -90, 1080, -96, 601, -33, 255, 77, 238, 94, 1054, -102, 1034, -96, 581, -27, 277, 71, 192, 165, 153, 312)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(3, 5, 6), PackedInt32Array(7, 3, 6), PackedInt32Array(2, 8, 9, 10, 0), PackedInt32Array(11, 0, 10, 7, 6), PackedInt32Array(11, 6, 12), PackedInt32Array(13, 14, 15), PackedInt32Array(16, 13, 15), PackedInt32Array(17, 18, 19), PackedInt32Array(20, 21, 22, 23, 24, 25), PackedInt32Array(26, 27, 28), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(33, 34, 35), PackedInt32Array(36, 33, 35, 37), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(50, 51, 24), PackedInt32Array(52, 53, 54, 55), PackedInt32Array(56, 57, 58), PackedInt32Array(45, 44, 22, 21, 59), PackedInt32Array(60, 17, 19), PackedInt32Array(61, 62, 63, 64), PackedInt32Array(65, 66, 67, 68), PackedInt32Array(67, 69, 70), PackedInt32Array(70, 71, 72), PackedInt32Array(72, 73, 74), PackedInt32Array(75, 74, 76, 77, 78, 79, 80), PackedInt32Array(78, 77, 81, 55, 54), PackedInt32Array(35, 82, 37), PackedInt32Array(36, 37, 83, 84), PackedInt32Array(83, 85, 86, 87), PackedInt32Array(41, 88, 89, 38), PackedInt32Array(41, 40, 90, 91, 92), PackedInt32Array(93, 92, 91, 94), PackedInt32Array(95, 93, 94, 96), PackedInt32Array(97, 98, 99), PackedInt32Array(99, 100, 101), PackedInt32Array(102, 103, 104, 105), PackedInt32Array(106, 107, 108, 109, 110), PackedInt32Array(49, 48, 111, 112, 21), PackedInt32Array(113, 114, 115), PackedInt32Array(115, 116, 117, 118), PackedInt32Array(117, 119, 120, 118), PackedInt32Array(118, 121, 122, 21, 115), PackedInt32Array(122, 123, 59, 21), PackedInt32Array(70, 124, 125, 49, 126, 68, 67), PackedInt32Array(127, 128, 129, 130), PackedInt32Array(58, 131, 132), PackedInt32Array(133, 134, 135, 136), PackedInt32Array(137, 138, 139, 140), PackedInt32Array(140, 139, 141, 20, 25), PackedInt32Array(20, 142, 21), PackedInt32Array(24, 143, 25), PackedInt32Array(144, 145, 146, 140), PackedInt32Array(146, 147, 148, 149), PackedInt32Array(150, 151, 152, 153, 140), PackedInt32Array(152, 154, 155, 153), PackedInt32Array(155, 156, 157, 153), PackedInt32Array(158, 159, 160), PackedInt32Array(160, 161, 162), PackedInt32Array(162, 163, 34), PackedInt32Array(79, 164, 80), PackedInt32Array(113, 115, 21), PackedInt32Array(112, 113, 21), PackedInt32Array(165, 46, 49), PackedInt32Array(166, 165, 49), PackedInt32Array(125, 166, 49), PackedInt32Array(158, 160, 162), PackedInt32Array(60, 19, 167), PackedInt32Array(168, 95, 96, 97), PackedInt32Array(97, 169, 61, 64, 168), PackedInt32Array(55, 32, 31, 107, 106), PackedInt32Array(83, 87, 84), PackedInt32Array(36, 84, 170, 97), PackedInt32Array(127, 130, 171, 65), PackedInt32Array(172, 169, 97), PackedInt32Array(101, 173, 174), PackedInt32Array(175, 70, 72, 74, 75), PackedInt32Array(26, 28, 65, 176, 177), PackedInt32Array(23, 50, 24), PackedInt32Array(170, 172, 97), PackedInt32Array(36, 97, 99), PackedInt32Array(36, 99, 101), PackedInt32Array(36, 101, 174, 178), PackedInt32Array(36, 178, 179, 55), PackedInt32Array(55, 179, 105, 104, 32), PackedInt32Array(55, 106, 52), PackedInt32Array(70, 175, 180), PackedInt32Array(70, 180, 124), PackedInt32Array(65, 68, 127), PackedInt32Array(65, 171, 181), PackedInt32Array(65, 181, 176), PackedInt32Array(26, 177, 60, 167, 182), PackedInt32Array(26, 182, 56), PackedInt32Array(26, 56, 58, 132), PackedInt32Array(26, 132, 183), PackedInt32Array(140, 26, 183, 133), PackedInt32Array(140, 133, 136, 137), PackedInt32Array(140, 25, 144), PackedInt32Array(140, 146, 149, 150), PackedInt32Array(140, 153, 158), PackedInt32Array(33, 140, 158, 162), PackedInt32Array(33, 162, 34)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(377, -390, -278, 388, 1440, 393, 2085, -390)])
+vertices = PackedVector2Array(1425, 362, -213, 358, 391, -360, 2011, -408)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(377, -390, -278, 388, 1440, 393, 2073, -440)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 30.0
 
@@ -2278,7 +2279,7 @@ _data = {
 "wave": SubResource("Animation_pfb6f")
 }
 
-[node name="Hutan" type="Node2D"]
+[node name="Hutan" type="Node2D" groups=["hutan"]]
 script = ExtResource("1_4n0fo")
 
 [node name="TileMap2" type="TileMap" parent="."]
@@ -2348,20 +2349,6 @@ scale = Vector2(0.988421, 0.968354)
 collision_layer = 3
 collision_mask = 3
 
-[node name="inventory" type="CanvasLayer" parent="."]
-
-[node name="MiniInventory" parent="inventory" instance=ExtResource("5_q7xlm")]
-offset_left = 261.0
-offset_top = 309.0
-offset_right = 420.0
-offset_bottom = 366.0
-scale = Vector2(1.18, 1.18)
-
-[node name="tombol_serang" type="CanvasLayer" parent="."]
-
-[node name="tombolSerang" parent="tombol_serang" instance=ExtResource("6_mpcn1")]
-position = Vector2(462, 207)
-
 [node name="GameCamera" parent="." instance=ExtResource("9_04cy2")]
 
 [node name="SumberAir" type="CanvasGroup" parent="."]
@@ -2420,301 +2407,6 @@ position = Vector2(1637, 71)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_v13fq")
 
-[node name="Pohon153" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(657, 33)
-
-[node name="Pohon157" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(704, 10)
-
-[node name="Pohon158" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(665, 1)
-
-[node name="Pohon154" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(668, 67)
-
-[node name="Pohon155" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(712, 63)
-
-[node name="Pohon156" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(727, 19)
-
-[node name="pohon_kecil" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(602, 13)
-
-[node name="Pohon159" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(447, -320)
-
-[node name="Pohon160" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(494, -343)
-
-[node name="Pohon161" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(455, -352)
-
-[node name="Pohon162" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(458, -286)
-
-[node name="Pohon163" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(502, -290)
-
-[node name="Pohon164" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(517, -334)
-
-[node name="pohon_kecil2" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(392, -340)
-
-[node name="Pohon165" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(372, -275)
-
-[node name="Pohon166" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(419, -298)
-
-[node name="Pohon167" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(322, -234)
-
-[node name="Pohon168" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(383, -241)
-
-[node name="Pohon169" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(427, -245)
-
-[node name="Pohon170" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(566, -358)
-
-[node name="pohon_kecil3" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(317, -295)
-
-[node name="Pohon171" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(772, 2)
-
-[node name="Pohon172" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(819, -21)
-
-[node name="Pohon173" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(780, -54)
-
-[node name="Pohon174" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(783, 36)
-
-[node name="Pohon175" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(827, 32)
-
-[node name="Pohon176" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(842, -12)
-
-[node name="pohon_kecil4" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(717, -18)
-
-[node name="Pohon177" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(864, 19)
-
-[node name="Pohon178" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(911, -4)
-
-[node name="Pohon179" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(879, -43)
-
-[node name="Pohon180" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(875, 53)
-
-[node name="Pohon181" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(919, 49)
-
-[node name="Pohon182" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(934, 5)
-
-[node name="pohon_kecil5" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(809, -1)
-
-[node name="Pohon183" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(916, 61)
-
-[node name="Pohon184" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(963, 38)
-
-[node name="Pohon185" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(962, -49)
-
-[node name="Pohon186" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(927, 95)
-
-[node name="Pohon187" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(973, 94)
-
-[node name="Pohon188" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(986, 47)
-
-[node name="pohon_kecil6" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(861, 41)
-
-[node name="Pohon189" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1004, 17)
-
-[node name="Pohon190" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1051, -6)
-
-[node name="Pohon191" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1011, -39)
-
-[node name="Pohon192" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1015, 51)
-
-[node name="Pohon193" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1059, 47)
-
-[node name="Pohon194" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1074, 3)
-
-[node name="pohon_kecil7" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(949, -3)
-
-[node name="Pohon195" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1110, -36)
-
-[node name="Pohon196" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1157, -59)
-
-[node name="Pohon197" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1118, -68)
-
-[node name="Pohon198" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1121, -2)
-
-[node name="Pohon199" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1165, -6)
-
-[node name="Pohon200" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1180, -50)
-
-[node name="pohon_kecil8" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(1055, -56)
-
-[node name="Pohon201" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1083, 176)
-
-[node name="Pohon202" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1130, 153)
-
-[node name="Pohon203" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1223, 203)
-
-[node name="Pohon204" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1094, 210)
-
-[node name="Pohon205" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1138, 206)
-
-[node name="Pohon206" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1153, 162)
-
-[node name="pohon_kecil9" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(1028, 156)
-
-[node name="Pohon207" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1171, 112)
-
-[node name="Pohon208" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1218, 89)
-
-[node name="Pohon209" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1270, 156)
-
-[node name="Pohon210" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1182, 146)
-
-[node name="Pohon211" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1226, 142)
-
-[node name="Pohon212" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1241, 98)
-
-[node name="pohon_kecil10" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(1116, 92)
-
-[node name="Pohon213" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1316, 93)
-
-[node name="Pohon214" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1363, 70)
-
-[node name="Pohon215" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1324, 61)
-
-[node name="Pohon216" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1327, 127)
-
-[node name="Pohon217" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1371, 123)
-
-[node name="Pohon218" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1386, 79)
-
-[node name="pohon_kecil11" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(1261, 73)
-
-[node name="Pohon219" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1415, 53)
-
-[node name="Pohon220" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1462, 30)
-
-[node name="Pohon221" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1413, 160)
-
-[node name="Pohon222" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1426, 87)
-
-[node name="Pohon223" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1470, 83)
-
-[node name="Pohon224" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(1485, 39)
-
-[node name="pohon_kecil12" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(1360, 33)
-
-[node name="Pohon225" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(287, 208)
-
-[node name="Pohon226" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(334, 185)
-
-[node name="Pohon227" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(295, 176)
-
-[node name="Pohon228" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(298, 242)
-
-[node name="Pohon229" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(342, 238)
-
-[node name="Pohon230" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(357, 194)
-
-[node name="pohon_kecil13" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(232, 188)
-
-[node name="Pohon231" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(333, 137)
-
-[node name="Pohon232" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(380, 114)
-
-[node name="Pohon233" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(391, 201)
-
-[node name="Pohon234" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(193, 254)
-
-[node name="Pohon235" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-y_sort_enabled = true
-position = Vector2(223, 226)
-
-[node name="Pohon236" parent="NavigationRegion2D" instance=ExtResource("9_jaoby")]
-position = Vector2(402, 123)
-
-[node name="pohon_kecil14" parent="NavigationRegion2D" instance=ExtResource("15_jblt6")]
-position = Vector2(278, 117)
-
 [node name="api" parent="." instance=ExtResource("16_xe2fl")]
 position = Vector2(653, -22)
 
@@ -2731,7 +2423,6 @@ position = Vector2(494, 170)
 position = Vector2(530, 95)
 
 [node name="area_tanam" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="area_tanam"]
 polygon = PackedVector2Array(229, 61, 371, 65, 382, 52, 480, 53, 486, 37, 508, 41, 513, 26, 530, 28, 590, -47, 579, -48, 584, -59, 553, -59, 575, -85, 558, -85, 586, -121, 544, -121, 550, -134, 523, -134)
@@ -3837,14 +3528,6 @@ libraries = {
 "": SubResource("AnimationLibrary_j20x1")
 }
 
-[node name="inv" type="CanvasLayer" parent="."]
-
-[node name="Inv_UI" parent="inv" instance=ExtResource("28_axyc1")]
-offset_left = 257.0
-offset_top = 96.0
-offset_right = 403.0
-offset_bottom = 242.0
-
 [node name="musuh" type="Node2D" parent="."]
 
 [node name="biji2" parent="." instance=ExtResource("16_eyntx")]
@@ -3853,12 +3536,50 @@ position = Vector2(393, 60)
 [node name="biji3" parent="." instance=ExtResource("16_eyntx")]
 position = Vector2(455, 58)
 
+[node name="Pohon" parent="." instance=ExtResource("9_jaoby")]
+position = Vector2(1411, -131)
+
+[node name="tutorial" type="Node2D" parent="."]
+
+[node name="pelempar_api" parent="tutorial" instance=ExtResource("28_om3wg")]
+position = Vector2(-681, -134)
+
+[node name="camera_musuh" type="Camera2D" parent="tutorial/pelempar_api"]
+
+[node name="paman" parent="tutorial" instance=ExtResource("29_tmts1")]
+position = Vector2(-664, -214)
+
+[node name="kolam2" parent="." instance=ExtResource("18_gjnvv")]
+position = Vector2(727, -104)
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="joystick" parent="UI" instance=ExtResource("4_o1inn")]
 top_level = true
 position = Vector2(119, 255)
 scale = Vector2(1, 1)
+
+[node name="inventory" type="CanvasLayer" parent="."]
+
+[node name="MiniInventory" parent="inventory" instance=ExtResource("5_q7xlm")]
+offset_left = 261.0
+offset_top = 309.0
+offset_right = 420.0
+offset_bottom = 366.0
+scale = Vector2(1.18, 1.18)
+
+[node name="inv" type="CanvasLayer" parent="."]
+
+[node name="Inv_UI" parent="inv" instance=ExtResource("28_axyc1")]
+offset_left = 257.0
+offset_top = 96.0
+offset_right = 403.0
+offset_bottom = 242.0
+
+[node name="tombol_serang" type="CanvasLayer" parent="."]
+
+[node name="tombolSerang" parent="tombol_serang" instance=ExtResource("6_mpcn1")]
+position = Vector2(462, 207)
 
 [connection signal="timeout" from="Timer/masuk_map_ke_mulai_game" to="." method="_on_masuk_map_ke_mulai_game_timeout"]
 [connection signal="timeout" from="Timer/durasi_wave" to="." method="_on_durasi_wave_timeout"]

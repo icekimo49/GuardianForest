@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dqfhckmcatuaa"]
+[gd_scene load_steps=36 format=3 uid="uid://dqfhckmcatuaa"]
 
 [ext_resource type="Script" path="res://Areas/GameTutorial/game_tutorial.gd" id="1_0i16w"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_71wjt"]
@@ -67,6 +67,8 @@ size = Vector2(11, 690)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8cb7"]
 size = Vector2(20, 335)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dxiik"]
 
 [node name="GameTutorial" type="Node2D"]
 script = ExtResource("1_0i16w")
@@ -1538,5 +1540,15 @@ offset_top = 96.0
 offset_right = 403.0
 offset_bottom = 242.0
 
+[node name="cutsceneApi" type="Area2D" parent="."]
+position = Vector2(1365, 199)
+scale = Vector2(1.68, 1.68)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cutsceneApi"]
+position = Vector2(48.2143, 40.4762)
+scale = Vector2(3.84538, 3.57683)
+shape = SubResource("CircleShape2D_dxiik")
+
 [connection signal="body_entered" from="Area2/ganti_slide" to="." method="_on_ganti_slide_body_entered"]
 [connection signal="body_entered" from="pindah_ke_hutan" to="." method="_on_pindah_ke_hutan_body_entered"]
+[connection signal="body_entered" from="cutsceneApi" to="." method="_on_cutscene_api_body_entered"]

@@ -23,23 +23,38 @@ DamageToPlayer="*res://global_script/damage_to_player.gd"
 GameEvent="*res://Character/Player/game_event.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
+[compression]
+
+formats/zstd/window_log_size=30
+
 [dialogic]
 
 directories/dch_directory={
 "Player": "res://Dialogic/Player/Player.dch",
-"penjual_makanan": "res://Dialogic/Player/penjual_makanan.dch"
+"jam": "res://Dialogic/Player/jam.dch",
+"paman": "res://Dialogic/Player/paman.dch",
+"penjual_makanan": "res://Dialogic/Player/penjual_makanan.dch",
+"player_visualnovel": "res://Dialogic/Player/player_visualnovel.dch"
 }
 directories/dtl_directory={
-"1": "res://Dialogic/timeline/Lokasi/tebing_mainmenu/1.dtl",
-"2": "res://Dialogic/timeline/Lokasi/tebing_mainmenu/2.dtl",
-"3": "res://Dialogic/timeline/Lokasi/tebing_mainmenu/3.dtl",
+"1": "res://Dialogic/timeline/Lokasi/tebing_mainmenu/mainmenu_4.dtl",
+"2": "res://Dialogic/timeline/Lokasi/tebing_mainmenu/mainmenu_3.dtl",
+"3": "res://Dialogic/timeline/Lokasi/tebing_mainmenu/mainmenu_2.dtl",
+"desa_1": "res://Dialogic/timeline/Lokasi/Desa/desa_1.dtl",
+"desa_2": "res://Dialogic/timeline/Lokasi/Desa/desa_2.dtl",
+"desa_3": "res://Dialogic/timeline/Lokasi/Desa/desa_3.dtl",
+"desa_4": "res://Dialogic/timeline/Lokasi/Desa/desa_4.dtl",
+"desa_5": "res://Dialogic/timeline/Lokasi/Desa/desa_5.dtl",
 "gametutorial_1": "res://Dialogic/timeline/Lokasi/gametutorial/gametutorial_1.dtl",
+"hutan1": "res://Dialogic/timeline/Lokasi/hutan/hutan1.dtl",
+"hutan2": "res://Dialogic/timeline/Lokasi/hutan/hutan2.dtl",
+"hutan3": "res://Dialogic/timeline/Lokasi/hutan/hutan3.dtl",
 "mainmenu_1": "res://Dialogic/timeline/Lokasi/tebing_mainmenu/mainmenu_1.dtl",
 "penjual_makanan/1": "res://Dialogic/timeline/Lokasi/Desa/penjual_makanan/penjual_makanan_1.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://bubblestyle.tres", "res://visual_novel_style.tres"]
+layout/default_style="res://bubblestyle.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true

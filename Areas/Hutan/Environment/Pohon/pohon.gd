@@ -6,6 +6,7 @@ var deteksi = false
 var kebakar = false
 var timer1 = Timer.new()
 var timer2 = Timer.new()
+var boleh_kebakar = true
 
 func _ready():
 	GlobalScript.posisi_pohon.append(self.global_position)
@@ -42,9 +43,10 @@ func _on_area_2d_area_entered(area):
 	if area.name == "area_penebangkayu":
 		$timer_PenebangKayu.start()
 	if area.name == "api_hitbox":
-		if deteksi == false:
-			mulai_timer1()
-			deteksi = true
+		if boleh_kebakar == true:
+			if deteksi == false:
+				mulai_timer1()
+				deteksi = true
 
 func _on_area_2d_area_exited(area):
 	if area.name == "area_penebang_kayu":

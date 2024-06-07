@@ -1,0 +1,8 @@
+join paman 1
+paman: hi inun!
+join jam 2
+paman (normal): ini jam
+leave jam
+join player_visualnovel 3
+player_visualnovel: sok asik luh
+[signal arg="dialog_desa_1_selesai"]

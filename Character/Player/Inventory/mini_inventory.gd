@@ -1,6 +1,12 @@
 extends Control
 
 @onready var slots : Array = $NinePatchRect/GridContainer.get_children()
+@onready var tombol1 = $NinePatchRect/GridContainer/Inventory_UI_Slot
+@onready var tombol2 = $NinePatchRect/GridContainer/Inventory_UI_Slot2
+@onready var tombol3 = $NinePatchRect/GridContainer/Inventory_UI_Slot3
+
+var warna_awal
+
 var use_item = false
 
 func update_slots():
@@ -10,6 +16,7 @@ func update_slots():
 		j+=1
 
 func _ready():
+	warna_awal = tombol1.modulate
 	GlobalScript.inv.update.connect(update_slots)
 	update_slots()
 
@@ -23,11 +30,14 @@ func _on_touch_screen_button_pressed():
 		if use_item == true:
 			use_item = false 
 			GlobalScript.item_in_use = ""
+			tombol1.modulate = warna_awal
 		else:
 			if GlobalScript.inv.slots[8] != null:
-				if GlobalScript.inv.slots[8].item.type == false:
-					use_item = true
-					GlobalScript.item_in_use = GlobalScript.inv.slots[8].item.name
+				if GlobalScript.inv.slots[8].item != null:
+					if GlobalScript.inv.slots[8].item.type == false:
+						use_item = true
+						GlobalScript.item_in_use = GlobalScript.inv.slots[8].item.name
+						tombol1.modulate = Color("ffffff95")
 		print(GlobalScript.item_in_use)
 
 func _on_touch_screen_button_2_pressed():
@@ -40,11 +50,14 @@ func _on_touch_screen_button_2_pressed():
 		if use_item == true:
 			use_item = false 
 			GlobalScript.item_in_use = ""
+			tombol2.modulate = warna_awal
 		else:
 			if GlobalScript.inv.slots[9] != null:
-				if GlobalScript.inv.slots[9].item.type == false:
-					use_item = true
-					GlobalScript.item_in_use = GlobalScript.inv.slots[9].item.name
+				if GlobalScript.inv.slots[9].item != null:
+					if GlobalScript.inv.slots[9].item.type == false:
+						use_item = true
+						GlobalScript.item_in_use = GlobalScript.inv.slots[9].item.name
+						tombol2.modulate = Color("ffffff95")
 		print(GlobalScript.item_in_use)
 
 func _on_touch_screen_button_3_pressed():
@@ -57,11 +70,14 @@ func _on_touch_screen_button_3_pressed():
 		if use_item == true:
 			use_item = false 
 			GlobalScript.item_in_use = ""
+			tombol3.modulate = warna_awal
 		else:
 			if GlobalScript.inv.slots[10] != null:
-				if GlobalScript.inv.slots[10].item.type == false:
-					use_item = true
-					GlobalScript.item_in_use = GlobalScript.inv.slots[10].item.name
+				if GlobalScript.inv.slots[10].item != null:
+					if GlobalScript.inv.slots[10].item.type == false:
+						use_item = true
+						GlobalScript.item_in_use = GlobalScript.inv.slots[10].item.name
+						tombol3.modulate = Color("ffffff95")
 		print(GlobalScript.item_in_use)
 
 func more_item():

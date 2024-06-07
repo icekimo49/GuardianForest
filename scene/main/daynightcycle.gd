@@ -32,10 +32,11 @@ func _recalculate_time():
 	var day = int(total_minutes / minute_per_day)
 	
 	var current_day_minutes = total_minutes % minute_per_day
-	
+	#1 jam = 0.2617
 	var hour = int(current_day_minutes / minute_per_hour)
 	var minute = int(current_day_minutes % minute_per_hour)
 	GlobalScript.hour = hour
+	GlobalScript.minute = minute
 	if past_minute != minute:
 		past_minute = minute
 		time_tick.emit(day, hour, minute)

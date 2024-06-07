@@ -234,6 +234,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jw6pm"]
+radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_my3qs"]
 radius = 19.2354
@@ -306,7 +307,7 @@ texture_filter = 1
 position = Vector2(2.38419e-07, -6)
 scale = Vector2(0.473958, 0.473958)
 sprite_frames = SubResource("SpriteFrames_dyxpy")
-animation = &"serang_kanan"
+animation = &"diam_bawah"
 autoplay = "diam_bawah"
 
 [node name="abilityManager" type="Node" parent="."]
@@ -314,7 +315,7 @@ autoplay = "diam_bawah"
 [node name="lemparBotolController" parent="abilityManager" instance=ExtResource("2_botwl")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_jw6pm")
 
 [node name="player_hitbox" type="Area2D" parent="."]

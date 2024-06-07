@@ -5,12 +5,25 @@ extends Node2D
 @onready var info_wave = $InfoWave
 @onready var info_wave_color = $inforWaveCanvas/InfoWave
 @onready var animasi_wave = $inforWaveCanvas/InfoWave/AnimationPlayer
-@onready var musuh_tutorial = preload("res://Character/Musuh/Penebang_kayu/Penebang_kayu.tscn")
+@onready var camera_cs = $cameraCS
+@onready var game_camera = $GameCamera
+
 
 var durasi_game
-var biar_spawn_musuh_tutorial_cuman_sekali = false
+var dialog1 = false
+var dialog2 = false
+var api_selesai_dilempar = false
+var api_muncul = false
+
 
 func _ready():
+	if GlobalScript.sudah_tutorial == false:
+		$Player.global_position = Vector2(99, 81)
+		$tutorial/paman.global_position = Vector2(70,105)
+		$Pohon.boleh_kebakar = false
+		tutorial()
+	else:
+		$tutorial.queue_free()
 	animasi_wave
 	$NavigationRegion2D.bake_navigation_polygon(true)
 	daynightcycle.time_tick.connect(ui_jam.set_daytime)
@@ -19,25 +32,40 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if GlobalScript.hour == 1 and GlobalScript.game_berlangsung == false and GlobalScript.sudah_tutorial:
+	if api_selesai_dilempar == true:
+		ubah_kamera()
+		api_selesai_dilempar = false
+	if get_node("api_tutorial") == null and api_muncul:
+		var distance = $Player.global_position.distance_to(Vector2(99, 81))
+		if distance > 5:
+			$Player.gerakan_tutorial(Vector2(99, 81), "kiri")
+		else:
+			api_muncul = false
+			$tutorial/paman.dialog_paman_inun_hutan_3()
+			GlobalScript.tutorial_desa_1 = true
+	if GlobalScript.hour == 1 and GlobalScript.minute == 0 and GlobalScript.game_berlangsung == false and GlobalScript.sudah_tutorial:
 		var wave = $inforWaveCanvas/InfoWave2
-		wave.text = "Wave " + str(GlobalScript.tingkat_wave)
-		
-		#print("wave ke-", GlobalScript.tingkat_wave, " dimulai!!!!!")
-		
+		wave.text = "Wave " + str(GlobalScript.tingkat_wave) + " dimulai!!!!"
 		GlobalScript.game_berlangsung = true
 		$Timer/masuk_map_ke_mulai_game.start()
-	if GlobalScript.sudah_tutorial == false and biar_spawn_musuh_tutorial_cuman_sekali == false:
-		print("cihuy")
-		GlobalScript.game_berlangsung = true
-		var musuh = musuh_tutorial.instantiate()
-		musuh.global_position = Vector2(1540.66, -85.41129)
-		get_parent().add_child(musuh)
-		#kamera ke musuh
-		#kamera balik ke player
-		#tulisan suruh melawan dia
-		biar_spawn_musuh_tutorial_cuman_sekali =  true
 
+func tutorial():
+	if dialog1 == false:
+		$tutorial/paman.dialog_paman_inun_hutan_1()
+		dialog1 = true
+	elif dialog2 == true:
+		$tutorial/paman.dialog_paman_inun_hutan_2()
+		dialog2 = false
+
+func ubah_kamera():
+	if $tutorial/pelempar_api/camera_musuh == null:
+		$GameCamera.make_current()
+		dialog2 = true
+		tutorial()
+	elif $tutorial/pelempar_api/camera_musuh.is_current() == false:
+		$tutorial/pelempar_api.global_position = Vector2(1867, -371)
+		$tutorial/pelempar_api/camera_musuh.make_current()
+		$tutorial/pelempar_api.boleh_gerak = true
 
 func animasi_wave_player():
 	pass
@@ -78,3 +106,6 @@ func _on_area_tanam_body_entered(body):
 func _on_area_tanam_body_exited(body):
 	if body.has_method("player"):
 		GlobalScript.boleh_tanam = false
+
+func balik_desa():
+	get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
