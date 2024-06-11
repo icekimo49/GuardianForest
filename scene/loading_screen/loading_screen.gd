@@ -32,6 +32,7 @@ func _process(delta):
 	if loading_status == ResourceLoader.THREAD_LOAD_LOADED:
 		await get_tree().create_timer(2.0).timeout
 		var newScene = ResourceLoader.load_threaded_get(namaScene)
+		print(newScene)
 		get_tree().change_scene_to_packed(newScene)
 
 func kemana_kita_le():

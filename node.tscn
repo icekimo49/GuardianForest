@@ -1,5 +1,17 @@
-[gd_scene format=3 uid="uid://dj1qexsqwiihf"]
+[gd_scene load_steps=4 format=3 uid="uid://dj1qexsqwiihf"]
+
+[ext_resource type="Script" path="res://node.gd" id="1_yke2q"]
+[ext_resource type="Texture2D" uid="uid://dcjsbbfl25cnx" path="res://icon.svg" id="2_d4inl"]
+[ext_resource type="Script" path="res://TextureRect.gd" id="3_jjbdy"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_yke2q")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 38.0
+offset_top = 71.0
+offset_right = 166.0
+offset_bottom = 199.0
+texture = ExtResource("2_d4inl")
+expand_mode = 1
+script = ExtResource("3_jjbdy")

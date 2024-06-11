@@ -90,7 +90,7 @@ func dialog_sebelum_api():
 	else:
 		intro.play("matikan_api")
 		$Area1/Player.dialog_player_sendiri("gametutorial")
-		$Area1/UI/joystick.no_input = false
+		$Area1/UI/joystick.no_input = false 
 		dialog_di_liat_api = false
 	#if sudah_di_api and dialog == false:
 		#$Area1/Player.dialog_player_sendiri("gametutorial")

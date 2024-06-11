@@ -1,10 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccgbi3dh1ll2b"]
+[gd_scene load_steps=14 format=3 uid="uid://ccgbi3dh1ll2b"]
 
 [ext_resource type="Script" path="res://Character/Player/Inventory/Inv_UI.gd" id="1_6cqpk"]
 [ext_resource type="Texture2D" uid="uid://cx60oappfqfcj" path="res://asset/control/panel_brown.png" id="2_j4s6q"]
 [ext_resource type="PackedScene" uid="uid://5xltbkvfg7nt" path="res://Character/Player/Inventory/Inv_UI_Slot.tscn" id="3_6078w"]
 [ext_resource type="Texture2D" uid="uid://dmam0a1ma33v0" path="res://asset/control/panelInset_beige.png" id="4_ix4lb"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://Character/Player/Character_Asset/Actor1.png" id="5_ywyy6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pexay"]
+size = Vector2(21.8884, 20.6802)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gh2i"]
+size = Vector2(21.2589, 21.336)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq8mb"]
+size = Vector2(103.891, 100.586)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c332k"]
+size = Vector2(21.2589, 20.5263)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgnxr"]
+size = Vector2(21.2589, 20.5263)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4dul"]
+size = Vector2(21.2589, 20.5263)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eveeb"]
+size = Vector2(21.2589, 20.5263)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de3wv"]
+size = Vector2(21.2589, 20.5263)
 
 [node name="Inv_UI" type="Control"]
 custom_minimum_size = Vector2(146, 146)
@@ -59,9 +83,15 @@ position = Vector2(-0.509202, 0.153845)
 scale = Vector2(0.210086, 0.210086)
 texture_normal = ExtResource("2_j4s6q")
 
+[node name="Area2D" type="Area2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot/Area2D"]
+position = Vector2(11.0644, 11.3036)
+shape = SubResource("RectangleShape2D_pexay")
+
 [node name="inventory_slot2" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
-mouse_filter = 2
+mouse_filter = 1
 
 [node name="tombol2" type="TouchScreenButton" parent="big_inventory/inventory_slot/GridContainer/inventory_slot2"]
 self_modulate = Color(1, 1, 1, 0)
@@ -69,8 +99,15 @@ position = Vector2(0.225447, 0.963562)
 scale = Vector2(0.203306, 0.203306)
 texture_normal = ExtResource("2_j4s6q")
 
+[node name="Area2D2" type="Area2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot2/Area2D2"]
+position = Vector2(11.3096, 11.3482)
+shape = SubResource("RectangleShape2D_7gh2i")
+
 [node name="inventory_slot3" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="tombol3" type="TouchScreenButton" parent="big_inventory/inventory_slot/GridContainer/inventory_slot3"]
 self_modulate = Color(1, 1, 1, 0)
@@ -78,8 +115,17 @@ position = Vector2(0.29501, 1.06478)
 scale = Vector2(0.203306, 0.203306)
 texture_normal = ExtResource("2_j4s6q")
 
+[node name="Area2D3" type="Area2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot3"]
+position = Vector2(0.295013, 1.06478)
+scale = Vector2(0.203306, 0.203306)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot3/Area2D3"]
+position = Vector2(50.9013, 49.2757)
+shape = SubResource("RectangleShape2D_lq8mb")
+
 [node name="inventory_slot4" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="tombol4" type="TouchScreenButton" parent="big_inventory/inventory_slot/GridContainer/inventory_slot4"]
 self_modulate = Color(1, 1, 1, 0)
@@ -87,8 +133,15 @@ position = Vector2(0.225449, 1.06478)
 scale = Vector2(0.203306, 0.203306)
 texture_normal = ExtResource("2_j4s6q")
 
+[node name="Area2D4" type="Area2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot4/Area2D4"]
+position = Vector2(11.3096, 11.0445)
+shape = SubResource("RectangleShape2D_c332k")
+
 [node name="inventory_slot5" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="tombol5" type="TouchScreenButton" parent="big_inventory/inventory_slot/GridContainer/inventory_slot5"]
 self_modulate = Color(1, 1, 1, 0)
@@ -96,8 +149,15 @@ position = Vector2(0.29501, 0.356276)
 scale = Vector2(0.203306, 0.203306)
 texture_normal = ExtResource("2_j4s6q")
 
+[node name="Area2D5" type="Area2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot5/Area2D5"]
+position = Vector2(11.3792, 11.1458)
+shape = SubResource("RectangleShape2D_dgnxr")
+
 [node name="inventory_slot6" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="tombol6" type="TouchScreenButton" parent="big_inventory/inventory_slot/GridContainer/inventory_slot6"]
 self_modulate = Color(1, 1, 1, 0)
@@ -105,8 +165,15 @@ position = Vector2(0.225445, 0.35628)
 scale = Vector2(0.203306, 0.203306)
 texture_normal = ExtResource("2_j4s6q")
 
+[node name="Area2D6" type="Area2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot6/Area2D6"]
+position = Vector2(11.3096, 11.1458)
+shape = SubResource("RectangleShape2D_w4dul")
+
 [node name="inventory_slot7" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="tombol7" type="TouchScreenButton" parent="big_inventory/inventory_slot/GridContainer/inventory_slot7"]
 self_modulate = Color(1, 1, 1, 0)
@@ -114,14 +181,27 @@ position = Vector2(1.09922, 0.457491)
 scale = Vector2(0.203306, 0.203306)
 texture_normal = ExtResource("2_j4s6q")
 
+[node name="Area2D7" type="Area2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot7/Area2D7"]
+position = Vector2(11.3792, 11.247)
+shape = SubResource("RectangleShape2D_eveeb")
+
 [node name="inventory_slot8" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="tombol8" type="TouchScreenButton" parent="big_inventory/inventory_slot/GridContainer/inventory_slot8"]
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(0.225445, 0.45749)
 scale = Vector2(0.203306, 0.203306)
 texture_normal = ExtResource("2_j4s6q")
+
+[node name="Area2D8" type="Area2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot8/Area2D8"]
+position = Vector2(11.3096, 11.247)
+shape = SubResource("RectangleShape2D_de3wv")
 
 [node name="player_view" type="NinePatchRect" parent="big_inventory"]
 layout_mode = 0
@@ -142,11 +222,30 @@ hframes = 12
 vframes = 8
 frame = 10
 
+[node name="drag_item" type="Sprite2D" parent="."]
+top_level = true
+
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot/tombol1" to="." method="_on_tombol_1_pressed"]
+[connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot/tombol1" to="." method="_on_tombol_1_released"]
+[connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot2/tombol2" to="." method="_on_tombol_2_pressed"]
+[connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot2/tombol2" to="." method="_on_tombol_2_released"]
+[connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot2/Area2D2" to="." method="_on_area_2d_2_mouse_entered"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot3/tombol3" to="." method="_on_tombol_3_pressed"]
+[connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot3/tombol3" to="." method="_on_tombol_3_released"]
+[connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot3/Area2D3" to="." method="_on_area_2d_3_mouse_entered"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot4/tombol4" to="." method="_on_tombol_4_pressed"]
+[connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot4/tombol4" to="." method="_on_tombol_4_released"]
+[connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot4/Area2D4" to="." method="_on_area_2d_4_mouse_entered"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot5/tombol5" to="." method="_on_tombol_5_pressed"]
+[connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot5/tombol5" to="." method="_on_tombol_5_released"]
+[connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot5/Area2D5" to="." method="_on_area_2d_5_mouse_entered"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot6/tombol6" to="." method="_on_tombol_6_pressed"]
+[connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot6/tombol6" to="." method="_on_tombol_6_released"]
+[connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot6/Area2D6" to="." method="_on_area_2d_6_mouse_entered"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot7/tombol7" to="." method="_on_tombol_7_pressed"]
+[connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot7/tombol7" to="." method="_on_tombol_7_released"]
+[connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot7/Area2D7" to="." method="_on_area_2d_7_mouse_entered"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot8/tombol8" to="." method="_on_tombol_8_pressed"]
+[connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot8/tombol8" to="." method="_on_tombol_8_released"]
+[connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot8/Area2D8" to="." method="_on_area_2d_8_mouse_entered"]

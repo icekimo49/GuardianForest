@@ -31,6 +31,7 @@ var tutorial_desa_1
 var tutorial_desa_2
 var minute
 var tutorial_hutan = false
+var drag_loc
 #pohon
 var posisi_pohon = []
 

@@ -3,7 +3,10 @@ extends Control
 
 @onready var slots : Array = $big_inventory/inventory_slot/GridContainer.get_children()
 @onready var big_inventory = $big_inventory
+@onready var drag_item = $drag_item
 var mini_item_state : String
+var drag : bool
+var lok_pencet
 
 func _ready():
 	GameEvent.connect("tombol_more_inventory", Callable(self, "_mini_inventory"))
@@ -23,6 +26,10 @@ func _process(delta):
 		GlobalScript.inv.swap_item_slot(GlobalScript.select1, GlobalScript.select2)
 		GlobalScript.select1 = null
 		GlobalScript.select2 = null
+	if drag:
+		if lok_pencet != get_global_mouse_position():
+			drag_item.visible = true
+		drag_item.global_position = get_global_mouse_position()
 
 func kamera_ke_inventory_movement():
 	if GlobalScript.inv_is_open :
@@ -44,6 +51,13 @@ func close():
 	big_inventory.visible = false
 	GlobalScript.inv_is_open = false
 
+func get_texture(number):
+	if GlobalScript.inv.slots[number].item:
+		if !drag_item.texture:
+			drag_item.texture = GlobalScript.inv.slots[number].item.texture
+			drag_item.scale = GlobalScript.inv.slots[number].item.ukuran_item
+			drag_item.visible = false
+
 func _on_tombol_1_pressed():
 	if GlobalScript.select1 == null:
 		GlobalScript.select1 = 0
@@ -54,6 +68,9 @@ func _on_tombol_1_pressed():
 		GlobalScript.select2 = null
 	print(GlobalScript.select1)
 	print(GlobalScript.select2)
+	drag = true
+	lok_pencet = get_global_mouse_position()
+	get_texture(0)
 
 func _on_tombol_2_pressed():
 	if GlobalScript.select1 == null:
@@ -65,6 +82,9 @@ func _on_tombol_2_pressed():
 		GlobalScript.select2 = null
 	print(GlobalScript.select1)
 	print(GlobalScript.select2)
+	drag = true
+	lok_pencet = get_global_mouse_position()
+	get_texture(1)
 
 func _on_tombol_3_pressed():
 	if GlobalScript.select1 == null:
@@ -76,6 +96,9 @@ func _on_tombol_3_pressed():
 		GlobalScript.select2 = null
 	print(GlobalScript.select1)
 	print(GlobalScript.select2)
+	drag = true
+	lok_pencet = get_global_mouse_position()
+	get_texture(2)
 
 func _on_tombol_4_pressed():
 	if GlobalScript.select1 == null:
@@ -87,6 +110,9 @@ func _on_tombol_4_pressed():
 		GlobalScript.select2 = null
 	print(GlobalScript.select1)
 	print(GlobalScript.select2)
+	drag = true
+	lok_pencet = get_global_mouse_position()
+	get_texture(3)
 
 func _on_tombol_5_pressed():
 	if GlobalScript.select1 == null:
@@ -98,6 +124,9 @@ func _on_tombol_5_pressed():
 		GlobalScript.select2 = null
 	print(GlobalScript.select1)
 	print(GlobalScript.select2)
+	drag = true
+	lok_pencet = get_global_mouse_position()
+	get_texture(4)
 
 func _on_tombol_6_pressed():
 	if GlobalScript.select1 == null:
@@ -109,6 +138,9 @@ func _on_tombol_6_pressed():
 		GlobalScript.select2 = null
 	print(GlobalScript.select1)
 	print(GlobalScript.select2)
+	drag = true
+	lok_pencet = get_global_mouse_position()
+	get_texture(5)
 
 func _on_tombol_7_pressed():
 	if GlobalScript.select1 == null:
@@ -120,6 +152,9 @@ func _on_tombol_7_pressed():
 		GlobalScript.select2 = null
 	print(GlobalScript.select1)
 	print(GlobalScript.select2)
+	drag = true
+	lok_pencet = get_global_mouse_position()
+	get_texture(6)
 
 func _on_tombol_8_pressed():
 	if GlobalScript.select1 == null:
@@ -131,3 +166,118 @@ func _on_tombol_8_pressed():
 		GlobalScript.select2 = null
 	print(GlobalScript.select1)
 	print(GlobalScript.select2)
+	drag = true
+	lok_pencet = get_global_mouse_position()
+	get_texture(7)
+
+func _on_tombol_1_released():
+	if GlobalScript.select1 == null:
+		pass
+	elif GlobalScript.drag_loc != 0:
+		GlobalScript.select2 = GlobalScript.drag_loc
+	print(GlobalScript.select1)
+	print(GlobalScript.select2)
+	drag = false
+	drag_item.texture = null
+
+func _on_tombol_2_released():
+	if GlobalScript.select1 == null:
+		pass
+	elif GlobalScript.drag_loc != 1:
+		GlobalScript.select2 = GlobalScript.drag_loc
+	print(GlobalScript.select1)
+	print(GlobalScript.select2)
+	drag = false
+	drag_item.texture = null
+
+func _on_tombol_3_released():
+	if GlobalScript.select1 == null:
+		pass
+	elif GlobalScript.drag_loc != 2:
+		GlobalScript.select2 = GlobalScript.drag_loc
+	print(GlobalScript.select1)
+	print(GlobalScript.select2)
+	drag = false
+	drag_item.texture = null
+
+func _on_tombol_4_released():
+	if GlobalScript.select1 == null:
+		pass
+	elif GlobalScript.drag_loc != 3:
+		GlobalScript.select2 = GlobalScript.drag_loc
+	print(GlobalScript.select1)
+	print(GlobalScript.select2)
+	drag = false
+	drag_item.texture = null
+
+func _on_tombol_5_released():
+	if GlobalScript.select1 == null:
+		pass
+	elif GlobalScript.drag_loc != 4:
+		GlobalScript.select2 = GlobalScript.drag_loc
+	print(GlobalScript.select1)
+	print(GlobalScript.select2)
+	drag = false
+	drag_item.texture = null
+
+func _on_tombol_6_released():
+	if GlobalScript.select1 == null:
+		pass
+	elif GlobalScript.drag_loc != 5:
+		GlobalScript.select2 = GlobalScript.drag_loc
+	print(GlobalScript.select1)
+	print(GlobalScript.select2)
+	drag = false
+	drag_item.texture = null
+
+func _on_tombol_7_released():
+	if GlobalScript.select1 == null:
+		pass
+	elif GlobalScript.drag_loc != 6:
+		GlobalScript.select2 = GlobalScript.drag_loc
+	print(GlobalScript.select1)
+	print(GlobalScript.select2)
+	drag = false
+	drag_item.texture = null
+
+func _on_tombol_8_released():
+	if GlobalScript.select1 == null:
+		pass
+	elif GlobalScript.drag_loc != 7:
+		GlobalScript.select2 = GlobalScript.drag_loc
+	print(GlobalScript.select1)
+	print(GlobalScript.select2)
+	drag = false
+	drag_item.texture = null
+
+func _on_area_2d_mouse_entered():
+	GlobalScript.drag_loc = 0
+	print(GlobalScript.drag_loc)
+
+func _on_area_2d_2_mouse_entered():
+	GlobalScript.drag_loc = 1
+	print(GlobalScript.drag_loc)
+
+func _on_area_2d_3_mouse_entered():
+	GlobalScript.drag_loc = 2
+	print(GlobalScript.drag_loc)
+
+func _on_area_2d_4_mouse_entered():
+	GlobalScript.drag_loc = 3
+	print(GlobalScript.drag_loc)
+
+func _on_area_2d_5_mouse_entered():
+	GlobalScript.drag_loc = 4
+	print(GlobalScript.drag_loc)
+
+func _on_area_2d_6_mouse_entered():
+	GlobalScript.drag_loc = 5
+	print(GlobalScript.drag_loc)
+
+func _on_area_2d_7_mouse_entered():
+	GlobalScript.drag_loc = 6
+	print(GlobalScript.drag_loc)
+
+func _on_area_2d_8_mouse_entered():
+	GlobalScript.drag_loc = 7
+	print(GlobalScript.drag_loc)
