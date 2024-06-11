@@ -30,6 +30,7 @@ var scene_sebelum_loading
 var tutorial_desa_1
 var tutorial_desa_2
 var minute
+var tutorial_hutan = false
 #pohon
 var posisi_pohon = []
 

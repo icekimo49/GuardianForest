@@ -7,7 +7,7 @@ extends Node2D
 var boleh_pindah = false
 var sudah_di_api = false
 var dialog_di_liat_api = false
-
+var sekali = false
 
 signal sudah_di_area2
 
@@ -61,12 +61,14 @@ func _on_ganti_slide_body_entered(body):
 		#emit_signal("sudah_di_area2")
 		$inventory/MiniInventory.visible = true
 		$tombol_serang/tombolSerang.visible = true
-		dialog_di_liat_api = true
+		if sekali == false:
+			dialog_di_liat_api = true
+			sekali = true
 		if current_area == AREA.AREA1:
 			current_area = AREA.AREA2
 		else :
 			current_area = AREA.AREA1
-		
+
 func posisi_kamera_manager():
 	if current_area == AREA.AREA2:
 		kamera_player.limit_left = lerp(kamera_player.limit_left, 1075, get_process_delta_time())
@@ -84,9 +86,11 @@ func dialog_sebelum_api():
 	var distance = $Area1/Player.global_position.distance_to(Vector2(1305, 214))
 	if distance > 5:
 		$Area1/Player.gerakan_tutorial(Vector2(1305, 214), "kanan")
+		$Area1/UI/joystick.no_input = true
 	else:
 		intro.play("matikan_api")
 		$Area1/Player.dialog_player_sendiri("gametutorial")
+		$Area1/UI/joystick.no_input = false
 		dialog_di_liat_api = false
 	#if sudah_di_api and dialog == false:
 		#$Area1/Player.dialog_player_sendiri("gametutorial")

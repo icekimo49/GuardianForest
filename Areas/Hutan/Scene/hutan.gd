@@ -35,11 +35,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	jika_player_mati()
 	isi_air()
-	if api_selesai_dilempar == true:
+	if api_selesai_dilempar == true and !GlobalScript.sudah_tutorial:
 		ubah_kamera()
 		api_selesai_dilempar = false
-	if get_node("api_tutorial") == null and api_muncul:
+	if get_node("api_tutorial") == null and api_muncul and !GlobalScript.sudah_tutorial:
 		intro.play("temui_paman")
 		var distance = $Player.global_position.distance_to(Vector2(99, 81))
 		print(distance)
@@ -107,7 +108,7 @@ func _on_durasi_wave_timeout():
 	$Player.change_exp(100)
 
 func _on_pindah_desa_body_entered(body):
-	if GlobalScript.game_berlangsung == false:
+	if GlobalScript.game_berlangsung == false and get_node("api_tutorial") == null:
 		if body.is_in_group("player"):
 			$Player.save()
 			get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
@@ -122,8 +123,9 @@ func _on_area_tanam_body_exited(body):
 		GlobalScript.boleh_tanam = false
 
 func balik_desa():
-	get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
 	$Player.save()
+	GlobalScript.tutorial_hutan = true
+	get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
@@ -143,3 +145,8 @@ func isi_air():
 				GlobalScript.isi_air_gayung +=1
 				bisa_isi_air = false
 				$NavigationRegion2D/sungai/timer_sungai.start()
+
+func jika_player_mati():
+	if $Player == null:
+		GlobalScript.time = 0
+		get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))

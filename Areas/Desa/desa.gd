@@ -28,7 +28,8 @@ func _ready():
 	if GlobalScript.sudah_tutorial:
 		alur_cerita_tutorial_selesai = true
 		GlobalScript.tutorial_desa_1 = true
-	if alur_cerita_tutorial_selesai == false and !GlobalScript.sudah_tutorial and GlobalScript.scene_sebelum_loading != "Hutan":
+		GlobalScript.tutorial_hutan = true
+	if alur_cerita_tutorial_selesai == false and !GlobalScript.sudah_tutorial and GlobalScript.scene_sebelum_loading != "Hutan" and GlobalScript.tutorial_hutan:
 		paman.matiinvisible()
 		$jam/DayNightCycleUI.visible = false
 	distance = $Player.global_position.distance_to(Vector2(895.0, 228.0))

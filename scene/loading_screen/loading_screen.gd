@@ -48,4 +48,5 @@ func kemana_kita_le():
 		tujuan = "res://Areas/Hutan/Scene/hutan.tscn"
 	elif awal == "Hutan":
 		tujuan = "res://Areas/Desa/desa.tscn"
+	print(tujuan)
 	return tujuan

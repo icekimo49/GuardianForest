@@ -185,7 +185,7 @@ func player():
 	#jangan diapus, penting!!!!
 
 func api_attack():
-	if api_inattack_range and api_attack_cooldown == true:
+	if api_inattack_range and api_attack_cooldown == true and get_tree().current_scene.get_name() != "GameTutorial":
 		playerData.change_hp(-kerusakan)
 		display_darah_player() #Update Value Bar Darah
 		DamageToPlayer.display_damage(kerusakan, textDamage.global_position) #Nampilin Damage
