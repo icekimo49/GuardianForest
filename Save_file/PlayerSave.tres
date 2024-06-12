@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=21 format=3 uid="uid://cbcgjrxan1jl5"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=22 format=3 uid="uid://cbcgjrxan1jl5"]
 
 [ext_resource type="Script" path="res://Character/Player/Inventory/inventory.gd" id="1_537xl"]
 [ext_resource type="Script" path="res://PlayerData.gd" id="1_hsyi6"]
@@ -74,16 +74,21 @@ script = ExtResource("3_87egh")
 amount = 0
 ukuran = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_uqm5k"]
+[sub_resource type="Resource" id="Resource_u5bae"]
+script = ExtResource("3_87egh")
+amount = 0
+ukuran = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_f72af"]
 script = ExtResource("1_537xl")
 slots = Array[ExtResource("3_87egh")]([SubResource("Resource_r8h2p"), SubResource("Resource_03s7f"), SubResource("Resource_n8qyh"), SubResource("Resource_37jnp"), SubResource("Resource_3ynx0"), SubResource("Resource_nypy1"), SubResource("Resource_8s8dc"), SubResource("Resource_q2wto"), SubResource("Resource_im5fg"), SubResource("Resource_q1spi"), SubResource("Resource_ijr4b"), SubResource("Resource_2yuri")])
-temp_inv = SubResource("Resource_37jnp")
+temp_inv = SubResource("Resource_u5bae")
 
 [resource]
 script = ExtResource("1_hsyi6")
 hp = 200
 exp = 0
-inv = SubResource("Resource_uqm5k")
+inv = SubResource("Resource_f72af")
 wave = 1
 time = 0.0
 sudah_tutorial = true

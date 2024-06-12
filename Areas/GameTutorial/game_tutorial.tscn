@@ -1642,14 +1642,6 @@ position = Vector2(1267, 162)
 [node name="StaticBody2D" parent="." instance=ExtResource("22_vy250")]
 position = Vector2(1116, 166)
 
-[node name="inv" type="CanvasLayer" parent="."]
-
-[node name="Inv_UI" parent="inv" instance=ExtResource("23_vr4fr")]
-offset_left = 257.0
-offset_top = 96.0
-offset_right = 403.0
-offset_bottom = 242.0
-
 [node name="cutsceneApi" type="Area2D" parent="."]
 position = Vector2(1365, 199)
 scale = Vector2(1.68, 1.68)
@@ -1698,6 +1690,14 @@ size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("24_b42gr")
 text = "PERMULAAN"
+
+[node name="inv" type="CanvasLayer" parent="."]
+
+[node name="Inv_UI" parent="inv" instance=ExtResource("23_vr4fr")]
+offset_left = 177.0
+offset_top = 55.0
+offset_right = 384.0
+offset_bottom = 243.0
 
 [connection signal="body_entered" from="Area2/ganti_slide" to="." method="_on_ganti_slide_body_entered"]
 [connection signal="body_entered" from="pindah_ke_hutan" to="." method="_on_pindah_ke_hutan_body_entered"]

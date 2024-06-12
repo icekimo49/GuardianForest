@@ -115,7 +115,7 @@ func _on_pindah_desa_body_entered(body):
 
 func _on_area_tanam_body_entered(body):
 	if body.has_method("player"):
-		if GlobalScript.game_berlangsung:
+		if !GlobalScript.game_berlangsung:
 			GlobalScript.boleh_tanam = true
 
 func _on_area_tanam_body_exited(body):

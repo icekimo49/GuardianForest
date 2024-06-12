@@ -48,8 +48,8 @@ mouse_filter = 1
 
 [node name="inventory_slot" type="NinePatchRect" parent="big_inventory"]
 layout_mode = 0
-offset_right = 147.0
-offset_bottom = 147.0
+offset_right = 289.0
+offset_bottom = 248.0
 mouse_filter = 1
 texture = ExtResource("2_j4s6q")
 patch_margin_left = 10

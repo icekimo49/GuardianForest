@@ -66,8 +66,6 @@ func _on_tombol_1_pressed():
 	else:
 		GlobalScript.select1 = 0
 		GlobalScript.select2 = null
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = true
 	lok_pencet = get_global_mouse_position()
 	get_texture(0)
@@ -80,8 +78,6 @@ func _on_tombol_2_pressed():
 	else:
 		GlobalScript.select1 = 1
 		GlobalScript.select2 = null
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = true
 	lok_pencet = get_global_mouse_position()
 	get_texture(1)
@@ -94,8 +90,6 @@ func _on_tombol_3_pressed():
 	else:
 		GlobalScript.select1 = 2
 		GlobalScript.select2 = null
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = true
 	lok_pencet = get_global_mouse_position()
 	get_texture(2)
@@ -108,8 +102,6 @@ func _on_tombol_4_pressed():
 	else:
 		GlobalScript.select1 = 3
 		GlobalScript.select2 = null
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = true
 	lok_pencet = get_global_mouse_position()
 	get_texture(3)
@@ -122,8 +114,6 @@ func _on_tombol_5_pressed():
 	else:
 		GlobalScript.select1 = 4
 		GlobalScript.select2 = null
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = true
 	lok_pencet = get_global_mouse_position()
 	get_texture(4)
@@ -136,8 +126,6 @@ func _on_tombol_6_pressed():
 	else:
 		GlobalScript.select1 = 5
 		GlobalScript.select2 = null
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = true
 	lok_pencet = get_global_mouse_position()
 	get_texture(5)
@@ -150,8 +138,6 @@ func _on_tombol_7_pressed():
 	else:
 		GlobalScript.select1 = 6
 		GlobalScript.select2 = null
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = true
 	lok_pencet = get_global_mouse_position()
 	get_texture(6)
@@ -164,8 +150,6 @@ func _on_tombol_8_pressed():
 	else:
 		GlobalScript.select1 = 7
 		GlobalScript.select2 = null
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = true
 	lok_pencet = get_global_mouse_position()
 	get_texture(7)
@@ -175,8 +159,6 @@ func _on_tombol_1_released():
 		pass
 	elif GlobalScript.drag_loc != 0:
 		GlobalScript.select2 = GlobalScript.drag_loc
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = false
 	drag_item.texture = null
 
@@ -185,8 +167,6 @@ func _on_tombol_2_released():
 		pass
 	elif GlobalScript.drag_loc != 1:
 		GlobalScript.select2 = GlobalScript.drag_loc
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = false
 	drag_item.texture = null
 
@@ -195,8 +175,6 @@ func _on_tombol_3_released():
 		pass
 	elif GlobalScript.drag_loc != 2:
 		GlobalScript.select2 = GlobalScript.drag_loc
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = false
 	drag_item.texture = null
 
@@ -205,8 +183,6 @@ func _on_tombol_4_released():
 		pass
 	elif GlobalScript.drag_loc != 3:
 		GlobalScript.select2 = GlobalScript.drag_loc
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = false
 	drag_item.texture = null
 
@@ -215,8 +191,6 @@ func _on_tombol_5_released():
 		pass
 	elif GlobalScript.drag_loc != 4:
 		GlobalScript.select2 = GlobalScript.drag_loc
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = false
 	drag_item.texture = null
 
@@ -225,8 +199,6 @@ func _on_tombol_6_released():
 		pass
 	elif GlobalScript.drag_loc != 5:
 		GlobalScript.select2 = GlobalScript.drag_loc
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = false
 	drag_item.texture = null
 
@@ -235,8 +207,6 @@ func _on_tombol_7_released():
 		pass
 	elif GlobalScript.drag_loc != 6:
 		GlobalScript.select2 = GlobalScript.drag_loc
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = false
 	drag_item.texture = null
 
@@ -245,8 +215,6 @@ func _on_tombol_8_released():
 		pass
 	elif GlobalScript.drag_loc != 7:
 		GlobalScript.select2 = GlobalScript.drag_loc
-	print(GlobalScript.select1)
-	print(GlobalScript.select2)
 	drag = false
 	drag_item.texture = null
 

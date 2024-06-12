@@ -8,7 +8,6 @@ var player_serang_atas = false
 var player_serang_kanan = false
 var player_serang_kiri = false
 var player_serang_bawah = false
-var isi_air_gayung : int
 var inv_is_open = false
 var drop_item_loc
 var drop_item = false
@@ -32,6 +31,13 @@ var tutorial_desa_2
 var minute
 var tutorial_hutan = false
 var drag_loc
+var hp
+var slot_in_use
+
+#item
+var isi_air_gayung : int
+
+
 #pohon
 var posisi_pohon = []
 

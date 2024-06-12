@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cd0oh2t77de80"]
+[gd_scene load_steps=51 format=3 uid="uid://cd0oh2t77de80"]
 
 [ext_resource type="Script" path="res://Areas/Hutan/Scene/hutan.gd" id="1_4n0fo"]
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_52ebj"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://ccgbi3dh1ll2b" path="res://Character/Player/Inventory/Inv_UI.tscn" id="28_axyc1"]
 [ext_resource type="PackedScene" uid="uid://c0fyfkfnyjt36" path="res://Character/Musuh/pelempar_api/pelempar_api.tscn" id="28_om3wg"]
 [ext_resource type="PackedScene" uid="uid://c05txpvyplb1k" path="res://Character/Paman/paman.tscn" id="29_tmts1"]
+[ext_resource type="PackedScene" uid="uid://cidgrcqmek6ik" path="res://Character/Player/HP/hp.tscn" id="30_txqjh"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_qi053"]
 tile_data = PackedInt32Array(0, 786433, 11, 65536, 393217, 11, 131072, 786433, 12, 196608, 786433, 12, 262144, 786433, 12, 327680, 393217, 11, 393216, 393217, 11)
@@ -2640,7 +2641,6 @@ position = Vector2(494, 170)
 position = Vector2(530, 95)
 
 [node name="area_tanam" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="area_tanam"]
 polygon = PackedVector2Array(229, 61, 371, 65, 382, 52, 480, 53, 486, 37, 508, 41, 513, 26, 530, 28, 590, -47, 579, -48, 584, -59, 553, -59, 575, -85, 558, -85, 586, -121, 544, -121, 550, -134, 523, -134)
@@ -3766,14 +3766,6 @@ offset_right = 420.0
 offset_bottom = 366.0
 scale = Vector2(1.18, 1.18)
 
-[node name="inv" type="CanvasLayer" parent="."]
-
-[node name="Inv_UI" parent="inv" instance=ExtResource("28_axyc1")]
-offset_left = 257.0
-offset_top = 96.0
-offset_right = 403.0
-offset_bottom = 242.0
-
 [node name="inforWaveCanvas" type="CanvasLayer" parent="."]
 
 [node name="animasiWave" type="AnimationPlayer" parent="inforWaveCanvas"]
@@ -3842,6 +3834,18 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="inv" type="CanvasLayer" parent="."]
+
+[node name="Inv_UI" parent="inv" instance=ExtResource("28_axyc1")]
+offset_left = 177.0
+offset_top = 55.0
+offset_right = 384.0
+offset_bottom = 243.0
+
+[node name="hp" type="CanvasLayer" parent="."]
+
+[node name="HP" parent="hp" instance=ExtResource("30_txqjh")]
 
 [connection signal="timeout" from="Timer/masuk_map_ke_mulai_game" to="." method="_on_masuk_map_ke_mulai_game_timeout"]
 [connection signal="timeout" from="Timer/durasi_wave" to="." method="_on_durasi_wave_timeout"]

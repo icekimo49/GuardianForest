@@ -347,7 +347,7 @@ script = ExtResource("6_3nybf")
 [node name="api_cooldown" type="Timer" parent="."]
 
 [node name="deal_attack_timer" type="Timer" parent="."]
-wait_time = 0.439
+wait_time = 0.5
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_orxg3")

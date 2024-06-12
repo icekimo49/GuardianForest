@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bttfnxprkny6n"]
+[gd_scene load_steps=51 format=3 uid="uid://bttfnxprkny6n"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_ba21o"]
 [ext_resource type="Script" path="res://Areas/Desa/desa.gd" id="1_rrtmw"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dt8qonfwtuxfn" path="res://Areas/Desa/Environment/Tempat_makan/tempat_makan.tscn" id="25_acmst"]
 [ext_resource type="PackedScene" uid="uid://c05txpvyplb1k" path="res://Character/Paman/paman.tscn" id="26_f0ong"]
 [ext_resource type="PackedScene" uid="uid://b22dn0ahgadho" path="res://Areas/Desa/Environment/toko_peralatan/toko_peralatan.tscn" id="27_jbwf1"]
+[ext_resource type="PackedScene" uid="uid://cidgrcqmek6ik" path="res://Character/Player/HP/hp.tscn" id="28_84ves"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_qi053"]
 tile_data = PackedInt32Array(0, 786433, 11, 65536, 393217, 11, 131072, 786433, 12, 196608, 786433, 12, 262144, 786433, 12, 327680, 393217, 11, 393216, 393217, 11)
@@ -2432,10 +2433,10 @@ one_shot = true
 [node name="inv" type="CanvasLayer" parent="."]
 
 [node name="Inv_UI" parent="inv" instance=ExtResource("24_3263k")]
-offset_left = 257.0
-offset_top = 96.0
-offset_right = 403.0
-offset_bottom = 242.0
+offset_left = 177.0
+offset_top = 55.0
+offset_right = 384.0
+offset_bottom = 243.0
 
 [node name="inventory" type="CanvasLayer" parent="."]
 
@@ -2482,6 +2483,10 @@ shape = SubResource("CircleShape2D_ghdj6")
 libraries = {
 "": SubResource("AnimationLibrary_0bh5o")
 }
+
+[node name="HP" type="CanvasLayer" parent="."]
+
+[node name="HP" parent="HP" instance=ExtResource("28_84ves")]
 
 [connection signal="body_entered" from="pindah_hutan" to="." method="_on_pindah_hutan_body_entered"]
 [connection signal="timeout" from="timer_setelah_api" to="." method="_on_timer_setelah_api_timeout"]

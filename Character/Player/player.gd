@@ -5,7 +5,7 @@ var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
 var data_awal = PlayerData.new()
 
-const kecepatan : int = 250
+const kecepatan : int = 175
 const akselerasi  = 25
 var hp = 100
 var kerusakan = 20 #Damage api
@@ -41,6 +41,7 @@ func load_data():
 	GlobalScript.sudah_tutorial = playerData.sudah_tutorial
 	GlobalScript.inv = playerData.inv
 	GlobalScript.exp = playerData.exp
+	GlobalScript.hp = playerData.hp
 	print("loaded")
 
 func save():
@@ -203,14 +204,13 @@ func attack():
 			attack_ember()
 		elif GlobalScript.item_in_use == "biji":
 			tanam_pohon()
-	await get_tree().create_timer(2.0).timeout
-	GlobalScript.pencet = false
 
 func attack_ember():
 	var arah = animasi_player
 	if GlobalScript.pencet && GlobalScript.isi_air_gayung == 0:#notif ammo habis
 		notif_air_habis()
 	if GlobalScript.pencet && GlobalScript.isi_air_gayung > 0:
+		$deal_attack_timer.wait_time = 0.5
 		GlobalScript.player_current_attack = true
 		attack_in_progress = true
 		if arah == "kanan":
@@ -231,15 +231,18 @@ func attack_ember():
 			$deal_attack_timer.start()
 			$player_hitbox_atas.toggle_collision(true)
 		GlobalScript.isi_air_gayung -=1
+	GlobalScript.pencet = false
 
 func tanam_pohon():
 	if GlobalScript.pencet:
 		if GlobalScript.boleh_tanam:
-			var instance = pohon_kecil.instantiate()
-			instance.global_position = self.global_position
-			var parent_node = get_parent().get_node("NavigationRegion2D")
-			parent_node.add_child(instance)
-			playerData.inv.decrease("biji")
+			if playerData.inv.slots[GlobalScript.slot_in_use].amount > 0:
+				var instance = pohon_kecil.instantiate()
+				instance.global_position = self.global_position
+				var parent_node = get_parent().get_node("NavigationRegion2D")
+				parent_node.add_child(instance)
+				playerData.inv.decrease(GlobalScript.slot_in_use)
+	GlobalScript.pencet = false
 
 func _on_deal_attack_timer_timeout():
 	print("aselole")

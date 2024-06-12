@@ -50,14 +50,15 @@ func _on_touch_screen_button_pressed():
 			use_item = false 
 			GlobalScript.item_in_use = ""
 			tombol1.modulate = warna_awal
+			GlobalScript.slot_in_use = null
 		else:
 			if GlobalScript.inv.slots[8] != null:
 				if GlobalScript.inv.slots[8].item != null:
 					if GlobalScript.inv.slots[8].item.type == false:
 						use_item = true
 						GlobalScript.item_in_use = GlobalScript.inv.slots[8].item.name
+						GlobalScript.slot_in_use = 8
 						tombol1.modulate = Color("ffffff95")
-		print(GlobalScript.item_in_use)
 
 func _on_touch_screen_button_2_pressed():
 	if GlobalScript.inv_is_open:
@@ -73,6 +74,7 @@ func _on_touch_screen_button_2_pressed():
 			use_item = false 
 			GlobalScript.item_in_use = ""
 			tombol2.modulate = warna_awal
+			GlobalScript.slot_in_use = null
 		else:
 			if GlobalScript.inv.slots[9] != null:
 				if GlobalScript.inv.slots[9].item != null:
@@ -80,7 +82,7 @@ func _on_touch_screen_button_2_pressed():
 						use_item = true
 						GlobalScript.item_in_use = GlobalScript.inv.slots[9].item.name
 						tombol2.modulate = Color("ffffff95")
-		print(GlobalScript.item_in_use)
+						GlobalScript.slot_in_use = 9
 
 func _on_touch_screen_button_3_pressed():
 	if GlobalScript.inv_is_open:
@@ -96,6 +98,7 @@ func _on_touch_screen_button_3_pressed():
 			use_item = false 
 			GlobalScript.item_in_use = ""
 			tombol3.modulate = warna_awal
+			GlobalScript.slot_in_use = null
 		else:
 			if GlobalScript.inv.slots[10] != null:
 				if GlobalScript.inv.slots[10].item != null:
@@ -103,22 +106,19 @@ func _on_touch_screen_button_3_pressed():
 						use_item = true
 						GlobalScript.item_in_use = GlobalScript.inv.slots[10].item.name
 						tombol3.modulate = Color("ffffff95")
-		print(GlobalScript.item_in_use)
+						GlobalScript.slot_in_use = 10
 
 func more_item():
 	GameEvent.emit_signal("tombol_more_inventory")
 
 func _on_area_2d_mouse_entered():
 	GlobalScript.drag_loc = 8
-	print(GlobalScript.drag_loc)
 
 func _on_area_2d_2_mouse_entered():
 	GlobalScript.drag_loc = 9
-	print(GlobalScript.drag_loc)
 
 func _on_area_2d_3_mouse_entered():
 	GlobalScript.drag_loc = 10
-	print(GlobalScript.drag_loc)
 
 func _on_touch_screen_button_released():
 	if GlobalScript.inv_is_open:
@@ -126,8 +126,6 @@ func _on_touch_screen_button_released():
 			pass
 		elif GlobalScript.drag_loc != 8:
 			GlobalScript.select2 = GlobalScript.drag_loc
-		print(GlobalScript.select1)
-		print(GlobalScript.select2)
 		drag = false
 		drag_item.texture = null
 
@@ -137,8 +135,6 @@ func _on_touch_screen_button_2_released():
 			pass
 		elif GlobalScript.drag_loc != 9:
 			GlobalScript.select2 = GlobalScript.drag_loc
-		print(GlobalScript.select1)
-		print(GlobalScript.select2)
 		drag = false
 		drag_item.texture = null
 
@@ -148,7 +144,5 @@ func _on_touch_screen_button_3_released():
 			pass
 		elif GlobalScript.drag_loc != 10:
 			GlobalScript.select2 = GlobalScript.drag_loc
-		print(GlobalScript.select1)
-		print(GlobalScript.select2)
 		drag = false
 		drag_item.texture = null
