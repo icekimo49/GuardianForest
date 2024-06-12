@@ -26,10 +26,18 @@ func _process(delta):
 		GlobalScript.inv.swap_item_slot(GlobalScript.select1, GlobalScript.select2)
 		GlobalScript.select1 = null
 		GlobalScript.select2 = null
+		GlobalScript.drag_loc = null
+		print("loh")
 	if drag:
-		if lok_pencet != get_global_mouse_position():
-			drag_item.visible = true
-		drag_item.global_position = get_global_mouse_position()
+		if GlobalScript.select1:
+			print("yewye")
+			if lok_pencet != get_global_mouse_position():
+				#print(GlobalScript.select1, GlobalScript.select2)
+				if slots[GlobalScript.select1].item_visual.texture:
+					slots[GlobalScript.select1].item_visual.visible = false
+					slots[GlobalScript.select1].amount_text.visible = false
+					drag_item.visible = true
+			drag_item.global_position = get_global_mouse_position()
 
 func kamera_ke_inventory_movement():
 	if GlobalScript.inv_is_open :
@@ -159,6 +167,8 @@ func _on_tombol_1_released():
 		pass
 	elif GlobalScript.drag_loc != 0:
 		GlobalScript.select2 = GlobalScript.drag_loc
+	elif GlobalScript.drag_loc == null:
+		GlobalScript.select1 = null
 	drag = false
 	drag_item.texture = null
 
@@ -167,6 +177,8 @@ func _on_tombol_2_released():
 		pass
 	elif GlobalScript.drag_loc != 1:
 		GlobalScript.select2 = GlobalScript.drag_loc
+	elif GlobalScript.drag_loc == null:
+		GlobalScript.select1 = null
 	drag = false
 	drag_item.texture = null
 
@@ -175,6 +187,8 @@ func _on_tombol_3_released():
 		pass
 	elif GlobalScript.drag_loc != 2:
 		GlobalScript.select2 = GlobalScript.drag_loc
+	elif GlobalScript.drag_loc == null:
+		GlobalScript.select1 = null
 	drag = false
 	drag_item.texture = null
 
@@ -183,6 +197,8 @@ func _on_tombol_4_released():
 		pass
 	elif GlobalScript.drag_loc != 3:
 		GlobalScript.select2 = GlobalScript.drag_loc
+	elif GlobalScript.drag_loc == null:
+		GlobalScript.select1 = null
 	drag = false
 	drag_item.texture = null
 
@@ -191,6 +207,8 @@ func _on_tombol_5_released():
 		pass
 	elif GlobalScript.drag_loc != 4:
 		GlobalScript.select2 = GlobalScript.drag_loc
+	elif GlobalScript.drag_loc == null:
+		GlobalScript.select1 = null
 	drag = false
 	drag_item.texture = null
 
@@ -199,6 +217,8 @@ func _on_tombol_6_released():
 		pass
 	elif GlobalScript.drag_loc != 5:
 		GlobalScript.select2 = GlobalScript.drag_loc
+	elif GlobalScript.drag_loc == null:
+		GlobalScript.select1 = null
 	drag = false
 	drag_item.texture = null
 
@@ -207,6 +227,8 @@ func _on_tombol_7_released():
 		pass
 	elif GlobalScript.drag_loc != 6:
 		GlobalScript.select2 = GlobalScript.drag_loc
+	elif GlobalScript.drag_loc == null:
+		GlobalScript.select1 = null
 	drag = false
 	drag_item.texture = null
 
@@ -215,37 +237,63 @@ func _on_tombol_8_released():
 		pass
 	elif GlobalScript.drag_loc != 7:
 		GlobalScript.select2 = GlobalScript.drag_loc
+	elif GlobalScript.drag_loc == null:
+		GlobalScript.select1 = null
 	drag = false
 	drag_item.texture = null
 
 func _on_area_2d_mouse_entered():
 	GlobalScript.drag_loc = 0
-	print(GlobalScript.drag_loc)
+	#print(GlobalScript.drag_loc)
 
 func _on_area_2d_2_mouse_entered():
 	GlobalScript.drag_loc = 1
-	print(GlobalScript.drag_loc)
+	#print(GlobalScript.drag_loc)
 
 func _on_area_2d_3_mouse_entered():
 	GlobalScript.drag_loc = 2
-	print(GlobalScript.drag_loc)
+	#print(GlobalScript.drag_loc)
 
 func _on_area_2d_4_mouse_entered():
 	GlobalScript.drag_loc = 3
-	print(GlobalScript.drag_loc)
+	#print(GlobalScript.drag_loc)
 
 func _on_area_2d_5_mouse_entered():
 	GlobalScript.drag_loc = 4
-	print(GlobalScript.drag_loc)
+	#print(GlobalScript.drag_loc)
 
 func _on_area_2d_6_mouse_entered():
 	GlobalScript.drag_loc = 5
-	print(GlobalScript.drag_loc)
+	#print(GlobalScript.drag_loc)
 
 func _on_area_2d_7_mouse_entered():
 	GlobalScript.drag_loc = 6
-	print(GlobalScript.drag_loc)
+	#print(GlobalScript.drag_loc)
 
 func _on_area_2d_8_mouse_entered():
 	GlobalScript.drag_loc = 7
-	print(GlobalScript.drag_loc)
+	#print(GlobalScript.drag_loc)
+
+func _on_area_2d_mouse_exited():
+	GlobalScript.drag_loc = null
+
+func _on_area_2d_2_mouse_exited():
+	GlobalScript.drag_loc = null
+
+func _on_area_2d_3_mouse_exited():
+	GlobalScript.drag_loc = null
+
+func _on_area_2d_4_mouse_exited():
+	GlobalScript.drag_loc = null
+
+func _on_area_2d_5_mouse_exited():
+	GlobalScript.drag_loc = null
+
+func _on_area_2d_6_mouse_exited():
+	GlobalScript.drag_loc = null
+
+func _on_area_2d_7_mouse_exited():
+	GlobalScript.drag_loc = null
+
+func _on_area_2d_8_mouse_exited():
+	GlobalScript.drag_loc = null

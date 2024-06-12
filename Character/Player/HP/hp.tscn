@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cidgrcqmek6ik"]
+[gd_scene load_steps=4 format=3 uid="uid://cidgrcqmek6ik"]
 
 [ext_resource type="Texture2D" uid="uid://cx60oappfqfcj" path="res://asset/control/panel_brown.png" id="1_xc3mt"]
 [ext_resource type="Script" path="res://Character/Player/HP/HP.gd" id="2_4fvnf"]
-[ext_resource type="Texture2D" uid="uid://btsgwldbt0tur" path="res://Character/Player/joystik/circle.png" id="3_hb23p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxwf8"]
 bg_color = Color(0.533333, 0.0313726, 0.0313726, 1)
@@ -36,14 +35,3 @@ offset_left = 14.0
 offset_top = 28.0
 offset_right = 179.0
 offset_bottom = 51.0
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 66.0
-offset_right = 188.0
-offset_bottom = 222.0
-fill_mode = 4
-texture_under = ExtResource("3_hb23p")
-texture_progress = ExtResource("3_hb23p")
-tint_under = Color(0.303233, 0.303233, 0.303233, 1)

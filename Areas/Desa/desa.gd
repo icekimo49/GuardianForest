@@ -25,6 +25,8 @@ var lalala = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$inv.layer = 1
+	$inventory.layer = 1
 	$NightCycle.time_stop= true
 	if GlobalScript.sudah_tutorial:
 		alur_cerita_tutorial_selesai = true

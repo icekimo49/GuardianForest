@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dmam0a1ma33v0" path="res://asset/control/panelInset_beige.png" id="4_ix4lb"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://Character/Player/Character_Asset/Actor1.png" id="5_ywyy6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pexay"]
-size = Vector2(21.8884, 20.6802)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o833"]
+size = Vector2(21.2589, 22.1457)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gh2i"]
 size = Vector2(21.2589, 21.336)
@@ -86,8 +86,8 @@ texture_normal = ExtResource("2_j4s6q")
 [node name="Area2D" type="Area2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="big_inventory/inventory_slot/GridContainer/inventory_slot/Area2D"]
-position = Vector2(11.0644, 11.3036)
-shape = SubResource("RectangleShape2D_pexay")
+position = Vector2(11.4011, 11.3482)
+shape = SubResource("RectangleShape2D_3o833")
 
 [node name="inventory_slot2" parent="big_inventory/inventory_slot/GridContainer" instance=ExtResource("3_6078w")]
 layout_mode = 2
@@ -228,24 +228,32 @@ top_level = true
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot/tombol1" to="." method="_on_tombol_1_pressed"]
 [connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot/tombol1" to="." method="_on_tombol_1_released"]
 [connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="big_inventory/inventory_slot/GridContainer/inventory_slot/Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot2/tombol2" to="." method="_on_tombol_2_pressed"]
 [connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot2/tombol2" to="." method="_on_tombol_2_released"]
 [connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot2/Area2D2" to="." method="_on_area_2d_2_mouse_entered"]
+[connection signal="mouse_exited" from="big_inventory/inventory_slot/GridContainer/inventory_slot2/Area2D2" to="." method="_on_area_2d_2_mouse_exited"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot3/tombol3" to="." method="_on_tombol_3_pressed"]
 [connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot3/tombol3" to="." method="_on_tombol_3_released"]
 [connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot3/Area2D3" to="." method="_on_area_2d_3_mouse_entered"]
+[connection signal="mouse_exited" from="big_inventory/inventory_slot/GridContainer/inventory_slot3/Area2D3" to="." method="_on_area_2d_3_mouse_exited"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot4/tombol4" to="." method="_on_tombol_4_pressed"]
 [connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot4/tombol4" to="." method="_on_tombol_4_released"]
 [connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot4/Area2D4" to="." method="_on_area_2d_4_mouse_entered"]
+[connection signal="mouse_exited" from="big_inventory/inventory_slot/GridContainer/inventory_slot4/Area2D4" to="." method="_on_area_2d_4_mouse_exited"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot5/tombol5" to="." method="_on_tombol_5_pressed"]
 [connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot5/tombol5" to="." method="_on_tombol_5_released"]
 [connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot5/Area2D5" to="." method="_on_area_2d_5_mouse_entered"]
+[connection signal="mouse_exited" from="big_inventory/inventory_slot/GridContainer/inventory_slot5/Area2D5" to="." method="_on_area_2d_5_mouse_exited"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot6/tombol6" to="." method="_on_tombol_6_pressed"]
 [connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot6/tombol6" to="." method="_on_tombol_6_released"]
 [connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot6/Area2D6" to="." method="_on_area_2d_6_mouse_entered"]
+[connection signal="mouse_exited" from="big_inventory/inventory_slot/GridContainer/inventory_slot6/Area2D6" to="." method="_on_area_2d_6_mouse_exited"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot7/tombol7" to="." method="_on_tombol_7_pressed"]
 [connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot7/tombol7" to="." method="_on_tombol_7_released"]
 [connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot7/Area2D7" to="." method="_on_area_2d_7_mouse_entered"]
+[connection signal="mouse_exited" from="big_inventory/inventory_slot/GridContainer/inventory_slot7/Area2D7" to="." method="_on_area_2d_7_mouse_exited"]
 [connection signal="pressed" from="big_inventory/inventory_slot/GridContainer/inventory_slot8/tombol8" to="." method="_on_tombol_8_pressed"]
 [connection signal="released" from="big_inventory/inventory_slot/GridContainer/inventory_slot8/tombol8" to="." method="_on_tombol_8_released"]
 [connection signal="mouse_entered" from="big_inventory/inventory_slot/GridContainer/inventory_slot8/Area2D8" to="." method="_on_area_2d_8_mouse_entered"]
+[connection signal="mouse_exited" from="big_inventory/inventory_slot/GridContainer/inventory_slot8/Area2D8" to="." method="_on_area_2d_8_mouse_exited"]

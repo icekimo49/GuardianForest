@@ -2430,14 +2430,6 @@ position = Vector2(575, 92)
 wait_time = 2.0
 one_shot = true
 
-[node name="inv" type="CanvasLayer" parent="."]
-
-[node name="Inv_UI" parent="inv" instance=ExtResource("24_3263k")]
-offset_left = 177.0
-offset_top = 55.0
-offset_right = 384.0
-offset_bottom = 243.0
-
 [node name="inventory" type="CanvasLayer" parent="."]
 
 [node name="MiniInventory" parent="inventory" instance=ExtResource("4_w4ytk")]
@@ -2446,6 +2438,14 @@ offset_top = 309.0
 offset_right = 420.0
 offset_bottom = 366.0
 scale = Vector2(1.18, 1.18)
+
+[node name="inv" type="CanvasLayer" parent="."]
+
+[node name="Inv_UI" parent="inv" instance=ExtResource("24_3263k")]
+offset_left = 177.0
+offset_top = 55.0
+offset_right = 384.0
+offset_bottom = 243.0
 
 [node name="tombol_serang" type="CanvasLayer" parent="."]
 

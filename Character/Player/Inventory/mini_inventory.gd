@@ -113,12 +113,15 @@ func more_item():
 
 func _on_area_2d_mouse_entered():
 	GlobalScript.drag_loc = 8
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_2_mouse_entered():
 	GlobalScript.drag_loc = 9
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_3_mouse_entered():
 	GlobalScript.drag_loc = 10
+	print(GlobalScript.drag_loc)
 
 func _on_touch_screen_button_released():
 	if GlobalScript.inv_is_open:
