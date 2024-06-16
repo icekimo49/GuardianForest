@@ -16,6 +16,7 @@ position = Vector2(52, 52)
 texture = ExtResource("2_yy4ow")
 
 [node name="ProgressBar" type="ProgressBar" parent="Panel"]
+layout_mode = 0
 offset_right = 469.0
 offset_bottom = 27.0
 rounded = true
