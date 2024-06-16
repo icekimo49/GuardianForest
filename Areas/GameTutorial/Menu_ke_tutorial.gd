@@ -151,7 +151,7 @@ func _on_touch_screen_button_2_pressed():
 
 func _on_mulai_pressed():
 	$CanvasLayer/Tombol/GridContainer/Mulai.disabled = true
-	$Player.new_game()
+	await $Player.new_game()
 	#mulai dialog
 	$Player.dialog_player_sendiri("mainmenu")
 	await get_tree().create_timer(2.0).timeout

@@ -26,6 +26,8 @@ func insert(item: InvItem):
 
 func decrease(slot):
 	slots[slot].amount -= 1
+	if slots[slot].amount == 0:
+		slots[slot].item = null
 	update.emit()
 
 func swap_item_slot(select1, select2):

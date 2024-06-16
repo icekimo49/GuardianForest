@@ -27,7 +27,6 @@ var lalala = false
 func _ready():
 	$inv.layer = 1
 	$inventory.layer = 1
-	$NightCycle.time_stop= true
 	if GlobalScript.sudah_tutorial:
 		alur_cerita_tutorial_selesai = true
 		GlobalScript.tutorial_desa_1 = true
@@ -84,9 +83,9 @@ func _process(delta):
 		else:
 			lalala = true
 			paman.dialog_paman_inun_desa_3()
-	if GlobalScript.hour == 1  and GlobalScript.minute == 0 and GlobalScript.sudah_tutorial:
-		$Player.save()
-		get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
+	#if GlobalScript.hour == 1  and GlobalScript.minute == 0 and GlobalScript.sudah_tutorial:
+		#$Player.save()
+		#get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
 	pass
 
 func _on_pindah_hutan_body_entered(body):
@@ -116,15 +115,18 @@ func _on_timer_dialog_toko_peralatan_timeout():
 
 func _on_time_skip_body_entered(body):
 	if body.is_in_group("player") && GlobalScript.hour != 0 :
-		Engine.time_scale = 20
+		tidur()
 		await get_tree().create_timer(3)
 		anim.play("time_skip")
 	else :
 		Engine.time_scale = 1
 
-func set_besok():
-	GlobalScript.time = 6
-	
+func tidur():
+	var waktu_setelah_tidur = 0.1309
+	while GlobalScript.time > waktu_setelah_tidur:
+		waktu_setelah_tidur += 6.283
+	GlobalScript.time = waktu_setelah_tidur
+
 
 func _on_time_skip_body_exited(body):
 	if body.is_in_group("player") :
