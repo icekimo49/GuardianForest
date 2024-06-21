@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://baow0w0ivg278"]
+
+[ext_resource type="Texture2D" uid="uid://dmam0a1ma33v0" path="res://asset/control/panelInset_beige.png" id="1_ib1rl"]
+[ext_resource type="Texture2D" uid="uid://cx60oappfqfcj" path="res://asset/control/panel_brown.png" id="2_tittu"]
+[ext_resource type="PackedScene" uid="uid://bgaqm1qsbr30w" path="res://Areas/Desa/Environment/toko_peralatan/toko_peralatan_ui_slot_jual.tscn" id="3_3sgq5"]
+
+[node name="toko_peralatan_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ib1rl")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -271.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/ScrollContainer"]
+position = Vector2(135.5, 180)
+scale = Vector2(2.71, 3.6)
+texture = ExtResource("2_tittu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/ScrollContainer"]
+layout_mode = 2
+
+[node name="toko_peralatan_ui_slot_jual" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_3sgq5")]
+layout_mode = 2

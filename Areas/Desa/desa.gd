@@ -118,8 +118,6 @@ func _on_time_skip_body_entered(body):
 		tidur()
 		await get_tree().create_timer(3)
 		anim.play("time_skip")
-	else :
-		Engine.time_scale = 1
 
 func tidur():
 	var waktu_setelah_tidur = 0.1309

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgaqm1qsbr30w"]
+
+[ext_resource type="Texture2D" uid="uid://dlapxgbjce2wo" path="res://asset/control/putih.png" id="1_bt3xy"]
+
+[node name="toko_peralatan_ui_slot_jual" type="Panel"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(137.113, 29.5)
+scale = Vector2(0.226634, 0.0867647)
+texture = ExtResource("1_bt3xy")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 59.0
+mouse_filter = 1
