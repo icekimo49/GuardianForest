@@ -8,8 +8,10 @@ extends Node2D
 @onready var camera_cs = $cameraCS
 @onready var game_camera = $GameCamera
 @onready var intro = $introCanvas/intro
+@onready var player = $Ysort/Player
 
-
+var player_
+var spawn_player = preload("res://Character/Player/player.tscn")
 var durasi_game
 var dialog1 = false
 var dialog2 = false
@@ -17,21 +19,28 @@ var api_selesai_dilempar = false
 var api_muncul = false
 var isi_air_sungai = false
 var bisa_isi_air = false
+var respawn = false
 
 
 func _ready():
+	$api.timer.stop()
+	$tampilan_respawn/tampilan_respawn2.visible = false
 	if GlobalScript.sudah_tutorial == false:
-		$Player.global_position = Vector2(99, 81)
+		player.global_position = Vector2(99, 81)
 		$tutorial/paman.global_position = Vector2(70,105)
 		$Pohon.boleh_kebakar = false
 		tutorial()
 	else:
 		$tutorial.queue_free()
 	animasi_wave
-	$NavigationRegion2D.bake_navigation_polygon(true)
+	$Ysort/NavigationRegion2D.bake_navigation_polygon(true)
 	daynightcycle.time_tick.connect(ui_jam.set_daytime)
 	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()
 	GlobalScript.path_screen_terakhir_sebelum_loading= "res://Areas/Hutan/Scene/hutan.tscn"
+	for key in GlobalScript.posisi_pohon.keys():
+		var value = GlobalScript.posisi_pohon[key]
+		print("Key: %s, Value: %s" % [key, value])
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -42,12 +51,12 @@ func _process(delta):
 		api_selesai_dilempar = false
 	if get_node("api_tutorial") == null and api_muncul and !GlobalScript.sudah_tutorial:
 		intro.play("temui_paman")
-		var distance = $Player.global_position.distance_to(Vector2(99, 81))
+		var distance = player.global_position.distance_to(Vector2(99, 81))
 		print(distance)
 		if distance > 20:
-			#$Player.gerakan_tutorial(Vector2(99, 81), "kiri")
-			$Player.nav.target_position = Vector2(99, 81)
-			$Player.gerak_path_finding(Vector2(99, 81))
+			#player.gerakan_tutorial(Vector2(99, 81), "kiri")
+			player.nav.target_position = Vector2(99, 81)
+			player.gerak_path_finding(Vector2(99, 81))
 		else:
 			api_muncul = false
 			$tutorial/paman.dialog_paman_inun_hutan_3()
@@ -101,16 +110,16 @@ func _on_durasi_wave_timeout():
 	animasi_wave.queue("wave_selesai")
 	GlobalScript.game_berlangsung = false
 	print(GlobalScript.tingkat_wave)
-	$Player.change_wave()
+	player.change_wave()
 	print(GlobalScript.tingkat_wave)
 	print("game selesai")
 	
-	$Player.change_exp(100)
+	player.change_exp(100)
 
 func _on_pindah_desa_body_entered(body):
 	if GlobalScript.game_berlangsung == false and get_node("api_tutorial") == null:
 		if body.is_in_group("player"):
-			$Player.save()
+			player.save()
 			get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
 
 func _on_area_tanam_body_entered(body):
@@ -123,7 +132,7 @@ func _on_area_tanam_body_exited(body):
 		GlobalScript.boleh_tanam = false
 
 func balik_desa():
-	$Player.save()
+	player.save()
 	GlobalScript.tutorial_hutan = true
 	get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
 
@@ -136,7 +145,7 @@ func _on_timer_sungai_timeout():
 
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
-		$NavigationRegion2D/sungai/timer_sungai.stop()
+		$Ysort/NavigationRegion2D/sungai/timer_sungai.stop()
 		bisa_isi_air = false
 
 func isi_air():
@@ -144,9 +153,23 @@ func isi_air():
 			if bisa_isi_air:
 				GlobalScript.isi_air_gayung +=1
 				bisa_isi_air = false
-				$NavigationRegion2D/sungai/timer_sungai.start()
+				$Ysort/NavigationRegion2D/sungai/timer_sungai.start()
 
 func jika_player_mati():
-	if $Player == null:
-		GlobalScript.time = 0
-		get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
+	if $Ysort/Player == null:
+		$tampilan_respawn/tampilan_respawn2.visible = true
+		$tampilan_respawn/tampilan_respawn2.mulai_()
+		#get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
+
+func respawn_di_hutan():
+	player_ = spawn_player.instantiate()
+	player_.global_position = Vector2(103, 73)
+	var time_sementara = GlobalScript.time
+	get_node("Ysort").add_child(player_)
+	GlobalScript.time = time_sementara
+	$tampilan_respawn/tampilan_respawn2.visible = false
+
+func balik_ke_desa():
+	var waktu_1 = 0.1309
+	if GlobalScript.time > waktu_1:
+		

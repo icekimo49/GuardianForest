@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctaovm155bpqh"]
+
+[ext_resource type="Script" path="res://tampilan_respawn.gd" id="1_flyfe"]
+[ext_resource type="Texture2D" uid="uid://7h63yih8rm1p" path="res://hitam.jpeg" id="2_kbvh7"]
+
+[node name="tampilan_respawn" type="Node2D"]
+top_level = true
+script = ExtResource("1_flyfe")
+
+[node name="Hitam" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(320.014, 180.008)
+rotation = 1.5708
+scale = Vector2(0.500022, 0.500022)
+texture = ExtResource("2_kbvh7")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+offset_left = 247.0
+offset_top = 256.0
+offset_right = 392.0
+offset_bottom = 296.0
+
+[node name="keluar" type="Button" parent="HSplitContainer"]
+layout_mode = 2
+text = "keluar
+"
+
+[node name="respawn" type="Button" parent="HSplitContainer"]
+layout_mode = 2
+text = "respawn
+"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 286.0
+offset_top = 102.0
+offset_right = 326.0
+offset_bottom = 125.0
+text = "a"
+
+[connection signal="pressed" from="HSplitContainer/keluar" to="." method="_on_keluar_pressed"]
+[connection signal="pressed" from="HSplitContainer/respawn" to="." method="_on_respawn_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -6,14 +6,16 @@ extends NinePatchRect
 
 var player
 
-func _ready():
-	player = get_parent().get_parent().get_node("Player")
-	
 func _process(delta):
-	update()
+	player = $"../../Ysort/Player"
+	if player:
+		update()
 
 func update():
-	hp.value = player.playerData.hp
+	if !player:
+		hp.value = 0
+	else:
+		hp.value = player.playerData.hp
 	if GlobalScript.item_in_use == "ember":
 		label.text = str(GlobalScript.isi_air_gayung)
 	elif GlobalScript.item_in_use == "biji":

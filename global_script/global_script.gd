@@ -39,7 +39,10 @@ var isi_air_gayung : int
 
 
 #pohon
-var posisi_pohon = []
+var posisi_pohon = {
+	"pohon" = [],
+	"pohon_kecil" = []
+}
 
 #level
 var level_berakhir = false

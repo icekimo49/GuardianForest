@@ -9,7 +9,8 @@ var timer2 = Timer.new()
 var boleh_kebakar = true
 
 func _ready():
-	GlobalScript.posisi_pohon.append(self.global_position)
+	GlobalScript.posisi_pohon["pohon"].append(self.global_position)
+	$"../../".bake_navigation_polygon(true)
 
 func mulai_timer1():
 	timer1.set_wait_time(3.0)

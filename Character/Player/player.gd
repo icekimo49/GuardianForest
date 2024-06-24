@@ -129,8 +129,9 @@ func _process(delta):
 	move_and_slide()
 	
 	#Controller 
-	velocity = $"../UI/joystick".get_velo().normalized() * kecepatan
-	animasi_player = $"../UI/joystick".arah()
+	if $"../../UI/joystick":
+		velocity = $"../../UI/joystick".get_velo().normalized() * kecepatan
+		animasi_player = $"../../UI/joystick".arah()
 	var posisi_baru = self.global_position
 	if posisi_baru != posisi_lama:
 		animasi(1)

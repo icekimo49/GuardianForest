@@ -10,6 +10,8 @@ var timer2 = Timer.new()
 
 func _ready():
 	waktu_muncul = GlobalScript.time
+	GlobalScript.posisi_pohon["pohon_kecil"].append(self.global_position)
+	$"../../".bake_navigation_polygon(true)
 
 func _process(delta):
 	if GlobalScript.time - waktu_muncul >= 0.1:

@@ -255,8 +255,8 @@ radius = 21.0238
 polygon = PackedVector2Array(-7, -15, -8, -9, -3, -2, -4, 2, -5, 7, -5, 10, -3, 10, 0, 6, 3, 10, 5, 9, 4, 5, 4, 2, 3, -1, 8, -7, 6, -11, 1, -14)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_eewc5")
+position = Vector2(0, -4)
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_7c5n1")
@@ -276,6 +276,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_0qruo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_siawd")
 value = 50.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="airIndikator" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(10, 10)
@@ -292,6 +293,7 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 2
 text = "0
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false

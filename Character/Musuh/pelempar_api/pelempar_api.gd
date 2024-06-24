@@ -39,7 +39,24 @@ func _physics_process(delta):
 			
 
 func tujuan():
-		nav.target_position = GlobalScript.posisi_pohon[randi_range(0, GlobalScript.posisi_pohon.size()-1)]
+	nav.target_position = lokasi_pohon()
+
+func lokasi_pohon():
+	var keys = GlobalScript.posisi_pohon.keys()
+	var random_index = randi_range(0, keys.size() - 1)
+	var random_key = keys[random_index]
+	var random_values = GlobalScript.posisi_pohon[random_key]
+	if random_values == null:
+		if random_key == "pohon":
+			random_key = "pohon_kecil"
+		elif random_key == "pohon_kecil":
+			random_key = "pohon"
+		random_values = GlobalScript.posisi_pohon[random_key]
+		#tambahin game kalah kalo semua pohon udah habis disini
+	var value_index = randi_range(0, random_values.size() - 1)
+	var random_value = random_values[value_index]
+	print(random_value)
+	return random_value
 
 func set_next_target():
 	if nav.is_navigation_finished() == false:
