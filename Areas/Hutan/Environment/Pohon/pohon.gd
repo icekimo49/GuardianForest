@@ -9,8 +9,14 @@ var timer2 = Timer.new()
 var boleh_kebakar = true
 
 func _ready():
-	GlobalScript.posisi_pohon["pohon"].append(self.global_position)
 	$"../../".bake_navigation_polygon(true)
+
+func tambah_ke_array():
+	var tambah = false
+	if !tambah:
+		var data_di_arr = GlobalScript.posisi_pohon["pohon"].find(self.global_position)
+		if data_di_arr == -1:
+			GlobalScript.posisi_pohon["pohon"].append(self.global_position)
 
 func mulai_timer1():
 	timer1.set_wait_time(3.0)
@@ -35,6 +41,8 @@ func mulai_timer2():
 
 func _on_timer2_timeout():
 	queue_free()
+	$"../../".bake_navigation_polygon(true)
+	GlobalScript.posisi_pohon["pohon"].erase(self.global_position)
 
 func _on_timer_penebang_kayu_timeout():
 	queue_free()

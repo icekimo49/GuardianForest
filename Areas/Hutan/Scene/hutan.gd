@@ -10,6 +10,8 @@ extends Node2D
 @onready var intro = $introCanvas/intro
 @onready var player = $Ysort/Player
 
+var pohon_besar = preload("res://Areas/Hutan/Environment/Pohon/pohon.tscn")
+var pohon_kecil = preload("res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/pohon_kecil.tscn")
 var player_
 var spawn_player = preload("res://Character/Player/player.tscn")
 var durasi_game
@@ -20,15 +22,17 @@ var api_muncul = false
 var isi_air_sungai = false
 var bisa_isi_air = false
 var respawn = false
+var tambah_data_array_pohon = false
 
 
 func _ready():
+	spawn_pohon()
 	$api.timer.stop()
 	$tampilan_respawn/tampilan_respawn2.visible = false
 	if GlobalScript.sudah_tutorial == false:
 		player.global_position = Vector2(99, 81)
 		$tutorial/paman.global_position = Vector2(70,105)
-		$Pohon.boleh_kebakar = false
+		spawn_pohon_tutorial()
 		tutorial()
 	else:
 		$tutorial.queue_free()
@@ -40,7 +44,6 @@ func _ready():
 	for key in GlobalScript.posisi_pohon.keys():
 		var value = GlobalScript.posisi_pohon[key]
 		print("Key: %s, Value: %s" % [key, value])
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -78,6 +81,12 @@ func tutorial():
 		$tutorial/paman.dialog_paman_inun_hutan_2()
 		dialog2 = false
 		intro.play("padamkan_api")
+
+func spawn_pohon_tutorial():
+	var spawn_pohon = pohon_besar.instantiate()
+	spawn_pohon.global_position = Vector2(1441, -119)
+	spawn_pohon.boleh_kebakar = false
+	get_node("Ysort/NavigationRegion2D/pohon").add_child(spawn_pohon)
 
 func ubah_kamera():
 	if $tutorial/pelempar_api/camera_musuh == null:
@@ -119,6 +128,9 @@ func _on_durasi_wave_timeout():
 func _on_pindah_desa_body_entered(body):
 	if GlobalScript.game_berlangsung == false and get_node("api_tutorial") == null:
 		if body.is_in_group("player"):
+			tambah_data_array_pohon = true
+			for child in $Ysort/NavigationRegion2D/pohon.get_children():
+				await child.tambah_ke_array()
 			player.save()
 			get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
 
@@ -169,7 +181,30 @@ func respawn_di_hutan():
 	GlobalScript.time = time_sementara
 	$tampilan_respawn/tampilan_respawn2.visible = false
 
-func balik_ke_desa():
-	var waktu_1 = 0.1309
-	if GlobalScript.time > waktu_1:
-		
+func tombol_balik_ke_desa():
+	var waktu_1 = 1.832 #jam 7 pagi
+	while GlobalScript.time > waktu_1 + 6.283:
+		waktu_1 += 6.283
+	player_ = spawn_player.instantiate()
+	get_node("Ysort").add_child(player_)
+	GlobalScript.time = waktu_1
+	player_.save()
+	get_tree().change_scene_to_packed(load("res://scene/loading_screen/loading_screen.tscn"))
+
+func spawn_pohon():
+	for key in GlobalScript.posisi_pohon.keys():
+		var positions = GlobalScript.posisi_pohon[key]
+		if key == "pohon":
+			var i = 0
+			while i < positions.size():
+				var spawn_pohon = pohon_besar.instantiate()
+				spawn_pohon.global_position = positions[i]
+				get_node("Ysort/NavigationRegion2D/pohon").add_child(spawn_pohon)
+				i+=1
+		elif key == "pohon_kecil":
+			var i = 0
+			while i < positions.size():
+				var spawn_pohon = pohon_kecil.instantiate()
+				spawn_pohon.global_position = positions[i]
+				get_node("Ysort/NavigationRegion2D/pohon").add_child(spawn_pohon)
+				i+=1

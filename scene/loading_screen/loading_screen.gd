@@ -31,14 +31,12 @@ func _process(delta):
 	loading_bar.value = floor((progress[0]*100))
 	if loading_status == ResourceLoader.THREAD_LOAD_LOADED:
 		await get_tree().create_timer(2.0).timeout
-		var newScene = ResourceLoader.load_threaded_get(namaScene)
-		print(newScene)
+		var newScene = load(namaScene)
 		get_tree().change_scene_to_packed(newScene)
 
 func kemana_kita_le():
 	var awal = GlobalScript.scene_sebelum_loading
 	var tujuan
-	print(GlobalScript.sudah_tutorial, awal)
 	if awal == "MainMenu" and GlobalScript.sudah_tutorial == false:
 		tujuan = "res://Areas/GameTutorial/game_tutorial.tscn"
 	elif awal == "MainMenu" and GlobalScript.sudah_tutorial == true:
@@ -49,5 +47,4 @@ func kemana_kita_le():
 		tujuan = "res://Areas/Hutan/Scene/hutan.tscn"
 	elif awal == "Hutan":
 		tujuan = "res://Areas/Desa/desa.tscn"
-	print(tujuan)
 	return tujuan

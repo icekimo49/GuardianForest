@@ -42,6 +42,7 @@ func load_data():
 	GlobalScript.inv = playerData.inv
 	GlobalScript.exp = playerData.exp
 	GlobalScript.hp = playerData.hp
+	GlobalScript.posisi_pohon = playerData.pohon
 	print("loaded")
 
 func save():
@@ -50,6 +51,7 @@ func save():
 	playerData.wave = GlobalScript.tingkat_wave
 	playerData.inv = GlobalScript.inv
 	playerData.exp = GlobalScript.exp
+	playerData.pohon = GlobalScript.posisi_pohon
 	ResourceSaver.save(playerData, save_file_path + save_file_name)
 	print("save")
 
@@ -57,6 +59,10 @@ func new_game():
 	data_awal.inv = preload("res://global_script/global_script_temp_inv.tres")
 	data_awal.sudah_tutorial = false
 	data_awal.wave = 1
+	data_awal.pohon = {
+		"pohon" = [],
+		"pohon_kecil" = []
+	}
 	ResourceSaver.save(data_awal, save_file_path + save_file_name)
 	print(data_awal.sudah_tutorial)
 
@@ -240,7 +246,8 @@ func tanam_pohon():
 			if playerData.inv.slots[GlobalScript.slot_in_use].amount > 0:
 				var instance = pohon_kecil.instantiate()
 				instance.global_position = self.global_position
-				var parent_node = get_parent().get_node("NavigationRegion2D")
+				var parent_node = get_parent().get_node("NavigationRegion2D").get_node("pohon")
+				print(parent_node)
 				parent_node.add_child(instance)
 				playerData.inv.decrease(GlobalScript.slot_in_use)
 	GlobalScript.pencet = false

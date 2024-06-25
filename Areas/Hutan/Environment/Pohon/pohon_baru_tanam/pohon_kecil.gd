@@ -10,7 +10,6 @@ var timer2 = Timer.new()
 
 func _ready():
 	waktu_muncul = GlobalScript.time
-	GlobalScript.posisi_pohon["pohon_kecil"].append(self.global_position)
 	$"../../".bake_navigation_polygon(true)
 
 func _process(delta):
@@ -19,6 +18,13 @@ func _process(delta):
 		instance.position = global_position
 		get_parent().add_child(instance)
 		queue_free()
+
+func tambah_ke_array():
+	print("a")
+	var data_di_arr = GlobalScript.posisi_pohon["pohon_kecil"].find(self.global_position)
+	if data_di_arr == -1:
+		print("b" + str(self.global_position))
+		GlobalScript.posisi_pohon["pohon_kecil"].append(self.global_position)
 
 func mulai_timer1():
 	timer1.set_wait_time(3.0)
@@ -43,6 +49,8 @@ func mulai_timer2():
 
 func _on_timer2_timeout():
 	queue_free()
+	$"../../".bake_navigation_polygon(true)
+	GlobalScript.posisi_pohon["pohon_kecil"].erase(self.global_position)
 
 func _on_pohon_area_entered(area):
 	if area.name == "api_hitbox":

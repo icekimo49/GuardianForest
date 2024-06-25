@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bttfnxprkny6n"]
+[gd_scene load_steps=50 format=3 uid="uid://bttfnxprkny6n"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_ba21o"]
 [ext_resource type="Script" path="res://Areas/Desa/desa.gd" id="1_rrtmw"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cl4vpo8abukrq" path="res://Character/Player/Tombol_Serang/tombol_serang.tscn" id="5_uj250"]
 [ext_resource type="PackedScene" uid="uid://d60xcrr7mvka" path="res://Character/Player/Kamera/game_camera.tscn" id="6_t52t4"]
 [ext_resource type="Script" path="res://scene/main/daynightcycle.gd" id="7_3pkqf"]
-[ext_resource type="PackedScene" uid="uid://cs6b5jgiul2ci" path="res://Areas/Hutan/Environment/Pohon/pohon.tscn" id="9_krr00"]
 [ext_resource type="PackedScene" uid="uid://boe6xjcfkcv8g" path="res://Areas/Desa/Rumah/rumah.tscn" id="9_kt25c"]
 [ext_resource type="Texture2D" uid="uid://b243vple5c284" path="res://Areas/GameTutorial/Pager.png" id="9_n2n83"]
 [ext_resource type="Texture2D" uid="uid://cv1cqfptwyqiw" path="res://scene/UI/menu/asset/Pohon 2.png" id="10_0pnf2"]
@@ -1630,14 +1629,6 @@ texture = ExtResource("10_0pnf2")
 region_enabled = true
 region_rect = Rect2(216, 24, 416, 272)
 
-[node name="Pohon4" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(46, 54)
-scale = Vector2(2.06419, 2.06419)
-
-[node name="Pohon5" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(268, -30)
-scale = Vector2(2.06419, 2.06419)
-
 [node name="Pohon2" type="Sprite2D" parent="Environment/PepohonanBelakang"]
 position = Vector2(282, 4)
 texture = ExtResource("10_0pnf2")
@@ -1727,38 +1718,6 @@ texture = ExtResource("10_0pnf2")
 region_enabled = true
 region_rect = Rect2(216, 24, 416, 272)
 
-[node name="Pohon3" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(143, 58)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon7" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(369, -16)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon9" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(468, -43)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon10" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(555, -64)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon11" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(632, -48)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon12" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(512, 0.999996)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon13" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(594, -33)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon8" parent="Environment/PepohonanBelakang" instance=ExtResource("9_krr00")]
-position = Vector2(423, -9.53674e-07)
-scale = Vector2(2.36, 2.36)
-
 [node name="Sparkle2" type="Sprite2D" parent="Environment/PepohonanBelakang"]
 position = Vector2(379, 64)
 texture = ExtResource("11_vtxbm")
@@ -1796,61 +1755,9 @@ position = Vector2(327.795, -42.2961)
 scale = Vector2(0.632626, 0.632626)
 texture = ExtResource("12_e57jg")
 
-[node name="Pohon4" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(46, 54)
-scale = Vector2(2.06419, 2.06419)
-
-[node name="Pohon5" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(268, -30)
-scale = Vector2(2.06419, 2.06419)
-
 [node name="Pohon2" type="Sprite2D" parent="Environment/PepohonanBelakang2"]
 position = Vector2(282, 4)
 texture = ExtResource("10_0pnf2")
-
-[node name="Pohon3" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(143, 58)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon7" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(369, -16)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon9" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(468, -43)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon10" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(555, -64)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon11" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(632, -48)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon12" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(512, 0.999996)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon13" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(594, -33)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon14" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(584.631, 15.1057)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon15" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(661.631, 31.1057)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon16" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(541.631, 80.1057)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon17" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(623.631, 46.1057)
-scale = Vector2(2.36, 2.36)
 
 [node name="Pohon20" type="Sprite2D" parent="Environment/PepohonanBelakang2"]
 position = Vector2(-536.254, -35.4803)
@@ -1862,69 +1769,9 @@ position = Vector2(-536.254, -35.4803)
 scale = Vector2(0.632626, 0.632626)
 texture = ExtResource("12_e57jg")
 
-[node name="Pohon22" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-818.048, 60.8157)
-scale = Vector2(2.06419, 2.06419)
-
-[node name="Pohon23" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-596.048, -23.1843)
-scale = Vector2(2.06419, 2.06419)
-
 [node name="Pohon24" type="Sprite2D" parent="Environment/PepohonanBelakang2"]
 position = Vector2(-582.048, 10.8157)
 texture = ExtResource("10_0pnf2")
-
-[node name="Pohon25" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-721.048, 64.8158)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon26" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-495.048, -9.18425)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon27" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-407.855, 37.5468)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon28" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-312.069, -43.8067)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon29" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-235.069, -27.8067)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon30" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-425.982, 104.23)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon32" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-282.438, 35.2991)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon33" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-205.438, 51.2991)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon34" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-540.786, 60.2054)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon35" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(-294.562, 110.054)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon8" parent="Environment/PepohonanBelakang2" instance=ExtResource("9_krr00")]
-position = Vector2(423, -9.53674e-07)
-scale = Vector2(2.36, 2.36)
 
 [node name="Sparkle2" type="Sprite2D" parent="Environment/PepohonanBelakang2"]
 position = Vector2(379, 64)
@@ -1943,21 +1790,6 @@ scale = Vector2(0.319995, 0.319995)
 position = Vector2(-952, 3.99997)
 scale = Vector2(-0.662, 0.662)
 
-[node name="Pohon31" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-1015.11, -55.1178)
-rotation = 0.141104
-scale = Vector2(5.45471, 5.45471)
-
-[node name="Pohon36" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-1009.06, 118.598)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon37" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-1235.69, -126.888)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
 [node name="Pohon18" type="Sprite2D" parent="Environment/PepohonanKiri"]
 position = Vector2(-353.498, 470.368)
 scale = Vector2(0.632626, 0.632626)
@@ -1968,61 +1800,9 @@ position = Vector2(-353.498, 470.368)
 scale = Vector2(0.632626, 0.632626)
 texture = ExtResource("12_e57jg")
 
-[node name="Pohon4" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-635.292, 566.664)
-scale = Vector2(2.06419, 2.06419)
-
-[node name="Pohon5" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-413.292, 482.664)
-scale = Vector2(2.06419, 2.06419)
-
 [node name="Pohon2" type="Sprite2D" parent="Environment/PepohonanKiri"]
 position = Vector2(-369.638, 699.638)
 texture = ExtResource("10_0pnf2")
-
-[node name="Pohon3" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-508.638, 753.638)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon7" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-282.638, 679.638)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon9" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-452.52, 863.9)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon10" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-365.52, 842.9)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon11" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-288.52, 858.9)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon12" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-408.52, 907.9)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon13" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-667.329, 370.091)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon14" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-676.698, 418.196)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon15" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-599.698, 434.196)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon16" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-719.698, 483.196)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon17" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-637.698, 449.196)
-scale = Vector2(2.36, 2.36)
 
 [node name="Pohon20" type="Sprite2D" parent="Environment/PepohonanKiri"]
 position = Vector2(-995.468, 31.7221)
@@ -2034,71 +1814,11 @@ position = Vector2(-648.036, 353.474)
 scale = Vector2(-0.633, 0.632626)
 texture = ExtResource("12_e57jg")
 
-[node name="Pohon22" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-836.967, 310.06)
-scale = Vector2(-0.633, 2.06419)
-
-[node name="Pohon23" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-614.967, 226.06)
-scale = Vector2(-0.633, 2.06419)
-
 [node name="Pohon24" type="Sprite2D" parent="Environment/PepohonanKiri"]
 position = Vector2(-883.686, 238.671)
 rotation = 3.14159
 scale = Vector2(0.633, -1)
 texture = ExtResource("10_0pnf2")
-
-[node name="Pohon29" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-634.441, 191.843)
-rotation = 0.141104
-scale = Vector2(5.45471, 5.45471)
-
-[node name="Pohon25" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-739.967, 314.06)
-scale = Vector2(-0.633, 2.36)
-
-[node name="Pohon26" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-873.272, 292.931)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon27" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-786.079, 339.662)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon28" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-628.399, 365.559)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon30" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-804.205, 406.344)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon32" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-873.073, 113.293)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon33" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-796.073, 129.293)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon34" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-1101.25, 70.2236)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon35" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-855.024, 120.073)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon8" parent="Environment/PepohonanKiri" instance=ExtResource("9_krr00")]
-position = Vector2(-995.468, 119.335)
-scale = Vector2(2.36, 2.36)
 
 [node name="Sparkle2" type="Sprite2D" parent="Environment/PepohonanKiri"]
 position = Vector2(-738.671, 25.6798)
@@ -2117,21 +1837,6 @@ scale = Vector2(0.319995, 0.319995)
 position = Vector2(1004, 108)
 scale = Vector2(-0.662, 0.662)
 
-[node name="Pohon31" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-1015.11, -55.1178)
-rotation = 0.141104
-scale = Vector2(5.45471, 5.45471)
-
-[node name="Pohon36" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-1009.06, 118.598)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon37" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-1235.69, -126.888)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
 [node name="Pohon18" type="Sprite2D" parent="Environment/PepohonanKanan"]
 position = Vector2(-353.498, 470.368)
 scale = Vector2(0.632626, 0.632626)
@@ -2142,61 +1847,9 @@ position = Vector2(-353.498, 470.368)
 scale = Vector2(0.632626, 0.632626)
 texture = ExtResource("12_e57jg")
 
-[node name="Pohon4" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-635.292, 566.664)
-scale = Vector2(2.06419, 2.06419)
-
-[node name="Pohon5" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-413.292, 482.664)
-scale = Vector2(2.06419, 2.06419)
-
 [node name="Pohon2" type="Sprite2D" parent="Environment/PepohonanKanan"]
 position = Vector2(-369.638, 699.638)
 texture = ExtResource("10_0pnf2")
-
-[node name="Pohon3" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-508.638, 753.638)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon7" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-282.638, 679.638)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon9" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-452.52, 863.9)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon10" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-365.52, 842.9)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon11" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-288.52, 858.9)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon12" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-408.52, 907.9)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon13" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-667.329, 370.091)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon14" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-676.698, 418.196)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon15" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-599.698, 434.196)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon16" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-719.698, 483.196)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon17" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-637.698, 449.196)
-scale = Vector2(2.36, 2.36)
 
 [node name="Pohon20" type="Sprite2D" parent="Environment/PepohonanKanan"]
 position = Vector2(-995.468, 31.7221)
@@ -2208,71 +1861,11 @@ position = Vector2(-648.036, 353.474)
 scale = Vector2(-0.633, 0.632626)
 texture = ExtResource("12_e57jg")
 
-[node name="Pohon22" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-836.967, 310.06)
-scale = Vector2(-0.633, 2.06419)
-
-[node name="Pohon23" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-614.967, 226.06)
-scale = Vector2(-0.633, 2.06419)
-
 [node name="Pohon24" type="Sprite2D" parent="Environment/PepohonanKanan"]
 position = Vector2(-883.686, 238.671)
 rotation = 3.14159
 scale = Vector2(0.633, -1)
 texture = ExtResource("10_0pnf2")
-
-[node name="Pohon29" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-634.441, 191.843)
-rotation = 0.141104
-scale = Vector2(5.45471, 5.45471)
-
-[node name="Pohon25" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-739.967, 314.06)
-scale = Vector2(-0.633, 2.36)
-
-[node name="Pohon26" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-873.272, 292.931)
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon27" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-786.079, 339.662)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon28" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-628.399, 365.559)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon30" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-804.205, 406.344)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon32" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-873.073, 113.293)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon33" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-796.073, 129.293)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon34" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-1101.25, 70.2236)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon35" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-855.024, 120.073)
-rotation = 0.141104
-scale = Vector2(2.36, 2.36)
-
-[node name="Pohon8" parent="Environment/PepohonanKanan" instance=ExtResource("9_krr00")]
-position = Vector2(-995.468, 119.335)
-scale = Vector2(2.36, 2.36)
 
 [node name="Sparkle2" type="Sprite2D" parent="Environment/PepohonanKanan"]
 position = Vector2(-738.671, 25.6798)
@@ -2348,31 +1941,6 @@ flip_h = true
 [node name="ApiUnggun" parent="Environment" instance=ExtResource("19_p5cye")]
 position = Vector2(1118, 88)
 scale = Vector2(2.28657, 2.28657)
-
-[node name="PohonDesa" parent="." instance=ExtResource("9_krr00")]
-position = Vector2(-87, 202)
-rotation = 3.14159
-scale = Vector2(2.75553, -2.75553)
-
-[node name="PohonDesa5" parent="." instance=ExtResource("9_krr00")]
-position = Vector2(1321, -11)
-rotation = 3.14159
-scale = Vector2(2.75553, -2.75553)
-
-[node name="PohonDesa4" parent="." instance=ExtResource("9_krr00")]
-position = Vector2(-132, 289)
-rotation = 3.14159
-scale = Vector2(1.56232, -1.56232)
-
-[node name="PohonDesa3" parent="." instance=ExtResource("9_krr00")]
-position = Vector2(883, 326)
-rotation = 3.14159
-scale = Vector2(-2.967, -2.967)
-
-[node name="PohonDesa2" parent="." instance=ExtResource("9_krr00")]
-position = Vector2(193, 246)
-rotation = 3.14159
-scale = Vector2(2.68077, -2.68077)
 
 [node name="Border" type="StaticBody2D" parent="."]
 

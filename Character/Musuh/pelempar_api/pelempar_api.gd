@@ -46,16 +46,17 @@ func lokasi_pohon():
 	var random_index = randi_range(0, keys.size() - 1)
 	var random_key = keys[random_index]
 	var random_values = GlobalScript.posisi_pohon[random_key]
-	if random_values == null:
+	if random_values.size() == 0:
 		if random_key == "pohon":
 			random_key = "pohon_kecil"
 		elif random_key == "pohon_kecil":
 			random_key = "pohon"
 		random_values = GlobalScript.posisi_pohon[random_key]
+		if random_values.size() == 0:
+			pass #game kalah
 		#tambahin game kalah kalo semua pohon udah habis disini
 	var value_index = randi_range(0, random_values.size() - 1)
 	var random_value = random_values[value_index]
-	print(random_value)
 	return random_value
 
 func set_next_target():

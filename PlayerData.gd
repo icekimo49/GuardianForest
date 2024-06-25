@@ -7,6 +7,10 @@ class_name PlayerData
 @export var wave = 1
 @export var time = 0.0
 @export var sudah_tutorial = false
+@export var pohon = {
+	"pohon" = [],
+	"pohon_kecil" = []
+}
 
 func _ready():
 	pass

@@ -18,7 +18,7 @@ func _process(delta):
 		$HSplitContainer/respawn.disabled = false
 
 func _on_keluar_pressed():
-	$"../../".balik_ke_desa()
+	$"../../".tombol_balik_ke_desa()
 
 func _on_respawn_pressed():
 	$"../../".respawn_di_hutan()

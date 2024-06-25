@@ -8,6 +8,7 @@ var boleh_pindah = false
 var sudah_di_api = false
 var dialog_di_liat_api = false
 var sekali = false
+var sudah_dialog_api = false
 
 signal sudah_di_area2
 
@@ -84,14 +85,16 @@ func _on_pindah_ke_hutan_body_entered(body):
 
 func dialog_sebelum_api():
 	var distance = $Area1/Player.global_position.distance_to(Vector2(1305, 214))
-	if distance > 5:
-		$Area1/Player.gerakan_tutorial(Vector2(1305, 214), "kanan")
-		$Area1/UI/joystick.no_input = true
-	else:
-		intro.play("matikan_api")
-		$Area1/Player.dialog_player_sendiri("gametutorial")
-		$Area1/UI/joystick.no_input = false 
-		dialog_di_liat_api = false
+	if !sudah_dialog_api:
+		if distance > 5:
+			$Area1/Player.gerakan_tutorial(Vector2(1305, 214), "kanan")
+			$UI/joystick.no_input = true
+		else:
+			intro.play("matikan_api")
+			$Area1/Player.dialog_player_sendiri("gametutorial")
+			$UI/joystick.no_input = false 
+			dialog_di_liat_api = false
+			sudah_dialog_api = true
 	#if sudah_di_api and dialog == false:
 		#$Area1/Player.dialog_player_sendiri("gametutorial")
 		#$Area1/UI/joystick.no_input = false
