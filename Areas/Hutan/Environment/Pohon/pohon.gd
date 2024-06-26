@@ -7,6 +7,7 @@ var kebakar = false
 var timer1 = Timer.new()
 var timer2 = Timer.new()
 var boleh_kebakar = true
+var pohon_gaboleh_ilang_kebakar = false
 
 func _ready():
 	$"../../".bake_navigation_polygon(true)
@@ -29,6 +30,7 @@ func _on_timer1_timeout():
 	var instance = api.instantiate()
 	instance.position = posisi
 	add_child(instance)
+	instance.timer.stop()
 	kebakar = true
 	mulai_timer2()
 
@@ -40,9 +42,10 @@ func mulai_timer2():
 	timer2.start()
 
 func _on_timer2_timeout():
-	queue_free()
-	$"../../".bake_navigation_polygon(true)
-	GlobalScript.posisi_pohon["pohon"].erase(self.global_position)
+	#queue_free()
+	#$"../../".bake_navigation_polygon(true)
+	#GlobalScript.posisi_pohon["pohon"].erase(self.global_position)
+	pass
 
 func _on_timer_penebang_kayu_timeout():
 	queue_free()

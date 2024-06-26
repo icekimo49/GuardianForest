@@ -35,6 +35,7 @@ _data = {
 radius = 24.0
 
 [node name="api" type="CharacterBody2D" groups=["enemy"]]
+y_sort_enabled = true
 script = ExtResource("1_ktts3")
 
 [node name="Area2D" type="Area2D" parent="." groups=["api"]]

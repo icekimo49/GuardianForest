@@ -255,6 +255,7 @@ radius = 21.0238
 polygon = PackedVector2Array(-7, -15, -8, -9, -3, -2, -4, 2, -5, 7, -5, 10, -3, 10, 0, 6, 3, 10, 5, 9, 4, 5, 4, 2, 3, -1, 8, -7, 6, -11, 1, -14)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_eewc5")
 position = Vector2(0, -4)
 motion_mode = 1

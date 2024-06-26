@@ -34,6 +34,8 @@ func _process(delta):
 	if drag:
 		if lok_pencet != get_global_mouse_position():
 			drag_item.visible = true
+		drag_item.z_index = 6
+		print(drag_item.z_index)
 		drag_item.global_position = get_global_mouse_position()
 
 func _on_touch_screen_button_pressed():
@@ -111,18 +113,6 @@ func _on_touch_screen_button_3_pressed():
 func more_item():
 	GameEvent.emit_signal("tombol_more_inventory")
 
-func _on_area_2d_mouse_entered():
-	GlobalScript.drag_loc = 8
-	print(GlobalScript.drag_loc)
-
-func _on_area_2d_2_mouse_entered():
-	GlobalScript.drag_loc = 9
-	print(GlobalScript.drag_loc)
-
-func _on_area_2d_3_mouse_entered():
-	GlobalScript.drag_loc = 10
-	print(GlobalScript.drag_loc)
-
 func _on_touch_screen_button_released():
 	if GlobalScript.inv_is_open:
 		if GlobalScript.select1 == null:
@@ -149,3 +139,31 @@ func _on_touch_screen_button_3_released():
 			GlobalScript.select2 = GlobalScript.drag_loc
 		drag = false
 		drag_item.texture = null
+
+
+
+func _on_area_2d_mouse_entered():
+	GlobalScript.drag_loc = 8
+	print(GlobalScript.drag_loc)
+
+
+func _on_area_2d_2_mouse_entered():
+	GlobalScript.drag_loc = 9
+	print(GlobalScript.drag_loc)
+
+
+func _on_area_2d_3_mouse_entered():
+	GlobalScript.drag_loc = 10
+	print(GlobalScript.drag_loc)
+
+
+func _on_area_2d_mouse_exited():
+	GlobalScript.drag_loc = null
+
+
+func _on_area_2d_2_mouse_exited():
+	GlobalScript.drag_loc = null
+
+
+func _on_area_2d_3_mouse_exited():
+	GlobalScript.drag_loc = null

@@ -8,7 +8,8 @@ var kabur = false
 var lok_api
 var boleh_gerak = true
 var tutorial = false
-var i =0 
+var i = 0
+var pohon_habis = false 
 
 func _ready():
 	if get_tree().current_scene.get_name() == "Hutan" and GlobalScript.sudah_tutorial == false:
@@ -29,7 +30,7 @@ func _physics_process(delta):
 		if nav.distance_to_target() < 50.0:
 			lok_api = nav.target_position
 			nav.target_position = self.position
-			lempar_api()
+			await lempar_api()
 			kabur = true
 		if kabur == true:
 			if tutorial:
@@ -53,9 +54,10 @@ func lokasi_pohon():
 			random_key = "pohon"
 		random_values = GlobalScript.posisi_pohon[random_key]
 		if random_values.size() == 0:
-			pass #game kalah
+			pohon_habis = true
+			return self.position 
 		#tambahin game kalah kalo semua pohon udah habis disini
-	var value_index = randi_range(0, random_values.size() - 1)
+	var value_index = randi_range(0, random_values.size() -1)
 	var random_value = random_values[value_index]
 	return random_value
 
@@ -75,7 +77,7 @@ func kabur_tutorial():
 	nav.target_position = Vector2(1784,-300)
 
 func lempar_api():
-	if kabur == false:
+	if kabur == false and pohon_habis == false:
 		print("cihuy")
 		var instance = api.instantiate()
 		instance.position = lok_api

@@ -8,6 +8,7 @@ var kabur_gak_nich = false
 @onready var navAgent = $Navigasi/NavigationAgent2D
 var items = ["res://Item/Material/biji/biji.tscn", "res://Item/Material/Batu/batu_collectable.tscn", "res://Item/Material/Golden_Apple/golden_apple_collectable.tscn"]
 var i = 0
+
 func _ready():
 	set_physics_process(false)
 	tujuan()
@@ -24,7 +25,26 @@ func _physics_process(delta):
 		drop_item()
 
 func tujuan():
-	navAgent.target_position = GlobalScript.posisi_pohon[randi_range(0, GlobalScript.posisi_pohon.size()-1)]
+	navAgent.target_position = lokasi_pohon()
+
+func lokasi_pohon():
+	var keys = GlobalScript.posisi_pohon.keys()
+	var random_index = randi_range(0, keys.size() - 1)
+	var random_key = keys[random_index]
+	var random_values = GlobalScript.posisi_pohon[random_key]
+	if random_values.size() == 0:
+		if random_key == "pohon":
+			random_key = "pohon_kecil"
+		elif random_key == "pohon_kecil":
+			random_key = "pohon"
+		random_values = GlobalScript.posisi_pohon[random_key]
+		if random_values.size() == 0:
+			kabur = true
+			return self.position
+		#tambahin game kalah kalo semua pohon udah habis disini
+	var value_index = randi_range(0, random_values.size() -1)
+	var random_value = random_values[value_index]
+	return random_value
 
 func set_next_target():
 	if navAgent.is_navigation_finished() == false:

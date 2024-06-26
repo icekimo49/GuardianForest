@@ -31,6 +31,7 @@ size = Vector2(21.2589, 20.5263)
 size = Vector2(21.2589, 20.5263)
 
 [node name="Inv_UI" type="Control"]
+z_index = 5
 custom_minimum_size = Vector2(146, 146)
 layout_mode = 3
 anchors_preset = 0

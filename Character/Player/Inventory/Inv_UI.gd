@@ -37,6 +37,7 @@ func _process(delta):
 					slots[GlobalScript.select1].item_visual.visible = false
 					slots[GlobalScript.select1].amount_text.visible = false
 					drag_item.visible = true
+			drag_item.z_index = 6
 			drag_item.global_position = get_global_mouse_position()
 
 func kamera_ke_inventory_movement():
@@ -244,35 +245,35 @@ func _on_tombol_8_released():
 
 func _on_area_2d_mouse_entered():
 	GlobalScript.drag_loc = 0
-	#print(GlobalScript.drag_loc)
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_2_mouse_entered():
 	GlobalScript.drag_loc = 1
-	#print(GlobalScript.drag_loc)
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_3_mouse_entered():
 	GlobalScript.drag_loc = 2
-	#print(GlobalScript.drag_loc)
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_4_mouse_entered():
 	GlobalScript.drag_loc = 3
-	#print(GlobalScript.drag_loc)
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_5_mouse_entered():
 	GlobalScript.drag_loc = 4
-	#print(GlobalScript.drag_loc)
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_6_mouse_entered():
 	GlobalScript.drag_loc = 5
-	#print(GlobalScript.drag_loc)
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_7_mouse_entered():
 	GlobalScript.drag_loc = 6
-	#print(GlobalScript.drag_loc)
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_8_mouse_entered():
 	GlobalScript.drag_loc = 7
-	#print(GlobalScript.drag_loc)
+	print(GlobalScript.drag_loc)
 
 func _on_area_2d_mouse_exited():
 	GlobalScript.drag_loc = null
