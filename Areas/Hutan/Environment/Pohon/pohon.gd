@@ -10,7 +10,7 @@ var boleh_kebakar = true
 var pohon_gaboleh_ilang_kebakar = false
 
 func _ready():
-	$"../../".bake_navigation_polygon(true)
+	pass
 
 func tambah_ke_array():
 	var tambah = false

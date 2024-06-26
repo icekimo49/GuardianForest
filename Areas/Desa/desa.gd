@@ -40,7 +40,6 @@ func _ready():
 		pass
 	elif !GlobalScript.sudah_tutorial or !GlobalScript.tutorial_desa_1:
 		player.global_position = Vector2(1428.0, 228.0)
-	print(player.global_position)
 	daynightcycle.time_tick.connect(ui_jam.set_daytime)
 	GlobalScript.path_screen_terakhir_sebelum_loading= "res://Areas/Desa/desa.tscn"
 	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()

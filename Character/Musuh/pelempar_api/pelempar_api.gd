@@ -23,6 +23,7 @@ func _ready():
 func _physics_process(delta):
 	if boleh_gerak:
 		set_next_target()
+		print("tujuan" + str(nav.target_position))
 		if nav.is_navigation_finished() == true and kabur == true:
 			if tutorial == true:
 				get_parent().get_parent().api_selesai_dilempar = true
@@ -71,7 +72,7 @@ func set_next_target():
 		move_and_slide()
 
 func tujuan_tutorial():
-	nav.target_position = Vector2(1441, -119)
+	nav.target_position = Vector2(1444, 55)
 
 func kabur_tutorial():
 	nav.target_position = Vector2(1784,-300)

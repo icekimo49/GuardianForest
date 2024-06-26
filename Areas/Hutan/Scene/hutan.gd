@@ -27,7 +27,6 @@ var tambah_data_array_pohon = false
 
 func _ready():
 	spawn_pohon()
-	$api.timer.stop()
 	$tampilan_respawn/tampilan_respawn2.visible = false
 	if GlobalScript.sudah_tutorial == false:
 		player.global_position = Vector2(99, 81)
@@ -37,7 +36,6 @@ func _ready():
 	else:
 		$tutorial.queue_free()
 	animasi_wave
-	$Ysort/NavigationRegion2D.bake_navigation_polygon(true)
 	daynightcycle.time_tick.connect(ui_jam.set_daytime)
 	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()
 	GlobalScript.path_screen_terakhir_sebelum_loading= "res://Areas/Hutan/Scene/hutan.tscn"
@@ -71,6 +69,7 @@ func _process(delta):
 		wave.text = "Wave " + str(GlobalScript.tingkat_wave) + " dimulai!"
 		animasi_wave.queue("wave_mulai")
 		GlobalScript.game_berlangsung = true
+		$Ysort/NavigationRegion2D.bake_navigation_polygon(false)
 		$Timer/masuk_map_ke_mulai_game.start()
 
 func tutorial():
@@ -208,3 +207,4 @@ func spawn_pohon():
 				spawn_pohon.global_position = positions[i]
 				get_node("Ysort/NavigationRegion2D/pohon").add_child(spawn_pohon)
 				i+=1
+	$Ysort/NavigationRegion2D.bake_navigation_polygon(false)

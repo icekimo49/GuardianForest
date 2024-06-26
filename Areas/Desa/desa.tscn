@@ -1574,7 +1574,6 @@ layer_0/tile_data = PackedInt32Array(1900544, 65536, 2, 1966080, 65536, 2, 20316
 y_sort_enabled = true
 
 [node name="Player" parent="Ysort" instance=ExtResource("2_m5bgv")]
-y_sort_enabled = true
 texture_filter = 1
 position = Vector2(1136, 211)
 scale = Vector2(0.988421, 0.968354)
