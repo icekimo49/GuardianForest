@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8o75o0ig0u63"]
+
+[ext_resource type="Script" path="res://pengaturan/pengaturan.gd" id="1_q2ekh"]
+[ext_resource type="Texture2D" uid="uid://dlapxgbjce2wo" path="res://asset/control/putih.png" id="1_xu0d7"]
+[ext_resource type="PackedScene" uid="uid://bbky4hr7gq5ij" path="res://pengaturan/kredit/kredit.tscn" id="2_m4obc"]
+[ext_resource type="PackedScene" uid="uid://b27s2qpoioq7o" path="res://pengaturan/volume/volume_slider.tscn" id="3_ufgbo"]
+
+[node name="Pengaturan" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_q2ekh")
+
+[node name="kredit2" parent="." instance=ExtResource("2_m4obc")]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0.2, 0.4, 1)
+position = Vector2(320.265, 180)
+scale = Vector2(0.529363, 0.529412)
+texture = ExtResource("1_xu0d7")
+
+[node name="master" type="AudioStreamPlayer" parent="Node2D"]
+
+[node name="sfx" type="AudioStreamPlayer" parent="Node2D"]
+bus = &"SFX"
+
+[node name="PanelContainer" type="PanelContainer" parent="Node2D"]
+offset_left = 40.0
+offset_top = 128.0
+offset_right = 297.0
+offset_bottom = 232.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Node2D/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume
+"
+horizontal_alignment = 1
+
+[node name="volume_slider" parent="Node2D/PanelContainer/VBoxContainer" instance=ExtResource("3_ufgbo")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="Node2D/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX Volume
+"
+horizontal_alignment = 1
+
+[node name="volume_slider2" parent="Node2D/PanelContainer/VBoxContainer" instance=ExtResource("3_ufgbo")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="kredit" type="Button" parent="Node2D"]
+offset_left = 408.0
+offset_top = 96.0
+offset_right = 520.0
+offset_bottom = 163.0
+text = "Kredit
+"
+
+[node name="Keluar" type="Button" parent="Node2D"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 408.0
+offset_top = 192.0
+offset_right = 520.0
+offset_bottom = 259.0
+text = "Keluar
+"
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+position = Vector2(320, 177)
+
+[connection signal="pressed" from="Node2D/kredit" to="." method="_on_kredit_pressed"]
+[connection signal="pressed" from="Node2D/Keluar" to="." method="_on_keluar_pressed"]
