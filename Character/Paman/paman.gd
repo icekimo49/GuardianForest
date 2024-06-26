@@ -44,7 +44,8 @@ func dialogselesai(arg:String):
 		get_parent().get_parent().kamera_ke_toko_peralatan()
 	elif arg == "dialog_desa_5_selesai":
 		GlobalScript.sudah_tutorial = true
-		get_parent().get_parent().get_node("Player").save()
+		#get_parent().get_parent().get_node("Player").save()
+		get_tree().get_first_node_in_group("player").save()
 		nyalainvinsible()
 		queue_free()
 	elif arg == "dialog_hutan_1_selesai":

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://jyfnlm0s5f74"]
 
 [ext_resource type="Script" path="res://Character/Player/Inventory/inventory_item.gd" id="1_kqysc"]
-[ext_resource type="Texture2D" uid="uid://crnr18hrkjpjq" path="res://Item/Tools/ember.png" id="2_fdtfq"]
+[ext_resource type="Texture2D" uid="uid://dj8bievdjleu1" path="res://Item/Tools/ember1.png" id="2_k7rnc"]
 
 [resource]
 script = ExtResource("1_kqysc")
 name = "ember"
-texture = ExtResource("2_fdtfq")
+texture = ExtResource("2_k7rnc")
 stack = false
 type = false
 ukuran_item = Vector2(0.075, 0.075)

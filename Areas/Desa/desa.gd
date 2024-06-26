@@ -6,6 +6,8 @@ extends Node2D
 @onready var paman = $npc/paman
 @onready var anim = $timeSkipAnim
 @onready var player = $Ysort/Player
+@onready var camera_2d = $Ysort/Player/Camera2D
+
 
 
 #alur_cerita_tutorial_selesai jadiin true kalo cerita pas awal tutorialnya abis dan player mau ke hutan
@@ -102,7 +104,7 @@ func kamera_ke_penjual_makan():
 	$timer/timer_dialog_penjual_makan.start()
 
 func _on_timer_dialog_penjual_makan_timeout():
-	player.Camera2D.make_current()
+	camera_2d.make_current()
 	paman.dialog_paman_inun_desa_4()
 
 func kamera_ke_toko_peralatan():
@@ -110,7 +112,7 @@ func kamera_ke_toko_peralatan():
 	$timer/timer_dialog_toko_peralatan.start()
 
 func _on_timer_dialog_toko_peralatan_timeout():
-	player.Camera2D.make_current()
+	camera_2d.make_current()
 	paman.dialog_paman_inun_desa_5()
 
 func _on_time_skip_body_entered(body):
