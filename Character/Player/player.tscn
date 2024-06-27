@@ -1,10 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://bjxhj32neycau"]
+[gd_scene load_steps=43 format=3 uid="uid://bjxhj32neycau"]
 
 [ext_resource type="Script" path="res://Character/Player/player.gd" id="1_7c5n1"]
 [ext_resource type="Texture2D" uid="uid://31d13x56ufwx" path="res://Character/Player/Character_Asset/Actor1.png" id="2_0qjyr"]
 [ext_resource type="PackedScene" uid="uid://cxp32tjv0xv5n" path="res://scene/ability/lemparBotol_controller/lempar_botol_controller.tscn" id="2_botwl"]
 [ext_resource type="Texture2D" uid="uid://bngx5rc3f6t8r" path="res://asset/villain/Woodcutter_attack2.png" id="4_hw3ry"]
-[ext_resource type="Script" path="res://Character/Player/player_hitbox_atas.gd" id="6_3nybf"]
 [ext_resource type="Texture2D" uid="uid://doiov7l26pmts" path="res://asset/environtment/light.png" id="6_86ekm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eewc5"]
@@ -239,6 +238,9 @@ radius = 3.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_my3qs"]
 radius = 19.2354
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_orxg3"]
+polygon = PackedVector2Array(-7, -15, -8, -9, -3, -2, -4, 2, -5, 7, -5, 10, -3, 10, 0, 6, 3, 10, 5, 9, 4, 5, 4, 2, 3, -1, 8, -7, 6, -11, 1, -14)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1aifa"]
 radius = 21.0
 
@@ -251,8 +253,17 @@ radius = 21.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_afvx6"]
 radius = 21.0238
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_orxg3"]
-polygon = PackedVector2Array(-7, -15, -8, -9, -3, -2, -4, 2, -5, 7, -5, 10, -3, 10, 0, 6, 3, 10, 5, 9, 4, 5, 4, 2, 3, -1, 8, -7, 6, -11, 1, -14)
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xili"]
+radius = 43.0465
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5dla6"]
+radius = 43.0116
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_23d2i"]
+radius = 43.1045
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u20d3"]
+radius = 43.2897
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
@@ -297,7 +308,6 @@ text = "0
 metadata/_edit_use_anchors_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 energy = 0.2
 range_item_cull_mask = 7
 shadow_enabled = true
@@ -323,30 +333,11 @@ position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_jw6pm")
 
 [node name="player_hitbox" type="Area2D" parent="."]
+scale = Vector2(1, 1.21939)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_my3qs")
-
-[node name="player_hitbox_atas" type="CollisionShape2D" parent="."]
-position = Vector2(0, -37)
-shape = SubResource("CircleShape2D_1aifa")
-script = ExtResource("6_3nybf")
-
-[node name="player_hitbox_bawah" type="CollisionShape2D" parent="."]
-position = Vector2(32, -6)
-shape = SubResource("CircleShape2D_g61co")
-script = ExtResource("6_3nybf")
-
-[node name="player_hitbox_kiri" type="CollisionShape2D" parent="."]
-position = Vector2(-31, -6)
-shape = SubResource("CircleShape2D_nwtx7")
-script = ExtResource("6_3nybf")
-
-[node name="player_hitbox_kanan" type="CollisionShape2D" parent="."]
-position = Vector2(0, 25)
-shape = SubResource("CircleShape2D_afvx6")
-script = ExtResource("6_3nybf")
 
 [node name="api_cooldown" type="Timer" parent="."]
 
@@ -357,6 +348,56 @@ wait_time = 0.5
 occluder = SubResource("OccluderPolygon2D_orxg3")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="attack_kecil_atas" type="Area2D" parent="Node2D"]
+
+[node name="ember_atas" type="CollisionShape2D" parent="Node2D/attack_kecil_atas"]
+position = Vector2(0, -37)
+shape = SubResource("CircleShape2D_1aifa")
+
+[node name="attack_kecil_bawah" type="Area2D" parent="Node2D"]
+
+[node name="ember_bawah" type="CollisionShape2D" parent="Node2D/attack_kecil_bawah"]
+position = Vector2(32, -6)
+shape = SubResource("CircleShape2D_g61co")
+
+[node name="attack_kecil_kanan" type="Area2D" parent="Node2D"]
+
+[node name="ember_kanan" type="CollisionShape2D" parent="Node2D/attack_kecil_kanan"]
+position = Vector2(-31, -6)
+shape = SubResource("CircleShape2D_nwtx7")
+
+[node name="attack_kecil_kiri" type="Area2D" parent="Node2D"]
+
+[node name="ember_kiri" type="CollisionShape2D" parent="Node2D/attack_kecil_kiri"]
+position = Vector2(0, 25)
+shape = SubResource("CircleShape2D_afvx6")
+
+[node name="attack_besar_atas" type="Area2D" parent="Node2D"]
+
+[node name="granat_atas" type="CollisionShape2D" parent="Node2D/attack_besar_atas"]
+position = Vector2(0, -62)
+shape = SubResource("CircleShape2D_4xili")
+
+[node name="attack_besar_bawah" type="Area2D" parent="Node2D"]
+
+[node name="granat_bawah" type="CollisionShape2D" parent="Node2D/attack_besar_bawah"]
+position = Vector2(0, 62)
+shape = SubResource("CircleShape2D_5dla6")
+
+[node name="attack_besar_kanan" type="Area2D" parent="Node2D"]
+
+[node name="granat_kanan" type="CollisionShape2D" parent="Node2D/attack_besar_kanan"]
+position = Vector2(62, 0)
+shape = SubResource("CircleShape2D_23d2i")
+
+[node name="attack_besar_kiri" type="Area2D" parent="Node2D"]
+
+[node name="granat_kiri" type="CollisionShape2D" parent="Node2D/attack_besar_kiri"]
+position = Vector2(-62, 0)
+shape = SubResource("CircleShape2D_u20d3")
 
 [connection signal="area_entered" from="player_hitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="area_exited" from="player_hitbox" to="." method="_on_player_hitbox_area_exited"]

@@ -548,6 +548,7 @@ scale = Vector2(0.56, 0.56)
 texture = ExtResource("27_hax5k")
 
 [node name="PointLight2D" type="PointLight2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(-892, -96)
 scale = Vector2(1.25917, 1.25917)
 color = Color(0.111097, 0.381896, 0.719218, 1)
@@ -606,6 +607,7 @@ shape = SubResource("RectangleShape2D_upvdv")
 
 [node name="pengaturan" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
 
 [node name="Pengaturan" parent="pengaturan" instance=ExtResource("30_gwmw3")]
 

@@ -81,5 +81,5 @@ texture = ExtResource("4_jvi2h")
 texture_scale = 0.8
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="api_hitbox" to="." method="_on_api_hitbox_body_entered"]
-[connection signal="body_exited" from="api_hitbox" to="." method="_on_api_hitbox_body_exited"]
+[connection signal="area_entered" from="api_hitbox" to="." method="_on_api_hitbox_area_entered"]
+[connection signal="area_exited" from="api_hitbox" to="." method="_on_api_hitbox_area_exited"]

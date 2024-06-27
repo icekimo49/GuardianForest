@@ -8,6 +8,7 @@ signal update
 @export var temp_inv: InvSlot
 
 func insert(item: InvItem):
+	print(item.name)
 	if slots[8].item == null or item == slots[8].item and item.stack == true:
 		if slots[8].item == null:
 			slots[8].item = item

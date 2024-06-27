@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://2ylvfuc7ni7f"]
+
+[ext_resource type="Script" path="res://Item/Tools/granat_pemadam_api/granat_pemadam.gd" id="1_qrbbg"]
+[ext_resource type="Resource" uid="uid://blpgxghk107em" path="res://Item/Tools/granat_pemadam_api/Granat_pemadam.tres" id="2_kaw0p"]
+[ext_resource type="Texture2D" uid="uid://bi6kvw3ecq3xx" path="res://Item/Tools/granat_pemadam_api/Granat Pemadam Api.png" id="2_vs6yf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_26jyc"]
+radius = 12.0
+
+[node name="granat_pemadam" type="StaticBody2D"]
+script = ExtResource("1_qrbbg")
+item = ExtResource("2_kaw0p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1972, 0.1972)
+texture = ExtResource("2_vs6yf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_26jyc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

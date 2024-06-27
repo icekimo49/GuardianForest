@@ -25,11 +25,21 @@ var layout
 
 var pohon_kecil = preload("res://Areas/Hutan/Environment/Pohon/pohon_baru_tanam/pohon_kecil.tscn")
 
+@onready var attack_kecil_atas = $Node2D/attack_kecil_atas
+@onready var attack_kecil_bawah = $Node2D/attack_kecil_bawah
+@onready var attack_kecil_kanan = $Node2D/attack_kecil_kanan
+@onready var attack_kecil_kiri = $Node2D/attack_kecil_kiri
+@onready var attack_besar_atas = $Node2D/attack_besar_atas
+@onready var attack_besar_bawah = $Node2D/attack_besar_bawah
+@onready var attack_besar_kanan = $Node2D/attack_besar_kanan
+@onready var attack_besar_kiri = $Node2D/attack_besar_kiri
 
 func _ready():
 	load_data()
 	display_darah_player()
 	verify_save_directory(save_file_path)
+	#for child in get_node("Node2D").get_children():
+		#child.monitorable = false
 
 func verify_save_directory(path: String):
 	DirAccess.make_dir_absolute(path)
@@ -210,6 +220,8 @@ func attack():
 			attack_ember()
 		elif GlobalScript.item_in_use == "biji":
 			tanam_pohon()
+		elif GlobalScript.item_in_use == "granat_pemadam":
+			attack_granat()
 
 func attack_ember():
 	var arah = animasi_player
@@ -220,23 +232,44 @@ func attack_ember():
 		GlobalScript.player_current_attack = true
 		attack_in_progress = true
 		if arah == "kanan":
+			attack_kecil_kanan.monitorable = true
 			$AnimatedSprite2D.play("serang_kanan")
 			$deal_attack_timer.start()
-			$player_hitbox_kanan.toggle_collision(true)
 		if arah == "kiri":
+			attack_kecil_kiri.monitorable = true
 			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play("serang_kanan")
 			$deal_attack_timer.start()
-			$player_hitbox_kiri.toggle_collision(true)
 		if arah == "bawah":
 			$AnimatedSprite2D.play("serang_bawah")
 			$deal_attack_timer.start()
-			$player_hitbox_bawah.toggle_collision(true)
+			attack_kecil_bawah.monitorable = true
 		if arah == "atas":
 			$AnimatedSprite2D.play("serang_atas")
 			$deal_attack_timer.start()
-			$player_hitbox_atas.toggle_collision(true)
+			attack_kecil_atas.monitorable = true
 		GlobalScript.isi_air_gayung -=1
+	GlobalScript.pencet = false
+
+func attack_granat():
+	if GlobalScript.pencet:
+		print("xi")
+		$deal_attack_timer.wait_time = 0.5
+		GlobalScript.player_current_attack = true
+		attack_in_progress = true
+		if animasi_player == "atas":
+			$deal_attack_timer.start()
+			attack_besar_atas.monitorable = true
+		elif animasi_player == "bawah":
+			$deal_attack_timer.start()
+			attack_besar_bawah.monitorable = true
+		elif animasi_player == "kiri":
+			$deal_attack_timer.start()
+			attack_besar_kiri.monitorable = true
+		elif animasi_player == "kanan":
+			$deal_attack_timer.start()
+			attack_besar_kanan.monitorable = true
+		playerData.inv.decrease(GlobalScript.slot_in_use)
 	GlobalScript.pencet = false
 
 func tanam_pohon():
@@ -259,10 +292,8 @@ func _on_deal_attack_timer_timeout():
 	if attack_in_progress == false:
 		print("gagal")
 	$AnimatedSprite2D.flip_h = false
-	$player_hitbox_kiri.toggle_collision(false)
-	$player_hitbox_kanan.toggle_collision(false)
-	$player_hitbox_bawah.toggle_collision(false)
-	$player_hitbox_atas.toggle_collision(false)
+	for child in get_node("Node2D").get_children():
+		child.monitorable = false
 
 func collect(item):
 	playerData.inv.insert(item)

@@ -61,6 +61,7 @@ func _on_touch_screen_button_pressed():
 						GlobalScript.item_in_use = GlobalScript.inv.slots[8].item.name
 						GlobalScript.slot_in_use = 8
 						tombol1.modulate = Color("ffffff95")
+	print(GlobalScript.item_in_use)
 
 func _on_touch_screen_button_2_pressed():
 	if GlobalScript.inv_is_open:
@@ -85,6 +86,7 @@ func _on_touch_screen_button_2_pressed():
 						GlobalScript.item_in_use = GlobalScript.inv.slots[9].item.name
 						tombol2.modulate = Color("ffffff95")
 						GlobalScript.slot_in_use = 9
+	print(GlobalScript.item_in_use)
 
 func _on_touch_screen_button_3_pressed():
 	if GlobalScript.inv_is_open:
@@ -109,6 +111,7 @@ func _on_touch_screen_button_3_pressed():
 						GlobalScript.item_in_use = GlobalScript.inv.slots[10].item.name
 						tombol3.modulate = Color("ffffff95")
 						GlobalScript.slot_in_use = 10
+	print(GlobalScript.item_in_use)
 
 func more_item():
 	GameEvent.emit_signal("tombol_more_inventory")

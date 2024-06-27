@@ -22,17 +22,20 @@ func api():
 	pass
 	#jangan diapus, penting!!!!
 
-func _on_api_hitbox_body_entered(body):
-	if body.has_method("player"):
-		player_inattack_zone = true
-
-func _on_api_hitbox_body_exited(body):
-	if body.has_method("player"):
-		player_inattack_zone = false
-
 func deal_damage():
 	if player_inattack_zone and GlobalScript.player_current_attack == true:
 		HP -=1
 		print(HP)
 		if HP <= 0:
 			self.queue_free()
+
+func _on_api_hitbox_area_entered(area):
+	print("nama" + area.name)
+	if area.name != "player_hitbox":
+		player_inattack_zone = true
+		print("ril")
+
+func _on_api_hitbox_area_exited(area):
+	if area.name != "player_hitbox":
+		player_inattack_zone = false
+		print("fake")

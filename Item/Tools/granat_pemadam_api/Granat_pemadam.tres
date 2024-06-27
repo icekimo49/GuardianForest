@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://blpgxghk107em"]
+
+[ext_resource type="Script" path="res://Character/Player/Inventory/inventory_item.gd" id="1_oxlm1"]
+[ext_resource type="Texture2D" uid="uid://bi6kvw3ecq3xx" path="res://Item/Tools/granat_pemadam_api/Granat Pemadam Api.png" id="2_uopco"]
+
+[resource]
+script = ExtResource("1_oxlm1")
+name = "granat_pemadam"
+texture = ExtResource("2_uopco")
+stack = true
+type = false
+ukuran_item = Vector2(0.15, 0.15)
