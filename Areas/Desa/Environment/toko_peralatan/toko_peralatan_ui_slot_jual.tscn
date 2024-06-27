@@ -44,22 +44,6 @@ position = Vector2(440, 181)
 scale = Vector2(0.238213, 0.529412)
 texture = ExtResource("1_bt3xy")
 
-[node name="jual" type="Button" parent="."]
-layout_mode = 0
-offset_left = 390.0
-offset_top = 197.0
-offset_right = 491.0
-offset_bottom = 247.0
-text = "jual"
-
-[node name="beli" type="Button" parent="."]
-layout_mode = 0
-offset_left = 387.0
-offset_top = 97.0
-offset_right = 488.0
-offset_bottom = 145.0
-text = "beli"
-
 [node name="beli_barang" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_left = 308.0
@@ -69,14 +53,37 @@ offset_bottom = 352.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="beli_barang"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="beli_barang/VBoxContainer"]
+[node name="tombol" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="jual" type="Button" parent="tombol"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 197.0
+offset_right = 491.0
+offset_bottom = 247.0
+text = "jual"
+
+[node name="beli" type="Button" parent="tombol"]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 97.0
+offset_right = 488.0
+offset_bottom = 145.0
+text = "beli"
+
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 2
+offset_left = 308.0
+offset_top = 7.00001
+offset_right = 328.0
+offset_bottom = 8.00001
+scale = Vector2(13.3287, 341.596)
+columns = 6
 
-[node name="Sprite2D" type="Sprite2D" parent="beli_barang/VBoxContainer/HBoxContainer"]
-
-[node name="Label" type="Label" parent="beli_barang/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "asasd"
+[connection signal="pressed" from="tombol/beli" to="." method="_on_beli_pressed"]

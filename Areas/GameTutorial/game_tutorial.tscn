@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dqfhckmcatuaa"]
+[gd_scene load_steps=43 format=3 uid="uid://dqfhckmcatuaa"]
 
 [ext_resource type="Script" path="res://Areas/GameTutorial/game_tutorial.gd" id="1_0i16w"]
 [ext_resource type="TileSet" uid="uid://b5p2xp36w6qr7" path="res://resources/tileset.tres" id="1_71wjt"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://bryudnbm3yjh8" path="res://Item/Tools/ember_item.tscn" id="22_vy250"]
 [ext_resource type="PackedScene" uid="uid://ccgbi3dh1ll2b" path="res://Character/Player/Inventory/Inv_UI.tscn" id="23_vr4fr"]
 [ext_resource type="FontFile" uid="uid://bql7walclmmtp" path="res://scene/UI/menu/font/font_1.ttf" id="24_b42gr"]
+[ext_resource type="PackedScene" uid="uid://biakaku2x6hdt" path="res://Item/Material/biji/biji.tscn" id="24_r7x6i"]
+[ext_resource type="PackedScene" uid="uid://b6pds7h6kqda8" path="res://Item/Material/Batu/batu_collectable.tscn" id="25_n6vy5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1wwlw"]
 frequency = 0.0075
@@ -1371,6 +1373,18 @@ offset_top = 309.0
 offset_right = 420.0
 offset_bottom = 366.0
 scale = Vector2(1.18, 1.18)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("22_vy250")]
+position = Vector2(1133, 204)
+
+[node name="biji" parent="." instance=ExtResource("24_r7x6i")]
+position = Vector2(1333, 310)
+
+[node name="biji2" parent="." instance=ExtResource("24_r7x6i")]
+position = Vector2(1283, 312)
+
+[node name="batu_collectable" parent="." instance=ExtResource("25_n6vy5")]
+position = Vector2(1533, 275)
 
 [connection signal="body_entered" from="Area2/ganti_slide" to="." method="_on_ganti_slide_body_entered"]
 [connection signal="body_entered" from="pindah_ke_hutan" to="." method="_on_pindah_ke_hutan_body_entered"]

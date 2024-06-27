@@ -38,8 +38,7 @@ var warna_kosong = Color(0,0)
 @onready var warnaGF = guardian_forest.modulate
 @onready var warna_default_joystick = joystick.modulate
 @onready var warna_analog_tutorial = analog_tutorial.modulate
-@onready var canvas_layer_2 = $CanvasLayer2
-
+@onready var pengaturan = $pengaturan/Pengaturan
 @onready var tombol = $CanvasLayer/Tombol
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,7 +53,7 @@ func _ready():
 	unnes.modulate = warna_kosong
 	lucky_semua.modulate = warna_kosong
 	player
-	canvas_layer_2.visible = false
+	pengaturan.visible = false
 	tombol.visible = false
 	tombol_setting_mati()
 	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()
@@ -144,10 +143,11 @@ func diam_ditempat():
 	pass
 	
 func _on_tombol_setting_pressed():
-	canvas_layer_2.visible = true
+	pengaturan.visible = true
+	canvas_layer.visible = false
 
-func _on_touch_screen_button_2_pressed():
-	canvas_layer_2.visible = false
+func tampil_setelah_pengaturan():
+	canvas_layer.visible = true
 
 func _on_mulai_pressed():
 	$CanvasLayer/Tombol/GridContainer/Mulai.disabled = true

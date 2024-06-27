@@ -11,6 +11,7 @@ class_name PlayerData
 	"pohon" = [],
 	"pohon_kecil" = []
 }
+@export var uang : int
 
 func _ready():
 	pass

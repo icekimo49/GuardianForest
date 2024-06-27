@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqu3d3hbn70to"]
+[gd_scene load_steps=20 format=3 uid="uid://dqu3d3hbn70to"]
 
 [ext_resource type="Script" path="res://scene/loading_screen/loading_screen.gd" id="1_ak0i6"]
 [ext_resource type="Texture2D" uid="uid://3bqtndhxbppy" path="res://Areas/GameTutorial/Tutorial_Item/gambar.jpg" id="1_keu5t"]
@@ -9,8 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cfjlw7fy8ur4p" path="res://scene/loading_screen/Penyiram Air.png" id="8_a48kg"]
 [ext_resource type="Texture2D" uid="uid://cugq7tuqnjfx4" path="res://scene/loading_screen/AirLoadingScreenEMPTY.png" id="9_ucmtm"]
 [ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://Character/Player/player.tscn" id="10_dq2cd"]
+[ext_resource type="Texture2D" uid="uid://bgxde868iuxfr" path="res://scene/loading_screen/LoadingScreen2.png" id="10_go3qw"]
 [ext_resource type="Texture2D" uid="uid://b83l3tga7ieph" path="res://scene/loading_screen/AirLoadingScreenFILL.png" id="10_hjvi4"]
+[ext_resource type="Texture2D" uid="uid://drj55qjgt8d2b" path="res://scene/loading_screen/LoadingScreen3.png" id="11_8qpl2"]
 [ext_resource type="PackedScene" uid="uid://bofr4d4kvf2w6" path="res://Character/Player/joystik/script/joystick.tscn" id="11_awfuu"]
+[ext_resource type="Texture2D" uid="uid://b55wre5v5aook" path="res://scene/loading_screen/LoadingScreen4.png" id="12_4cvc0"]
 
 [sub_resource type="Animation" id="Animation_3yrqh"]
 length = 0.001
@@ -109,60 +112,62 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ak0i6")
 
-[node name="ColorRect" type="Sprite2D" parent="."]
+[node name="tampilan1" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="Sprite2D" parent="tampilan1"]
 position = Vector2(318, 189)
 scale = Vector2(3.64338, 2.0494)
 texture = ExtResource("1_keu5t")
 
-[node name="guardian_forest" type="Node2D" parent="."]
+[node name="guardian_forest" type="Node2D" parent="tampilan1"]
 position = Vector2(164, 69)
 
-[node name="Text-1710175318481" type="Sprite2D" parent="guardian_forest"]
+[node name="Text-1710175318481" type="Sprite2D" parent="tampilan1/guardian_forest"]
 position = Vector2(-26, -3)
 texture = ExtResource("3_yftcg")
 
-[node name="Node" type="Node2D" parent="."]
+[node name="Node" type="Node2D" parent="tampilan1"]
 position = Vector2(-62, -59)
 
-[node name="alangAlang1" parent="Node" instance=ExtResource("5_17vg4")]
+[node name="alangAlang1" parent="tampilan1/Node" instance=ExtResource("5_17vg4")]
 position = Vector2(251, 297)
 scale = Vector2(2.2, 2.2)
 
-[node name="alangAlang2" parent="Node" instance=ExtResource("5_17vg4")]
+[node name="alangAlang2" parent="tampilan1/Node" instance=ExtResource("5_17vg4")]
 position = Vector2(183, 312)
 rotation = -0.201317
 scale = Vector2(2.2, 2.2)
 
-[node name="alangAlang3" parent="Node" instance=ExtResource("5_17vg4")]
+[node name="alangAlang3" parent="tampilan1/Node" instance=ExtResource("5_17vg4")]
 position = Vector2(248, 331)
 rotation = 0.0831349
 scale = Vector2(2.2, 2.2)
 
-[node name="Text-1716860562400" type="Sprite2D" parent="."]
+[node name="Text-1716860562400" type="Sprite2D" parent="tampilan1"]
 texture_filter = 2
 position = Vector2(155, 312)
 scale = Vector2(0.27673, 0.27673)
 texture = ExtResource("6_0ri8t")
 
-[node name="AlangTxt" type="Sprite2D" parent="."]
+[node name="AlangTxt" type="Sprite2D" parent="tampilan1"]
 texture_filter = 2
 position = Vector2(165, 271)
 scale = Vector2(0.841667, 0.841667)
 texture = ExtResource("4_87htg")
 
-[node name="PenyiramAir" type="Sprite2D" parent="."]
+[node name="PenyiramAir" type="Sprite2D" parent="tampilan1"]
 texture_filter = 1
 position = Vector2(576, 259)
 rotation = -0.659712
 texture = ExtResource("8_a48kg")
 
-[node name="PenyiramLoading" type="AnimationPlayer" parent="PenyiramAir"]
+[node name="PenyiramLoading" type="AnimationPlayer" parent="tampilan1/PenyiramAir"]
 libraries = {
 "": SubResource("AnimationLibrary_67mkm")
 }
 
-[node name="LoadingBar" type="TextureProgressBar" parent="."]
-layout_mode = 0
+[node name="LoadingBar" type="TextureProgressBar" parent="tampilan1"]
 offset_left = 448.0
 offset_top = 269.0
 offset_right = 552.0
@@ -170,6 +175,23 @@ offset_bottom = 318.0
 fill_mode = 1
 texture_under = ExtResource("9_ucmtm")
 texture_progress = ExtResource("10_hjvi4")
+
+[node name="tampilan2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 180)
+scale = Vector2(0.333333, 0.333333)
+texture = ExtResource("10_go3qw")
+
+[node name="tampilan3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320.016, 180.008)
+scale = Vector2(0.333317, 0.333319)
+texture = ExtResource("11_8qpl2")
+
+[node name="tampilan4" type="Sprite2D" parent="."]
+position = Vector2(320.008, 180.5)
+scale = Vector2(0.333325, 0.334259)
+texture = ExtResource("12_4cvc0")
 
 [node name="warnaKosong" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -184,6 +206,7 @@ rotation = 3.14159
 scale = Vector2(12.1801, -10.5167)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(325, 75)
@@ -194,8 +217,8 @@ texture = SubResource("GradientTexture2D_1u5qx")
 visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="joystick" parent="UI" instance=ExtResource("11_awfuu")]
+visible = false
 position = Vector2(63, 283)
 scale = Vector2(1, 1)

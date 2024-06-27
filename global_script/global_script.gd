@@ -33,6 +33,7 @@ var tutorial_hutan = false
 var drag_loc
 var hp
 var slot_in_use
+var uang
 
 #item
 var isi_air_gayung : int

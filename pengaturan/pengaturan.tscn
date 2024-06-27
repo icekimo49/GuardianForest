@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8o75o0ig0u63"]
+[gd_scene load_steps=6 format=3 uid="uid://c8o75o0ig0u63"]
 
 [ext_resource type="Script" path="res://pengaturan/pengaturan.gd" id="1_q2ekh"]
 [ext_resource type="Texture2D" uid="uid://dlapxgbjce2wo" path="res://asset/control/putih.png" id="1_xu0d7"]
 [ext_resource type="PackedScene" uid="uid://bbky4hr7gq5ij" path="res://pengaturan/kredit/kredit.tscn" id="2_m4obc"]
 [ext_resource type="PackedScene" uid="uid://b27s2qpoioq7o" path="res://pengaturan/volume/volume_slider.tscn" id="3_ufgbo"]
+[ext_resource type="PackedScene" uid="uid://4tm2rs77s10v" path="res://scene/setting/touch_screen_button.tscn" id="5_vql14"]
 
 [node name="Pengaturan" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -76,5 +78,9 @@ text = "Keluar
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(320, 177)
 
+[node name="TouchScreenButton" parent="." instance=ExtResource("5_vql14")]
+position = Vector2(593, 0)
+
 [connection signal="pressed" from="Node2D/kredit" to="." method="_on_kredit_pressed"]
 [connection signal="pressed" from="Node2D/Keluar" to="." method="_on_keluar_pressed"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

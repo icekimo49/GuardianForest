@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtqsxvlwgcuxc"]
+
+[ext_resource type="Texture2D" uid="uid://cx60oappfqfcj" path="res://asset/control/panel_brown.png" id="1_bxixm"]
+[ext_resource type="Texture2D" uid="uid://dmam0a1ma33v0" path="res://asset/control/panelInset_beige.png" id="2_gntl2"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="3_i5lme"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oicoi"]
+font = ExtResource("3_i5lme")
+font_size = 12
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_o7efe"]
+
+[node name="slot_beli" type="Panel"]
+custom_minimum_size = Vector2(20, 0)
+
+[node name="slot" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.81, 0.804171)
+texture = ExtResource("1_bxixm")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(29, 22)
+scale = Vector2(0.428721, 0.402883)
+texture = ExtResource("2_gntl2")
+
+[node name="item_picture" type="Sprite2D" parent="."]
+position = Vector2(29, 22)
+
+[node name="item_name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 4.0
+offset_right = 112.0
+offset_bottom = 27.0
+scale = Vector2(1.91885, 1.2534)
+label_settings = SubResource("LabelSettings_oicoi")
+vertical_alignment = 1
+
+[node name="item_price" type="Label" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 44.0
+offset_right = 55.0
+offset_bottom = 67.0
+label_settings = SubResource("LabelSettings_o7efe")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 44.0
+offset_right = 160.0
+offset_bottom = 75.0
+text = "beli"
