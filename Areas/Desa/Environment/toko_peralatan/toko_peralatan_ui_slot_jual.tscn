@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dlapxgbjce2wo" path="res://asset/control/putih.png" id="1_bt3xy"]
 [ext_resource type="Script" path="res://Areas/Desa/Environment/toko_peralatan/toko_peralatan_ui_slot_jual.gd" id="1_mfcb7"]
 [ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://Character/Player/player.tscn" id="2_plfhb"]
-[ext_resource type="Texture2D" uid="uid://dxokc2kk2dpoi" path="res://Character/Paman/paman - Copy.png" id="3_0a6p6"]
+[ext_resource type="Texture2D" uid="uid://cf5f0ehgffuw1" path="res://Character/Bengkel/Bengkel_senyum.png" id="4_kxr7o"]
 [ext_resource type="PackedScene" uid="uid://dtqsxvlwgcuxc" path="res://Areas/Desa/Environment/toko_peralatan/slot_beli.tscn" id="4_rgega"]
 
 [node name="toko_peralatan_ui_slot_jual" type="Panel"]
@@ -22,9 +22,9 @@ scale = Vector2(0.529295, 0.52932)
 texture = ExtResource("1_bt3xy")
 
 [node name="Paman-Copy" type="Sprite2D" parent="Node2D"]
-position = Vector2(132, 172)
-scale = Vector2(10.1875, 10.1875)
-texture = ExtResource("3_0a6p6")
+position = Vector2(147, 134)
+scale = Vector2(0.480242, 0.480242)
+texture = ExtResource("4_kxr7o")
 
 [node name="Text Box" type="Sprite2D" parent="Node2D"]
 modulate = Color(1, 0.494118, 0.180392, 1)
@@ -117,6 +117,7 @@ offset_bottom = 355.0
 layout_mode = 2
 
 [node name="kembali" type="Button" parent="jual_barang"]
+layout_mode = 0
 offset_left = 399.0
 offset_top = 298.0
 offset_right = 470.0

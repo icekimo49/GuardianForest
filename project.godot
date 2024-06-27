@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="GuardianForest"
-run/main_scene="res://Areas/GameTutorial/Menu_ke_tutorial.tscn"
+run/main_scene="res://SPLASH_SCREEN/SPLASH_SCREEN.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0.090328, 0.365669, 0.514436, 1)
+boot_splash/image="res://src/demo_collection/slide/icon_color.png"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -23,6 +25,8 @@ DamageToPlayer="*res://global_script/damage_to_player.gd"
 GameEvent="*res://Character/Player/game_event.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Forward="*res://global_script/forward.tscn"
+sp="*res://addons/awesome_splash/utils_splash.gd"
+gd="*res://addons/godot-action/utils_gd_action.tscn"
 
 [compression]
 
@@ -96,7 +100,7 @@ project/assembly_name="GuardianForest"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/awesome_splash/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/godot-action/plugin.cfg")
 
 [input]
 

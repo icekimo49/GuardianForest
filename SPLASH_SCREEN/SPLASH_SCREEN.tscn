@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://e4vnaxqat2q4"]
+
+[ext_resource type="Script" path="res://addons/awesome_splash/core/SplashContainer.gd" id="1_5ip7q"]
+[ext_resource type="PackedScene" uid="uid://boyjp71m3uskg" path="res://Areas/GameTutorial/Menu_ke_tutorial.tscn" id="2_5krwc"]
+[ext_resource type="PackedScene" uid="uid://c1a6h17cr3guq" path="res://src/demo_collection/fire/splash_screen.tscn" id="2_ax0vb"]
+[ext_resource type="PackedScene" uid="uid://buyt4mwwjbexq" path="res://SPLASH_SCREEN/gemastik_splash.tscn" id="5_auy60"]
+
+[node name="SplashContainer" type="Node2D"]
+script = ExtResource("1_5ip7q")
+move_to_scene = ExtResource("2_5krwc")
+
+[node name="SplashFire" parent="." instance=ExtResource("2_ax0vb")]
+duration = 4.0
+background_color = Color(0.0823529, 0.117647, 0.180392, 1)
+is_skip_appear_transition = true
+
+[node name="GemastikSplash" parent="." instance=ExtResource("5_auy60")]
