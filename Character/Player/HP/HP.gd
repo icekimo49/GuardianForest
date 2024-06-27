@@ -8,6 +8,8 @@ var player
 
 func _process(delta):
 	player = $"../../Ysort/Player"
+	if player == null:
+		player = $"../".get_node("Player")
 	if player:
 		update()
 
