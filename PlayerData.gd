@@ -3,6 +3,7 @@ class_name PlayerData
 
 @export var hp = 200
 @export var exp : int
+@export var uang = 0
 @export var inv : Inv
 @export var wave = 1
 @export var time = 0.0
@@ -11,7 +12,6 @@ class_name PlayerData
 	"pohon" = [],
 	"pohon_kecil" = []
 }
-@export var uang : int
 
 func _ready():
 	pass

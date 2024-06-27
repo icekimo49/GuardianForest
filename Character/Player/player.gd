@@ -72,6 +72,7 @@ func new_game():
 	data_awal.sudah_tutorial = false
 	data_awal.wave = 1
 	data_awal.uang = 0
+	data_awal.pohon = playerData.pohon
 	ResourceSaver.save(data_awal, save_file_path + save_file_name)
 	print(data_awal.sudah_tutorial)
 
@@ -296,6 +297,7 @@ func _on_deal_attack_timer_timeout():
 		child.monitorable = false
 
 func collect(item):
+	print(item)
 	playerData.inv.insert(item)
 
 func _on_player_hitbox_area_entered(area):

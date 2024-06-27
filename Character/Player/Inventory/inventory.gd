@@ -50,6 +50,12 @@ func decrease(slot):
 		slots[slot].item = null
 	update.emit()
 
+func clear(slot):
+	slots[slot].item = null
+	slots[slot].amount = 0
+	slots[slot].ukuran = Vector2(0, 0)
+	update.emit()
+
 func swap_item_slot(select1, select2):
 	if select1 != null && select2 != null:
 		temp_inv = slots[select1]
