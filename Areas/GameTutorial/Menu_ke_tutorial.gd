@@ -54,7 +54,6 @@ func _ready():
 	tombol.visible = false
 	tombol_setting_mati()
 	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()
-	state_start = true
 
 func tombol_setting_mati():
 	tombol_setting.modulate = warna_kosong
