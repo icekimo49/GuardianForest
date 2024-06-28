@@ -6,7 +6,8 @@ var slot_jual = preload("res://Areas/Desa/Environment/toko_peralatan/slot_jual.t
 var array_beli_isi = [
 	[preload("res://Item/Tools/granat_pemadam_api/Granat Pemadam Api.png"), "Granat Pemadam Api", "20", Vector2(0.4, 0.4), "granat_pemadam"],
 	[preload("res://Item/Material/biji/biji.png"), "Biji Pohon", "10", Vector2(0.4, 0.4), "biji"],
-	[preload("res://Item/Tools/kentongan/kentongan.png"), "Kentongan", "250", Vector2(0.15, 0.15), "kentongan"]
+	[preload("res://Item/Tools/kentongan/kentongan.png"), "Kentongan", "250", Vector2(0.15, 0.15), "kentongan"],
+	[preload("res://Item/Tools/ember1.png"), "Ember", "150", Vector2(0.25, 0.25), "ember"]
 ]
 
 func _ready():
@@ -68,7 +69,7 @@ func harga(nama):
 	elif nama == "granat_pemadam":
 		harga = 10
 	else:
-		harga = 1000
+		harga = 10
 	return harga
 
 func ukuran(nama):
@@ -79,6 +80,13 @@ func ukuran(nama):
 		ukuran = Vector2(0.4, 0.4)
 	elif nama == "granat_pemadam":
 		ukuran = Vector2(0.4, 0.4)
+	elif nama == "ember":
+		ukuran = Vector2(0.25, 0.25)
+	elif nama == "Batu":
+		ukuran = Vector2(0.02, 0.02)
+	else:
+		ukuran = Vector2(0.5, 0.5)
+	print(nama, ukuran)
 	return ukuran
 	
 func _on_kembali_pressed():

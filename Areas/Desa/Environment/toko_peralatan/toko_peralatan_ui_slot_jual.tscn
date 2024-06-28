@@ -72,6 +72,9 @@ layout_mode = 2
 [node name="slot_beli" parent="beli_barang/VBoxContainer" instance=ExtResource("4_rgega")]
 layout_mode = 2
 
+[node name="slot_beli4" parent="beli_barang/VBoxContainer" instance=ExtResource("4_rgega")]
+layout_mode = 2
+
 [node name="kembali" type="Button" parent="beli_barang"]
 layout_mode = 2
 offset_left = 91.0

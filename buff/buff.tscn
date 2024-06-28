@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3t35jinubfa1"]
+
+[ext_resource type="Script" path="res://buff/buff.gd" id="1_8ib2y"]
+[ext_resource type="Texture2D" uid="uid://cto6dhbllwso6" path="res://buff/Heading (16).png" id="1_f4dry"]
+[ext_resource type="Texture2D" uid="uid://1bq52njp3otm" path="res://buff/Heading (18).png" id="2_swbh8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_df3vb"]
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_rw1xj"]
+font_size = 43
+
+[node name="buff" type="Node2D"]
+script = ExtResource("1_8ib2y")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(181, 175)
+scale = Vector2(0.392, 0.392)
+texture = ExtResource("1_f4dry")
+
+[node name="1" type="Label" parent="1"]
+offset_left = -161.0
+offset_top = 301.0
+offset_right = 168.0
+offset_bottom = 362.0
+label_settings = SubResource("LabelSettings_df3vb")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="button1" type="Button" parent="1"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -181.0
+offset_top = -204.0
+offset_right = 184.0
+offset_bottom = 242.0
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(457, 175)
+scale = Vector2(0.392, 0.392)
+texture = ExtResource("2_swbh8")
+
+[node name="2" type="Label" parent="2"]
+offset_left = -161.0
+offset_top = 301.0
+offset_right = 168.0
+offset_bottom = 364.0
+label_settings = SubResource("LabelSettings_rw1xj")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="button2" type="Button" parent="2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -181.0
+offset_top = -207.0
+offset_right = 181.0
+offset_bottom = 240.0
+
+[connection signal="pressed" from="1/button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="2/button2" to="." method="_on_button_2_pressed"]

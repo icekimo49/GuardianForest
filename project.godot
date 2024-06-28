@@ -25,6 +25,8 @@ DamageToPlayer="*res://global_script/damage_to_player.gd"
 GameEvent="*res://Character/Player/game_event.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Forward="*res://global_script/forward.tscn"
+sp="*res://addons/awesome_splash/utils_splash.gd"
+gd="*res://addons/godot-action/utils_gd_action.tscn"
 
 [compression]
 

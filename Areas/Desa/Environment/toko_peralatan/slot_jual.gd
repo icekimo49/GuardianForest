@@ -6,6 +6,7 @@ var amount
 
 func _on_jual_pressed():
 	GlobalScript.inv.decrease(inv_slot)
+	GlobalScript.uang += price
 	if GlobalScript.inv.slots[inv_slot].amount == 0:
 		queue_free()
 	else:

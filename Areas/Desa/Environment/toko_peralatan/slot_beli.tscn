@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtqsxvlwgcuxc"]
+[gd_scene load_steps=11 format=3 uid="uid://dtqsxvlwgcuxc"]
 
 [ext_resource type="Texture2D" uid="uid://cx60oappfqfcj" path="res://asset/control/panel_brown.png" id="1_bxixm"]
 [ext_resource type="Script" path="res://Areas/Desa/Environment/toko_peralatan/slot_beli.gd" id="1_obbq5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://dj6yuumdtvmv0" path="res://Item/Material/biji/biji.tres" id="3_f05mi"]
 [ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="3_i5lme"]
 [ext_resource type="Resource" uid="uid://df2grqymlof6r" path="res://Item/Tools/kentongan/kentongan.tres" id="4_dqh3b"]
+[ext_resource type="Resource" uid="uid://jyfnlm0s5f74" path="res://Item/Tools/Ember.tres" id="5_2facf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oicoi"]
 font = ExtResource("3_i5lme")
@@ -21,6 +22,7 @@ script = ExtResource("1_obbq5")
 granat = ExtResource("2_ssr0y")
 biji = ExtResource("3_f05mi")
 kentongan = ExtResource("4_dqh3b")
+ember = ExtResource("5_2facf")
 
 [node name="slot" type="Sprite2D" parent="."]
 texture_filter = 1

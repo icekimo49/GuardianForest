@@ -7,6 +7,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 641.0
 offset_bottom = 361.0
 color = Color(0.0823529, 0.117647, 0.180392, 1)
