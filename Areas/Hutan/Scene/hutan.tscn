@@ -3180,9 +3180,9 @@ offset_top = 55.0
 offset_right = 384.0
 offset_bottom = 243.0
 
-[node name="hp" type="CanvasLayer" parent="."]
+[node name="HP" type="CanvasLayer" parent="."]
 
-[node name="HP" parent="hp" instance=ExtResource("30_txqjh")]
+[node name="HP" parent="HP" instance=ExtResource("30_txqjh")]
 
 [node name="tampilan_respawn" type="CanvasLayer" parent="."]
 

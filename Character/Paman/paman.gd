@@ -63,6 +63,7 @@ func gerakan_tutorial(tujuan):
 	move_and_slide()
 
 func matiinvisible():
+	get_parent().get_parent().get_node("HP").get_node("HP").visible = false
 	get_parent().get_parent().get_node("UI").get_node("joystick").visible = false
 	get_parent().get_parent().get_node("UI").get_node("joystick").no_input = true
 	get_parent().get_parent().get_node("inventory").get_node("MiniInventory").visible = false
