@@ -37,10 +37,15 @@ var warna_kosong = Color(0,0)
 @onready var warnaGF = guardian_forest.modulate
 @onready var warna_default_joystick = Color(1, 1, 1, 1)
 @onready var warna_analog_tutorial = analog_tutorial.modulate
-@onready var pengaturan = $Node2D/Pengaturan
+@onready var pengaturan = $pengaturan/Pengaturan
 @onready var tombol = $CanvasLayer/Tombol
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#sementara
+	$CanvasLayer/Tombol.visible = false
+	$CanvasLayer/tombol_setting.visible = false
+	$CanvasLayer/RichTextLabel.hide()
+	#
 	cahaya_GF.energy = 0
 	guardian_forest.modulate = warna_kosong
 	gemastik.modulate = warna_kosong
@@ -54,6 +59,9 @@ func _ready():
 	tombol.visible = false
 	tombol_setting_mati()
 	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()
+	#sementara
+	state_start = true
+	#
 
 func tombol_setting_mati():
 	tombol_setting.modulate = warna_kosong
@@ -80,11 +88,11 @@ func _on_tombol_start_pressed():
 	
 func animasi():
 	if !get_tree():
+		print("a")
 		return
 	var delta = get_physics_process_delta_time()
 	main_text.modulate = lerp(main_text.modulate,Color(0,0),10* delta)
 	await get_tree().create_timer(1.0).timeout
-	
 	lucky_semua.modulate = lerp(lucky_semua.modulate,warnaGF,2* delta)
 	await get_tree().create_timer(2.0).timeout
 	lucky_semua.modulate = lerp(lucky_semua.modulate,Color(0,-2),2* delta)
@@ -118,7 +126,7 @@ func animasi():
 	#await get_tree().create_timer(.5).timeout
 	#analog_tutorial.modulate = lerp(analog_tutorial.modulate, warna_default_joystick, 3 * delta)
 	state_start = true
-	tombol.visible = true
+	#####tombol.visible = true
 	#joystick.enable_analog = true
 	#await get_tree().create_timer(2).timeout
 	#$CanvasLayer/analog_tutorial/tutorial_ngedip.play("ngedip")
@@ -140,12 +148,10 @@ func diam_ditempat():
 	pass
 	
 func _on_tombol_setting_pressed():
-	$Node2D/Pengaturan/Camera2D.make_current()
 	pengaturan.visible = true
 	canvas_layer.hide()
 
 func tampil_setelah_pengaturan():
-	$Camera2D.make_current()
 	canvas_layer.visible = true
 
 func _on_mulai_pressed():

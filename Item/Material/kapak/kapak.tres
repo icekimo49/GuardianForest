@@ -9,4 +9,4 @@ name = "kapak"
 texture = ExtResource("2_dy17n")
 stack = false
 type = false
-ukuran_item = Vector2(0.1, 0.1)
+ukuran_item = Vector2(-0.9, 0.01)
