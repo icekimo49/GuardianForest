@@ -8,21 +8,20 @@
 "sound_moods": {},
 "style": "visual_novel_style"
 },
-"default_portrait": "normal",
+"default_portrait": "New portrait",
 "description": "",
 "display_name": "paman",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"normal": {
+"New portrait": {
 "export_overrides": {
-"image": "\"res://Character/Paman/paman - Copy.png\""
+"image": "\"res://Dialogic/Player/Paman Inun (Dzul).png\""
 },
-"ignore_char_scale": true,
 "mirror": false,
-"offset": Vector2(0, -130),
-"scale": 10.0,
+"offset": Vector2(0, -150),
+"scale": 0.5,
 "scene": ""
 }
 },

@@ -1,7 +1,7 @@
 extends Panel
 
 var boleh_beli = true
-
+@onready var player = $"../../".get_node("Ysort").get_node("Player")
 var arr_makanan =[
 	[preload("res://Item/makanan/Apel.png"), "Apel", "10", 20, Vector2(1, 1)],
 	[preload("res://Item/makanan/Roti.png"), "Roti", "20", 40, Vector2(0.2, 0.2)]
@@ -33,3 +33,7 @@ func sudah_beli():
 	$mbok_yem.texture = face_arr[1]
 	$dialog.text = " "
 	boleh_beli = true
+
+
+func _on_button_pressed():
+	self.hide()

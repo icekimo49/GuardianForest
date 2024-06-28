@@ -14,7 +14,6 @@ var next_target
 
 
 
-@onready var joystick = $UI/joystick
 @onready var canvas_layer = $CanvasLayer
 @onready var main_text = $CanvasLayer/RichTextLabel
 @onready var guardian_forest = $guardian_forest
@@ -36,15 +35,13 @@ var awan_sudah_naik = false
 #Warna
 var warna_kosong = Color(0,0)
 @onready var warnaGF = guardian_forest.modulate
-@onready var warna_default_joystick = joystick.modulate
+@onready var warna_default_joystick = Color(1, 1, 1, 1)
 @onready var warna_analog_tutorial = analog_tutorial.modulate
 @onready var pengaturan = $pengaturan/Pengaturan
 @onready var tombol = $CanvasLayer/Tombol
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cahaya_GF.energy = 0
-	joystick.enable_analog = false
-	joystick.modulate = Color(0,0)
 	guardian_forest.modulate = warna_kosong
 	gemastik.modulate = warna_kosong
 	analog_tutorial.modulate = warna_kosong

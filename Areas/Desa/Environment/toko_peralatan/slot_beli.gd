@@ -17,8 +17,8 @@ func _on_button_pressed():
 			item = granat
 		elif item_name == "ember":
 			item = ember
-		$"../../../".get_node("Player").collect(item)
+		$"../../../../../".get_node("Ysort").get_node("Player").collect(item)
 		GlobalScript.uang -= price
-		print(GlobalScript.uang)
+		$"../../../".get_node("Node2D").get_node("Label").text = "terimakasih sudah membeli"
 	else:
-		print("uang tidak cukup")
+		$"../../../".get_node("Node2D").get_node("Label").text = "uangmu tidak cukup!"

@@ -9,7 +9,7 @@ var player
 func _process(delta):
 	player = $"../../Ysort/Player"
 	if player == null:
-		player = $"../".get_node("Player")
+		player = get_parent().player
 	if player:
 		update()
 

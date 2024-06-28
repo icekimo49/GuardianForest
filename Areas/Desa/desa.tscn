@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bttfnxprkny6n"]
+[gd_scene load_steps=53 format=3 uid="uid://bttfnxprkny6n"]
 
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_ba21o"]
 [ext_resource type="Script" path="res://Areas/Desa/desa.gd" id="1_rrtmw"]
@@ -25,8 +25,10 @@
 [ext_resource type="PackedScene" uid="uid://ccgbi3dh1ll2b" path="res://Character/Player/Inventory/Inv_UI.tscn" id="24_3263k"]
 [ext_resource type="PackedScene" uid="uid://dt8qonfwtuxfn" path="res://Areas/Desa/Environment/Tempat_makan/tempat_makan.tscn" id="25_acmst"]
 [ext_resource type="PackedScene" uid="uid://c05txpvyplb1k" path="res://Character/Paman/paman.tscn" id="26_f0ong"]
-[ext_resource type="PackedScene" uid="uid://b22dn0ahgadho" path="res://Areas/Desa/Environment/toko_peralatan/toko_peralatan.tscn" id="27_jbwf1"]
 [ext_resource type="PackedScene" uid="uid://cidgrcqmek6ik" path="res://Character/Player/HP/hp.tscn" id="28_84ves"]
+[ext_resource type="PackedScene" uid="uid://bh4ww76mk8vo5" path="res://Character/Mbok_yem/npc_1.tscn" id="28_kj3e2"]
+[ext_resource type="PackedScene" uid="uid://x743q76qrpin" path="res://Areas/Desa/Environment/Tempat_makan/rumah_makan_ui.tscn" id="29_1kw3q"]
+[ext_resource type="PackedScene" uid="uid://dw1nlfijg3yyf" path="res://Areas/Desa/Environment/toko_peralatan/toko_peralatan_ui_slot_jual.tscn" id="29_5j6na"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_qi053"]
 tile_data = PackedInt32Array(0, 786433, 11, 65536, 393217, 11, 131072, 786433, 12, 196608, 786433, 12, 262144, 786433, 12, 327680, 393217, 11, 393216, 393217, 11)
@@ -1552,6 +1554,9 @@ _data = {
 "time_skip": SubResource("Animation_na61c")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ynk1k"]
+radius = 13.0384
+
 [node name="Desa" type="Node2D"]
 script = ExtResource("1_rrtmw")
 
@@ -2038,13 +2043,13 @@ one_shot = true
 [node name="paman" parent="npc" instance=ExtResource("26_f0ong")]
 position = Vector2(836, 212)
 
-[node name="toko_peralatan" parent="." instance=ExtResource("27_jbwf1")]
-position = Vector2(344, 428)
-
-[node name="kamera_toko_peralatan" type="Camera2D" parent="toko_peralatan"]
+[node name="kamera_toko_peralatan" type="Camera2D" parent="."]
+position = Vector2(866, 74)
+scale = Vector2(0.0525463, 0.0525463)
 
 [node name="timeSkip" type="Area2D" parent="."]
 position = Vector2(-292, 545)
+scale = Vector2(1.32496, 1.02215)
 
 [node name="zonaTimeSkip" type="CollisionShape2D" parent="timeSkip"]
 scale = Vector2(2.04, 2.16078)
@@ -2059,9 +2064,27 @@ libraries = {
 
 [node name="HP" parent="HP" instance=ExtResource("28_84ves")]
 
+[node name="npc1" parent="." instance=ExtResource("28_kj3e2")]
+position = Vector2(692, 130)
+
+[node name="toko_peralatan" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toko_peralatan"]
+position = Vector2(869, 120)
+shape = SubResource("CircleShape2D_ynk1k")
+
+[node name="toko_peralatan2" type="CanvasLayer" parent="."]
+
+[node name="toko_peralatan_ui_slot_jual" parent="toko_peralatan2" instance=ExtResource("29_5j6na")]
+
+[node name="toko_makan" type="CanvasLayer" parent="."]
+
+[node name="rumah_makan" parent="toko_makan" instance=ExtResource("29_1kw3q")]
+
 [connection signal="body_entered" from="pindah_hutan" to="." method="_on_pindah_hutan_body_entered"]
 [connection signal="timeout" from="timer_setelah_api" to="." method="_on_timer_setelah_api_timeout"]
 [connection signal="timeout" from="timer/timer_dialog_penjual_makan" to="." method="_on_timer_dialog_penjual_makan_timeout"]
 [connection signal="timeout" from="timer/timer_dialog_toko_peralatan" to="." method="_on_timer_dialog_toko_peralatan_timeout"]
 [connection signal="body_entered" from="timeSkip" to="." method="_on_time_skip_body_entered"]
 [connection signal="body_exited" from="timeSkip" to="." method="_on_time_skip_body_exited"]
+[connection signal="body_entered" from="toko_peralatan" to="." method="_on_toko_peralatan_body_entered"]

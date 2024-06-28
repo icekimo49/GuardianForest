@@ -30,6 +30,8 @@ var lalala = false
 func _ready():
 	$inv.layer = 1
 	$inventory.layer = 1
+	$toko_peralatan2/toko_peralatan_ui_slot_jual.hide()
+	$toko_makan/rumah_makan.hide()
 	if GlobalScript.sudah_tutorial:
 		alur_cerita_tutorial_selesai = true
 		GlobalScript.tutorial_desa_1 = true
@@ -108,7 +110,7 @@ func _on_timer_dialog_penjual_makan_timeout():
 	paman.dialog_paman_inun_desa_4()
 
 func kamera_ke_toko_peralatan():
-	$toko_peralatan/kamera_toko_peralatan.make_current()
+	$kamera_toko_peralatan.make_current()
 	$timer/timer_dialog_toko_peralatan.start()
 
 func _on_timer_dialog_toko_peralatan_timeout():
@@ -127,7 +129,13 @@ func tidur():
 		waktu_setelah_tidur += 6.283
 	GlobalScript.time = waktu_setelah_tidur
 
-
 func _on_time_skip_body_exited(body):
 	if body.is_in_group("player") :
 		Engine.time_scale = 1
+
+func _on_toko_peralatan_body_entered(body):
+	if body.name == "Player":
+		$toko_peralatan2/toko_peralatan_ui_slot_jual.show()
+
+func ui_tempat_makan():
+	$toko_makan/rumah_makan.show()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dmam0a1ma33v0" path="res://asset/control/panelInset_beige.png" id="1_ib1rl"]
 [ext_resource type="Texture2D" uid="uid://cx60oappfqfcj" path="res://asset/control/panel_brown.png" id="2_tittu"]
-[ext_resource type="PackedScene" uid="uid://bgaqm1qsbr30w" path="res://Areas/Desa/Environment/toko_peralatan/toko_peralatan_ui_slot_jual.tscn" id="3_3sgq5"]
+[ext_resource type="PackedScene" uid="uid://dw1nlfijg3yyf" path="res://Areas/Desa/Environment/toko_peralatan/toko_peralatan_ui_slot_jual.tscn" id="3_3sgq5"]
 
 [node name="toko_peralatan_UI" type="Control"]
 layout_mode = 3

@@ -2,10 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://fp0pb07sbeqq" path="res://Character/Paman/paman.png" id="1_d7f84"]
 [ext_resource type="Script" path="res://Character/Paman/paman.gd" id="1_uvq7q"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vqsvv"]
-atlas = ExtResource("1_d7f84")
-region = Rect2(0, 0, 16, 24)
+[ext_resource type="Texture2D" uid="uid://dxokc2kk2dpoi" path="res://Character/Paman/paman - Copy.png" id="2_k742y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ahko"]
 atlas = ExtResource("1_d7f84")
@@ -43,7 +40,7 @@ region = Rect2(48, 48, 16, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vqsvv")
+"texture": ExtResource("2_k742y")
 }],
 "loop": true,
 "name": &"idle",
@@ -88,12 +85,14 @@ animations = [{
 size = Vector2(11, 22)
 
 [node name="paman" type="CharacterBody2D"]
+scale = Vector2(1.31327, 1.31327)
 script = ExtResource("1_uvq7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.38419e-07, 1)
+scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_3nkd3")
 animation = &"idle"
-autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1)

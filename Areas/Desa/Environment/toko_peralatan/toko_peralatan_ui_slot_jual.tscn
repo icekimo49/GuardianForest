@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgaqm1qsbr30w"]
+[gd_scene load_steps=5 format=3 uid="uid://dw1nlfijg3yyf"]
 
 [ext_resource type="Texture2D" uid="uid://dlapxgbjce2wo" path="res://asset/control/putih.png" id="1_bt3xy"]
 [ext_resource type="Script" path="res://Areas/Desa/Environment/toko_peralatan/toko_peralatan_ui_slot_jual.gd" id="1_mfcb7"]
-[ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://Character/Player/player.tscn" id="2_plfhb"]
 [ext_resource type="Texture2D" uid="uid://cf5f0ehgffuw1" path="res://Character/Bengkel/Bengkel_senyum.png" id="4_kxr7o"]
 [ext_resource type="PackedScene" uid="uid://dtqsxvlwgcuxc" path="res://Areas/Desa/Environment/toko_peralatan/slot_beli.tscn" id="4_rgega"]
 
-[node name="toko_peralatan_ui_slot_jual" type="Panel"]
+[node name="toko_peralatan_ui_slot_jual" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_mfcb7")
-
-[node name="Player" parent="." instance=ExtResource("2_plfhb")]
-visible = false
-position = Vector2(-140, 32)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -42,6 +43,7 @@ offset_right = 265.0
 offset_bottom = 316.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "halo ada yang bisa saya bantu?"
 
 [node name="Putih" type="Sprite2D" parent="Node2D"]
 modulate = Color(1, 0.494118, 0.180392, 1)
@@ -49,7 +51,15 @@ position = Vector2(440, 181)
 scale = Vector2(0.238213, 0.529412)
 texture = ExtResource("1_bt3xy")
 
+[node name="Label2" type="Label" parent="Node2D"]
+offset_left = 17.0
+offset_top = 285.0
+offset_right = 57.0
+offset_bottom = 308.0
+scale = Vector2(1.49012, 1.27904)
+
 [node name="beli_barang" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_left = 308.0
 offset_top = 4.0
@@ -84,6 +94,7 @@ offset_bottom = 325.0
 text = "Kembali"
 
 [node name="tombol" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -105,6 +116,7 @@ offset_bottom = 145.0
 text = "beli"
 
 [node name="jual_barang" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -127,7 +139,14 @@ offset_right = 470.0
 offset_bottom = 329.0
 text = "Kembali"
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "keluar"
+
 [connection signal="pressed" from="beli_barang/kembali" to="." method="_on_kembali_pressed"]
 [connection signal="pressed" from="tombol/jual" to="." method="_on_jual_pressed"]
 [connection signal="pressed" from="tombol/beli" to="." method="_on_beli_pressed"]
 [connection signal="pressed" from="jual_barang/kembali" to="." method="_on_kembali_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -122,7 +122,7 @@ func _on_durasi_wave_timeout():
 	player.change_wave()
 	print(GlobalScript.tingkat_wave)
 	print("game selesai")
-	$buff/buff.show()
+	$buff/buff.hide()
 	GlobalScript.uang += 500
 	player.change_exp(100)
 

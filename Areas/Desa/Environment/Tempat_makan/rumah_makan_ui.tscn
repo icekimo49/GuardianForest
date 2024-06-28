@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://x743q76qrpin"]
+[gd_scene load_steps=5 format=3 uid="uid://x743q76qrpin"]
 
 [ext_resource type="Script" path="res://Areas/Desa/Environment/Tempat_makan/rumah_makan_ui.gd" id="1_165gr"]
 [ext_resource type="Texture2D" uid="uid://dlapxgbjce2wo" path="res://asset/control/putih.png" id="2_d0h1d"]
 [ext_resource type="Texture2D" uid="uid://b76cokojg67ao" path="res://Character/Mbok_yem/PenjagaTokoMakanan_Senyum.png" id="3_unnw6"]
-[ext_resource type="PackedScene" uid="uid://bjxhj32neycau" path="res://Character/Player/player.tscn" id="4_c0wdq"]
 [ext_resource type="PackedScene" uid="uid://cidgrcqmek6ik" path="res://Character/Player/HP/hp.tscn" id="5_pjwvb"]
 
 [node name="rumah_makan" type="Panel"]
@@ -61,12 +60,19 @@ offset_bottom = 323.0
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
 layout_mode = 2
 
-[node name="Player" parent="." instance=ExtResource("4_c0wdq")]
-position = Vector2(-278, 89)
-
 [node name="HP" parent="." instance=ExtResource("5_pjwvb")]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 9.0
 offset_right = 204.0
 offset_bottom = 65.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 17.0
+offset_right = 298.0
+offset_bottom = 48.0
+text = "keluar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

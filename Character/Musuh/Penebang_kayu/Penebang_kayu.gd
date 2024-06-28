@@ -6,7 +6,7 @@ var kabur = false
 var player = null
 var kabur_gak_nich = false
 @onready var navAgent = $Navigasi/NavigationAgent2D
-var items = ["res://Item/Material/biji/biji.tscn", "res://Item/Material/Batu/batu_collectable.tscn", "res://Item/Material/Golden_Apple/golden_apple_collectable.tscn"]
+var items = ["res://Item/Material/biji/biji.tscn", "res://Item/Material/Batu/batu_collectable.tscn", "res://Item/Material/korek_api/korek_api.tscn", "res://Item/Material/kapak/kapak.tscn"]
 var i = 0
 
 func _ready():

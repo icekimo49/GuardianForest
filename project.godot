@@ -37,6 +37,7 @@ formats/zstd/window_log_size=30
 directories/dch_directory={
 "Player": "res://Dialogic/Player/Player.dch",
 "jam": "res://Dialogic/Player/jam.dch",
+"mbok_yem": "res://Dialogic/Player/mbok_yem.dch",
 "paman": "res://Dialogic/Player/paman.dch",
 "penjual_makanan": "res://Dialogic/Player/penjual_makanan.dch",
 "player_visualnovel": "res://Dialogic/Player/player_visualnovel.dch"
@@ -55,6 +56,9 @@ directories/dtl_directory={
 "hutan2": "res://Dialogic/timeline/Lokasi/hutan/hutan2.dtl",
 "hutan3": "res://Dialogic/timeline/Lokasi/hutan/hutan3.dtl",
 "mainmenu_1": "res://Dialogic/timeline/Lokasi/tebing_mainmenu/mainmenu_1.dtl",
+"mbokyem_1": "res://Dialogic/timeline/Lokasi/Desa/mbokyem_1.dtl",
+"mbokyem_2": "res://Dialogic/timeline/Lokasi/Desa/mbokyem_2.dtl",
+"mbokyem_3": "res://Dialogic/timeline/Lokasi/Desa/mbokyem_3.dtl",
 "penjual_makanan/1": "res://Dialogic/timeline/Lokasi/Desa/penjual_makanan/penjual_makanan_1.dtl"
 }
 glossary/default_case_sensitive=true

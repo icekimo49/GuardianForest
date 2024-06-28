@@ -1,5 +1,6 @@
+paman (New portrait): <Empty Text Event>
 join paman 1
 paman (normal): Sepertinya ada yang sedang tidak beres di hutan. Ayo Inun, ikut Paman!
-join player_visualnovel 3
-player_visualnovel (New portrait): Baik Paman
+join player_visualnovel (senyum) 3
+player_visualnovel (ngomong): Baik Paman
 [signal arg="dialog_desa_2_selesai"]

@@ -7,6 +7,7 @@ func _on_kredit_pressed():
 	$Node2D.visible = false
 	$kredit2.visible = true
 	$TouchScreenButton.visible = false
+	$kredit2.get_node("CanvasLayer").get_node("Button").visible = true
 	$kredit2.mulai()
 
 func _on_keluar_pressed():

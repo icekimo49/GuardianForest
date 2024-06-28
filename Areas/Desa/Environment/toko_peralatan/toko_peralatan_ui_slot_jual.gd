@@ -1,4 +1,5 @@
-extends Panel
+extends Control
+
 @onready var beli_barang = $beli_barang
 @onready var tombol = $tombol
 @onready var array_beli : Array = $beli_barang/VBoxContainer.get_children()
@@ -15,7 +16,7 @@ func _ready():
 	$jual_barang.hide()
 	
 func _process(delta):
-	$Node2D/Label.text = str(GlobalScript.uang)
+	$Node2D/Label2.text = "Uang : $" + str(GlobalScript.uang)
 
 func _on_beli_pressed():
 	tombol.hide()
@@ -68,6 +69,10 @@ func harga(nama):
 		harga = 100
 	elif nama == "granat_pemadam":
 		harga = 10
+	elif nama == "kapak":
+		harga = 200
+	elif nama == "korek_api":
+		harga = 5
 	else:
 		harga = 10
 	return harga
@@ -84,13 +89,22 @@ func ukuran(nama):
 		ukuran = Vector2(0.25, 0.25)
 	elif nama == "Batu":
 		ukuran = Vector2(0.02, 0.02)
+	elif nama == "kapak":
+		ukuran = Vector2(0.1, 0.1)
+	elif nama == "korek_api":
+		ukuran = Vector2(0.08,0.08)
 	else:
 		ukuran = Vector2(0.5, 0.5)
-	print(nama, ukuran)
 	return ukuran
 	
 func _on_kembali_pressed():
-	$Player.save()
+	for child in $jual_barang/ScrollContainer/VBoxContainer.get_children():
+		child.queue_free()
+	$"../../".get_node("Ysort").get_node("Player").save()
 	$beli_barang.hide()
 	$jual_barang.hide()
 	tombol.show()
+
+
+func _on_button_pressed():
+	self.hide()

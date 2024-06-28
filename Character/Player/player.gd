@@ -223,10 +223,9 @@ func attack():
 			tanam_pohon()
 		elif GlobalScript.item_in_use == "granat_pemadam":
 			attack_granat()
-		elif GlobalScript.item_in_use == null:
-			if GlobalScript.pencet == true:
-				await get_tree().create_timer(2.0).timeout
-				GlobalScript.pencet = false
+		else:
+			await get_tree().create_timer(1).timeout
+			GlobalScript.pencet = false
 func attack_ember():
 	var arah = animasi_player
 	if GlobalScript.pencet && GlobalScript.isi_air_gayung == 0:#notif ammo habis
