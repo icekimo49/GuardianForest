@@ -37,7 +37,7 @@ var warna_kosong = Color(0,0)
 @onready var warnaGF = guardian_forest.modulate
 @onready var warna_default_joystick = Color(1, 1, 1, 1)
 @onready var warna_analog_tutorial = analog_tutorial.modulate
-@onready var pengaturan = $pengaturan/Pengaturan
+@onready var pengaturan = $Node2D/Pengaturan
 @onready var tombol = $CanvasLayer/Tombol
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -140,10 +140,12 @@ func diam_ditempat():
 	pass
 	
 func _on_tombol_setting_pressed():
+	$Node2D/Pengaturan/Camera2D.make_current()
 	pengaturan.visible = true
-	canvas_layer.visible = false
+	canvas_layer.hide()
 
 func tampil_setelah_pengaturan():
+	$Camera2D.make_current()
 	canvas_layer.visible = true
 
 func _on_mulai_pressed():

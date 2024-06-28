@@ -597,10 +597,12 @@ scale = Vector2(1, 7.67566)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border_next_stage"]
 shape = SubResource("RectangleShape2D_upvdv")
 
-[node name="pengaturan" type="CanvasLayer" parent="."]
-layer = 3
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="Pengaturan" parent="pengaturan" instance=ExtResource("30_gwmw3")]
+[node name="Pengaturan" parent="Node2D" instance=ExtResource("30_gwmw3")]
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Pengaturan"]
+position = Vector2(320, 178)
 
 [connection signal="screen_exited" from="ParallaxBackground3/awan2/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="screen_exited" from="ParallaxBackground3/awan3/awan_3_screen_exit" to="." method="_on_awan_3_screen_exit_screen_exited"]
