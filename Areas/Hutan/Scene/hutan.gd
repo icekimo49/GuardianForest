@@ -26,6 +26,7 @@ var tambah_data_array_pohon = false
 
 
 func _ready():
+	$buff/buff.hide()
 	spawn_pohon()
 	$tampilan_respawn/tampilan_respawn2.visible = false
 	if GlobalScript.sudah_tutorial == false:
@@ -121,7 +122,8 @@ func _on_durasi_wave_timeout():
 	player.change_wave()
 	print(GlobalScript.tingkat_wave)
 	print("game selesai")
-	
+	$buff/buff.show()
+	GlobalScript.uang += 500
 	player.change_exp(100)
 
 func _on_pindah_desa_body_entered(body):

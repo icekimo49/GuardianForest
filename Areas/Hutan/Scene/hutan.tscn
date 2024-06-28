@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cd0oh2t77de80"]
+[gd_scene load_steps=47 format=3 uid="uid://cd0oh2t77de80"]
 
 [ext_resource type="Script" path="res://Areas/Hutan/Scene/hutan.gd" id="1_4n0fo"]
 [ext_resource type="Texture2D" uid="uid://vence6jv6qqw" path="res://asset/environtment/tilemap_packed_farm.png" id="1_52ebj"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://be6e84ghfocia" path="res://scene/UI/menu/asset/Pohon.png" id="23_bk44a"]
 [ext_resource type="PackedScene" uid="uid://cepjowy0mhxvl" path="res://Character/Tanaman/BatangKayu/batang_kayu.tscn" id="24_dqvkg"]
 [ext_resource type="Texture2D" uid="uid://cat27ahudphaw" path="res://scene/UI/menu/asset/Sparkle 1.png" id="25_3comt"]
+[ext_resource type="PackedScene" uid="uid://b3t35jinubfa1" path="res://buff/buff.tscn" id="26_e48u7"]
 [ext_resource type="FontFile" uid="uid://bql7walclmmtp" path="res://scene/UI/menu/font/font_1.ttf" id="27_6w3c3"]
 [ext_resource type="PackedScene" uid="uid://ccgbi3dh1ll2b" path="res://Character/Player/Inventory/Inv_UI.tscn" id="28_axyc1"]
 [ext_resource type="PackedScene" uid="uid://c0fyfkfnyjt36" path="res://Character/Musuh/pelempar_api/pelempar_api.tscn" id="28_om3wg"]
@@ -3184,11 +3185,14 @@ offset_bottom = 243.0
 [node name="HP" parent="hp" instance=ExtResource("30_txqjh")]
 
 [node name="tampilan_respawn" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="tampilan_respawn2" parent="tampilan_respawn" instance=ExtResource("31_yb27c")]
 z_index = 2
 position = Vector2(0, 1)
+
+[node name="buff" type="CanvasLayer" parent="."]
+
+[node name="buff" parent="buff" instance=ExtResource("26_e48u7")]
 
 [connection signal="body_entered" from="Ysort/NavigationRegion2D/sungai/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Ysort/NavigationRegion2D/sungai/Area2D" to="." method="_on_area_2d_body_exited"]
