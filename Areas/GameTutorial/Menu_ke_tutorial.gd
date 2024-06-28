@@ -41,11 +41,6 @@ var warna_kosong = Color(0,0)
 @onready var tombol = $CanvasLayer/Tombol
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#sementara
-	$CanvasLayer/Tombol.visible = false
-	$CanvasLayer/tombol_setting.visible = false
-	$CanvasLayer/RichTextLabel.hide()
-	#
 	cahaya_GF.energy = 0
 	guardian_forest.modulate = warna_kosong
 	gemastik.modulate = warna_kosong
@@ -59,9 +54,7 @@ func _ready():
 	tombol.visible = false
 	tombol_setting_mati()
 	GlobalScript.scene_sebelum_loading = get_tree().current_scene.get_name()
-	#sementara
 	state_start = true
-	#
 
 func tombol_setting_mati():
 	tombol_setting.modulate = warna_kosong
@@ -126,7 +119,7 @@ func animasi():
 	#await get_tree().create_timer(.5).timeout
 	#analog_tutorial.modulate = lerp(analog_tutorial.modulate, warna_default_joystick, 3 * delta)
 	state_start = true
-	#####tombol.visible = true
+	tombol.visible = true
 	#joystick.enable_analog = true
 	#await get_tree().create_timer(2).timeout
 	#$CanvasLayer/analog_tutorial/tutorial_ngedip.play("ngedip")

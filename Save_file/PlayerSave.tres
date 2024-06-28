@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=20 format=3]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=20 format=3 uid="uid://bq12vb11w0bs2"]
 
 [ext_resource type="Script" path="res://PlayerData.gd" id="1_hsyi6"]
 [ext_resource type="Script" path="res://Character/Player/Inventory/inventory.gd" id="1_ygpm1"]
 [ext_resource type="Script" path="res://Character/Player/Inventory/Inv_slot.gd" id="2_e5pu3"]
-[ext_resource type="Resource" path="res://Item/Material/kapak/kapak.tres" id="3_kxni7"]
-[ext_resource type="Resource" path="res://Item/Material/korek_api/korek_api.tres" id="4_y4pi3"]
+[ext_resource type="Resource" uid="uid://cval4y2kxqqbs" path="res://Item/Material/kapak/kapak.tres" id="3_kxni7"]
+[ext_resource type="Resource" uid="uid://b8wyuqakcjtym" path="res://Item/Material/korek_api/korek_api.tres" id="4_y4pi3"]
 
 [sub_resource type="Resource" id="Resource_8s8dc"]
 script = ExtResource("2_e5pu3")
